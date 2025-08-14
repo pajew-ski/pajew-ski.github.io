@@ -1,0 +1,10 @@
+title: Personal Portfolio
+author: A Curious Mind
+description: "A portfolio showcasing projects in Home Assistant, Data, and AI Agents."
+theme: minima
+
+header_pages:
+  - about.md
+  - home-assistant.md
+  - data.md
+  - agents.md
