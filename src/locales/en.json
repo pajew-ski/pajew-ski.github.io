@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "h1": "MICHAEL",
+    "h2": "Causal Inference. Metaphysical Sovereignty.",
+    "lead": "Data Scientist and Architect of autonomous cognitive systems. Constructing infrastructure for entropy defense and preservation of ontological independence."
+  },
+  "exocortex": {
+    "h2": "Infrastructure of Sovereignty",
+    "copy": "The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.",
+    "stack": {
+      "orchestration": {
+        "title": "Orchestration",
+        "desc": "Home Assistant (Action Layer) coupled with proprietary Orchestrator (Decision Layer)."
+      },
+      "memory": {
+        "title": "Memory & Inference",
+        "desc": "RDF-Store as Single Source of Truth. Local LLMs via Bare-Metal Proxmox Cluster (AI X1 Pro)."
+      },
+      "operations": {
+        "title": "Operations",
+        "desc": "SecDevOps, GitOps, PyWhy for causal inference modeling."
+      }
+    }
+  },
+  "axioms": {
+    "h2": "Principles of Mastery",
+    "copy": "Operation via Intent, Consent, and Authority in alignment with Natural Law. Wisdom is validated solely by action.",
+    "list": [
+      { "title": "Signal Congruence", "desc": "Teaching through resonance, not rhetoric." },
+      { "title": "Hierarchical Control", "desc": "Subordination of the Lower Mind to the Higher Mind." },
+      { "title": "Zero-Point Observation", "desc": "Non-judgmental observation and acceptance of full reality." }
+    ]
+  },
+  "nexus": {
+    "h2": "Protocols",
+    "copy": "Asynchronous, encrypted, and decentralized coordination.",
+    "links": {
+      "chatops": "ChatOps",
+      "signature": "Signature",
+      "federation": "Federation",
+      "physical": "Physical Node"
+    }
+  }
+}
