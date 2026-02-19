@@ -1,0 +1,44 @@
+{
+  "hero": {
+    "h1": "MICHAEL",
+    "h2": "Kausale Inferenz. Metaphysische Souveränität.",
+    "lead": "Data Scientist und Architekt autonomer kognitiver Systeme. Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologischer Unabhängigkeit."
+  },
+  "exocortex": {
+    "h2": "Infrastruktur der Souveränität",
+    "copy": "Der Exocortex ist eine asymmetrische Antwort auf systemische Entropie. Eine lokale, autonome Intelligenz-Architektur, entworfen zur Filterung von Rauschen und Synthese von Signal.",
+    "stack": {
+      "orchestration": {
+        "title": "Orchestrierung",
+        "desc": "Home Assistant (Aktionsschicht) gekoppelt mit eigenem Orchestrator (Entscheidungsschicht)."
+      },
+      "memory": {
+        "title": "Memory & Inference",
+        "desc": "RDF-Store als Single Source of Truth. Lokale LLMs via Bare-Metal Proxmox Cluster (AI X1 Pro)."
+      },
+      "operations": {
+        "title": "Operationen",
+        "desc": "SecDevOps, GitOps, PyWhy für kausale Inferenz-Modellierung."
+      }
+    }
+  },
+  "axioms": {
+    "h2": "Prinzipien der Meisterschaft",
+    "copy": "Operation via Intent, Consent und Authority im Einklang mit dem Naturrecht. Weisheit wird ausschließlich durch Tat validiert.",
+    "list": [
+      { "title": "Signal-Kongruenz", "desc": "Lehre durch Resonanz, nicht durch Rhetorik." },
+      { "title": "Hierarchische Kontrolle", "desc": "Subordination des Niederen Geistes unter den Höheren Geist." },
+      { "title": "Nullpunkt-Beobachtung", "desc": "Urteilsfreie Beobachtung und Akzeptanz der vollen Realität." }
+    ]
+  },
+  "nexus": {
+    "h2": "Protokolle",
+    "copy": "Asynchrone, verschlüsselte und dezentrale Koordination.",
+    "links": {
+      "chatops": "ChatOps",
+      "signature": "Signatur",
+      "federation": "Föderation",
+      "physical": "Physischer Node"
+    }
+  }
+}
