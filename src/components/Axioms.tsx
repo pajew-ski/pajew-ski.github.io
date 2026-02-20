@@ -99,7 +99,7 @@ function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="bg-white dark:bg-black text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 relative overflow-hidden group"
+      className="bg-white dark:bg-neutral-800 text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 relative overflow-hidden group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
