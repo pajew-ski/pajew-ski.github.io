@@ -38,10 +38,6 @@ export function Nexus() {
           ))}
         </div>
       </div>
-
-      <div className="mt-24 text-center text-xs text-muted-foreground/30 font-mono uppercase tracking-widest">
-        Digitales Nullpunkt-Feld v2.0
-      </div>
     </footer>
   );
 }
