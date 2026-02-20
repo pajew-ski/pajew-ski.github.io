@@ -77,6 +77,8 @@
     "subtitle": "Frag mich alles",
     "placeholder": "Schreibe deine Nachricht...",
     "getStarted": "Neue Konversation",
-    "initialMessage": "Hallo! Wie kann ich dir heute helfen?"
+    "initialMessage": "Hallo! Wie kann ich dir heute helfen?",
+    "footer": "",
+    "closeButtonTooltip": "Chat schließen"
   }
 }
