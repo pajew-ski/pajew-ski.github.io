@@ -25,6 +25,8 @@ export function ChatWidget() {
           subtitle: t('chat.subtitle', 'Ask me anything'),
           inputPlaceholder: t('chat.placeholder', 'Type your message...'),
           getStarted: t('chat.getStarted', 'New Conversation'),
+          footer: t('chat.footer', ''),
+          closeButtonTooltip: t('chat.closeButtonTooltip', 'Close chat'),
         },
       },
       showWelcomeScreen: true,

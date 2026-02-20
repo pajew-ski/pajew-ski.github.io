@@ -77,6 +77,8 @@
     "subtitle": "Ask me anything",
     "placeholder": "Type your message...",
     "getStarted": "New Conversation",
-    "initialMessage": "Hello! How can I help you today?"
+    "initialMessage": "Hello! How can I help you today?",
+    "footer": "",
+    "closeButtonTooltip": "Close chat"
   }
 }
