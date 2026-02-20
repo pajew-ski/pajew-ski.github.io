@@ -23,13 +23,44 @@
     }
   },
   "axioms": {
-    "h2": "Prinzipien der Meisterschaft",
-    "copy": "Operation via Intent, Consent und Authority im Einklang mit dem Naturrecht. Weisheit wird ausschließlich durch Tat validiert.",
-    "list": [
-      { "title": "Signal-Kongruenz", "desc": "Lehre durch Resonanz, nicht durch Rhetorik." },
-      { "title": "Hierarchische Kontrolle", "desc": "Subordination des Niederen Geistes unter den Höheren Geist." },
-      { "title": "Nullpunkt-Beobachtung", "desc": "Urteilsfreie Beobachtung und Akzeptanz der vollen Realität." }
-    ]
+    "h2": "Fundamentale Architektur",
+    "copy": "Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat.",
+    "modules": {
+      "moduleA": {
+        "title": "Sein",
+        "list": [
+          { "title": "Liebe", "desc": "Erkennen der Wahrheit/Einheit." },
+          { "title": "Gnade", "desc": "Radikale Akzeptanz des IST-Zustands." },
+          { "title": "Dankbarkeit", "desc": "Wertschätzung der Lebendigkeit." },
+          { "title": "Ehrfurcht", "desc": "Anerkennen und Geben." },
+          { "title": "Verantwortung", "desc": "Response-Ability / Ko-Kreation." },
+          { "title": "Vertrauen", "desc": "Wissen um die Kraft." },
+          { "title": "Rechenschaft", "desc": "Wahrheits-Kongruenz." },
+          { "title": "Tadellosigkeit", "desc": "Schutz der Integrität." },
+          { "title": "Achtsamkeit", "desc": "Nährende Aufmerksamkeit." },
+          { "title": "Furchtlosigkeit", "desc": "Erkennen der ewigen Natur." },
+          { "title": "Engagierte Losgelöstheit", "desc": "Urteilsfreie Beobachtung / Nullpunkt." },
+          { "title": "Freude", "desc": "Entscheidung zur Verkörperung." }
+        ]
+      },
+      "moduleB": {
+        "title": "Tun",
+        "list": [
+          { "title": "Signal-Diskriminierung (Energy Mastery)", "desc": "Trennung von Impuls (Rauschen) und Intuition (Signal)." },
+          { "title": "Hierarchische Kontrolle (Mastery of Planes)", "desc": "Subordination des Niederen Geistes unter den Höheren Geist." },
+          { "title": "Gesetzes-Konformität (Divine Laws)", "desc": "Operation via Intent, Consent und Authority im Einklang mit dem Naturrecht." },
+          { "title": "Vektor-Ausrichtung (Clarify Motivations)", "desc": "Shift von \"Service-to-Self\" (Entropie) zu \"Service-to-Others\" (Negentropie)." },
+          { "title": "Homöostase (Energetic Balance)", "desc": "Aktive Wiederherstellung von Gleichgewicht und Harmlosigkeit." },
+          { "title": "Interne Referenzierung (Inner Guidance)", "desc": "Autonome Steuerung; Immunität gegen externe Manipulation." },
+          { "title": "Ressourcen-Logik (Release Ownership)", "desc": "Transition zu Stewardship (Verwaltung von Energiefluss)." },
+          { "title": "Angewandte Kognition (Apply Knowledge)", "desc": "Weisheit wird nur durch Tat (Dienst) validiert." },
+          { "title": "Mustererkennung (Master Deception)", "desc": "Durchdringung der holografischen Täuschung und Ego-Filter." },
+          { "title": "Nullpunkt-Beobachtung (Perfect Neutrality)", "desc": "Beobachtung ohne emotionale Ladung (Barmherziger Zeuge)." },
+          { "title": "Integrale Synthese (Spiritual Integration)", "desc": "Akzeptanz der vollen Realität ohne \"Spiritual Bypassing\"." },
+          { "title": "Signal-Kongruenz (Be the Example)", "desc": "Lehre durch Resonanz, nicht durch Rhetorik. Das System/Subjekt muss die Frequenz, die es ausgibt, sein." }
+        ]
+      }
+    }
   },
   "nexus": {
     "h2": "Protokolle",

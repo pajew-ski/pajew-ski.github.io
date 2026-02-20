@@ -23,13 +23,44 @@
     }
   },
   "axioms": {
-    "h2": "Principles of Mastery",
-    "copy": "Operation via Intent, Consent, and Authority in alignment with Natural Law. Wisdom is validated solely by action.",
-    "list": [
-      { "title": "Signal Congruence", "desc": "Teaching through resonance, not rhetoric." },
-      { "title": "Hierarchical Control", "desc": "Subordination of the Lower Mind to the Higher Mind." },
-      { "title": "Zero-Point Observation", "desc": "Non-judgmental observation and acceptance of full reality." }
-    ]
+    "h2": "Fundamental Architecture",
+    "copy": "Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.",
+    "modules": {
+      "moduleA": {
+        "title": "Being",
+        "list": [
+          { "title": "Love", "desc": "Recognition of truth/unity." },
+          { "title": "Grace", "desc": "Radical acceptance of the IS-state." },
+          { "title": "Gratitude", "desc": "Appreciation of aliveness." },
+          { "title": "Awe", "desc": "Recognition and giving." },
+          { "title": "Responsibility", "desc": "Response-Ability / Co-Creation." },
+          { "title": "Trust", "desc": "Knowing the power." },
+          { "title": "Accountability", "desc": "Truth-Congruence." },
+          { "title": "Impeccability", "desc": "Protection of integrity." },
+          { "title": "Mindfulness", "desc": "Nourishing attention." },
+          { "title": "Fearlessness", "desc": "Recognition of the eternal nature." },
+          { "title": "Engaged Detachment", "desc": "Non-judgmental observation / Zero Point." },
+          { "title": "Joy", "desc": "Decision for embodiment." }
+        ]
+      },
+      "moduleB": {
+        "title": "Doing",
+        "list": [
+          { "title": "Signal Discrimination (Energy Mastery)", "desc": "Separation of impulse (noise) and intuition (signal)." },
+          { "title": "Hierarchical Control (Mastery of Planes)", "desc": "Subordination of the Lower Mind to the Higher Mind." },
+          { "title": "Law Compliance (Divine Laws)", "desc": "Operation via Intent, Consent, and Authority in alignment with Natural Law." },
+          { "title": "Vector Alignment (Clarify Motivations)", "desc": "Shift from \"Service-to-Self\" (Entropy) to \"Service-to-Others\" (Negentropy)." },
+          { "title": "Homeostasis (Energetic Balance)", "desc": "Active restoration of balance and harmlessness." },
+          { "title": "Internal Referencing (Inner Guidance)", "desc": "Autonomous control; immunity to external manipulation." },
+          { "title": "Resource Logic (Release Ownership)", "desc": "Transition to Stewardship (management of energy flow)." },
+          { "title": "Applied Cognition (Apply Knowledge)", "desc": "Wisdom is validated solely by deed (service)." },
+          { "title": "Pattern Recognition (Master Deception)", "desc": "Penetration of holographic deception and ego filters." },
+          { "title": "Zero-Point Observation (Perfect Neutrality)", "desc": "Observation without emotional charge (Merciful Witness)." },
+          { "title": "Integral Synthesis (Spiritual Integration)", "desc": "Acceptance of full reality without \"Spiritual Bypassing\"." },
+          { "title": "Signal Congruence (Be the Example)", "desc": "Teaching through resonance, not rhetoric. The system/subject must be the frequency it emits." }
+        ]
+      }
+    }
   },
   "nexus": {
     "h2": "Protocols",
