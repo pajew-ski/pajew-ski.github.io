@@ -19,7 +19,7 @@ export function Axioms() {
   const moduleB = t('axioms.modules.moduleB', { returnObjects: true }) as AxiomModuleData;
 
   return (
-    <section className="py-32 bg-foreground text-background transition-colors duration-500 overflow-hidden">
+    <section className="py-32 bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="mb-24 space-y-6">
@@ -36,7 +36,7 @@ export function Axioms() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl md:text-2xl text-background/80 font-light max-w-3xl"
+            className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
           >
             {t('axioms.copy')}
           </motion.p>
@@ -49,7 +49,7 @@ export function Axioms() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold border-b border-background/20 pb-4"
+              className="text-3xl font-bold border-b border-foreground/10 pb-4"
             >
               {moduleA.title}
             </motion.h3>
@@ -70,7 +70,7 @@ export function Axioms() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-bold border-b border-background/20 pb-4"
+              className="text-3xl font-bold border-b border-foreground/10 pb-4"
             >
               {moduleB.title}
             </motion.h3>
@@ -99,7 +99,7 @@ function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="bg-background text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-border/10 shadow-sm hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
+      className="bg-white dark:bg-black text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-800 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-700 transition-all duration-300 relative overflow-hidden group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
