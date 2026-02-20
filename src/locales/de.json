@@ -71,5 +71,12 @@
       "federation": "Föderation",
       "physical": "Physischer Node"
     }
+  },
+  "chat": {
+    "title": "Assistent",
+    "subtitle": "Frag mich alles",
+    "placeholder": "Schreibe deine Nachricht...",
+    "getStarted": "Neue Konversation",
+    "initialMessage": "Hallo! Wie kann ich dir heute helfen?"
   }
 }

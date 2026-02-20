@@ -66,6 +66,37 @@
   }
 }
 
+/* n8n Chat Overrides - Global Scope (Higher specificity than @layer base) */
+:root {
+    --chat--color-primary: hsl(var(--primary));
+    --chat--color-primary-shade-50: hsl(var(--primary));
+    --chat--color-primary-shade-100: hsl(var(--primary));
+
+    --chat--color-secondary: hsl(var(--secondary));
+
+    --chat--color-dark: hsl(var(--foreground));
+    --chat--color-light: hsl(var(--background));
+    --chat--color-white: hsl(var(--card));
+
+    --chat--message--user--background: hsl(var(--primary));
+    --chat--message--user--color: hsl(var(--primary-foreground));
+
+    --chat--message--bot--background: hsl(var(--secondary));
+    --chat--message--bot--color: hsl(var(--secondary-foreground));
+
+    --chat--header--background: hsl(var(--primary));
+    --chat--header--color: hsl(var(--primary-foreground));
+
+    --chat--body--background: hsl(var(--background));
+    --chat--footer--background: hsl(var(--background));
+    --chat--input--background: hsl(var(--background));
+    --chat--input--text-color: hsl(var(--foreground));
+
+    --chat--toggle--background: hsl(var(--primary));
+    --chat--toggle--color: hsl(var(--primary-foreground));
+    --chat--toggle--hover--background: hsl(var(--primary));
+}
+
 @layer base {
   * {
     @apply border-border;
