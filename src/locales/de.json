@@ -46,18 +46,18 @@
       "moduleB": {
         "title": "Tun",
         "list": [
-          { "title": "Signal-Diskriminierung (Energy Mastery)", "desc": "Trennung von Impuls (Rauschen) und Intuition (Signal)." },
-          { "title": "Hierarchische Kontrolle (Mastery of Planes)", "desc": "Subordination des Niederen Geistes unter den Höheren Geist." },
-          { "title": "Gesetzes-Konformität (Divine Laws)", "desc": "Operation via Intent, Consent und Authority im Einklang mit dem Naturrecht." },
-          { "title": "Vektor-Ausrichtung (Clarify Motivations)", "desc": "Shift von \"Service-to-Self\" (Entropie) zu \"Service-to-Others\" (Negentropie)." },
-          { "title": "Homöostase (Energetic Balance)", "desc": "Aktive Wiederherstellung von Gleichgewicht und Harmlosigkeit." },
-          { "title": "Interne Referenzierung (Inner Guidance)", "desc": "Autonome Steuerung; Immunität gegen externe Manipulation." },
-          { "title": "Ressourcen-Logik (Release Ownership)", "desc": "Transition zu Stewardship (Verwaltung von Energiefluss)." },
-          { "title": "Angewandte Kognition (Apply Knowledge)", "desc": "Weisheit wird nur durch Tat (Dienst) validiert." },
-          { "title": "Mustererkennung (Master Deception)", "desc": "Durchdringung der holografischen Täuschung und Ego-Filter." },
-          { "title": "Nullpunkt-Beobachtung (Perfect Neutrality)", "desc": "Beobachtung ohne emotionale Ladung (Barmherziger Zeuge)." },
-          { "title": "Integrale Synthese (Spiritual Integration)", "desc": "Akzeptanz der vollen Realität ohne \"Spiritual Bypassing\"." },
-          { "title": "Signal-Kongruenz (Be the Example)", "desc": "Lehre durch Resonanz, nicht durch Rhetorik. Das System/Subjekt muss die Frequenz, die es ausgibt, sein." }
+          { "title": "Signal-Diskriminierung", "desc": "Energie-Meisterschaft. Trennung von Impuls (Rauschen) und Intuition (Signal)." },
+          { "title": "Hierarchische Kontrolle", "desc": "Meisterschaft der Ebenen. Subordination des Niederen Geistes unter den Höheren Geist." },
+          { "title": "Gesetzes-Konformität", "desc": "Göttliche Gesetze. Operation via Intent, Consent und Authority im Einklang mit dem Naturrecht." },
+          { "title": "Vektor-Ausrichtung", "desc": "Klärung der Motivation. Shift von \"Service-to-Self\" (Entropie) zu \"Service-to-Others\" (Negentropie)." },
+          { "title": "Homöostase", "desc": "Energetische Balance. Aktive Wiederherstellung von Gleichgewicht und Harmlosigkeit." },
+          { "title": "Interne Referenzierung", "desc": "Innere Führung. Autonome Steuerung; Immunität gegen externe Manipulation." },
+          { "title": "Ressourcen-Logik", "desc": "Loslassen von Besitz. Transition zu Stewardship (Verwaltung von Energiefluss)." },
+          { "title": "Angewandte Kognition", "desc": "Anwendung von Wissen. Weisheit wird nur durch Tat (Dienst) validiert." },
+          { "title": "Mustererkennung", "desc": "Meisterung der Täuschung. Durchdringung der holografischen Täuschung und Ego-Filter." },
+          { "title": "Nullpunkt-Beobachtung", "desc": "Perfekte Neutralität. Beobachtung ohne emotionale Ladung (Barmherziger Zeuge)." },
+          { "title": "Integrale Synthese", "desc": "Spirituelle Integration. Akzeptanz der vollen Realität ohne \"Spiritual Bypassing\"." },
+          { "title": "Signal-Kongruenz", "desc": "Sei das Beispiel. Lehre durch Resonanz, nicht durch Rhetorik. Das System/Subjekt muss die Frequenz, die es ausgibt, sein." }
         ]
       }
     }

@@ -14,8 +14,7 @@ interface AxiomModuleData {
 
 export function Axioms() {
   const { t } = useTranslation();
-
-  // Cast the translation results to our interfaces
+  
   const moduleA = t('axioms.modules.moduleA', { returnObjects: true }) as AxiomModuleData;
   const moduleB = t('axioms.modules.moduleB', { returnObjects: true }) as AxiomModuleData;
 
@@ -43,12 +42,10 @@ export function Axioms() {
           </motion.p>
         </div>
 
-        {/* Bivalent Grid System */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
-
-          {/* Module A: Sein (Left Column) */}
+        <div className="space-y-32">
+          {/* Module A: Sein */}
           <div className="space-y-12">
-            <motion.h3
+            <motion.h3 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -56,83 +53,74 @@ export function Axioms() {
             >
               {moduleA.title}
             </motion.h3>
-            <div className="space-y-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {moduleA.list.map((item, index) => (
-                <AxiomItem
-                  key={index}
-                  item={item}
+                <AxiomCard 
+                  key={index} 
+                  item={item} 
                   index={index}
-                  fontClass="font-sans"
                 />
               ))}
             </div>
           </div>
 
-          {/* Module B: Tun (Right Column) */}
+          {/* Module B: Tun */}
           <div className="space-y-12">
-             <motion.h3
-              initial={{ opacity: 0, x: 20 }}
+             <motion.h3 
+              initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="text-3xl font-mono border-b border-background/20 pb-4"
+              className="text-3xl font-bold border-b border-background/20 pb-4"
             >
               {moduleB.title}
             </motion.h3>
-            <div className="space-y-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {moduleB.list.map((item, index) => (
-                <AxiomItem
-                  key={index}
-                  item={item}
+                <AxiomCard 
+                  key={index} 
+                  item={item} 
                   index={index}
-                  fontClass="font-mono"
                 />
               ))}
             </div>
           </div>
-
         </div>
       </div>
     </section>
   );
 }
 
-function AxiomItem({ item, index, fontClass }: { item: AxiomItemData; index: number; fontClass: string }) {
+function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 10 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="group cursor-pointer py-4 border-b border-background/5"
+      className="bg-background text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-border/10 shadow-sm hover:shadow-lg transition-all duration-300 relative overflow-hidden group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
     >
-      <div className="flex items-baseline gap-4">
-        <span className={`text-sm opacity-30 font-mono`}>
-          {(index + 1).toString().padStart(2, '0')}
-        </span>
-        <div className="flex-1">
-          <h4 className={`text-xl md:text-2xl font-medium transition-colors duration-300 ${fontClass} ${isHovered ? 'text-primary' : 'text-background'}`}>
-            {item.title}
-          </h4>
-          <motion.div
-            initial={false}
-            animate={{
-              height: isHovered ? 'auto' : 0,
-              opacity: isHovered ? 1 : 0,
-              marginTop: isHovered ? 8 : 0
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            className="overflow-hidden"
-          >
-            <p className="text-background/70 font-light leading-relaxed">
-              {item.desc}
-            </p>
-          </motion.div>
-        </div>
+      <div className="relative z-10">
+        <h4 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+          {item.title}
+        </h4>
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isHovered ? 1 : 0,
+            height: isHovered ? 'auto' : 0
+          }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          className="overflow-hidden"
+        >
+          <p className="text-foreground/80 font-light leading-relaxed pt-2">
+            {item.desc}
+          </p>
+        </motion.div>
       </div>
     </motion.div>
   );
