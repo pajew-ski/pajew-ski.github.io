@@ -97,6 +97,15 @@
     --chat--toggle--hover--background: hsl(var(--primary));
 }
 
+/* Hide n8n branding */
+.chat-window-footer a[href*="n8n"],
+.chat-window-footer .n8n-branding,
+[class*="chat"] a[href*="n8n.io"],
+[class*="chat"] [class*="powered"],
+[class*="chat"] [class*="branding"] {
+    display: none !important;
+}
+
 @layer base {
   * {
     @apply border-border;

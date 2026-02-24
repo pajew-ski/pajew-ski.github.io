@@ -13,7 +13,7 @@ export function ChatWidget() {
     }
 
     createChat({
-      webhookUrl: 'https://placeholder.webhook.url/test',
+      webhookUrl: 'https://n8n.pajewski.net/webhook/580e7531-abf2-4933-a1c7-ce2c5155c746/chat',
       target: '#n8n-chat',
       mode: 'window',
       // We force 'en' as the language key because n8n chat currently only supports 'en'
@@ -30,6 +30,7 @@ export function ChatWidget() {
         },
       },
       showWelcomeScreen: true,
+      metadata: {},
       initialMessages: [
         t('chat.initialMessage', 'Hello! How can I help you today?')
       ],
