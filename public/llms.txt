@@ -1,9 +1,9 @@
-# Michael - Data Scientist and Creator of autonomous cognitive systems
+# Michael – Data Scientist, Dancer, Creative, Creator of autonomous cognitive systems
 
-> Constructing infrastructure for entropy defense and preservation of ontological independence.
+> Mission: Constructing infrastructure for entropy defense and preservation of ontological independence.
 
 ## About
-Michael is a Data Scientist and creator of autonomous cognitive systems. This portfolio site outlines his philosophy, architecture ("Exocortex"), and fundamental axioms.
+Michael is a Data Scientist, dancer, creative, and creator of autonomous cognitive systems. This site outlines his philosophy, architecture ("Exocortex"), and fundamental axioms.
 
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.

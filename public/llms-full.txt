@@ -1,22 +1,22 @@
 # MICHAEL
-## Causal Inference. Metaphysical Sovereignty.
+## Data Scientist, Dancer, Creative, Creator of autonomous cognitive systems.
 
-Data Scientist and Creator of autonomous cognitive systems. Constructing infrastructure for entropy defense and preservation of ontological independence.
+Mission: Constructing infrastructure for entropy defense and preservation of ontological independence.
 
 ---
 
-## Infrastructure of Sovereignty (Exocortex)
+## Infrastructure of Sovereignty. Causal Inference. Metaphysical Sovereignty. (Exocortex)
 
 The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.
 
 ### Orchestration
-Home Assistant (Action Layer) coupled with proprietary Orchestrator (Decision Layer).
+Home Assistant (Action Layer) coupled with N8N (Decision Layer).
 
 ### Memory & Inference
-RDF-Store as Single Source of Truth. Local LLMs via Bare-Metal Proxmox Cluster (AI X1 Pro).
+RDF-Store as Single Source of Truth. Local LLMs.
 
 ### Operations
-SecDevOps, GitOps, PyWhy for causal inference modeling.
+SecDevOps, GitOps, causal inference modeling.
 
 ---
 
