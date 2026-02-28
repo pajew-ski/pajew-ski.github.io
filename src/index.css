@@ -143,6 +143,15 @@
   display: none !important;
 }
 
+/* Ensure "Neue Konversation" button text is readable */
+.chat-get-started button {
+  color: hsl(0 0% 9%) !important;
+}
+
+.dark .chat-get-started button {
+  color: hsl(0 0% 98%) !important;
+}
+
 @layer base {
   * {
     @apply border-border;
