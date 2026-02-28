@@ -66,32 +66,26 @@
   }
 }
 
-/* n8n Chat Overrides - Light Mode (Global Scope, higher specificity than @layer base) */
+/* n8n Chat Overrides - Light Mode */
 :root {
-  /* Single-dash variants */
-  --chat--color-primary: hsl(0 0% 75%);
-  --chat--color-primary-shade-50: hsl(0 0% 68%);
-  --chat--color-primary-shade-100: hsl(0 0% 60%);
-
-  /* Double-dash variants (used internally by n8n chat) */
-  --chat--color--primary: hsl(0 0% 75%);
-  --chat--color--primary--shade-100: hsl(0 0% 60%);
-  --chat--color--primary-shade-50: hsl(0 0% 68%);
-
-  /* Secondary (n8n defaults to teal #20b69e — override to neutral) */
+  --chat--color-primary: hsl(0 0% 90%);
+  --chat--color-primary-shade-50: hsl(0 0% 90%);
+  --chat--color-primary-shade-100: hsl(0 0% 90%);
+  --chat--color--primary: hsl(0 0% 90%);
+  --chat--color--primary--shade-100: hsl(0 0% 90%);
+  --chat--color--primary-shade-50: hsl(0 0% 90%);
   --chat--color-secondary: hsl(0 0% 90%);
   --chat--color--secondary: hsl(0 0% 90%);
-  --chat--color-secondary-shade-50: hsl(0 0% 80%);
+  --chat--color-secondary-shade-50: hsl(0 0% 90%);
 
   --chat--color-dark: hsl(var(--foreground));
   --chat--color-light: hsl(var(--background));
   --chat--color-white: hsl(var(--card));
 
-  --chat--message--user--background: hsl(0 0% 85%);
+  --chat--message--user--background: hsl(0 0% 90%);
   --chat--message--user--color: hsl(0 0% 9%);
-
-  --chat--message--bot--background: hsl(var(--secondary));
-  --chat--message--bot--color: hsl(var(--secondary-foreground));
+  --chat--message--bot--background: hsl(0 0% 90%);
+  --chat--message--bot--color: hsl(0 0% 9%);
 
   --chat--header--background: hsl(0 0% 90%);
   --chat--header--color: hsl(0 0% 9%);
@@ -101,35 +95,33 @@
   --chat--input--background: hsl(var(--background));
   --chat--input--text-color: hsl(var(--foreground));
 
-  --chat--toggle--background: hsl(0 0% 75%);
+  --chat--toggle--background: hsl(0 0% 90%);
   --chat--toggle--color: hsl(0 0% 9%);
-  --chat--toggle--hover--background: hsl(0 0% 68%);
+  --chat--toggle--hover--background: hsl(0 0% 85%);
 }
 
 /* n8n Chat Overrides - Dark Mode */
 .dark {
-  --chat--color-primary: hsl(0 0% 30%);
-  --chat--color-primary-shade-50: hsl(0 0% 35%);
-  --chat--color-primary-shade-100: hsl(0 0% 40%);
-  --chat--color--primary: hsl(0 0% 30%);
-  --chat--color--primary--shade-100: hsl(0 0% 40%);
-  --chat--color--primary-shade-50: hsl(0 0% 35%);
-
-  --chat--color-secondary: hsl(0 0% 20%);
-  --chat--color--secondary: hsl(0 0% 20%);
-  --chat--color-secondary-shade-50: hsl(0 0% 25%);
+  --chat--color-primary: hsl(0 0% 15%);
+  --chat--color-primary-shade-50: hsl(0 0% 15%);
+  --chat--color-primary-shade-100: hsl(0 0% 15%);
+  --chat--color--primary: hsl(0 0% 15%);
+  --chat--color--primary--shade-100: hsl(0 0% 15%);
+  --chat--color--primary-shade-50: hsl(0 0% 15%);
+  --chat--color-secondary: hsl(0 0% 15%);
+  --chat--color--secondary: hsl(0 0% 15%);
+  --chat--color-secondary-shade-50: hsl(0 0% 15%);
 
   --chat--color-dark: hsl(var(--foreground));
   --chat--color-light: hsl(var(--background));
   --chat--color-white: hsl(var(--card));
 
-  --chat--message--user--background: hsl(0 0% 25%);
+  --chat--message--user--background: hsl(0 0% 15%);
   --chat--message--user--color: hsl(0 0% 98%);
+  --chat--message--bot--background: hsl(0 0% 15%);
+  --chat--message--bot--color: hsl(0 0% 98%);
 
-  --chat--message--bot--background: hsl(var(--secondary));
-  --chat--message--bot--color: hsl(var(--secondary-foreground));
-
-  --chat--header--background: hsl(0 0% 18%);
+  --chat--header--background: hsl(0 0% 15%);
   --chat--header--color: hsl(0 0% 98%);
 
   --chat--body--background: hsl(var(--background));
@@ -137,9 +129,9 @@
   --chat--input--background: hsl(var(--background));
   --chat--input--text-color: hsl(var(--foreground));
 
-  --chat--toggle--background: hsl(0 0% 25%);
+  --chat--toggle--background: hsl(0 0% 15%);
   --chat--toggle--color: hsl(0 0% 98%);
-  --chat--toggle--hover--background: hsl(0 0% 30%);
+  --chat--toggle--hover--background: hsl(0 0% 20%);
 }
 
 /* Hide n8n branding */
