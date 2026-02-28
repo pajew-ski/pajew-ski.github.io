@@ -143,5 +143,6 @@
     "footer": "",
     "closeButtonTooltip": "Close chat"
   },
-  "siteFooter": "Private web card – no commercial offer, no Impressum required (§ 5 TMG). Hosting: GitHub Pages (IP logging by GitHub Inc.). Chat inputs are orchestrated on private infrastructure; AI inference is processed by external providers (incl. USA) — temporary processing cannot be ruled out despite zero-retention policies. Chat usage is voluntary. Contact via my GitHub profile."
+  "legalLink": "Legal / Privacy",
+  "siteFooter": "Private web card – no commercial offer, no Impressum required (§ 5 TMG). Hosting: GitHub Pages (IP logging by GitHub Inc.). Chat inputs are orchestrated on private infrastructure; AI inference may run on private infrastructure or via external providers (incl. USA) — temporary processing cannot be ruled out despite zero-retention policies. Chat usage is voluntary. Contact via my GitHub profile."
 }

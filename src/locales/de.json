@@ -143,5 +143,6 @@
     "footer": "",
     "closeButtonTooltip": "Chat schließen"
   },
-  "siteFooter": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur orchestriert; die KI-Inferenz erfolgt über externe Anbieter (u. a. USA) — eine vorübergehende Verarbeitung dort kann trotz Zero-Retention-Richtlinien nicht ausgeschlossen werden. Die Nutzung des Chats ist freiwillig. Kontakt über mein GitHub-Profil."
+  "legalLink": "Impressum / Datenschutz",
+  "siteFooter": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur orchestriert; die KI-Inferenz kann auf eigener Infrastruktur oder über externe Anbieter (u. a. USA) erfolgen — eine vorübergehende Verarbeitung dort kann trotz Zero-Retention-Richtlinien nicht ausgeschlossen werden. Die Nutzung des Chats ist freiwillig. Kontakt über mein GitHub-Profil."
 }

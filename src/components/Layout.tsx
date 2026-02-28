@@ -36,7 +36,7 @@ export function Layout({ children }: LayoutProps) {
           onClick={() => setShowLegal(true)}
           className="hover:opacity-100 transition-opacity cursor-pointer"
         >
-          Impressum / Datenschutz
+          {t('legalLink')}
         </button>
       </footer>
 
@@ -56,7 +56,7 @@ export function Layout({ children }: LayoutProps) {
             >
               ✕
             </button>
-            <h2 className="text-sm font-semibold mb-3">Impressum / Datenschutz</h2>
+            <h2 className="text-sm font-semibold mb-3">{t('legalLink')}</h2>
             <p className="text-xs text-muted-foreground leading-relaxed">
               {t('siteFooter')}
             </p>
