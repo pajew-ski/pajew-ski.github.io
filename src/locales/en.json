@@ -140,7 +140,7 @@
     "placeholder": "Type your message...",
     "getStarted": "New Conversation",
     "initialMessage": "Hello! How can I help you today?",
-    "footer": "Private web card – no commercial offer. No legal notice (Impressum) required per § 5 TMG.",
+    "footer": "Private web card – no commercial offer, no Impressum required (§ 5 TMG). Hosting: GitHub Pages (IP logging by GitHub Inc.). Chat inputs are processed on private infrastructure.",
     "closeButtonTooltip": "Close chat"
   }
 }

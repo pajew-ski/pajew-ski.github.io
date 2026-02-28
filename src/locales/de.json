@@ -140,7 +140,7 @@
     "placeholder": "Schreibe deine Nachricht...",
     "getStarted": "Neue Konversation",
     "initialMessage": "Hallo! Wie kann ich dir heute helfen?",
-    "footer": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot. Impressumspflicht entfällt gem. § 5 TMG.",
+    "footer": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur verarbeitet.",
     "closeButtonTooltip": "Chat schließen"
   }
 }
