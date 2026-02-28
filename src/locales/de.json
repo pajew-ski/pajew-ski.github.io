@@ -62,16 +62,6 @@
       }
     }
   },
-  "nexus": {
-    "h2": "Protokolle",
-    "copy": "Asynchrone, verschlüsselte und dezentrale Koordination.",
-    "links": {
-      "chatops": "ChatOps",
-      "signature": "Signatur",
-      "federation": "Föderation",
-      "physical": "Physischer Node"
-    }
-  },
   "chat": {
     "title": "Assistent",
     "subtitle": "Frag mich alles",

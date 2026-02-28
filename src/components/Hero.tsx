@@ -6,7 +6,7 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-4">
+    <header className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-4" aria-label="Introduction">
       <ParticleNetwork />
       <div className="z-10 text-center space-y-8 max-w-4xl mix-blend-difference text-white pointer-events-none select-none">
         <motion.h1
@@ -44,6 +44,6 @@ export function Hero() {
       >
         <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-current to-transparent opacity-50 animate-pulse"></div>
       </motion.div>
-    </section>
+    </header>
   );
 }

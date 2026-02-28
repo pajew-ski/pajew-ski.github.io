@@ -1,0 +1,53 @@
+# MICHAEL
+## Causal Inference. Metaphysical Sovereignty.
+
+Data Scientist and Creator of autonomous cognitive systems. Constructing infrastructure for entropy defense and preservation of ontological independence.
+
+---
+
+## Infrastructure of Sovereignty (Exocortex)
+
+The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.
+
+### Orchestration
+Home Assistant (Action Layer) coupled with proprietary Orchestrator (Decision Layer).
+
+### Memory & Inference
+RDF-Store as Single Source of Truth. Local LLMs via Bare-Metal Proxmox Cluster (AI X1 Pro).
+
+### Operations
+SecDevOps, GitOps, PyWhy for causal inference modeling.
+
+---
+
+## Fundamental Architecture (Axioms)
+
+Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.
+
+### Being
+* **Love**: Recognition of truth/unity.
+* **Grace**: Radical acceptance of the IS-state.
+* **Gratitude**: Appreciation of aliveness.
+* **Awe**: Recognition and giving.
+* **Responsibility**: Response-Ability / Co-Creation.
+* **Trust**: Knowing the power.
+* **Accountability**: Truth-Congruence.
+* **Impeccability**: Protection of integrity.
+* **Mindfulness**: Nourishing attention.
+* **Fearlessness**: Recognition of the eternal nature.
+* **Engaged Detachment**: Non-judgmental observation / Zero Point.
+* **Joy**: Decision for embodiment.
+
+### Doing
+* **Signal Discrimination**: Energy Mastery. Separation of impulse (noise) and intuition (signal).
+* **Hierarchical Control**: Mastery of Planes. Subordination of the Lower Mind to the Higher Mind.
+* **Law Compliance**: Divine Laws. Operation via Intent, Consent, and Authority in alignment with Natural Law.
+* **Vector Alignment**: Clarify Motivations. Shift from "Service-to-Self" (Entropy) to "Service-to-Others" (Negentropy).
+* **Homeostasis**: Energetic Balance. Active restoration of balance and harmlessness.
+* **Internal Referencing**: Inner Guidance. Autonomous control; immunity to external manipulation.
+* **Resource Logic**: Release Ownership. Transition to Stewardship (management of energy flow).
+* **Applied Cognition**: Apply Knowledge. Wisdom is validated solely by deed (service).
+* **Pattern Recognition**: Master Deception. Penetration of holographic deception and ego filters.
+* **Zero-Point Observation**: Perfect Neutrality. Observation without emotional charge (Merciful Witness).
+* **Integral Synthesis**: Spiritual Integration. Acceptance of full reality without "Spiritual Bypassing".
+* **Signal Congruence**: Be the Example. Teaching through resonance, not rhetoric. The system/subject must be the frequency it emits.

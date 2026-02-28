@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pajew-ski.github.io/sitemap.xml

@@ -12,9 +12,10 @@ export function Exocortex() {
   ];
 
   return (
-    <section className="py-32 px-4 md:px-8 max-w-7xl mx-auto">
+    <section className="py-32 px-4 md:px-8 max-w-7xl mx-auto" aria-labelledby="exocortex-heading">
       <div className="mb-20">
         <motion.h2
+          id="exocortex-heading"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
@@ -35,7 +36,7 @@ export function Exocortex() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
         {features.map((feature, index) => (
-          <motion.div
+          <motion.article
             key={feature.key}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -50,7 +51,7 @@ export function Exocortex() {
             <p className="text-muted-foreground leading-relaxed font-light">
               {t(`exocortex.stack.${feature.key}.desc`)}
             </p>
-          </motion.div>
+          </motion.article>
         ))}
       </div>
     </section>

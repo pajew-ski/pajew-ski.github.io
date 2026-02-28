@@ -19,11 +19,12 @@ export function Axioms() {
   const moduleB = t('axioms.modules.moduleB', { returnObjects: true }) as AxiomModuleData;
 
   return (
-    <section className="py-32 bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden">
+    <section className="py-32 bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden" aria-labelledby="axioms-heading">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="mb-24 space-y-6">
           <motion.h2
+            id="axioms-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -94,15 +95,23 @@ function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.05 }}
-      className="bg-white dark:bg-neutral-800 text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 relative overflow-hidden group"
+      className="bg-white dark:bg-neutral-800 text-foreground p-8 md:p-10 flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          setIsHovered(!isHovered);
+        }
+      }}
+      tabIndex={0}
+      aria-expanded={isHovered}
     >
       <div className="relative z-10">
         <h4 className="text-2xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
@@ -116,12 +125,13 @@ function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="overflow-hidden"
+          aria-hidden={!isHovered}
         >
           <p className="text-foreground/80 font-light leading-relaxed pt-2">
             {item.desc}
           </p>
         </motion.div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 }
