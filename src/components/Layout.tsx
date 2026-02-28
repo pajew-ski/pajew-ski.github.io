@@ -3,12 +3,15 @@ import { Github } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ChatWidget } from './ChatWidget';
+import { useTranslation } from 'react-i18next';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps) {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
       <nav className="fixed top-6 right-8 z-50 flex items-center gap-6 mix-blend-difference text-white pointer-events-auto">
@@ -27,6 +30,9 @@ export function Layout({ children }: LayoutProps) {
       <main className="w-full relative">
         {children}
       </main>
+      <footer className="w-full py-6 px-8 text-center text-xs text-muted-foreground opacity-60">
+        {t('siteFooter')}
+      </footer>
       <ChatWidget />
     </div>
   );

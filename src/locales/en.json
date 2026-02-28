@@ -5,7 +5,7 @@
     "lead": "Mission: Constructing infrastructure for entropy defense and preservation of ontological independence."
   },
   "exocortex": {
-    "h2": "Infrastructure of Sovereignty. Causal Inference. Metaphysical Sovereignty.",
+    "h2": "Infrastructure of Metaphysical Sovereignty. Causal Inference.",
     "copy": "The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.",
     "stack": {
       "orchestration": {
@@ -140,7 +140,8 @@
     "placeholder": "Type your message...",
     "getStarted": "New Conversation",
     "initialMessage": "Hello! How can I help you today?",
-    "footer": "Private web card – no commercial offer, no Impressum required (§ 5 TMG). Hosting: GitHub Pages (IP logging by GitHub Inc.). Chat inputs are processed on private infrastructure.",
+    "footer": "",
     "closeButtonTooltip": "Close chat"
-  }
+  },
+  "siteFooter": "Private web card – no commercial offer, no Impressum required (§ 5 TMG). Hosting: GitHub Pages (IP logging by GitHub Inc.). Chat inputs are processed on private infrastructure."
 }

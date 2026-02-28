@@ -5,7 +5,7 @@
     "lead": "Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologischer Unabhängigkeit."
   },
   "exocortex": {
-    "h2": "Infrastruktur der Souveränität. Kausale Inferenz. Metaphysische Souveränität.",
+    "h2": "Infrastruktur metaphysischer Souveränität. Kausale Inferenz.",
     "copy": "Der Exocortex ist eine asymmetrische Antwort auf systemische Entropie. Eine lokale, autonome Intelligenz-Architektur, entworfen zur Filterung von Rauschen und Synthese von Signal.",
     "stack": {
       "orchestration": {
@@ -140,7 +140,8 @@
     "placeholder": "Schreibe deine Nachricht...",
     "getStarted": "Neue Konversation",
     "initialMessage": "Hallo! Wie kann ich dir heute helfen?",
-    "footer": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur verarbeitet.",
+    "footer": "",
     "closeButtonTooltip": "Chat schließen"
-  }
+  },
+  "siteFooter": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur verarbeitet."
 }

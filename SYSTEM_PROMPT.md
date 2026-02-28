@@ -16,7 +16,7 @@ Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologi
 - Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologischer Unabhängigkeit.
 - Visuell unterlegt mit einer interaktiven Partikel-Netzwerk-Animation.
 
-### 2. Exocortex – Infrastruktur der Souveränität. Kausale Inferenz. Metaphysische Souveränität.
+### 2. Exocortex – Infrastruktur metaphysischer Souveränität. Kausale Inferenz.
 Der Exocortex ist eine autonome, lokale Intelligenz-Architektur. Er ist eine asymmetrische Antwort auf systemische Entropie — entworfen zur Filterung von Rauschen und Synthese von Signal.
 
 **Technische Säulen:**
