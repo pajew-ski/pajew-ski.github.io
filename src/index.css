@@ -66,35 +66,80 @@
   }
 }
 
-/* n8n Chat Overrides - Global Scope (Higher specificity than @layer base) */
+/* n8n Chat Overrides - Light Mode (Global Scope, higher specificity than @layer base) */
 :root {
-    --chat--color-primary: hsl(var(--primary));
-    --chat--color-primary-shade-50: hsl(var(--primary));
-    --chat--color-primary-shade-100: hsl(var(--primary));
+  /* Single-dash variants */
+  --chat--color-primary: hsl(0 0% 75%);
+  --chat--color-primary-shade-50: hsl(0 0% 68%);
+  --chat--color-primary-shade-100: hsl(0 0% 60%);
 
-    --chat--color-secondary: hsl(var(--secondary));
+  /* Double-dash variants (used internally by n8n chat) */
+  --chat--color--primary: hsl(0 0% 75%);
+  --chat--color--primary--shade-100: hsl(0 0% 60%);
+  --chat--color--primary-shade-50: hsl(0 0% 68%);
 
-    --chat--color-dark: hsl(var(--foreground));
-    --chat--color-light: hsl(var(--background));
-    --chat--color-white: hsl(var(--card));
+  /* Secondary (n8n defaults to teal #20b69e — override to neutral) */
+  --chat--color-secondary: hsl(0 0% 90%);
+  --chat--color--secondary: hsl(0 0% 90%);
+  --chat--color-secondary-shade-50: hsl(0 0% 80%);
 
-    --chat--message--user--background: hsl(var(--primary));
-    --chat--message--user--color: hsl(var(--primary-foreground));
+  --chat--color-dark: hsl(var(--foreground));
+  --chat--color-light: hsl(var(--background));
+  --chat--color-white: hsl(var(--card));
 
-    --chat--message--bot--background: hsl(var(--secondary));
-    --chat--message--bot--color: hsl(var(--secondary-foreground));
+  --chat--message--user--background: hsl(0 0% 85%);
+  --chat--message--user--color: hsl(0 0% 9%);
 
-    --chat--header--background: hsl(var(--primary));
-    --chat--header--color: hsl(var(--primary-foreground));
+  --chat--message--bot--background: hsl(var(--secondary));
+  --chat--message--bot--color: hsl(var(--secondary-foreground));
 
-    --chat--body--background: hsl(var(--background));
-    --chat--footer--background: hsl(var(--background));
-    --chat--input--background: hsl(var(--background));
-    --chat--input--text-color: hsl(var(--foreground));
+  --chat--header--background: hsl(0 0% 90%);
+  --chat--header--color: hsl(0 0% 9%);
 
-    --chat--toggle--background: hsl(var(--primary));
-    --chat--toggle--color: hsl(var(--primary-foreground));
-    --chat--toggle--hover--background: hsl(var(--primary));
+  --chat--body--background: hsl(var(--background));
+  --chat--footer--background: hsl(var(--background));
+  --chat--input--background: hsl(var(--background));
+  --chat--input--text-color: hsl(var(--foreground));
+
+  --chat--toggle--background: hsl(0 0% 75%);
+  --chat--toggle--color: hsl(0 0% 9%);
+  --chat--toggle--hover--background: hsl(0 0% 68%);
+}
+
+/* n8n Chat Overrides - Dark Mode */
+.dark {
+  --chat--color-primary: hsl(0 0% 30%);
+  --chat--color-primary-shade-50: hsl(0 0% 35%);
+  --chat--color-primary-shade-100: hsl(0 0% 40%);
+  --chat--color--primary: hsl(0 0% 30%);
+  --chat--color--primary--shade-100: hsl(0 0% 40%);
+  --chat--color--primary-shade-50: hsl(0 0% 35%);
+
+  --chat--color-secondary: hsl(0 0% 20%);
+  --chat--color--secondary: hsl(0 0% 20%);
+  --chat--color-secondary-shade-50: hsl(0 0% 25%);
+
+  --chat--color-dark: hsl(var(--foreground));
+  --chat--color-light: hsl(var(--background));
+  --chat--color-white: hsl(var(--card));
+
+  --chat--message--user--background: hsl(0 0% 25%);
+  --chat--message--user--color: hsl(0 0% 98%);
+
+  --chat--message--bot--background: hsl(var(--secondary));
+  --chat--message--bot--color: hsl(var(--secondary-foreground));
+
+  --chat--header--background: hsl(0 0% 18%);
+  --chat--header--color: hsl(0 0% 98%);
+
+  --chat--body--background: hsl(var(--background));
+  --chat--footer--background: hsl(var(--background));
+  --chat--input--background: hsl(var(--background));
+  --chat--input--text-color: hsl(var(--foreground));
+
+  --chat--toggle--background: hsl(0 0% 25%);
+  --chat--toggle--color: hsl(0 0% 98%);
+  --chat--toggle--hover--background: hsl(0 0% 30%);
 }
 
 /* Hide n8n branding */
@@ -103,16 +148,18 @@
 [class*="chat"] a[href*="n8n.io"],
 [class*="chat"] [class*="powered"],
 [class*="chat"] [class*="branding"] {
-    display: none !important;
+  display: none !important;
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground antialiased font-sans selection:bg-neutral-200 dark:selection:bg-neutral-800;
   }
+
   html {
     scroll-behavior: smooth;
   }
