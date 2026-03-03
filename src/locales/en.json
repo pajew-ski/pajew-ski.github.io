@@ -26,6 +26,27 @@
     "h2": "Fundamental Architecture",
     "copy": "Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.",
     "modules": {
+      "moduleCognition": {
+        "title": "Cognition",
+        "list": [
+          {
+            "title": "Interpretive Asymmetry",
+            "desc": "No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed."
+          },
+          {
+            "title": "Syntactic Integration",
+            "desc": "Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states."
+          },
+          {
+            "title": "Symbolic Organization",
+            "desc": "Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences."
+          },
+          {
+            "title": "Semantic Communication",
+            "desc": "Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs."
+          }
+        ]
+      },
       "moduleA": {
         "title": "Being",
         "list": [

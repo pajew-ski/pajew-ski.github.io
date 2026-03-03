@@ -15,6 +15,7 @@ interface AxiomModuleData {
 export function Axioms() {
   const { t } = useTranslation();
   
+  const moduleCognition = t('axioms.modules.moduleCognition', { returnObjects: true }) as AxiomModuleData;
   const moduleA = t('axioms.modules.moduleA', { returnObjects: true }) as AxiomModuleData;
   const moduleB = t('axioms.modules.moduleB', { returnObjects: true }) as AxiomModuleData;
 
@@ -44,6 +45,27 @@ export function Axioms() {
         </div>
 
         <div className="space-y-32">
+          {/* Module: Erkennen */}
+          <div className="space-y-12">
+            <motion.h3
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold border-b border-foreground/10 pb-4"
+            >
+              {moduleCognition.title}
+            </motion.h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {moduleCognition.list.map((item, index) => (
+                <AxiomCard
+                  key={index}
+                  item={item}
+                  index={index}
+                />
+              ))}
+            </div>
+          </div>
+
           {/* Module A: Sein */}
           <div className="space-y-12">
             <motion.h3 
