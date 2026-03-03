@@ -8,7 +8,7 @@ Michael is a Data Scientist, dancer, creative, and creator of autonomous cogniti
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.
 - [Exocortex](#exocortex): Infrastructure of Sovereignty, a local autonomous intelligence architecture.
-- [Axioms](#axioms): Fundamental Architecture broken down into Being (Module A) and Doing (Module B).
+- [Axioms](#axioms): Fundamental Architecture broken down into Cognition (formal axioms of cognitive systems), Being, and Doing.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)

@@ -24,6 +24,14 @@ SecDevOps, GitOps, causal inference modeling.
 
 Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.
 
+### Cognition
+Four sequential axioms describing the formal conditions and limits of cognitive systems:
+
+1. **Interpretive Asymmetry**: No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.
+2. **Syntactic Integration**: Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.
+3. **Symbolic Organization**: Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.
+4. **Semantic Communication**: Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.
+
 ### Being
 * **Love**: Recognition of truth/unity.
 * **Grace**: Radical acceptance of the IS-state.

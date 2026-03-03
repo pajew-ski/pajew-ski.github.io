@@ -26,6 +26,27 @@
     "h2": "Fundamentale Architektur",
     "copy": "Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat.",
     "modules": {
+      "moduleCognition": {
+        "title": "Erkennen",
+        "list": [
+          {
+            "title": "Interpretative Asymmetrie",
+            "desc": "Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab."
+          },
+          {
+            "title": "Syntaktische Integration",
+            "desc": "Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände."
+          },
+          {
+            "title": "Symbolische Organisation",
+            "desc": "Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen."
+          },
+          {
+            "title": "Semantische Kommunikation",
+            "desc": "Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs."
+          }
+        ]
+      },
       "moduleA": {
         "title": "Sein",
         "list": [

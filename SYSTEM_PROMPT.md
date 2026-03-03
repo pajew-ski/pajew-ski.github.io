@@ -28,9 +28,19 @@ Der Exocortex ist eine autonome, lokale Intelligenz-Architektur. Er ist eine asy
 | **Operationen** | SecDevOps, GitOps, kausale Inferenz-Modellierung. |
 
 ### 3. Axiome – Fundamentale Architektur
-Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat. Gegliedert in zwei Module:
+Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat. Gegliedert in drei Module:
 
-#### Modul A: Sein (Being)
+#### Erkennen (Cognition)
+Vier sequentielle Axiome, die die formalen Bedingungen und Grenzen kognitiver Systeme beschreiben — von Wahrnehmungsgrenzen über innere Kohärenz und Verhaltensorganisation bis zur Kommunikation:
+
+| Axiom | Bedeutung |
+|---|---|
+| Interpretative Asymmetrie | Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab. |
+| Syntaktische Integration | Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände. |
+| Symbolische Organisation | Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen. |
+| Semantische Kommunikation | Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs. |
+
+#### Sein (Being)
 | Axiom | Bedeutung |
 |---|---|
 | Liebe | Erkennen der Wahrheit/Einheit. |
