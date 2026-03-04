@@ -1,4 +1,4 @@
-# Digitale Web Visitenkarte mit AI Chat Widget Integration als Technische Demo
+# Digital Web Card with AI Chat Integration as Technical Demo
 
 ## Development
 
