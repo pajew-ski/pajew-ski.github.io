@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Github } from 'lucide-react';
+import { Github, Youtube } from 'lucide-react';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ChatWidget } from './ChatWidget';
@@ -24,6 +24,15 @@ export function Layout({ children }: LayoutProps) {
           aria-label="GitHub Profile"
         >
           <Github className="w-5 h-5" />
+        </a>
+        <a
+          href="https://youtube.com/@m_pajew_ski"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          aria-label="YouTube Channel"
+        >
+          <Youtube className="w-5 h-5" />
         </a>
         <LanguageSwitcher />
         <ThemeToggle />
