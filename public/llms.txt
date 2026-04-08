@@ -3,12 +3,13 @@
 > Mission: Constructing infrastructure for entropy defense and preservation of ontological independence.
 
 ## About
-Michael is a Data Scientist, dancer, creative, and creator of autonomous cognitive systems. This site outlines his philosophy, architecture ("Exocortex"), and fundamental axioms.
+Michael is a Data Scientist, dancer, creative, magician, and creator of autonomous cognitive systems. This site outlines his philosophy, architecture ("Exocortex"), fundamental axioms, and his magical framework "Opus Purum".
 
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.
 - [Exocortex](#exocortex): Infrastructure of Sovereignty, a local autonomous intelligence architecture.
 - [Axioms](#axioms): Fundamental Architecture broken down into Cognition (formal axioms of cognitive systems), Being, and Doing.
+- [Opus Purum](#opus-purum): The Pure Working — an axiomatic framework for magic recast without myth or apparatus. Seven chapters: Axioms, The Divine, The Self, Mechanism of Effect, Sovereignty, Freedom, and Practice.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)
