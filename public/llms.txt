@@ -7,9 +7,9 @@ Michael is a Data Scientist, dancer, creative, magician, and creator of autonomo
 
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.
+- [Opus Purum](#opus-purum): The Pure Working — an axiomatic framework for magic recast without myth or apparatus. Seven chapters: Axioms, The Divine, The Self, Mechanism of Effect, Sovereignty, Freedom, and Practice.
 - [Exocortex](#exocortex): Infrastructure of Sovereignty, a local autonomous intelligence architecture.
 - [Axioms](#axioms): Fundamental Architecture broken down into Cognition (formal axioms of cognitive systems), Being, and Doing.
-- [Opus Purum](#opus-purum): The Pure Working — an axiomatic framework for magic recast without myth or apparatus. Seven chapters: Axioms, The Divine, The Self, Mechanism of Effect, Sovereignty, Freedom, and Practice.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)

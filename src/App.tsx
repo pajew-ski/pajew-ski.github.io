@@ -10,9 +10,9 @@ function App() {
     <ThemeProvider>
       <Layout>
         <Hero />
+        <OpusPurum />
         <Exocortex />
         <Axioms />
-        <OpusPurum />
       </Layout>
     </ThemeProvider>
   );

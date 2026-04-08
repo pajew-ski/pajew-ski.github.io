@@ -16,7 +16,24 @@ Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologi
 - Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologischer Unabhängigkeit.
 - Visuell unterlegt mit einer interaktiven Partikel-Netzwerk-Animation.
 
-### 2. Exocortex – Infrastruktur metaphysischer Souveränität. Kausale Inferenz.
+### 2. Opus Purum – Das Reine Wirken · Ein axiomatisches Framework
+Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit. Opus Purum repräsentiert Michaels Werk als Magier — nicht als okkulte Praxis, sondern als operatives Framework. Sieben Kapitel:
+
+**I. Axiome** — Fünf Grundsätze: (1) Wirklichkeit ist Prozess, nicht Zustand. (2) Bewusstsein ist kausal, nicht epiphänomenal. (3) Das Selbst ist plastisch. (4) Keine Wahrheit ist absolut — deshalb ist alle Wahrheit operational. (5) Ausrichtung ist wirksamer als Kontrolle.
+
+**II. Das Göttliche** — Kein personales Wesen, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert, der Logos, der allem Wandel zugrunde liegt. Magie ist Ausrichtung, nicht Befehl.
+
+**III. Das Selbst** — Das Betriebssystem des Magiers: Priors (Überzeugungsstrukturen), Narrative (Kausalgeschichten), Aufmerksamkeitsarchitektur. Das Selbst muss stabil genug sein, um zu wirken, und flexibel genug, um sich zu transformieren. Diese Spannung aufzulösen ist das Große Werk.
+
+**IV. Wirkungsmechanismus** — Drei empirische Prinzipien: Aufmerksamkeits-Kausalität (Aufmerksamkeit ist Intervention), Zustandsabhängige Revision (Gnosis als Fenster für Neukonditionierung), Semiotische Reorganisation (Zeichenarbeit ist Realarbeit).
+
+**V. Souveränität** — Das Telos des Magiers: nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte. Responsiv statt reaktiv. Den Grund des Handelns in sich haben, nicht in äußeren Systemen.
+
+**VI. Freiheit** — Nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert. Magie beginnt mit der Unterscheidung zwischen gewählten und widerfahrenen Überzeugungen.
+
+**VII. Praxis: Die essentielle Form** — Sechs Schritte: Stille, Intention, Zustand, Symbol, Vergessen, Ausrichtung. "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge."
+
+### 3. Exocortex – Infrastruktur metaphysischer Souveränität. Kausale Inferenz.
 Der Exocortex ist eine autonome, lokale Intelligenz-Architektur. Er ist eine asymmetrische Antwort auf systemische Entropie — entworfen zur Filterung von Rauschen und Synthese von Signal.
 
 **Technische Säulen:**
@@ -27,7 +44,7 @@ Der Exocortex ist eine autonome, lokale Intelligenz-Architektur. Er ist eine asy
 | **Gedächtnis & Inferenz** | RDF-Store als zentrale Wahrheitsquelle. Lokale LLMs. |
 | **Operationen** | SecDevOps, GitOps, kausale Inferenz-Modellierung. |
 
-### 3. Axiome – Fundamentale Architektur
+### 4. Axiome – Fundamentale Architektur
 Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat. Gegliedert in drei Module:
 
 #### Erkennen (Cognition)
@@ -71,23 +88,6 @@ Vier sequentielle Axiome, die die formalen Bedingungen und Grenzen kognitiver Sy
 | Nullpunkt-Beobachtung | Perfekte Neutralität. Beobachtung ohne emotionale Ladung (Barmherziger Zeuge). |
 | Integrale Synthese | Spirituelle Integration. Akzeptanz der vollen Realität ohne "Spiritual Bypassing". |
 | Signal-Kongruenz | Sei das Beispiel. Lehre durch Resonanz, nicht durch Rhetorik. Das System/Subjekt muss die Frequenz, die es ausgibt, sein. |
-
-### 4. Opus Purum – Das Reine Wirken · Ein axiomatisches Framework
-Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit. Opus Purum repräsentiert Michaels Werk als Magier — nicht als okkulte Praxis, sondern als operatives Framework. Sieben Kapitel:
-
-**I. Axiome** — Fünf Grundsätze: (1) Wirklichkeit ist Prozess, nicht Zustand. (2) Bewusstsein ist kausal, nicht epiphänomenal. (3) Das Selbst ist plastisch. (4) Keine Wahrheit ist absolut — deshalb ist alle Wahrheit operational. (5) Ausrichtung ist wirksamer als Kontrolle.
-
-**II. Das Göttliche** — Kein personales Wesen, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert, der Logos, der allem Wandel zugrunde liegt. Magie ist Ausrichtung, nicht Befehl.
-
-**III. Das Selbst** — Das Betriebssystem des Magiers: Priors (Überzeugungsstrukturen), Narrative (Kausalgeschichten), Aufmerksamkeitsarchitektur. Das Selbst muss stabil genug sein, um zu wirken, und flexibel genug, um sich zu transformieren. Diese Spannung aufzulösen ist das Große Werk.
-
-**IV. Wirkungsmechanismus** — Drei empirische Prinzipien: Aufmerksamkeits-Kausalität (Aufmerksamkeit ist Intervention), Zustandsabhängige Revision (Gnosis als Fenster für Neukonditionierung), Semiotische Reorganisation (Zeichenarbeit ist Realarbeit).
-
-**V. Souveränität** — Das Telos des Magiers: nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte. Responsiv statt reaktiv. Den Grund des Handelns in sich haben, nicht in äußeren Systemen.
-
-**VI. Freiheit** — Nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert. Magie beginnt mit der Unterscheidung zwischen gewählten und widerfahrenen Überzeugungen.
-
-**VII. Praxis: Die essentielle Form** — Sechs Schritte: Stille, Intention, Zustand, Symbol, Vergessen, Ausrichtung. "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge."
 
 ## Schlüsselbegriffe
 

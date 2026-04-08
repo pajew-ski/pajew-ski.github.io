@@ -5,63 +5,6 @@ Mission: Constructing infrastructure for entropy defense and preservation of ont
 
 ---
 
-## Infrastructure of Metaphysical Sovereignty. Causal Inference. (Exocortex)
-
-The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.
-
-### Orchestration
-Home Assistant (Action Layer) coupled with N8N (Decision Layer).
-
-### Memory & Inference
-RDF-Store as Single Source of Truth. Local LLMs.
-
-### Operations
-SecDevOps, GitOps, causal inference modeling.
-
----
-
-## Fundamental Architecture (Axioms)
-
-Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.
-
-### Cognition
-Four sequential axioms describing the formal conditions and limits of cognitive systems:
-
-1. **Interpretive Asymmetry**: No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.
-2. **Syntactic Integration**: Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.
-3. **Symbolic Organization**: Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.
-4. **Semantic Communication**: Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.
-
-### Being
-* **Love**: Recognition of truth/unity.
-* **Grace**: Radical acceptance of the IS-state.
-* **Gratitude**: Appreciation of aliveness.
-* **Awe**: Recognition and giving.
-* **Responsibility**: Response-Ability / Co-Creation.
-* **Trust**: Knowing the power.
-* **Accountability**: Truth-Congruence.
-* **Impeccability**: Protection of integrity.
-* **Mindfulness**: Nourishing attention.
-* **Fearlessness**: Recognition of the eternal nature.
-* **Engaged Detachment**: Non-judgmental observation / Zero Point.
-* **Joy**: Decision for embodiment.
-
-### Doing
-* **Signal Discrimination**: Energy Mastery. Separation of impulse (noise) and intuition (signal).
-* **Hierarchical Control**: Mastery of Planes. Subordination of the Lower Mind to the Higher Mind.
-* **Law Compliance**: Divine Laws. Operation via Intent, Consent, and Authority in alignment with Natural Law.
-* **Vector Alignment**: Clarify Motivations. Shift from "Service-to-Self" (Entropy) to "Service-to-Others" (Negentropy).
-* **Homeostasis**: Energetic Balance. Active restoration of balance and harmlessness.
-* **Internal Referencing**: Inner Guidance. Autonomous control; immunity to external manipulation.
-* **Resource Logic**: Release Ownership. Transition to Stewardship (management of energy flow).
-* **Applied Cognition**: Apply Knowledge. Wisdom is validated solely by deed (service).
-* **Pattern Recognition**: Master Deception. Penetration of holographic deception and ego filters.
-* **Zero-Point Observation**: Perfect Neutrality. Observation without emotional charge (Merciful Witness).
-* **Integral Synthesis**: Spiritual Integration. Acceptance of full reality without "Spiritual Bypassing".
-* **Signal Congruence**: Be the Example. Teaching through resonance, not rhetoric. The system/subject must be the frequency it emits.
-
----
-
 ## Opus Purum — The Pure Working · An Axiomatic Framework
 
 Magic, recast: free of myth, free of apparatus, precise in its claim upon reality. Seven chapters.
@@ -117,3 +60,60 @@ Magic begins with this distinction. And ends nowhere.
 6. **Alignment**: Act in everyday life as if what is willed already has direction.
 
 This is magic. Without myth. Without apparatus. Without lie.
+
+---
+
+## Infrastructure of Metaphysical Sovereignty. Causal Inference. (Exocortex)
+
+The Exocortex is an asymmetric response to systemic entropy. A local, autonomous intelligence architecture designed to filter noise and synthesize signal.
+
+### Orchestration
+Home Assistant (Action Layer) coupled with N8N (Decision Layer).
+
+### Memory & Inference
+RDF-Store as Single Source of Truth. Local LLMs.
+
+### Operations
+SecDevOps, GitOps, causal inference modeling.
+
+---
+
+## Fundamental Architecture (Axioms)
+
+Synthesis of metaphysical sovereignty and technical rigor. Wisdom validated by deed.
+
+### Cognition
+Four sequential axioms describing the formal conditions and limits of cognitive systems:
+
+1. **Interpretive Asymmetry**: No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.
+2. **Syntactic Integration**: Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.
+3. **Symbolic Organization**: Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.
+4. **Semantic Communication**: Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.
+
+### Being
+* **Love**: Recognition of truth/unity.
+* **Grace**: Radical acceptance of the IS-state.
+* **Gratitude**: Appreciation of aliveness.
+* **Awe**: Recognition and giving.
+* **Responsibility**: Response-Ability / Co-Creation.
+* **Trust**: Knowing the power.
+* **Accountability**: Truth-Congruence.
+* **Impeccability**: Protection of integrity.
+* **Mindfulness**: Nourishing attention.
+* **Fearlessness**: Recognition of the eternal nature.
+* **Engaged Detachment**: Non-judgmental observation / Zero Point.
+* **Joy**: Decision for embodiment.
+
+### Doing
+* **Signal Discrimination**: Energy Mastery. Separation of impulse (noise) and intuition (signal).
+* **Hierarchical Control**: Mastery of Planes. Subordination of the Lower Mind to the Higher Mind.
+* **Law Compliance**: Divine Laws. Operation via Intent, Consent, and Authority in alignment with Natural Law.
+* **Vector Alignment**: Clarify Motivations. Shift from "Service-to-Self" (Entropy) to "Service-to-Others" (Negentropy).
+* **Homeostasis**: Energetic Balance. Active restoration of balance and harmlessness.
+* **Internal Referencing**: Inner Guidance. Autonomous control; immunity to external manipulation.
+* **Resource Logic**: Release Ownership. Transition to Stewardship (management of energy flow).
+* **Applied Cognition**: Apply Knowledge. Wisdom is validated solely by deed (service).
+* **Pattern Recognition**: Master Deception. Penetration of holographic deception and ego filters.
+* **Zero-Point Observation**: Perfect Neutrality. Observation without emotional charge (Merciful Witness).
+* **Integral Synthesis**: Spiritual Integration. Acceptance of full reality without "Spiritual Bypassing".
+* **Signal Congruence**: Be the Example. Teaching through resonance, not rhetoric. The system/subject must be the frequency it emits.
