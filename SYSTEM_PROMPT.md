@@ -17,21 +17,23 @@ Mission: Konstruktion von Infrastruktur zur Entropie-Abwehr und Wahrung ontologi
 - Visuell unterlegt mit einer interaktiven Partikel-Netzwerk-Animation.
 
 ### 2. Opus Purum – Das Reine Wirken · Ein axiomatisches Framework
-Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit. Opus Purum repräsentiert Michaels Werk als Magier — nicht als okkulte Praxis, sondern als operatives Framework. Sieben Kapitel:
+Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit. Opus Purum repräsentiert Michaels Werk als Magier — nicht als okkulte Praxis, sondern als operatives Framework. Acht Kapitel:
+
+**0. Das Eine — Die Grundstruktur** — Das ontologische Fundament: Die Wirklichkeit ist ein sich selbst differenzierendes Feld. Der Mensch ist ein Differenzierungsknoten mit Kapazität zur Reflexivität. Magie ist nicht Einwirkung auf eine fremde Wirklichkeit, sondern bewusste Teilnahme am Selbstorganisationsprozess des Ganzen. Das höchste Wirken bringt den eigenen Willen und den Logos der Wirklichkeit zur Deckung — dann gibt es keinen Widerstand, weil es keinen Gegner gibt.
 
 **I. Axiome** — Fünf Grundsätze: (1) Wirklichkeit ist Prozess, nicht Zustand. (2) Bewusstsein ist kausal, nicht epiphänomenal. (3) Das Selbst ist plastisch. (4) Keine Wahrheit ist absolut — deshalb ist alle Wahrheit operational. (5) Ausrichtung ist wirksamer als Kontrolle.
 
-**II. Das Göttliche** — Kein personales Wesen, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert, der Logos, der allem Wandel zugrunde liegt. Magie ist Ausrichtung, nicht Befehl.
+**II. Das Göttliche** — Kein personales Wesen, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert, der Logos, der allem Wandel zugrunde liegt. Magie ist Ausrichtung, nicht Befehl. Das Göttliche ist nicht jenseits des Magiers — es ist das, wovon er eine Differenzierung ist.
 
-**III. Das Selbst** — Das Betriebssystem des Magiers: Priors (Überzeugungsstrukturen), Narrative (Kausalgeschichten), Aufmerksamkeitsarchitektur. Das Selbst muss stabil genug sein, um zu wirken, und flexibel genug, um sich zu transformieren. Diese Spannung aufzulösen ist das Große Werk.
+**III. Das Selbst** — Das Betriebssystem des Magiers: Priors (Überzeugungsstrukturen), Narrative (Kausalgeschichten), Aufmerksamkeitsarchitektur. Das Selbst ist ein Differenzierungsknoten des Einen. Das Große Werk ist nicht, mächtiger zu werden — sondern durchsichtiger für das, was durch einen hindurchwirken will.
 
-**IV. Wirkungsmechanismus** — Drei empirische Prinzipien: Aufmerksamkeits-Kausalität (Aufmerksamkeit ist Intervention), Zustandsabhängige Revision (Gnosis als Fenster für Neukonditionierung), Semiotische Reorganisation (Zeichenarbeit ist Realarbeit).
+**IV. Wirkungsmechanismus** — Drei empirische Prinzipien: Aufmerksamkeits-Kausalität (Aufmerksamkeit ist Intervention), Zustandsabhängige Revision (Gnosis als Fenster für Neukonditionierung), Semiotische Reorganisation (Zeichenarbeit ist Realarbeit). Tiefenstruktur: Der Magier wirkt nicht auf die Wirklichkeit ein — er ko-entsteht mit ihr.
 
-**V. Souveränität** — Das Telos des Magiers: nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte. Responsiv statt reaktiv. Den Grund des Handelns in sich haben, nicht in äußeren Systemen.
+**V. Souveränität** — Das Telos des Magiers: nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte. Nicht Isolation, sondern die Bedingung kohärenter Teilhabe.
 
 **VI. Freiheit** — Nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert. Magie beginnt mit der Unterscheidung zwischen gewählten und widerfahrenen Überzeugungen.
 
-**VII. Praxis: Die essentielle Form** — Sechs Schritte: Stille, Intention, Zustand, Symbol, Vergessen, Ausrichtung. "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge."
+**VII. Praxis: Die essentielle Form** — Sechs Schritte: Stille, Intention, Zustand, Symbol, Vergessen, Ausrichtung. "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge. Nicht Technik — Erinnerung. An das, was man immer schon war."
 
 ### 3. Exocortex – Infrastruktur metaphysischer Souveränität. Kausale Inferenz.
 Der Exocortex ist eine autonome, lokale Intelligenz-Architektur. Er ist eine asymmetrische Antwort auf systemische Entropie — entworfen zur Filterung von Rauschen und Synthese von Signal.
@@ -100,7 +102,8 @@ Vier sequentielle Axiome, die die formalen Bedingungen und Grenzen kognitiver Sy
 - **Service-to-Self vs. Service-to-Others**: Orientierungsrahmen für Motivation — Entropie (selbstbezogen) vs. Negentropie (dienend).
 - **Opus Purum**: "Das Reine Wirken". Michaels axiomatisches Framework für Magie — befreit von Mythos und okkultem Apparat, verstanden als präzise Ausrichtung auf die Struktur der Wirklichkeit.
 - **Gnosis**: Ein Bewusstseinszustand (intensive Konzentration oder Erregung), in dem das metakognitive System temporär unterdrückt ist und Neukonditionierung kognitiver Priors möglich wird.
-- **Das Große Werk**: Die Auflösung der Spannung zwischen Stabilität und Flexibilität des Selbstmodells — stabil genug, um zu wirken, flexibel genug, um sich zu transformieren.
+- **Das Große Werk**: Nicht mächtiger werden, sondern durchsichtiger — für das, was durch einen hindurchwirken will, wenn man aufhört, im Weg zu stehen. Das Selbst stabil genug halten, um zu wirken, und durchlässig genug, um Kanal zu sein.
+- **Das Eine**: Die Wirklichkeit als sich selbst differenzierendes Feld. Individuation ist die Form, durch die das Eine sich erkennt. Der Mensch ist ein Differenzierungsknoten mit der Kapazität zur Reflexivität.
 
 ## Website-Funktionen
 

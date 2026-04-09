@@ -161,6 +161,29 @@
     "premise": "Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit.",
     "chapters": [
       {
+        "id": "einheit",
+        "label": "0",
+        "title": "Das Eine — Die Grundstruktur",
+        "content": [
+          {
+            "heading": "",
+            "body": "Die Wirklichkeit ist nicht eine Ansammlung separater Dinge, die gelegentlich interagieren. Sie ist ein sich selbst differenzierendes Feld — ein Prozess, der sich durch Individuation erkennt und durch Rückkehr vollendet."
+          },
+          {
+            "heading": "",
+            "body": "Trennung ist real als Funktion. Sie ist die notwendige Form, durch die das Eine sich selbst erfahren kann. Der Mensch ist eine solche Form — ein Differenzierungsknoten mit der Kapazität zur Reflexivität. Das ist keine geringe Sache."
+          },
+          {
+            "heading": "",
+            "body": "Magie in diesem Licht: nicht das Einwirken eines Subjekts auf eine fremde Wirklichkeit, sondern die bewusste Teilnahme eines kohärenten Knotens am Selbstorganisationsprozess des Ganzen."
+          },
+          {
+            "heading": "",
+            "body": "Das höchste Wirken ist das, das den eigenen Willen und den Logos der Wirklichkeit zur Deckung bringt. In diesem Moment gibt es keinen Widerstand mehr — weil es keinen Gegner gibt."
+          }
+        ]
+      },
+      {
         "id": "axiome",
         "label": "I",
         "title": "Axiome",
@@ -203,6 +226,10 @@
           {
             "heading": "",
             "body": "Magie im reinsten Sinne ist Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nicht — er stimmt sich mit ihr ein, bis sein Wollen und ihr Werden dasselbe sind."
+          },
+          {
+            "heading": "",
+            "body": "Das Göttliche ist nicht jenseits des Magiers. Es ist das, wovon er eine Differenzierung ist. Wer das erkennt, sucht nicht mehr nach einer äußeren Kraft — er erinnert sich an die innere."
           }
         ]
       },
@@ -229,7 +256,7 @@
           },
           {
             "heading": "",
-            "body": "Der kritische Fehler der meisten Menschen: das Selbst für gegeben zu halten. Der kritische Fehler mancher Magier: es für beliebig zu halten. Das Selbst ist der Punkt, von dem aus gewirkt wird. Es muss stabil genug sein, um zu wirken — und flexibel genug, um sich zu transformieren. Diese Spannung aufzulösen ist das Große Werk."
+            "body": "Der kritische Fehler der meisten Menschen: das Selbst für gegeben zu halten. Der kritische Fehler mancher Magier: es für beliebig zu halten. Das Selbst ist ein Differenzierungsknoten des Einen — der Punkt, von dem aus gewirkt wird. Es muss stabil genug sein, um zu wirken — und durchlässig genug, um das hindurchzulassen, was durch es wirken will. Das Große Werk ist nicht, mächtiger zu werden. Es ist, durchsichtiger zu werden — für das, was durch einen hindurchwirken will, wenn man aufhört, im Weg zu stehen."
           }
         ]
       },
@@ -249,6 +276,10 @@
           {
             "heading": "Semiotische Reorganisation",
             "body": "Wirklichkeit-als-erlebt ist zeichenvermittelt. Symbole, Rituale, magische Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft, durch die Handlung kanalisiert wird, durch die Welt sich formt. Zeichenarbeit ist Realarbeit. Das ist nicht Metapher. Das ist Semiotik."
+          },
+          {
+            "heading": "",
+            "body": "Alle drei Mechanismen teilen eine Tiefenstruktur: Sie wirken nicht, weil ein Subjekt eine externe Wirklichkeit manipuliert — sondern weil ein kohärenter Knoten sich neu in den Selbstorganisationsprozess des Ganzen einschreibt. Der Magier wirkt nicht auf die Wirklichkeit ein. Er ko-entsteht mit ihr."
           }
         ]
       },
@@ -263,7 +294,7 @@
           },
           {
             "heading": "",
-            "body": "Das bedeutet konkret: nicht reaktiv zu sein, sondern responsiv. Nicht von Überzeugungen bewohnt zu werden, sondern sie zu bewohnen. Nicht zu glauben, weil es komfortabel ist, sondern zu operieren, weil es wirksam ist. Den Grund des eigenen Handelns in sich zu haben, nicht in äußeren Systemen."
+            "body": "Das bedeutet konkret: nicht reaktiv zu sein, sondern responsiv. Nicht von Überzeugungen bewohnt zu werden, sondern sie zu bewohnen. Nicht zu glauben, weil es komfortabel ist, sondern zu operieren, weil es wirksam ist. Den Grund des eigenen Handelns in sich zu haben, nicht in äußeren Systemen. Souveränität ist nicht Isolation. Sie ist die Bedingung kohärenter Teilhabe — denn nur wer sich nicht verliert, kann sich wirklich einbringen."
           },
           {
             "heading": "Second-Order-Konsequenz",
@@ -321,7 +352,7 @@
           },
           {
             "heading": "",
-            "body": "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge."
+            "body": "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge. Nicht Technik — Erinnerung. An das, was man immer schon war."
           }
         ]
       }
