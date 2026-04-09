@@ -155,6 +155,178 @@
       }
     }
   },
+  "opusPurum": {
+    "h2": "Opus Purum",
+    "subtitle": "Das Reine Wirken · Ein axiomatisches Framework",
+    "premise": "Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit.",
+    "chapters": [
+      {
+        "id": "axiome",
+        "label": "I",
+        "title": "Axiome",
+        "content": [
+          {
+            "heading": "I · Wirklichkeit ist Prozess, nicht Zustand.",
+            "body": "Es gibt keine statischen Entitäten — nur Muster im Werden. Was als Ding erscheint, ist ein temporärer Knoten in einem Netz von Kausalrelationen. Darunter liegt eine Ordnungsstruktur, die sich selbst erzeugt, selbst erhält und sich selbst transzendiert. Das Substrat aller Phänomene."
+          },
+          {
+            "heading": "II · Bewusstsein ist kausal, nicht epiphänomenal.",
+            "body": "Aufmerksamkeit, Intention und Modellrevision sind keine Begleiterscheinungen realer Prozesse — sie sind reale Prozesse. Der Beobachter ist Teil des Systems. Das ist keine Metapher."
+          },
+          {
+            "heading": "III · Das Selbst ist plastisch.",
+            "body": "Identität ist kein Datum, sondern ein laufender Konstruktionsprozess. Jedes Selbstmodell ist revidierbar. Das ist nicht Beliebigkeit — es ist Freiheit unter Bedingungen."
+          },
+          {
+            "heading": "IV · Keine Wahrheit ist absolut — deshalb ist alle Wahrheit operational.",
+            "body": "Ein Modell ist nicht wahr oder falsch. Es ist wirksam, präzise oder nützlich — oder keines davon. Paradigmaflexibilität ist keine intellektuelle Schwäche. Sie ist die Voraussetzung vollständiger Operabilität."
+          },
+          {
+            "heading": "V · Ausrichtung ist wirksamer als Kontrolle.",
+            "body": "Es gibt eine tiefe Struktur der Wirklichkeit — einen Logos, einen Tao, eine intrinsische Ordnungsrichtung komplexer Systeme. Wer mit ihr arbeitet, wirkt. Wer gegen sie arbeitet, verbraucht sich."
+          }
+        ]
+      },
+      {
+        "id": "goettliche",
+        "label": "II",
+        "title": "Das Göttliche",
+        "content": [
+          {
+            "heading": "",
+            "body": "Unter dem Begriff das Göttliche wird hier keine Person, kein Wille und keine übernatürliche Kraft verstanden, sondern das Prinzip der Selbstorganisation der Wirklichkeit selbst — der Attraktor, zu dem alle Komplexität tendiert; der Logos, der allem Wandel zugrunde liegt; die Struktur, die im menschlichen Bewusstsein reflexiv wird."
+          },
+          {
+            "heading": "",
+            "body": "Das Göttliche kennen heißt nicht glauben. Es heißt: die Richtung des Flusses kennen und sie nutzen."
+          },
+          {
+            "heading": "",
+            "body": "Magie im reinsten Sinne ist Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nicht — er stimmt sich mit ihr ein, bis sein Wollen und ihr Werden dasselbe sind."
+          }
+        ]
+      },
+      {
+        "id": "selbst",
+        "label": "III",
+        "title": "Das Selbst",
+        "content": [
+          {
+            "heading": "",
+            "body": "Das Selbst ist das Betriebssystem des Magiers — und wie jedes Betriebssystem: revidierbar, erweiterbar, transformierbar."
+          },
+          {
+            "heading": "Priors",
+            "body": "Eingeschliffene Überzeugungsstrukturen, die Wahrnehmung filtern, bevor sie bewusst wird. Der unsichtbare Code, der bestimmt, welche Wirklichkeit zugänglich ist."
+          },
+          {
+            "heading": "Narrative",
+            "body": "Kausalgeschichten über Identität und Welt. Nicht Beschreibungen — Konstruktionen. Sie erzeugen die Kontinuität, die das Selbst kohärent erscheinen lässt."
+          },
+          {
+            "heading": "Aufmerksamkeitsarchitektur",
+            "body": "Die Struktur, die bestimmt, welchen Signalen Zugang gewährt wird. Aufmerksamkeit ist keine neutrale Beobachtung. Sie ist Intervention."
+          },
+          {
+            "heading": "",
+            "body": "Der kritische Fehler der meisten Menschen: das Selbst für gegeben zu halten. Der kritische Fehler mancher Magier: es für beliebig zu halten. Das Selbst ist der Punkt, von dem aus gewirkt wird. Es muss stabil genug sein, um zu wirken — und flexibel genug, um sich zu transformieren. Diese Spannung aufzulösen ist das Große Werk."
+          }
+        ]
+      },
+      {
+        "id": "mechanismus",
+        "label": "IV",
+        "title": "Wirkungsmechanismus",
+        "content": [
+          {
+            "heading": "Aufmerksamkeits-Kausalität",
+            "body": "Was konsistent mit Intention belegt wird, verändert sich — durch Verhaltensänderung, Wahrnehmungsfilter, soziale Signale, emergente Musterbildung. Aufmerksamkeit ist keine neutrale Beobachtung. Sie ist Intervention. Das ist empirisch, nicht spekulativ."
+          },
+          {
+            "heading": "Zustandsabhängige Revision",
+            "body": "Kognitive Priors können nur in bestimmten Bewusstseinszuständen revidiert werden. Intensive Konzentration oder intensive Erregung unterdrücken temporär das metakognitive System. In diesem Fenster sind Neukonditionierungen möglich, die im Normalzustand blockiert wären. Gnosis ist der praktische Name für dieses Fenster."
+          },
+          {
+            "heading": "Semiotische Reorganisation",
+            "body": "Wirklichkeit-als-erlebt ist zeichenvermittelt. Symbole, Rituale, magische Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft, durch die Handlung kanalisiert wird, durch die Welt sich formt. Zeichenarbeit ist Realarbeit. Das ist nicht Metapher. Das ist Semiotik."
+          }
+        ]
+      },
+      {
+        "id": "souveraenitaet",
+        "label": "V",
+        "title": "Souveränität",
+        "content": [
+          {
+            "heading": "",
+            "body": "Souveränität ist das Telos des Magiers — nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte heraus."
+          },
+          {
+            "heading": "",
+            "body": "Das bedeutet konkret: nicht reaktiv zu sein, sondern responsiv. Nicht von Überzeugungen bewohnt zu werden, sondern sie zu bewohnen. Nicht zu glauben, weil es komfortabel ist, sondern zu operieren, weil es wirksam ist. Den Grund des eigenen Handelns in sich zu haben, nicht in äußeren Systemen."
+          },
+          {
+            "heading": "Second-Order-Konsequenz",
+            "body": "Wer Souveränität erlangt, wird schwerer manipulierbar, authentischer in sozialen Kontexten, kreativer in Problemlösungen — und trägt mehr Verantwortung, weil er keine externen Systeme mehr zur Entlastung nutzt. Das ist der Preis. Er ist es wert."
+          }
+        ]
+      },
+      {
+        "id": "freiheit",
+        "label": "VI",
+        "title": "Freiheit",
+        "content": [
+          {
+            "heading": "",
+            "body": "Freiheit ist nicht die Abwesenheit von Struktur. Es ist die Fähigkeit, die Struktur zu wählen, in der man operiert."
+          },
+          {
+            "heading": "",
+            "body": "Der unfreie Mensch ist nicht der, der Regeln hat — sondern der, der seine Regeln nicht kennt. Der nicht weiß, welche seiner Überzeugungen er gewählt hat und welche ihm widerfahren sind."
+          },
+          {
+            "heading": "",
+            "body": "Magie beginnt mit dieser Unterscheidung. Und endet nirgendwo."
+          }
+        ]
+      },
+      {
+        "id": "praxis",
+        "label": "VII",
+        "title": "Praxis: Die essentielle Form",
+        "content": [
+          {
+            "heading": "I · Stille",
+            "body": "Das Selbst beobachten, ohne es zu bewegen. Erkennen, was automatisch läuft."
+          },
+          {
+            "heading": "II · Intention",
+            "body": "Präzise formulieren, was werden soll. Nicht wünschen. Wollen."
+          },
+          {
+            "heading": "III · Zustand",
+            "body": "Ein Bewusstseinsfenster erzeugen, in dem Revision möglich ist."
+          },
+          {
+            "heading": "IV · Symbol",
+            "body": "Den Willen in eine Form kondensieren, die das rationale Bewusstsein übergeht."
+          },
+          {
+            "heading": "V · Vergessen",
+            "body": "Loslassen. Das rationale Ich ist der größte Feind seiner eigenen Wünsche."
+          },
+          {
+            "heading": "VI · Ausrichtung",
+            "body": "Im Alltag so handeln, als ob das Gewollte bereits Richtung hat."
+          },
+          {
+            "heading": "",
+            "body": "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge."
+          }
+        ]
+      }
+    ]
+  },
   "chat": {
     "title": "Exocortex",
     "subtitle": "Frag mich alles",
