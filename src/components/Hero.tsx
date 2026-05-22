@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { ParticleNetwork } from './ParticleNetwork';
 import { KrystalFlower } from './KrystalFlower';
 
 export function Hero() {
@@ -8,8 +7,7 @@ export function Hero() {
 
   return (
     <header className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-4" aria-label="Introduction">
-      <ParticleNetwork />
-      <div className="z-10 text-center space-y-8 max-w-4xl mix-blend-difference text-white pointer-events-none select-none">
+<div className="z-10 text-center space-y-8 max-w-4xl mix-blend-difference text-white pointer-events-none select-none">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
