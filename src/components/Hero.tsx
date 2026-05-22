@@ -10,7 +10,7 @@ export function Hero() {
       <div className="z-10 flex flex-col items-center gap-10 md:gap-14">
 
         {/* Text block — compact, subordinate to the logo */}
-        <div className="text-center space-y-3 md:space-y-4 max-w-3xl mix-blend-difference text-white pointer-events-none select-none">
+        <div className="text-center space-y-3 md:space-y-4 max-w-3xl text-foreground pointer-events-none select-none">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
