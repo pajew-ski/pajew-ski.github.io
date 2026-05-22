@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { ParticleNetwork } from './ParticleNetwork';
+import { KrystalFlower } from './KrystalFlower';
 
 export function Hero() {
   const { t } = useTranslation();
@@ -35,15 +36,10 @@ export function Hero() {
         </motion.p>
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 mix-blend-difference text-white"
-      >
-        <div className="w-[1px] h-24 bg-gradient-to-b from-transparent via-current to-transparent opacity-50 animate-pulse"></div>
-      </motion.div>
+      {/* Krystal Flower logo — draws from center on page load */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <KrystalFlower size={112} animated delay={1.5} />
+      </div>
     </header>
   );
 }
