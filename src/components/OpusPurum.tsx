@@ -17,8 +17,9 @@ interface Chapter {
 export function OpusPurum() {
   const { t } = useTranslation();
   const chapters = t('opusPurum.chapters', { returnObjects: true }) as Chapter[];
-  const [activeId, setActiveId] = useState<string>(chapters[0]?.id ?? '');
-  const activeChapter = chapters.find((c) => c.id === activeId) ?? chapters[0];
+  const [openId, setOpenId] = useState<string>(chapters[0]?.id ?? '');
+
+  const toggle = (id: string) => setOpenId((prev) => (prev === id ? '' : id));
 
   return (
     <section
@@ -55,74 +56,78 @@ export function OpusPurum() {
         </motion.p>
       </div>
 
-      {/* Chapter Navigation */}
-      <div
-        className="border-y border-foreground/10 mb-16 overflow-x-auto"
-        role="tablist"
-        aria-label={t('opusPurum.h2')}
-      >
-        <div className="flex min-w-max">
-          {chapters.map((chapter) => {
-            const isActive = activeId === chapter.id;
-            return (
+      <div className="border-t border-foreground/10">
+        {chapters.map((chapter, idx) => {
+          const isOpen = openId === chapter.id;
+          return (
+            <motion.div
+              key={chapter.id}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.04 }}
+              className="border-b border-foreground/10"
+            >
               <button
-                key={chapter.id}
-                role="tab"
-                aria-selected={isActive}
+                onClick={() => toggle(chapter.id)}
+                aria-expanded={isOpen}
                 aria-controls={`opus-purum-panel-${chapter.id}`}
-                id={`opus-purum-tab-${chapter.id}`}
-                onClick={() => setActiveId(chapter.id)}
-                className={`px-5 py-4 text-[10px] md:text-xs font-light tracking-[0.25em] uppercase whitespace-nowrap border-b-2 -mb-px transition-colors duration-200 focus:outline-none focus:text-foreground ${
-                  isActive
-                    ? 'border-foreground text-foreground'
-                    : 'border-transparent text-muted-foreground hover:text-foreground'
-                }`}
+                id={`opus-purum-btn-${chapter.id}`}
+                className="w-full flex items-center gap-6 py-5 text-left group focus:outline-none"
               >
-                {chapter.label} · {chapter.title}
+                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-6 shrink-0">
+                  {chapter.label}
+                </span>
+                <span
+                  className={`flex-1 text-base md:text-lg font-light tracking-tight transition-colors duration-200 ${
+                    isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
+                  }`}
+                >
+                  {chapter.title}
+                </span>
+                <span
+                  className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
+                    isOpen ? 'rotate-45' : ''
+                  }`}
+                  aria-hidden="true"
+                >
+                  +
+                </span>
               </button>
-            );
-          })}
-        </div>
-      </div>
 
-      {/* Active chapter content */}
-      <AnimatePresence mode="wait">
-        <motion.article
-          key={activeChapter.id}
-          id={`opus-purum-panel-${activeChapter.id}`}
-          role="tabpanel"
-          aria-labelledby={`opus-purum-tab-${activeChapter.id}`}
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -12 }}
-          transition={{ duration: 0.35, ease: 'easeOut' }}
-          className="max-w-3xl"
-        >
-          <div className="flex items-baseline gap-5 mb-12 border-b border-foreground/10 pb-4">
-            <span className="text-sm font-light tracking-[0.3em] text-muted-foreground">
-              {activeChapter.label}
-            </span>
-            <h3 className="text-3xl md:text-4xl font-bold tracking-tight">
-              {activeChapter.title}
-            </h3>
-          </div>
-
-          <div className="space-y-10">
-            {activeChapter.content.map((entry, idx) => (
-              <div key={idx} className="space-y-3">
-                {entry.heading && (
-                  <h4 className="text-lg md:text-xl font-semibold tracking-tight">
-                    {entry.heading}
-                  </h4>
+              <AnimatePresence initial={false}>
+                {isOpen && (
+                  <motion.div
+                    id={`opus-purum-panel-${chapter.id}`}
+                    role="region"
+                    aria-labelledby={`opus-purum-btn-${chapter.id}`}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pb-12 max-w-3xl space-y-10 ml-12">
+                      {chapter.content.map((entry, i) => (
+                        <div key={i} className="space-y-3">
+                          {entry.heading && (
+                            <h4 className="text-lg md:text-xl font-semibold tracking-tight">
+                              {entry.heading}
+                            </h4>
+                          )}
+                          <p className="text-foreground/75 font-light leading-relaxed">
+                            {entry.body}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
                 )}
-                <p className="text-foreground/75 font-light leading-relaxed">
-                  {entry.body}
-                </p>
-              </div>
-            ))}
-          </div>
-        </motion.article>
-      </AnimatePresence>
+              </AnimatePresence>
+            </motion.div>
+          );
+        })}
+      </div>
     </section>
   );
 }
