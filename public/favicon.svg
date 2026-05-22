@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
   <style>
-    :root { --fg: hsl(0 0% 3.9%); --bg: hsl(0 0% 100%); }
+    :root { --fg: hsl(0 0% 3.9%); }
     @media (prefers-color-scheme: dark) {
-      :root { --fg: hsl(0 0% 98%); --bg: hsl(0 0% 0%); }
+      :root { --fg: hsl(0 0% 98%); }
     }
-    rect         { fill: var(--bg); }
-    circle.ring  { fill: none; stroke: var(--fg); }
-    circle.dot   { fill: var(--fg); }
+    circle.ring { fill: none; stroke: var(--fg); }
+    circle.dot  { fill: var(--fg); }
   </style>
-  <rect width="500" height="500"/>
   <circle class="ring" cx="250" cy="250" r="200" stroke-width="18" opacity=".65"/>
   <circle class="dot"  cx="250" cy="250" r="42"/>
 </svg>
