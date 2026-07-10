@@ -1,9 +1,7 @@
-# Michael – Data Scientist, Dancer, Creative, Creator of autonomous cognitive systems
-
-> Mission: Constructing infrastructure for entropy defense and preservation of ontological independence.
+# Michael – Data Scientist, Dancer, Creative
 
 ## About
-Michael is a Data Scientist, dancer, creative, magician, and creator of autonomous cognitive systems. This site outlines his philosophy, architecture ("Exocortex"), fundamental axioms, and his magical framework "Opus Purum".
+Michael is a Data Scientist, dancer, and creative. This site outlines his architecture ("Exocortex"), fundamental axioms, and his framework "Opus Purum".
 
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.
