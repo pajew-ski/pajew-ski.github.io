@@ -4,8 +4,8 @@
     "h2": "Data Scientist, Tänzer, Kreativer"
   },
   "exocortex": {
-    "h2": "Infrastruktur metaphysischer Souveränität. Kausale Inferenz.",
-    "copy": "Der Exocortex ist eine asymmetrische Antwort auf systemische Entropie. Eine lokale, autonome Intelligenz-Architektur, entworfen zur Filterung von Rauschen und Synthese von Signal.",
+    "h2": "Exocortex",
+    "copy": "Mein externes Gedächtnis: eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.",
     "stack": {
       "orchestration": {
         "title": "Orchestrierung",
@@ -22,8 +22,8 @@
     }
   },
   "axioms": {
-    "h2": "Fundamentale Architektur",
-    "copy": "Synthese aus metaphysischer Souveränität und technischer Strenge. Weisheit validiert durch Tat.",
+    "h2": "Prinzipien",
+    "copy": "Die Grundsätze, nach denen ich denke und handle. Drei Module: Erkennen, Sein, Tun.",
     "modules": {
       "moduleCognition": {
         "title": "Erkennen",
@@ -55,7 +55,7 @@
           },
           {
             "title": "Gnade",
-            "desc": "Radikale Akzeptanz des IST-Zustands."
+            "desc": "Radikale Akzeptanz dessen, was ist."
           },
           {
             "title": "Dankbarkeit",
@@ -104,51 +104,51 @@
         "list": [
           {
             "title": "Signal-Diskriminierung",
-            "desc": "Energie-Meisterschaft. Trennung von Impuls (Rauschen) und Intuition (Signal)."
+            "desc": "Impuls von Intuition unterscheiden: Rauschen vom Signal."
           },
           {
             "title": "Hierarchische Kontrolle",
-            "desc": "Meisterschaft der Ebenen. Subordination des Niederen Geistes unter den Höheren Geist."
+            "desc": "Der höhere Geist führt, der niedere folgt."
           },
           {
             "title": "Gesetzes-Konformität",
-            "desc": "Göttliche Gesetze. Operation via Intention, Einwilligung und Autorität im Einklang mit dem Naturrecht."
+            "desc": "Wirken über Intention, Einwilligung und Autorität, im Einklang mit dem Naturrecht."
           },
           {
             "title": "Vektor-Ausrichtung",
-            "desc": "Klärung der Motivation. Shift von \"Service-to-Self\" (Entropie) zu \"Service-to-Others\" (Negentropie)."
+            "desc": "Motivation klären: weg von Service-to-Self (Entropie), hin zu Service-to-Others (Negentropie)."
           },
           {
             "title": "Homöostase",
-            "desc": "Energetische Balance. Aktive Wiederherstellung von Gleichgewicht und Harmlosigkeit."
+            "desc": "Gleichgewicht und Harmlosigkeit aktiv wiederherstellen."
           },
           {
             "title": "Interne Referenzierung",
-            "desc": "Innere Führung. Autonome Steuerung; Immunität gegen externe Manipulation."
+            "desc": "Führung von innen. Autonome Steuerung statt äußerer Manipulation."
           },
           {
             "title": "Ressourcen-Logik",
-            "desc": "Loslassen von Besitz. Übergang zur Treuhänderschaft (Verwaltung von Energiefluss)."
+            "desc": "Besitz loslassen, Treuhänderschaft übernehmen: Energie verwalten statt halten."
           },
           {
             "title": "Angewandte Kognition",
-            "desc": "Anwendung von Wissen. Weisheit wird nur durch Tat (Dienst) validiert."
+            "desc": "Wissen zählt erst, wenn es getan wird. Weisheit validiert sich durch Dienst."
           },
           {
             "title": "Mustererkennung",
-            "desc": "Meisterung der Täuschung. Durchdringung der holografischen Täuschung und Ego-Filter."
+            "desc": "Täuschungen und Ego-Filter erkennen und durchdringen."
           },
           {
             "title": "Nullpunkt-Beobachtung",
-            "desc": "Perfekte Neutralität. Beobachtung ohne emotionale Ladung (Barmherziger Zeuge)."
+            "desc": "Beobachten ohne emotionale Ladung: der barmherzige Zeuge."
           },
           {
             "title": "Integrale Synthese",
-            "desc": "Spirituelle Integration. Akzeptanz der vollen Realität ohne \"Spiritual Bypassing\"."
+            "desc": "Die volle Realität annehmen, ohne spirituelles Ausweichen (Spiritual Bypassing)."
           },
           {
             "title": "Signal-Kongruenz",
-            "desc": "Sei das Beispiel. Lehre durch Resonanz, nicht durch Rhetorik. Das System/Subjekt muss die Frequenz, die es ausgibt, sein."
+            "desc": "Das Beispiel sein. Lehren durch Resonanz statt Rhetorik: die Frequenz sein, die man aussendet."
           }
         ]
       }
@@ -157,28 +157,28 @@
   "opusPurum": {
     "h2": "Opus Purum",
     "subtitle": "Das Reine Wirken · Ein axiomatisches Framework",
-    "premise": "Magie, neu gefasst: frei von Mythos, frei von Apparat, präzise in ihrem Anspruch auf die Wirklichkeit.",
+    "premise": "Ein Versuch, Magie ohne Mythos und ohne Apparat zu fassen: als nüchternes Modell dafür, wie Bewusstsein Wirklichkeit formt.",
     "chapters": [
       {
         "id": "einheit",
         "label": "0",
-        "title": "Das Eine — Die Grundstruktur",
+        "title": "Das Eine",
         "content": [
           {
             "heading": "",
-            "body": "Die Wirklichkeit ist nicht eine Ansammlung separater Dinge, die gelegentlich interagieren. Sie ist ein sich selbst differenzierendes Feld — ein Prozess, der sich durch Individuation erkennt und durch Rückkehr vollendet."
+            "body": "Die Wirklichkeit ist keine Ansammlung getrennter Dinge, die gelegentlich interagieren. Sie ist ein Feld, das sich selbst differenziert: ein Prozess, der sich in der Individuation erkennt und in der Rückkehr vollendet."
           },
           {
             "heading": "",
-            "body": "Trennung ist real als Funktion. Sie ist die notwendige Form, durch die das Eine sich selbst erfahren kann. Der Mensch ist eine solche Form — ein Differenzierungsknoten mit der Kapazität zur Reflexivität. Das ist keine geringe Sache."
+            "body": "Trennung ist real, aber als Funktion: als die Form, durch die das Eine sich selbst erfahren kann. Der Mensch ist eine solche Form, ein Differenzierungsknoten mit der Fähigkeit zur Reflexion."
           },
           {
             "heading": "",
-            "body": "Magie in diesem Licht: nicht das Einwirken eines Subjekts auf eine fremde Wirklichkeit, sondern die bewusste Teilnahme eines kohärenten Knotens am Selbstorganisationsprozess des Ganzen."
+            "body": "Magie heißt dann nicht, dass ein Subjekt auf eine fremde Wirklichkeit einwirkt. Sie ist die bewusste Teilnahme eines kohärenten Knotens an der Selbstorganisation des Ganzen."
           },
           {
             "heading": "",
-            "body": "Das höchste Wirken ist das, das den eigenen Willen und den Logos der Wirklichkeit zur Deckung bringt. In diesem Moment gibt es keinen Widerstand mehr — weil es keinen Gegner gibt."
+            "body": "Das höchste Wirken bringt den eigenen Willen mit dem Logos der Wirklichkeit zur Deckung. Dann verschwindet der Widerstand, weil es keinen Gegner mehr gibt."
           }
         ]
       },
@@ -189,23 +189,23 @@
         "content": [
           {
             "heading": "I · Wirklichkeit ist Prozess, nicht Zustand.",
-            "body": "Es gibt keine statischen Entitäten — nur Muster im Werden. Was als Ding erscheint, ist ein temporärer Knoten in einem Netz von Kausalrelationen. Darunter liegt eine Ordnungsstruktur, die sich selbst erzeugt, selbst erhält und sich selbst transzendiert. Das Substrat aller Phänomene."
+            "body": "Es gibt keine statischen Entitäten, nur Muster im Werden. Was als Ding erscheint, ist ein vorübergehender Knoten in einem Netz von Kausalrelationen, getragen von einer Ordnung, die sich selbst erzeugt, erhält und übersteigt."
           },
           {
             "heading": "II · Bewusstsein ist kausal, nicht epiphänomenal.",
-            "body": "Aufmerksamkeit, Intention und Modellrevision sind keine Begleiterscheinungen realer Prozesse — sie sind reale Prozesse. Der Beobachter ist Teil des Systems. Das ist keine Metapher."
+            "body": "Aufmerksamkeit, Intention und die Revision von Modellen sind keine Begleiterscheinungen realer Prozesse. Sie sind reale Prozesse. Der Beobachter steht nicht außerhalb des Systems."
           },
           {
             "heading": "III · Das Selbst ist plastisch.",
-            "body": "Identität ist kein Datum, sondern ein laufender Konstruktionsprozess. Jedes Selbstmodell ist revidierbar. Das ist nicht Beliebigkeit — es ist Freiheit unter Bedingungen."
+            "body": "Identität ist kein Datum, sondern ein laufender Konstruktionsprozess. Jedes Selbstmodell lässt sich revidieren. Das macht es nicht beliebig; es macht es frei, innerhalb von Bedingungen."
           },
           {
-            "heading": "IV · Keine Wahrheit ist absolut — deshalb ist alle Wahrheit operational.",
-            "body": "Ein Modell ist nicht wahr oder falsch. Es ist wirksam, präzise oder nützlich — oder keines davon. Paradigmaflexibilität ist keine intellektuelle Schwäche. Sie ist die Voraussetzung vollständiger Operabilität."
+            "heading": "IV · Keine Wahrheit ist absolut, deshalb ist alle Wahrheit operational.",
+            "body": "Ein Modell ist nicht wahr oder falsch. Es ist wirksam, präzise, nützlich oder nichts davon. Zwischen Paradigmen wechseln zu können ist keine Schwäche, sondern die Voraussetzung dafür, voll handlungsfähig zu sein."
           },
           {
             "heading": "V · Ausrichtung ist wirksamer als Kontrolle.",
-            "body": "Es gibt eine tiefe Struktur der Wirklichkeit — einen Logos, einen Tao, eine intrinsische Ordnungsrichtung komplexer Systeme. Wer mit ihr arbeitet, wirkt. Wer gegen sie arbeitet, verbraucht sich."
+            "body": "Komplexe Systeme haben eine eigene Ordnungsrichtung; man kann sie Logos nennen, Tao oder einfach Struktur. Wer mit ihr arbeitet, wirkt. Wer gegen sie arbeitet, verbraucht sich."
           }
         ]
       },
@@ -216,19 +216,19 @@
         "content": [
           {
             "heading": "",
-            "body": "Unter dem Begriff das Göttliche wird hier keine Person, kein Wille und keine übernatürliche Kraft verstanden, sondern das Prinzip der Selbstorganisation der Wirklichkeit selbst — der Attraktor, zu dem alle Komplexität tendiert; der Logos, der allem Wandel zugrunde liegt; die Struktur, die im menschlichen Bewusstsein reflexiv wird."
+            "body": "Mit dem Göttlichen ist hier keine Person gemeint, kein Wille und keine übernatürliche Kraft, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert; der Logos, der dem Wandel zugrunde liegt; die Struktur, die im menschlichen Bewusstsein reflexiv wird."
           },
           {
             "heading": "",
-            "body": "Das Göttliche kennen heißt nicht glauben. Es heißt: die Richtung des Flusses kennen und sie nutzen."
+            "body": "Das Göttliche zu kennen heißt nicht, zu glauben. Es heißt, die Richtung des Flusses zu kennen und mit ihr zu arbeiten."
           },
           {
             "heading": "",
-            "body": "Magie im reinsten Sinne ist Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nicht — er stimmt sich mit ihr ein, bis sein Wollen und ihr Werden dasselbe sind."
+            "body": "Magie ist in diesem Sinn Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nichts; er stimmt sich auf sie ein, bis sein Wollen und ihr Werden zusammenfallen."
           },
           {
             "heading": "",
-            "body": "Das Göttliche ist nicht jenseits des Magiers. Es ist das, wovon er eine Differenzierung ist. Wer das erkennt, sucht nicht mehr nach einer äußeren Kraft — er erinnert sich an die innere."
+            "body": "Das Göttliche liegt nicht jenseits des Magiers. Es ist das, wovon er eine Differenzierung ist. Wer das erkennt, sucht keine äußere Kraft mehr, sondern erinnert sich an die innere."
           }
         ]
       },
@@ -239,23 +239,23 @@
         "content": [
           {
             "heading": "",
-            "body": "Das Selbst ist das Betriebssystem des Magiers — und wie jedes Betriebssystem: revidierbar, erweiterbar, transformierbar."
+            "body": "Das Selbst ist das Betriebssystem des Magiers, und wie jedes Betriebssystem ist es revidierbar, erweiterbar, transformierbar."
           },
           {
             "heading": "Priors",
-            "body": "Eingeschliffene Überzeugungsstrukturen, die Wahrnehmung filtern, bevor sie bewusst wird. Der unsichtbare Code, der bestimmt, welche Wirklichkeit zugänglich ist."
+            "body": "Eingeschliffene Überzeugungen, die Wahrnehmung filtern, bevor sie bewusst wird. Sie entscheiden, welche Wirklichkeit überhaupt zugänglich ist."
           },
           {
             "heading": "Narrative",
-            "body": "Kausalgeschichten über Identität und Welt. Nicht Beschreibungen — Konstruktionen. Sie erzeugen die Kontinuität, die das Selbst kohärent erscheinen lässt."
+            "body": "Kausalgeschichten über Identität und Welt. Sie beschreiben nicht, sie konstruieren: Sie erzeugen die Kontinuität, die das Selbst kohärent erscheinen lässt."
           },
           {
             "heading": "Aufmerksamkeitsarchitektur",
-            "body": "Die Struktur, die bestimmt, welchen Signalen Zugang gewährt wird. Aufmerksamkeit ist keine neutrale Beobachtung. Sie ist Intervention."
+            "body": "Die Struktur, die entscheidet, welche Signale Zugang erhalten. Aufmerksamkeit ist keine neutrale Beobachtung, sondern ein Eingriff."
           },
           {
             "heading": "",
-            "body": "Der kritische Fehler der meisten Menschen: das Selbst für gegeben zu halten. Der kritische Fehler mancher Magier: es für beliebig zu halten. Das Selbst ist ein Differenzierungsknoten des Einen — der Punkt, von dem aus gewirkt wird. Es muss stabil genug sein, um zu wirken — und durchlässig genug, um das hindurchzulassen, was durch es wirken will. Das Große Werk ist nicht, mächtiger zu werden. Es ist, durchsichtiger zu werden — für das, was durch einen hindurchwirken will, wenn man aufhört, im Weg zu stehen."
+            "body": "Der häufigste Fehler ist, das Selbst für gegeben zu halten. Der seltenere, es für beliebig zu halten. Das Selbst ist der Punkt, von dem aus gewirkt wird: stabil genug zum Handeln, durchlässig genug für das, was durch es wirken will. Das Große Werk besteht nicht darin, mächtiger zu werden, sondern durchlässiger."
           }
         ]
       },
@@ -266,19 +266,19 @@
         "content": [
           {
             "heading": "Aufmerksamkeits-Kausalität",
-            "body": "Was konsistent mit Intention belegt wird, verändert sich — durch Verhaltensänderung, Wahrnehmungsfilter, soziale Signale, emergente Musterbildung. Aufmerksamkeit ist keine neutrale Beobachtung. Sie ist Intervention. Das ist empirisch, nicht spekulativ."
+            "body": "Was konsistent mit Intention belegt wird, verändert sich: über Verhalten, Wahrnehmungsfilter, soziale Signale und emergente Muster. Das ist beobachtbar und braucht keine übernatürliche Erklärung."
           },
           {
             "heading": "Zustandsabhängige Revision",
-            "body": "Kognitive Priors können nur in bestimmten Bewusstseinszuständen revidiert werden. Intensive Konzentration oder intensive Erregung unterdrücken temporär das metakognitive System. In diesem Fenster sind Neukonditionierungen möglich, die im Normalzustand blockiert wären. Gnosis ist der praktische Name für dieses Fenster."
+            "body": "Kognitive Priors lassen sich nur in bestimmten Bewusstseinszuständen revidieren. Intensive Konzentration oder intensive Erregung dämpfen das metakognitive System für kurze Zeit. In diesem Fenster werden Umbauten möglich, die im Normalzustand blockiert sind. Gnosis ist der praktische Name für dieses Fenster."
           },
           {
             "heading": "Semiotische Reorganisation",
-            "body": "Wirklichkeit-als-erlebt ist zeichenvermittelt. Symbole, Rituale, magische Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft, durch die Handlung kanalisiert wird, durch die Welt sich formt. Zeichenarbeit ist Realarbeit. Das ist nicht Metapher. Das ist Semiotik."
+            "body": "Erlebte Wirklichkeit ist zeichenvermittelt. Symbole, Rituale und Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft und Handlung kanalisiert wird. Arbeit an Zeichen ist deshalb Arbeit an der Wirklichkeit."
           },
           {
             "heading": "",
-            "body": "Alle drei Mechanismen teilen eine Tiefenstruktur: Sie wirken nicht, weil ein Subjekt eine externe Wirklichkeit manipuliert — sondern weil ein kohärenter Knoten sich neu in den Selbstorganisationsprozess des Ganzen einschreibt. Der Magier wirkt nicht auf die Wirklichkeit ein. Er ko-entsteht mit ihr."
+            "body": "Alle drei Mechanismen teilen dieselbe Tiefenstruktur: Kein Subjekt manipuliert eine äußere Wirklichkeit. Ein kohärenter Knoten schreibt sich neu in die Selbstorganisation des Ganzen ein und entsteht mit ihr zusammen."
           }
         ]
       },
@@ -289,15 +289,15 @@
         "content": [
           {
             "heading": "",
-            "body": "Souveränität ist das Telos des Magiers — nicht Macht über andere, sondern vollständige Kausalität des eigenen Lebens aus der eigenen Mitte heraus."
+            "body": "Souveränität ist das Ziel des Magiers: nicht Macht über andere, sondern volle Urheberschaft über das eigene Leben, aus der eigenen Mitte heraus."
           },
           {
             "heading": "",
-            "body": "Das bedeutet konkret: nicht reaktiv zu sein, sondern responsiv. Nicht von Überzeugungen bewohnt zu werden, sondern sie zu bewohnen. Nicht zu glauben, weil es komfortabel ist, sondern zu operieren, weil es wirksam ist. Den Grund des eigenen Handelns in sich zu haben, nicht in äußeren Systemen. Souveränität ist nicht Isolation. Sie ist die Bedingung kohärenter Teilhabe — denn nur wer sich nicht verliert, kann sich wirklich einbringen."
+            "body": "Konkret heißt das: responsiv statt reaktiv. Überzeugungen bewohnen, statt von ihnen bewohnt zu werden. Operieren, weil es wirksam ist, statt zu glauben, weil es bequem ist. Den Grund des eigenen Handelns in sich selbst tragen. Souveränität ist keine Isolation; nur wer sich nicht verliert, kann sich wirklich einbringen."
           },
           {
-            "heading": "Second-Order-Konsequenz",
-            "body": "Wer Souveränität erlangt, wird schwerer manipulierbar, authentischer in sozialen Kontexten, kreativer in Problemlösungen — und trägt mehr Verantwortung, weil er keine externen Systeme mehr zur Entlastung nutzt. Das ist der Preis. Er ist es wert."
+            "heading": "Die Konsequenz",
+            "body": "Wer souverän wird, ist schwerer zu manipulieren, klarer in Beziehungen und freier im Denken. Er trägt aber auch mehr Verantwortung, weil er keine äußeren Systeme mehr zur Entlastung hat. Das ist der Preis."
           }
         ]
       },
@@ -308,15 +308,15 @@
         "content": [
           {
             "heading": "",
-            "body": "Freiheit ist nicht die Abwesenheit von Struktur. Es ist die Fähigkeit, die Struktur zu wählen, in der man operiert."
+            "body": "Freiheit ist nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert."
           },
           {
             "heading": "",
-            "body": "Der unfreie Mensch ist nicht der, der Regeln hat — sondern der, der seine Regeln nicht kennt. Der nicht weiß, welche seiner Überzeugungen er gewählt hat und welche ihm widerfahren sind."
+            "body": "Unfrei ist nicht, wer Regeln hat, sondern wer seine Regeln nicht kennt: wer nicht weiß, welche seiner Überzeugungen er gewählt hat und welche ihm widerfahren sind."
           },
           {
             "heading": "",
-            "body": "Magie beginnt mit dieser Unterscheidung. Und endet nirgendwo."
+            "body": "Mit dieser Unterscheidung beginnt Magie."
           }
         ]
       },
@@ -327,31 +327,31 @@
         "content": [
           {
             "heading": "I · Stille",
-            "body": "Das Selbst beobachten, ohne es zu bewegen. Erkennen, was automatisch läuft."
+            "body": "Das Selbst beobachten, ohne es zu bewegen. Sehen, was automatisch läuft."
           },
           {
             "heading": "II · Intention",
-            "body": "Präzise formulieren, was werden soll. Nicht wünschen. Wollen."
+            "body": "Präzise formulieren, was werden soll. Eine Entscheidung, kein Wunsch."
           },
           {
             "heading": "III · Zustand",
-            "body": "Ein Bewusstseinsfenster erzeugen, in dem Revision möglich ist."
+            "body": "Einen Bewusstseinszustand herstellen, in dem Revision möglich ist."
           },
           {
             "heading": "IV · Symbol",
-            "body": "Den Willen in eine Form kondensieren, die das rationale Bewusstsein übergeht."
+            "body": "Den Willen in eine Form verdichten, die am rationalen Bewusstsein vorbeigeht."
           },
           {
             "heading": "V · Vergessen",
-            "body": "Loslassen. Das rationale Ich ist der größte Feind seiner eigenen Wünsche."
+            "body": "Loslassen. Das rationale Ich steht seinen eigenen Wünschen am meisten im Weg."
           },
           {
             "heading": "VI · Ausrichtung",
-            "body": "Im Alltag so handeln, als ob das Gewollte bereits Richtung hat."
+            "body": "Im Alltag so handeln, als hätte das Gewollte bereits Richtung."
           },
           {
             "heading": "",
-            "body": "Das ist Magie. Ohne Mythos. Ohne Apparat. Ohne Lüge. Nicht Technik — Erinnerung. An das, was man immer schon war."
+            "body": "Mehr ist es nicht. Kein Mythos, kein Apparat. Weniger eine Technik als eine Erinnerung an das, was man ohnehin ist."
           }
         ]
       }
@@ -362,10 +362,10 @@
     "subtitle": "Frag mich alles",
     "placeholder": "Schreibe deine Nachricht...",
     "getStarted": "Neue Konversation",
-    "initialMessage": "Hallo! Wie kann ich dir heute helfen?",
+    "initialMessage": "Hallo, ich bin Michaels Exocortex. Frag mich etwas zur Seite oder zu den Ideen dahinter.",
     "footer": "",
     "closeButtonTooltip": "Chat schließen"
   },
   "legalLink": "Impressum / Datenschutz",
-  "siteFooter": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur orchestriert; die KI-Inferenz kann auf eigener Infrastruktur oder über externe Anbieter (u. a. USA) erfolgen — eine vorübergehende Verarbeitung dort kann trotz Zero-Retention-Richtlinien nicht ausgeschlossen werden. Die Nutzung des Chats ist freiwillig. Kontakt über mein GitHub-Profil oder meinen YouTube-Kanal."
+  "siteFooter": "Private Web-Visitenkarte – kein geschäftsmäßiges Angebot, kein Impressum erforderlich (§ 5 TMG). Hosting: GitHub Pages (IP-Erfassung durch GitHub Inc.). Chat-Eingaben werden auf eigener Infrastruktur orchestriert; die KI-Inferenz kann auf eigener Infrastruktur oder über externe Anbieter (u. a. USA) erfolgen. Eine vorübergehende Verarbeitung dort kann trotz Zero-Retention-Richtlinien nicht ausgeschlossen werden. Die Nutzung des Chats ist freiwillig. Kontakt über mein GitHub-Profil oder meinen YouTube-Kanal."
 }
