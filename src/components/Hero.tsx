@@ -6,10 +6,10 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <header className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6" aria-label="Introduction">
+    <header id="hero" className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6" aria-label="Introduction">
       <div className="z-10 flex flex-col items-center gap-10 md:gap-14">
 
-        {/* Text block — compact, subordinate to the logo */}
+        {/* Text block: compact, subordinate to the logo */}
         <div className="text-center space-y-3 md:space-y-4 max-w-3xl text-foreground pointer-events-none select-none">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -29,7 +29,7 @@ export function Hero() {
           </motion.h2>
         </div>
 
-        {/* Krystal Flower — visual centrepiece, draws on load */}
+        {/* Krystal Flower: visual centrepiece, draws on load */}
         <KrystalFlower
           animated
           delay={1.2}

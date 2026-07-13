@@ -23,6 +23,7 @@ export function OpusPurum() {
 
   return (
     <section
+      id="opus-purum"
       className="py-32 px-4 md:px-8 max-w-7xl mx-auto"
       aria-labelledby="opus-purum-heading"
     >

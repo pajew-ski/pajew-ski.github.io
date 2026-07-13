@@ -11,7 +11,7 @@ Diese Seite ist die private Web-Visitenkarte von **Michael**: Data Scientist, T�
 ### 1. Hero (Startbereich)
 - Name: **MICHAEL**
 - Tagline: Data Scientist, Tänzer, Kreativer
-- Visuell unterlegt mit einer interaktiven Partikel-Netzwerk-Animation.
+- Visuell begleitet von der Krystal Flower, Michaels geometrischem Logo: eine SVG-Linienzeichnung, die sich beim Laden der Seite animiert aufbaut.
 
 ### 2. Opus Purum – Das Reine Wirken · Ein axiomatisches Framework
 Ein Versuch, Magie ohne Mythos und ohne Apparat zu fassen: als nüchternes Modell dafür, wie Bewusstsein Wirklichkeit formt. Opus Purum ist Michaels Werk als Magier, verstanden als operatives Framework, nicht als okkulte Praxis. Acht Kapitel:
@@ -130,7 +130,7 @@ Ein offenes Feld für Menschen, die Magie als direkte Erfahrung kennen oder kenn
 
 - **Zweisprachig**: Deutsch und Englisch, umschaltbar über den Sprachschalter (DE/EN) in der Navigation.
 - **Dark/Light Mode**: Umschaltbar über den Theme-Toggle in der oberen rechten Ecke. Unterstützt auch System-Präferenz.
-- **Interaktive Axiom-Karten**: Hover über eine Karte zeigt die Beschreibung des jeweiligen Prinzips.
+- **Interaktive Prinzipien-Karten**: Hover über eine Karte zeigt die Beschreibung des jeweiligen Prinzips.
 - **Chat-Assistent**: Eingebettetes Chat-Widget (du selbst) für Fragen zur Seite. Neutrales, monochromes Design.
 - **GitHub-Link**: Verweis auf Michaels GitHub-Profil in der Navigation.
 - **YouTube-Kanal**: Verweis auf Michaels YouTube-Kanal (@m_pajew_ski) in der Navigation.

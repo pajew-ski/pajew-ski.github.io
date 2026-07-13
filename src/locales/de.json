@@ -21,7 +21,7 @@
       }
     }
   },
-  "axioms": {
+  "principles": {
     "h2": "Prinzipien",
     "copy": "Die Grundsätze, nach denen ich denke und handle. Drei Module: Erkennen, Sein, Tun.",
     "modules": {
@@ -46,7 +46,7 @@
           }
         ]
       },
-      "moduleA": {
+      "moduleBeing": {
         "title": "Sein",
         "list": [
           {
@@ -99,7 +99,7 @@
           }
         ]
       },
-      "moduleB": {
+      "moduleDoing": {
         "title": "Tun",
         "list": [
           {
@@ -357,7 +357,7 @@
       }
     ]
   },
-  "relating": {
+  "relationships": {
     "h2": "Beziehungen",
     "copy": "Ich gestalte Beziehungen ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Der Rahmen dafür ist die Beziehungsanarchie.",
     "principles": [

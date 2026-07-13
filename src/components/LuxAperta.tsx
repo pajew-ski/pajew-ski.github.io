@@ -22,6 +22,7 @@ export function LuxAperta() {
 
   return (
     <section
+      id="lux-aperta"
       className="py-32 px-4 md:px-8 max-w-7xl mx-auto"
       aria-labelledby="lux-aperta-heading"
     >

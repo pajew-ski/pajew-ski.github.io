@@ -21,7 +21,7 @@
       }
     }
   },
-  "axioms": {
+  "principles": {
     "h2": "Principles",
     "copy": "The principles I think and act by. Three modules: cognition, being, doing.",
     "modules": {
@@ -46,7 +46,7 @@
           }
         ]
       },
-      "moduleA": {
+      "moduleBeing": {
         "title": "Being",
         "list": [
           {
@@ -99,7 +99,7 @@
           }
         ]
       },
-      "moduleB": {
+      "moduleDoing": {
         "title": "Doing",
         "list": [
           {
@@ -357,7 +357,7 @@
       }
     ]
   },
-  "relating": {
+  "relationships": {
     "h2": "Relationships",
     "copy": "I shape relationships without ranking and without ready-made scripts. What a connection is, the people in it negotiate themselves: what closeness, what commitments, what form. The frame for this is relationship anarchy.",
     "principles": [
