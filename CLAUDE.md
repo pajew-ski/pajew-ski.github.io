@@ -27,14 +27,19 @@ Never add text directly in components — always use `t('key')` from `react-i18n
 
 ## Site Structure (Sections)
 
-1. **Hero** — Name, tagline, mission, particle animation
-2. **Exocortex** — Technical infrastructure (Orchestration, Memory & Inference, Operations)
-3. **Axioms** — Three modules in this order:
+Ordered inside-out: worldview → principles → own infrastructure → relationships → open spaces.
+
+1. **Hero** — Name, tagline, Krystal Flower animation
+2. **Opus Purum** — Axiomatic framework, accordion with 8 chapters
+3. **Axioms** ("Prinzipien") — Three modules in this order:
    - **Erkennen/Cognition** — 4 sequential formal axioms (single-column layout)
    - **Sein/Being** — 12 ontological principles (3-column grid)
    - **Tun/Doing** — 12 operative principles (3-column grid)
-4. **Chat Widget** — N8N-powered assistant
-5. **Footer** — Legal modal, site footer text
+4. **Exocortex** — Technical infrastructure (Orchestration, Memory & Inference, Operations)
+5. **Relating** ("Beziehungen") — Relationship anarchy: 6 principle cards (reuses `AxiomCard`) + building-block chips + source link
+6. **LuxAperta** — Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum)
+7. **Chat Widget** — N8N-powered assistant
+8. **Footer** — Legal modal, site footer text
 
 ## i18n
 

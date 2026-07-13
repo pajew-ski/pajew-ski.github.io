@@ -74,21 +74,6 @@ That is all there is to it. No myth, no apparatus. Less a technique than a remem
 
 ---
 
-## Exocortex
-
-Michael's external memory: a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
-
-### Orchestration
-Home Assistant (action layer) coupled with N8N (decision layer).
-
-### Memory & Inference
-RDF store as single source of truth. Local LLMs.
-
-### Operations
-SecDevOps, GitOps, causal inference modeling.
-
----
-
 ## Principles
 
 The principles Michael thinks and acts by. Three modules: cognition, being, doing.
@@ -128,3 +113,76 @@ Four sequential axioms describing the formal conditions and limits of cognitive 
 * **Zero-Point Observation**: Observing without emotional charge: the merciful witness.
 * **Integral Synthesis**: Accepting the whole of reality, without spiritual bypassing.
 * **Signal Congruence**: Being the example. Teaching through resonance rather than rhetoric: being the frequency you emit.
+
+---
+
+## Exocortex
+
+Michael's external memory: a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
+
+### Orchestration
+Home Assistant (action layer) coupled with N8N (decision layer).
+
+### Memory & Inference
+RDF store as single source of truth. Local LLMs.
+
+### Operations
+SecDevOps, GitOps, causal inference modeling.
+
+---
+
+## Relationships
+
+How Michael shapes relationships: without ranking and without ready-made scripts. What a connection is, the people in it negotiate themselves: what closeness, what commitments, what form. The frame for this is relationship anarchy, based on Andie Nordgren's manifesto (2006).
+
+### Principles
+* **Love is not a scarce resource**: Several bonds do not diminish one another. Each relationship counts on its own, without comparison or ranking.
+* **No primary status**: No connection needs a label to be real. What it is, the people in it decide themselves.
+* **Spontaneity over obligation**: Meeting grows out of the wish to meet, not out of expectation or fear of consequences.
+* **Commitments are negotiated**: Obligations are agreed on explicitly, not inherited silently from norms.
+* **No entitlement**: Feelings or shared history grant no right to control another person's behavior.
+* **Self-clarity**: Naming one's own values, boundaries, and expectations instead of adopting them from role scripts.
+
+### Building Blocks
+Every connection chooses its own building blocks. No combination is a deficit or a preliminary stage of something more complete.
+
+* **Intimacy**: emotional closeness, physical closeness, sexuality.
+* **Connection**: companionship, long-term commitment, visibility.
+* **Care**: support, shared responsibility.
+* **Structure**: entanglement (shared living, finances, everyday life), collaboration.
+* **Modalities**: kink, deliberate asymmetry (mentorship, guidance with clear role asymmetry).
+
+Source: Andie Nordgren, "The Short Instructional Manifesto for Relationship Anarchy" (2006), https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy
+
+---
+
+## Lux Aperta Bavaria · The Open Light
+
+Consciousness is contagious. Not as a metaphor.
+
+Lux Aperta Bavaria is an open field for people who know magic as direct experience, or want to. Not as theory, not as belief: as bodily reality.
+
+What emerges here grows in the field between people who are consciously present. That is magic in its most direct form: playful exploration of creation, with one's own body as the instrument.
+
+You need no particular worldview. Only the willingness to put direct experience above concepts.
+
+Lux Aperta is not a secret order. It is its opposite.
+
+All formats are free of charge; Michael hosts these spaces openly.
+
+### Iter Apertum · The Open Way
+Sunday, 11:00. Full light. We walk: no agenda, no lecture, no prepared answers. No guru, no degrees of initiation.
+
+A walk with intent: movement and daylight as the practice space, open encounter as the method. What emerges when people are consciously present interests us more than what we think about it.
+
+We walk in groups of three, one lap through the park each; then the groups reshuffle. A circle to open, a circle to close, and a slow wind-down at a café.
+
+* **Rhythm**: Sundays at 11:00, roughly monthly
+* **Place**: A park in Regensburg
+* **Duration**: 60 to 90 minutes
+* **Prerequisites**: None
+
+### Convivium Apertum · The Stationary Format
+The same stance without movement. In pairs, one person speaks for three minutes while the other only listens; then they switch. Ten minutes of silence follow before the conversation opens to everyone.
+
+Listening without replying does here what walking side by side does outdoors: nobody performs, nobody lectures.

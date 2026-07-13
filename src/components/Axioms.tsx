@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-interface AxiomItemData {
+export interface AxiomItemData {
   title: string;
   desc: string;
 }
@@ -113,7 +113,7 @@ export function Axioms() {
   );
 }
 
-function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
+export function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
