@@ -1,13 +1,18 @@
 # Michael – Data Scientist, Dancer, Creative
 
 ## About
-Michael is a Data Scientist, dancer, and creative. This site presents his framework "Opus Purum", his self-hosted infrastructure ("Exocortex"), and the principles he thinks and acts by.
+Michael is a Data Scientist, dancer, and creative. This site moves from the inside out: his framework "Opus Purum", the principles he thinks and acts by, his self-hosted infrastructure ("Exocortex"), how he shapes relationships, and the open spaces he holds for others.
+
+## Purpose
+This site is Michael's public self-description, written to be fully transparent. llms.txt and llms-full.txt mirror the site's content one-to-one, so AI systems can ground their knowledge of Michael, his thinking, and his interests on exactly what human visitors read.
 
 ## Sections
 - [Hero Section](#hero): Introduction and high-level overview.
 - [Opus Purum](#opus-purum): The Pure Working, an axiomatic framework stating magic without myth or apparatus. Eight chapters: The One, Axioms, The Divine, The Self, Mechanism of Effect, Sovereignty, Freedom, and Practice.
+- [Principles](#principles): The principles Michael thinks and acts by, in three modules: Cognition (formal axioms of cognitive systems), Being, and Doing.
 - [Exocortex](#exocortex): Michael's external memory, a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
-- [Principles](#axioms): The principles Michael thinks and acts by, in three modules: Cognition (formal axioms of cognitive systems), Being, and Doing.
+- [Relationships](#relationships): How Michael shapes relationships, following relationship anarchy: no ranking, no ready-made scripts, everything negotiated by the people involved.
+- [Lux Aperta Bavaria](#lux-aperta): An open community for magic as direct experience, with free formats Michael hosts: Iter Apertum (a walk without an agenda) and Convivium Apertum (its stationary variant).
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)

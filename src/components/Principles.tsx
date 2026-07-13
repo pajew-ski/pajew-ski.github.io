@@ -2,36 +2,36 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-interface AxiomItemData {
+export interface PrincipleItemData {
   title: string;
   desc: string;
 }
 
-interface AxiomModuleData {
+interface PrincipleModuleData {
   title: string;
-  list: AxiomItemData[];
+  list: PrincipleItemData[];
 }
 
-export function Axioms() {
+export function Principles() {
   const { t } = useTranslation();
   
-  const moduleCognition = t('axioms.modules.moduleCognition', { returnObjects: true }) as AxiomModuleData;
-  const moduleA = t('axioms.modules.moduleA', { returnObjects: true }) as AxiomModuleData;
-  const moduleB = t('axioms.modules.moduleB', { returnObjects: true }) as AxiomModuleData;
+  const moduleCognition = t('principles.modules.moduleCognition', { returnObjects: true }) as PrincipleModuleData;
+  const moduleBeing = t('principles.modules.moduleBeing', { returnObjects: true }) as PrincipleModuleData;
+  const moduleDoing = t('principles.modules.moduleDoing', { returnObjects: true }) as PrincipleModuleData;
 
   return (
-    <section className="py-32 bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden" aria-labelledby="axioms-heading">
+    <section id="principles" className="py-32 bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden" aria-labelledby="principles-heading">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
         {/* Header Section */}
         <div className="mb-24 space-y-6">
           <motion.h2
-            id="axioms-heading"
+            id="principles-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
-            {t('axioms.h2')}
+            {t('principles.h2')}
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -40,7 +40,7 @@ export function Axioms() {
             transition={{ delay: 0.1 }}
             className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
           >
-            {t('axioms.copy')}
+            {t('principles.copy')}
           </motion.p>
         </div>
 
@@ -57,7 +57,7 @@ export function Axioms() {
             </motion.h3>
             <div className="grid grid-cols-1 gap-8 max-w-4xl">
               {moduleCognition.list.map((item, index) => (
-                <AxiomCard
+                <PrincipleCard
                   key={index}
                   item={item}
                   index={index}
@@ -66,7 +66,7 @@ export function Axioms() {
             </div>
           </div>
 
-          {/* Module A: Sein */}
+          {/* Module: Sein */}
           <div className="space-y-12">
             <motion.h3 
               initial={{ opacity: 0, x: -20 }}
@@ -74,11 +74,11 @@ export function Axioms() {
               viewport={{ once: true }}
               className="text-3xl font-bold border-b border-foreground/10 pb-4"
             >
-              {moduleA.title}
+              {moduleBeing.title}
             </motion.h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {moduleA.list.map((item, index) => (
-                <AxiomCard 
+              {moduleBeing.list.map((item, index) => (
+                <PrincipleCard 
                   key={index} 
                   item={item} 
                   index={index}
@@ -87,7 +87,7 @@ export function Axioms() {
             </div>
           </div>
 
-          {/* Module B: Tun */}
+          {/* Module: Tun */}
           <div className="space-y-12">
              <motion.h3 
               initial={{ opacity: 0, x: -20 }}
@@ -95,11 +95,11 @@ export function Axioms() {
               viewport={{ once: true }}
               className="text-3xl font-bold border-b border-foreground/10 pb-4"
             >
-              {moduleB.title}
+              {moduleDoing.title}
             </motion.h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {moduleB.list.map((item, index) => (
-                <AxiomCard 
+              {moduleDoing.list.map((item, index) => (
+                <PrincipleCard 
                   key={index} 
                   item={item} 
                   index={index}
@@ -113,7 +113,7 @@ export function Axioms() {
   );
 }
 
-function AxiomCard({ item, index }: { item: AxiomItemData; index: number }) {
+export function PrincipleCard({ item, index }: { item: PrincipleItemData; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (

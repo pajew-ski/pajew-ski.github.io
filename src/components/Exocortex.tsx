@@ -12,7 +12,7 @@ export function Exocortex() {
   ];
 
   return (
-    <section className="py-32 px-4 md:px-8 max-w-7xl mx-auto" aria-labelledby="exocortex-heading">
+    <section id="exocortex" className="py-32 px-4 md:px-8 max-w-7xl mx-auto" aria-labelledby="exocortex-heading">
       <div className="mb-20">
         <motion.h2
           id="exocortex-heading"

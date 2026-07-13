@@ -47,7 +47,7 @@ export function KrystalFlower({ animated = true, delay = 0, className = '' }: Kr
       className={className}
       aria-hidden="true"
     >
-      {/* Monad inner ring — proportion marker at 0.905 × R */}
+      {/* Monad inner ring: proportion marker at 0.905 × R */}
       <motion.circle
         cx={CX} cy={CY} r={R * 0.905}
         fill="none"
@@ -76,7 +76,7 @@ export function KrystalFlower({ animated = true, delay = 0, className = '' }: Kr
         />
       ))}
 
-      {/* Monad outer ring — boundary of the complete field */}
+      {/* Monad outer ring: boundary of the complete field */}
       <motion.circle
         cx={CX} cy={CY} r={R}
         fill="none"
@@ -88,7 +88,7 @@ export function KrystalFlower({ animated = true, delay = 0, className = '' }: Kr
         transition={ringTransition}
       />
 
-      {/* Center dot — zero-point source (r scales proportionally with logo) */}
+      {/* Center dot: zero-point source (r scales proportionally with logo) */}
       <motion.circle
         cx={CX} cy={CY} r={8}
         fill="currentColor"

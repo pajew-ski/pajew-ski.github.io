@@ -21,7 +21,7 @@
       }
     }
   },
-  "axioms": {
+  "principles": {
     "h2": "Prinzipien",
     "copy": "Die Grundsätze, nach denen ich denke und handle. Drei Module: Erkennen, Sein, Tun.",
     "modules": {
@@ -46,7 +46,7 @@
           }
         ]
       },
-      "moduleA": {
+      "moduleBeing": {
         "title": "Sein",
         "list": [
           {
@@ -99,7 +99,7 @@
           }
         ]
       },
-      "moduleB": {
+      "moduleDoing": {
         "title": "Tun",
         "list": [
           {
@@ -353,6 +353,100 @@
             "heading": "",
             "body": "Mehr ist es nicht. Kein Mythos, kein Apparat. Weniger eine Technik als eine Erinnerung an das, was man ohnehin ist."
           }
+        ]
+      }
+    ]
+  },
+  "relationships": {
+    "h2": "Beziehungen",
+    "copy": "Ich gestalte Beziehungen ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Der Rahmen dafür ist die Beziehungsanarchie.",
+    "principles": [
+      {
+        "title": "Liebe ist keine knappe Ressource",
+        "desc": "Mehrere Bindungen schmälern einander nicht. Jede Beziehung zählt für sich, ohne Vergleich und ohne Rangfolge."
+      },
+      {
+        "title": "Kein Primärstatus",
+        "desc": "Keine Verbindung braucht ein Etikett, um real zu sein. Was sie ist, bestimmen die Beteiligten selbst."
+      },
+      {
+        "title": "Spontanität statt Pflicht",
+        "desc": "Begegnung entsteht aus dem Wunsch danach, nicht aus Erwartungsdruck oder Angst vor Konsequenzen."
+      },
+      {
+        "title": "Zusagen werden ausgehandelt",
+        "desc": "Verbindlichkeit wird explizit vereinbart, nicht stillschweigend aus Normen übernommen."
+      },
+      {
+        "title": "Kein Anspruchsdenken",
+        "desc": "Gefühle oder gemeinsame Geschichte begründen kein Recht, das Verhalten der anderen Person zu kontrollieren."
+      },
+      {
+        "title": "Selbstklärung",
+        "desc": "Eigene Werte, Grenzen und Erwartungen benennen, statt sie aus Rollenskripten zu übernehmen."
+      }
+    ],
+    "dimensionsTitle": "Bausteine",
+    "dimensionsIntro": "Jede Verbindung wählt ihre eigenen Bausteine. Keine Kombination ist ein Defizit oder eine Vorstufe zu etwas Vollständigerem.",
+    "dimensions": [
+      {
+        "label": "Intimität",
+        "items": ["Emotionale Nähe", "Körperliche Nähe", "Sexualität"]
+      },
+      {
+        "label": "Verbindung",
+        "items": ["Gefährtenschaft", "Langfristige Bindung", "Sichtbarkeit"]
+      },
+      {
+        "label": "Fürsorge",
+        "items": ["Unterstützung", "Geteilte Verantwortung"]
+      },
+      {
+        "label": "Struktur",
+        "items": ["Verflechtung", "Zusammenarbeit"]
+      },
+      {
+        "label": "Modalitäten",
+        "items": ["Kink", "Bewusstes Gefälle"]
+      }
+    ],
+    "source": "Nach Andie Nordgrens Manifest zur Beziehungsanarchie (2006).",
+    "sourceLinkLabel": "Zum Originaltext"
+  },
+  "luxAperta": {
+    "subtitle": "Das offene Licht",
+    "h2": "Lux Aperta Bavaria",
+    "lead": "Bewusstsein ist ansteckend. Nicht als Metapher.",
+    "paragraphs": [
+      "Lux Aperta Bavaria ist ein offenes Feld für Menschen, die Magie als direkte Erfahrung kennen oder kennenlernen wollen. Nicht als Theorie, nicht als Überzeugung: als körperliche Realität.",
+      "Was hier entsteht, wächst im Feld zwischen Menschen, die bewusst präsent sind. Das ist Magie in ihrer direktesten Form: spielerische Erkundung der Schöpfung, mit dem eigenen Körper als Instrument.",
+      "Du brauchst kein bestimmtes Weltbild. Nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen.",
+      "Lux Aperta ist kein geheimer Orden. Es ist sein Gegenteil."
+    ],
+    "formats": [
+      {
+        "id": "iter",
+        "title": "Iter Apertum",
+        "tagline": "Der offene Weg",
+        "paragraphs": [
+          "Sonntag, 11:00 Uhr. Volles Licht. Wir gehen: ohne Programm, ohne Vortrag, ohne vorbereitete Antworten. Kein Guru, keine Einweihungsstufen.",
+          "Ein Spaziergang mit Absicht: Bewegung und Tageslicht als Praxisraum, offene Begegnung als Methode. Was entsteht, wenn Menschen bewusst präsent sind, interessiert uns mehr als das, was wir darüber denken.",
+          "Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Ein Kreis am Anfang, ein Kreis am Ende, zum Schluss Ausklang im Café."
+        ],
+        "facts": [
+          { "label": "Rhythmus", "value": "Sonntags 11:00 Uhr, etwa monatlich" },
+          { "label": "Ort", "value": "Ein Park in Regensburg" },
+          { "label": "Dauer", "value": "60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Keine" }
+        ]
+      },
+      {
+        "id": "convivium",
+        "title": "Convivium Apertum",
+        "tagline": "Das stationäre Format",
+        "paragraphs": [
+          "Die gleiche Haltung ohne Bewegung. Zu zweit spricht eine Person drei Minuten, die andere hört nur zu; dann Wechsel. Danach zehn Minuten Stille, bevor sich das Gespräch für alle öffnet.",
+          "Das Zuhören ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert."
         ]
       }
     ]

@@ -1,8 +1,10 @@
 import { Layout } from './components/Layout';
 import { Hero } from './components/Hero';
 import { Exocortex } from './components/Exocortex';
-import { Axioms } from './components/Axioms';
+import { Principles } from './components/Principles';
 import { OpusPurum } from './components/OpusPurum';
+import { Relationships } from './components/Relationships';
+import { LuxAperta } from './components/LuxAperta';
 import { ThemeProvider } from './components/ThemeProvider';
 
 function App() {
@@ -11,8 +13,10 @@ function App() {
       <Layout>
         <Hero />
         <OpusPurum />
+        <Principles />
         <Exocortex />
-        <Axioms />
+        <Relationships />
+        <LuxAperta />
       </Layout>
     </ThemeProvider>
   );
