@@ -14,7 +14,7 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
-      <nav className="fixed top-6 right-8 z-50 flex items-center gap-6 mix-blend-difference text-white pointer-events-auto">
+      <nav className="fixed top-phi-lg right-phi-2xl z-50 flex items-center gap-phi-lg mix-blend-difference text-white pointer-events-auto">
         <a
           href="https://github.com/pajew-ski"
           target="_blank"
@@ -37,7 +37,8 @@ export function Layout({ children }: LayoutProps) {
       <main className="w-full relative">
         {children}
       </main>
-      <footer className="w-full py-6 px-8 text-center text-xs text-muted-foreground opacity-60 space-y-2">
+      {/* pb clears the floating chat toggle so the last line never sits under it */}
+      <footer className="w-full pt-phi-lg pb-phi-5xl px-phi-2xl text-center text-xs text-muted-foreground opacity-60 space-y-phi-2xs">
         <div>
           <LanguageSwitcher />
         </div>
