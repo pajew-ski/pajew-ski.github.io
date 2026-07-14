@@ -49,12 +49,12 @@ export function Layout({ children }: LayoutProps) {
         </button>
         <p>
           {t('aiContext')}{' '}
-          <a href="/llms.txt" className="underline underline-offset-2 hover:opacity-100 transition-opacity">
-            llms.txt
+          <a href={t('llmsHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+            {t('llmsHref').slice(1)}
           </a>
           {' · '}
-          <a href="/llms-full.txt" className="underline underline-offset-2 hover:opacity-100 transition-opacity">
-            llms-full.txt
+          <a href={t('llmsFullHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+            {t('llmsFullHref').slice(1)}
           </a>
         </p>
       </footer>

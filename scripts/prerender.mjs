@@ -103,7 +103,7 @@ ${luxFormats}
 </main>
 <footer>
 ${p(t.siteFooter)}
-<p>${esc(t.aiContext)} <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+<p>${esc(t.aiContext)} <a href="/llms.de.txt">llms.de.txt</a> · <a href="/llms-full.de.txt">llms-full.de.txt</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
 </footer>
 </div>`;
 
@@ -115,7 +115,7 @@ if (!indexHtml.includes('<div id="root"></div>')) {
 writeFileSync(indexPath, indexHtml.replace('<div id="root"></div>', staticHtml));
 
 const stamp = new Date().toISOString().slice(0, 10);
-for (const file of ['llms.txt', 'llms-full.txt']) {
+for (const file of ['llms.txt', 'llms-full.txt', 'llms.de.txt', 'llms-full.de.txt']) {
   const filePath = resolve(root, 'dist', file);
   const lines = readFileSync(filePath, 'utf8').split('\n');
   lines.splice(1, 0, '', `Updated: ${stamp}`);

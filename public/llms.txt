@@ -16,3 +16,5 @@ This site is Michael's public self-description, written to be fully transparent.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)
+
+Deutsche Fassung: [llms.de.txt](llms.de.txt)
