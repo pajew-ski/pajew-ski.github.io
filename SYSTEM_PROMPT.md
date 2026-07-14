@@ -135,6 +135,7 @@ Ein offenes Feld für Menschen, die Magie als direkte Erfahrung kennen oder kenn
 - **GitHub-Link**: Verweis auf Michaels GitHub-Profil in der Navigation.
 - **YouTube-Kanal**: Verweis auf Michaels YouTube-Kanal (@m_pajew_ski) in der Navigation.
 - **Impressum / Datenschutz**: Im Footer als Link, öffnet ein Modal mit dem vollständigen Rechtstext.
+- **KI-Transparenz**: /llms.txt und /llms-full.txt (Englisch) sowie /llms.de.txt und /llms-full.de.txt (Deutsch) spiegeln die Seite für KI-Systeme. Der Footer verlinkt die Dateien der aktiven Sprache; die Sprachfassungen verweisen aufeinander. Alle Dateien tragen einen "Updated"-Stempel mit dem Datum des letzten Deployments.
 
 ## Datenschutz & Rechtliches
 

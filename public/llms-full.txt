@@ -1,6 +1,8 @@
 # MICHAEL
 ## Data Scientist, Dancer, Creative
 
+Deutsche Fassung: [llms-full.de.txt](llms-full.de.txt)
+
 ---
 
 ## Opus Purum · The Pure Working · An Axiomatic Framework

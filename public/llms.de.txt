@@ -1,0 +1,20 @@
+# Michael – Data Scientist, Tänzer, Kreativer
+
+## Über
+Michael ist Data Scientist, Tänzer und Kreativer. Diese Seite bewegt sich von innen nach außen: sein Framework "Opus Purum", die Prinzipien, nach denen er denkt und handelt, seine selbst gehostete Infrastruktur ("Exocortex"), wie er Beziehungen gestaltet, und die offenen Räume, die er für andere hält.
+
+## Zweck
+Diese Seite ist Michaels öffentliche Selbstbeschreibung, angelegt auf volle Transparenz. llms.de.txt und llms-full.de.txt spiegeln den Seiteninhalt eins zu eins, damit KI-Systeme ihr Wissen über Michael, sein Denken und seine Interessen auf genau das stützen können, was menschliche Besucher lesen.
+
+## Sektionen
+- [Hero](#hero): Einstieg und Überblick.
+- [Opus Purum](#opus-purum): Das Reine Wirken, ein axiomatisches Framework, das Magie ohne Mythos und Apparat fasst. Acht Kapitel: Das Eine, Axiome, Das Göttliche, Das Selbst, Wirkungsmechanismus, Souveränität, Freiheit und Praxis.
+- [Prinzipien](#principles): Die Grundsätze, nach denen Michael denkt und handelt, in drei Modulen: Erkennen (formale Axiome kognitiver Systeme), Sein und Tun.
+- [Exocortex](#exocortex): Michaels externes Gedächtnis, eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.
+- [Beziehungen](#relationships): Wie Michael Beziehungen gestaltet, nach der Beziehungsanarchie: ohne Rangfolge, ohne fertige Skripte, alles von den Beteiligten ausgehandelt.
+- [Lux Aperta Bavaria](#lux-aperta): Eine offene Community für Magie als direkte Erfahrung, mit kostenlosen Formaten, die Michael anbietet: Iter Apertum (Spaziergang ohne Programm) und Convivium Apertum (die stationäre Variante).
+
+Der vollständige Inhalt aller Sektionen steht in der Langfassung:
+[Vollständiger Inhalt](llms-full.de.txt)
+
+English version: [llms.txt](llms.txt)

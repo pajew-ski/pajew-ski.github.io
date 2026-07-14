@@ -40,13 +40,23 @@ export function Layout({ children }: LayoutProps) {
       <main className="w-full relative">
         {children}
       </main>
-      <footer className="w-full py-6 px-8 text-center text-xs text-muted-foreground opacity-60">
+      <footer className="w-full py-6 px-8 text-center text-xs text-muted-foreground opacity-60 space-y-2">
         <button
           onClick={() => setShowLegal(true)}
           className="hover:opacity-100 transition-opacity cursor-pointer"
         >
           {t('legalLink')}
         </button>
+        <p>
+          {t('aiContext')}{' '}
+          <a href={t('llmsHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+            {t('llmsHref').slice(1)}
+          </a>
+          {' · '}
+          <a href={t('llmsFullHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+            {t('llmsFullHref').slice(1)}
+          </a>
+        </p>
       </footer>
 
       {showLegal && (
