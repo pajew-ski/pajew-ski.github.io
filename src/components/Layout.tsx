@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Github, Youtube } from 'lucide-react';
-import { ThemeToggle } from './ThemeToggle';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ChatWidget } from './ChatWidget';
 import { useTranslation } from 'react-i18next';
@@ -34,19 +33,22 @@ export function Layout({ children }: LayoutProps) {
         >
           <Youtube className="w-5 h-5" />
         </a>
-        <LanguageSwitcher />
-        <ThemeToggle />
       </nav>
       <main className="w-full relative">
         {children}
       </main>
       <footer className="w-full py-6 px-8 text-center text-xs text-muted-foreground opacity-60 space-y-2">
-        <button
-          onClick={() => setShowLegal(true)}
-          className="hover:opacity-100 transition-opacity cursor-pointer"
-        >
-          {t('legalLink')}
-        </button>
+        <div>
+          <LanguageSwitcher />
+        </div>
+        <div>
+          <button
+            onClick={() => setShowLegal(true)}
+            className="hover:opacity-100 transition-opacity cursor-pointer"
+          >
+            {t('legalLink')}
+          </button>
+        </div>
         <p>
           {t('aiContext')}{' '}
           <a href={t('llmsHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
