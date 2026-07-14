@@ -116,5 +116,7 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 
 - Branch naming: `claude/<description>-<id>` for Claude-generated branches
 - CI/CD: GitHub Actions deploys `dist/` to GitHub Pages on push to main/master
+- Repo setting: Pages source must stay on "GitHub Actions". The legacy "Deploy from a branch" mode publishes the raw source tree (blank page) and races against the workflow deployment.
+- `deploy.yml` carries the previously live hashed assets into each new deployment so browsers holding the 10-minute-cached HTML never hit deleted assets.
 - Build must pass (`npm run build`) before pushing
 - Node version: 20

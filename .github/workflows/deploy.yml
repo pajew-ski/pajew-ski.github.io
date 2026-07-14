@@ -33,6 +33,19 @@ jobs:
       - name: Build
         run: npm run build
 
+      # GitHub Pages serves HTML with a fixed 10-minute cache. A browser holding
+      # the previous index.html would 404 on its hashed assets after a deploy,
+      # so the previous generation's assets are carried into each new deployment.
+      - name: Carry over previous assets for cached HTML
+        run: |
+          prev=$(curl -sf https://pajew-ski.github.io/ || true)
+          for a in $(printf '%s' "$prev" | grep -o '/assets/[^"]*' | sort -u); do
+            if [ ! -f "dist$a" ]; then
+              mkdir -p "dist$(dirname "$a")"
+              curl -sf "https://pajew-ski.github.io$a" -o "dist$a" || rm -f "dist$a"
+            fi
+          done
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
