@@ -43,8 +43,10 @@ The copy must read as written by a person, not generated:
 
 Guiding premise for all work on this site: natural beauty and semantic purity first. The first impression of every view must be pure beauty, on desktop and on mobile alike. This is a standing requirement, not a per-task instruction: every session that adds or changes anything visible applies and verifies the rules below proactively, without being asked.
 
-- Proportions derive from the golden ratio (φ ≈ 1.618). Sizing and spacing values come from the φ ladder measured in vmin: 100, 61.8, 38.2, 23.6, 14.6, 9, 5.6. Pick values from this ladder instead of inventing new ones.
-- Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps (e.g. `max-w`, `min(...)`).
+- Proportions derive from the golden ratio (φ ≈ 1.618). Macro composition uses the φ ladder in vmin (100, 61.8, 38.2, 23.6, 14.6, 9, 5.6); element spacing uses the named Tailwind tokens `phi-3xs` … `phi-6xl` (powers of √φ in rem, see `tailwind.config.js`). Pick values from these ladders instead of inventing new ones.
+- The type scale keeps the default Tailwind names but every size is a power of φ^(1/4) rem (base 1rem, see `tailwind.config.js`); line heights step from φ for running text down to 1 for display sizes. No ad-hoc pixel sizes; rely on the per-size line heights instead of `leading-*` utilities. The hero tagline's `text-[0.694rem]` (φ^(-3/4)) is the only sub-xs step.
+- Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps or floors (e.g. `max-w`, `min(...)`, `max(...)`).
+- Section shell, identical for every content section: `py-[max(14.6vmin,6.854rem)]`, header `mb-phi-5xl space-y-phi-lg`, h2 `text-4xl md:text-6xl font-bold tracking-tighter`, lead copy `text-xl md:text-2xl max-w-3xl font-light`, card grids `gap-phi-xl`, uppercase micro-labels `tracking-[0.3em]`.
 - Vertical composition is optically centred: free space above : below = 1 : φ. Reference implementation: `Hero.tsx` (flower diameter 61.8vmin capped at 32rem, text gap 9vmin, spacers `grow` and `grow-[1.618]`).
 - Whitespace is a design element; prefer removing elements over adding. No helper graphics, no decoration without meaning. The Krystal Flower consists of its 24 curves and nothing else.
 - Semantic purity: semantic HTML, minimal DOM, no wrapper elements without purpose; ids, i18n keys, and component names stay aligned (see Component Conventions).
