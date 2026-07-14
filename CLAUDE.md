@@ -74,7 +74,8 @@ Each section element carries an `id` matching the anchors used in `llms.txt`.
 
 The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents, scrapers) would receive an empty `<div id="root">`. Therefore:
 
-- `scripts/prerender.mjs` runs as part of `npm run build`. It generates a static HTML snapshot of the full site content from `src/locales/de.json` (same source of truth as the app) and injects it into `dist/index.html` inside `#root`. React replaces the snapshot on mount; the interactive app is unaffected.
+- `scripts/prerender.mjs` runs as part of `npm run build`. It generates a static HTML snapshot of the full site content from `src/locales/de.json` (same source of truth as the app) and injects it into `dist/index.html` inside `#root`, wrapped in `[data-snapshot]`. React replaces the snapshot on mount; the interactive app is unaffected.
+- Browsers never flash the snapshot: the inline head script tags `<html>` with a `js` class before first paint and `index.css` hides `[data-snapshot]` under `.js`. Clients without JavaScript render the snapshot as before. Keep script, wrapper, and CSS rule in sync.
 - The script also stamps all four llms files in `dist/` (`llms.txt`, `llms-full.txt`, `llms.de.txt`, `llms-full.de.txt`) with an `Updated: YYYY-MM-DD` line (build date) so stale CDN caches are recognizable. The source files in `public/` carry no stamp.
 - Because the snapshot is generated from `de.json`, it needs no manual syncing; new sections must be added to the script's section list, though.
 - Discovery: `public/robots.txt` points to `public/sitemap.xml`, which lists `/` and all four llms files; robots.txt also names them in a comment. `index.html` carries `<link rel="llms.txt">` and a meta description. The app footer links the llms files of the active language; the English and German llms files cross-reference each other.

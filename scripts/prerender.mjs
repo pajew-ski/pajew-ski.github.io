@@ -57,7 +57,11 @@ const luxFormats = t.luxAperta.formats
   })
   .join('');
 
+// The [data-snapshot] wrapper is hidden by CSS when the inline head script has
+// tagged <html> with the js class, so browsers never flash the raw snapshot;
+// clients without JavaScript still render it.
 const staticHtml = `<div id="root">
+<div data-snapshot>
 <header id="hero">
 <h1>${esc(t.hero.h1)}</h1>
 ${p(t.hero.h2)}
@@ -105,6 +109,7 @@ ${luxFormats}
 ${p(t.siteFooter)}
 <p>${esc(t.aiContext)} <a href="/llms.de.txt">llms.de.txt</a> · <a href="/llms-full.de.txt">llms-full.de.txt</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
 </footer>
+</div>
 </div>`;
 
 const indexPath = resolve(root, 'dist/index.html');

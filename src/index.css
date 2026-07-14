@@ -156,6 +156,12 @@
   color: hsl(0 0% 98%) !important;
 }
 
+/* The prerender snapshot is for clients without JavaScript; browsers that will
+   mount React (html.js, set by the inline head script) never show it. */
+.js [data-snapshot] {
+  display: none;
+}
+
 @layer base {
   * {
     @apply border-border;
