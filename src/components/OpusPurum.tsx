@@ -24,15 +24,15 @@ export function OpusPurum() {
   return (
     <section
       id="opus-purum"
-      className="py-32 px-4 md:px-8 max-w-7xl mx-auto"
+      className="py-[max(14.6vmin,6.854rem)] px-phi-sm md:px-phi-xl max-w-7xl mx-auto"
       aria-labelledby="opus-purum-heading"
     >
-      <div className="mb-16 space-y-6">
+      <div className="mb-phi-5xl space-y-phi-lg">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-xs md:text-sm uppercase tracking-[0.35em] text-muted-foreground font-light"
+          className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('opusPurum.subtitle')}
         </motion.p>
@@ -51,7 +51,7 @@ export function OpusPurum() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-2xl leading-relaxed"
+          className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
         >
           {t('opusPurum.premise')}
         </motion.p>
@@ -74,9 +74,9 @@ export function OpusPurum() {
                 aria-expanded={isOpen}
                 aria-controls={`opus-purum-panel-${chapter.id}`}
                 id={`opus-purum-btn-${chapter.id}`}
-                className="w-full flex items-center gap-6 py-5 text-left group focus:outline-none"
+                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
               >
-                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-6 shrink-0">
+                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
                   {chapter.label}
                 </span>
                 <span
@@ -108,15 +108,15 @@ export function OpusPurum() {
                     transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="pb-12 max-w-3xl space-y-10 ml-12">
+                    <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
                       {chapter.content.map((entry, i) => (
-                        <div key={i} className="space-y-3">
+                        <div key={i} className="space-y-phi-xs">
                           {entry.heading && (
                             <h4 className="text-lg md:text-xl font-semibold tracking-tight">
                               {entry.heading}
                             </h4>
                           )}
-                          <p className="text-foreground/75 font-light leading-relaxed">
+                          <p className="text-foreground/75 font-light">
                             {entry.body}
                           </p>
                         </div>

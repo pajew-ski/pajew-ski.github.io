@@ -14,7 +14,7 @@ export function Hero() {
       <div className="z-10 flex flex-col items-center gap-[9vmin]">
 
         {/* Text block: compact, subordinate to the logo */}
-        <div className="text-center space-y-3 md:space-y-4 max-w-3xl text-foreground pointer-events-none select-none">
+        <div className="text-center space-y-phi-xs md:space-y-phi-sm max-w-3xl text-foreground pointer-events-none select-none">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            className="text-[11px] md:text-xs font-light tracking-[0.28em] uppercase opacity-60"
+            className="text-[0.694rem] md:text-xs font-light tracking-[0.3em] uppercase opacity-60"
           >
             {t('hero.h2')}
           </motion.h2>

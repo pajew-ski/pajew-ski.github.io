@@ -10,6 +10,39 @@ export default {
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
+      // Type scale on the golden ratio: every size is φ^(n/4) rem, base 1rem.
+      // Line heights step down the same ladder: φ for running text to 1 for display.
+      fontSize: {
+        xs: ['0.786rem', { lineHeight: '1.618' }],
+        sm: ['0.887rem', { lineHeight: '1.618' }],
+        base: ['1rem', { lineHeight: '1.618' }],
+        lg: ['1.128rem', { lineHeight: '1.618' }],
+        xl: ['1.272rem', { lineHeight: '1.618' }],
+        '2xl': ['1.434rem', { lineHeight: '1.618' }],
+        '3xl': ['1.618rem', { lineHeight: '1.272' }],
+        '4xl': ['2.058rem', { lineHeight: '1.272' }],
+        '5xl': ['2.618rem', { lineHeight: '1.128' }],
+        '6xl': ['3.33rem', { lineHeight: '1.128' }],
+        '7xl': ['4.236rem', { lineHeight: '1' }],
+        '8xl': ['5.388rem', { lineHeight: '1' }],
+        '9xl': ['6.854rem', { lineHeight: '1' }],
+      },
+      // Spacing tokens on the same ladder: φ^(n/2) rem. Use these instead of the
+      // default numeric spacing for gaps, margins, and paddings.
+      spacing: {
+        'phi-3xs': '0.382rem',
+        'phi-2xs': '0.618rem',
+        'phi-xs': '0.786rem',
+        'phi-sm': '1rem',
+        'phi-md': '1.272rem',
+        'phi-lg': '1.618rem',
+        'phi-xl': '2.058rem',
+        'phi-2xl': '2.618rem',
+        'phi-3xl': '3.33rem',
+        'phi-4xl': '4.236rem',
+        'phi-5xl': '5.388rem',
+        'phi-6xl': '6.854rem',
+      },
       colors: {
         border: "hsl(var(--border) / <alpha-value>)",
         input: "hsl(var(--input) / <alpha-value>)",
