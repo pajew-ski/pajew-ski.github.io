@@ -6,8 +6,12 @@ export function Hero() {
   const { t } = useTranslation();
 
   return (
-    <header id="hero" className="relative h-screen w-full flex flex-col justify-center items-center overflow-hidden px-6" aria-label="Introduction">
-      <div className="z-10 flex flex-col items-center gap-10 md:gap-14">
+    <header id="hero" className="relative h-screen w-full flex flex-col items-center overflow-hidden px-6" aria-label="Introduction">
+      {/* Golden-section composition: free space above : below = 1 : φ places the
+          group at the optical centre; flower diameter is 100vmin/φ, the gap to
+          the text is one φ-ladder step further down (61.8/φ⁴ ≈ 9vmin). */}
+      <div className="grow" />
+      <div className="z-10 flex flex-col items-center gap-[9vmin]">
 
         {/* Text block: compact, subordinate to the logo */}
         <div className="text-center space-y-3 md:space-y-4 max-w-3xl text-foreground pointer-events-none select-none">
@@ -29,13 +33,14 @@ export function Hero() {
           </motion.h2>
         </div>
 
-        {/* Krystal Flower: visual centrepiece, draws on load */}
+        {/* Krystal Flower: visual centrepiece, reveals on load */}
         <KrystalFlower
           animated
           delay={1.2}
-          className="w-44 h-44 md:w-64 md:h-64 lg:w-72 lg:h-72 pointer-events-none"
+          className="w-[min(61.8vmin,32rem)] h-[min(61.8vmin,32rem)] pointer-events-none"
         />
       </div>
+      <div className="grow-[1.618]" />
     </header>
   );
 }
