@@ -3,8 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Applies the dark class before first paint so a refresh never flashes white -->
+    <!-- Runs before first paint: the js class hides the prerender snapshot for
+         browsers that will mount React, the dark class prevents a white flash -->
     <script>
+      document.documentElement.classList.add('js');
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
         document.documentElement.classList.add('dark');
       }
