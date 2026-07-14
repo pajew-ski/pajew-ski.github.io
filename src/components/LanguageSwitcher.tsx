@@ -11,7 +11,7 @@ export function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="px-3 py-1 text-sm font-medium hover:text-primary transition-colors tracking-widest uppercase"
+      className="text-xs font-medium tracking-widest uppercase hover:opacity-100 transition-opacity cursor-pointer"
       aria-label="Toggle language"
     >
       {isGerman ? 'EN' : 'DE'}
