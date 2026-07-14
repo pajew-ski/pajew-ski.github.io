@@ -7,10 +7,13 @@ const r0 = R / 64;
 
 function generateSpiralPath(baseAngle: number, dir: number): string {
   const TURNS = 1.5;
-  const STEPS = 360;
+  // A logarithmic spiral never reaches r = 0; extending it half a turn below
+  // r0 shrinks the start radius to r0/4 (sub-pixel), closing the centre hole.
+  const INNER_TURNS = 0.5;
+  const STEPS = 480;
   const parts: string[] = [];
   for (let i = 0; i <= STEPS; i++) {
-    const theta = (i / STEPS) * TURNS * 2 * Math.PI;
+    const theta = (-INNER_TURNS + (i / STEPS) * (TURNS + INNER_TURNS)) * 2 * Math.PI;
     const r = r0 * Math.pow(2, (2 * theta) / Math.PI);
     const angle = baseAngle + dir * theta;
     const x = CX + r * Math.cos(angle);
