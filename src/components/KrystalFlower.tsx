@@ -33,6 +33,7 @@ const SPIRALS: { path: string; dir: 1 | -1 }[] = Array.from({ length: 12 }, (_, 
 
 const EASE = [0.4, 0, 0.2, 1] as const;
 const DRAW_DURATION = 3.4;
+const CLIP_ID = 'krystal-flower-reveal';
 
 interface KrystalFlowerProps {
   animated?: boolean;
@@ -40,10 +41,11 @@ interface KrystalFlowerProps {
   className?: string;
 }
 
-// 24 logarithmic spirals (12 per direction), nothing else. All strokes are in
-// viewBox units and linecaps stay at the default "butt": non-scaling-stroke
-// plus dasharray animation renders as dotted lines on iOS Safari, and round
-// caps show a dot per path while pathLength is still 0.
+// 24 logarithmic spirals (12 per direction), nothing else. The flower is
+// revealed by a circular clip growing from the centre instead of stroke-dash
+// drawing (motion's pathLength): iOS Safari mis-renders animated dasharray on
+// these long polyline paths. Radius grows monotonically along a log spiral,
+// so the radial wipe is equivalent to drawing each curve along its length.
 export function KrystalFlower({ animated = true, delay = 0, className = '' }: KrystalFlowerProps) {
   return (
     <svg
@@ -51,19 +53,29 @@ export function KrystalFlower({ animated = true, delay = 0, className = '' }: Kr
       className={className}
       aria-hidden="true"
     >
-      {SPIRALS.map((s, i) => (
-        <motion.path
-          key={i}
-          d={s.path}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2}
-          opacity={s.dir === 1 ? 0.52 : 0.34}
-          initial={animated ? { pathLength: 0 } : undefined}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: DRAW_DURATION, delay, ease: EASE }}
-        />
-      ))}
+      <defs>
+        <clipPath id={CLIP_ID}>
+          <motion.circle
+            cx={CX}
+            cy={CY}
+            initial={animated ? { r: 0 } : false}
+            animate={{ r: R + 4 }}
+            transition={{ duration: DRAW_DURATION, delay, ease: EASE }}
+          />
+        </clipPath>
+      </defs>
+      <g clipPath={`url(#${CLIP_ID})`}>
+        {SPIRALS.map((s, i) => (
+          <path
+            key={i}
+            d={s.path}
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            opacity={s.dir === 1 ? 0.52 : 0.34}
+          />
+        ))}
+      </g>
     </svg>
   );
 }
