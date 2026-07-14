@@ -9,7 +9,7 @@ Purpose of the site: a fully transparent self-description for human visitors, mi
 
 ## Commands
 
-- `npm run build`: TypeScript check + Vite production build (must pass before committing)
+- `npm run build`: TypeScript check + Vite production build + prerender step (must pass before committing)
 - `npm run lint`: ESLint (flat config, strict TS rules)
 - `npm run dev`: Dev server
 
@@ -52,7 +52,16 @@ Each section element carries an `id` matching the anchors used in `llms.txt`.
 5. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards (reuses `PrincipleCard`) + building-block chips + source link
 6. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum)
 7. **Chat Widget**: N8N-powered assistant
-8. **Footer**: Legal modal, site footer text
+8. **Footer**: Legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
+
+## Prerendering & AI Discovery
+
+The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents, scrapers) would receive an empty `<div id="root">`. Therefore:
+
+- `scripts/prerender.mjs` runs as part of `npm run build`. It generates a static HTML snapshot of the full site content from `src/locales/de.json` (same source of truth as the app) and injects it into `dist/index.html` inside `#root`. React replaces the snapshot on mount; the interactive app is unaffected.
+- The script also stamps `dist/llms.txt` and `dist/llms-full.txt` with an `Updated: YYYY-MM-DD` line (build date) so stale CDN caches are recognizable. The source files in `public/` carry no stamp.
+- Because the snapshot is generated from `de.json`, it needs no manual syncing; new sections must be added to the script's section list, though.
+- Discovery: `public/robots.txt` points to `public/sitemap.xml`, which lists `/`, `/llms.txt`, and `/llms-full.txt`. `index.html` carries `<link rel="llms.txt">` and a meta description; the footer links both llms files visibly.
 
 ## i18n
 
