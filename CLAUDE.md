@@ -39,6 +39,18 @@ The copy must read as written by a person, not generated:
 - No grandiose self-description; plain, concrete claims
 - German copy avoids unnecessary anglicisms and consulting jargon
 
+## Design & Proportion (Critical)
+
+Guiding premise for all work on this site: natural beauty and semantic purity first. The first impression of every view must be pure beauty, on desktop and on mobile alike. This is a standing requirement, not a per-task instruction: every session that adds or changes anything visible applies and verifies the rules below proactively, without being asked.
+
+- Proportions derive from the golden ratio (φ ≈ 1.618). Sizing and spacing values come from the φ ladder measured in vmin: 100, 61.8, 38.2, 23.6, 14.6, 9, 5.6. Pick values from this ladder instead of inventing new ones.
+- Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps (e.g. `max-w`, `min(...)`).
+- Vertical composition is optically centred: free space above : below = 1 : φ. Reference implementation: `Hero.tsx` (flower diameter 61.8vmin capped at 32rem, text gap 9vmin, spacers `grow` and `grow-[1.618]`).
+- Whitespace is a design element; prefer removing elements over adding. No helper graphics, no decoration without meaning. The Krystal Flower consists of its 24 curves and nothing else.
+- Semantic purity: semantic HTML, minimal DOM, no wrapper elements without purpose; ids, i18n keys, and component names stay aligned (see Component Conventions).
+- Every visual change is verified with headless-browser screenshots before committing: mobile (390×844) and desktop (1440×900), each in light and dark mode. Animations are checked mid-run too, not only in their final state; WebKit has mis-rendered animated `stroke-dasharray` (motion's `pathLength`) here before, so avoid dash-based drawing.
+- Dark mode must never flash: an inline script in `index.html` sets the `dark` class before first paint. Keep it intact.
+
 ## Site Structure (Sections)
 
 Ordered inside-out: worldview, principles, own infrastructure, relationships, open spaces.
@@ -54,7 +66,7 @@ Each section element carries an `id` matching the anchors used in `llms.txt`.
 5. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards (reuses `PrincipleCard`) + building-block chips + source link
 6. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum)
 7. **Chat Widget**: N8N-powered assistant
-8. **Footer**: Legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
+8. **Footer**: Language switcher (EN/DE), legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
 
 ## Prerendering & AI Discovery
 
@@ -87,7 +99,7 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 ## Styling
 
 - Monochromatic grayscale, no color hues. All HSL values use `0 0% X%`.
-- Dark mode via `class` strategy (`<html class="dark">`)
+- Dark mode via `class` strategy (`<html class="dark">`), automatic only: it follows `prefers-color-scheme`, there is no manual toggle. The class is set before first paint by an inline script in `index.html` and kept in sync by `ThemeProvider`.
 - Colors defined as CSS variables in `src/index.css` (`:root` and `.dark`)
 - System font stack, no web fonts
 - Responsive: mobile-first with `md:` and `lg:` breakpoints
