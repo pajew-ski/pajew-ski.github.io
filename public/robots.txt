@@ -1,10 +1,10 @@
 # AI context files (llmstxt.org convention):
-#   https://pajew-ski.github.io/llms.txt          (summary, English)
-#   https://pajew-ski.github.io/llms-full.txt     (full content, English)
-#   https://pajew-ski.github.io/llms.de.txt       (summary, German)
-#   https://pajew-ski.github.io/llms-full.de.txt  (full content, German)
+#   https://pajew.ski/llms.txt          (summary, English)
+#   https://pajew.ski/llms-full.txt     (full content, English)
+#   https://pajew.ski/llms.de.txt       (summary, German)
+#   https://pajew.ski/llms-full.de.txt  (full content, German)
 
 User-agent: *
 Allow: /
 
-Sitemap: https://pajew-ski.github.io/sitemap.xml
+Sitemap: https://pajew.ski/sitemap.xml

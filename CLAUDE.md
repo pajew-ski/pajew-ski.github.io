@@ -1,4 +1,4 @@
-# CLAUDE.md – pajew-ski.github.io
+# CLAUDE.md – pajew.ski
 
 ## Project Overview
 
