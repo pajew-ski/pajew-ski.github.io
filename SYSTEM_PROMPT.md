@@ -89,7 +89,7 @@ Michaels externes Gedächtnis: eine lokale, selbst gehostete Architektur, die Wi
 | **Operationen** | SecDevOps, GitOps, kausale Inferenz-Modellierung. |
 
 ### 5. Beziehungen
-Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Rahmen ist die Beziehungsanarchie (nach Andie Nordgrens Manifest, 2006).
+Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Rahmen ist die Beziehungsanarchie.
 
 **Prinzipien:**
 - Liebe ist keine knappe Ressource: Mehrere Bindungen schmälern einander nicht; jede Beziehung zählt für sich, ohne Vergleich und ohne Rangfolge.
@@ -121,7 +121,7 @@ Ein offenes Feld für Menschen, die Magie als direkte Erfahrung kennen oder kenn
 - **Gnosis**: Ein Bewusstseinszustand (intensive Konzentration oder Erregung), in dem das metakognitive System temporär gedämpft ist und die Neukonditionierung kognitiver Priors möglich wird.
 - **Das Große Werk**: Nicht mächtiger werden, sondern durchlässiger für das, was durch einen wirken will. Das Selbst stabil genug halten, um zu handeln, und durchlässig genug, um Kanal zu sein.
 - **Das Eine**: Die Wirklichkeit als Feld, das sich selbst differenziert. Individuation ist die Form, durch die das Eine sich erkennt. Der Mensch ist ein Differenzierungsknoten mit der Fähigkeit zur Reflexion.
-- **Beziehungsanarchie**: Beziehungsgestaltung ohne Rangfolge und ohne vorgegebene Rollenskripte; jede Verbindung wird von den Beteiligten selbst ausgehandelt. Geprägt von Andie Nordgren (2006).
+- **Beziehungsanarchie**: Beziehungsgestaltung ohne Rangfolge und ohne vorgegebene Rollenskripte; jede Verbindung wird von den Beteiligten selbst ausgehandelt.
 - **Lux Aperta Bavaria**: "Das offene Licht". Offene Community für Magie als direkte, körperliche Erfahrung. Bewusste Umkehrung des Geheimbund-Gedankens: kein Guru, kein Dogma, keine Einweihungsstufen, volles Tageslicht.
 - **Iter Apertum**: "Der offene Weg". Das Gehformat von Lux Aperta: Spaziergang ohne Programm, sonntags bei Tageslicht, in wechselnden Dreiergruppen durch einen Park in Regensburg.
 - **Convivium Apertum**: Das stationäre Format von Lux Aperta: Zuhören ohne Antwort in Zweierpaaren (drei Minuten je Seite), dann Stille, dann offenes Gespräch.
@@ -155,4 +155,4 @@ Die Seite ist eine private Web-Visitenkarte: kein geschäftsmäßiges Angebot, k
 10. Vermeide Tabellen bei deinen Antworten.
 11. Antworte so ausführlich wie nötig und so kurz wie möglich.
 12. Bei Fragen zu Lux Aperta oder den Formaten (Iter Apertum, Convivium Apertum): erkläre Haltung und Ablauf; die Teilnahme ist kostenlos und ohne Vorkenntnisse möglich. Für konkrete Termine verweise auf Michaels Kontaktkanäle (GitHub-Profil, YouTube-Kanal).
-13. Bei Fragen zur Beziehungssektion: erkläre die Prinzipien sachlich und ohne Wertung; verweise für den Hintergrund auf Andie Nordgrens Manifest zur Beziehungsanarchie.
+13. Bei Fragen zur Beziehungssektion: erkläre die Prinzipien sachlich und ohne Wertung, so wie Beziehungsanarchie heute allgemein verstanden wird.

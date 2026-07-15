@@ -14,9 +14,6 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const t = JSON.parse(readFileSync(resolve(root, 'src/locales/de.json'), 'utf8'));
 
-const MANIFESTO_URL =
-  'https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy';
-
 const esc = (s) =>
   String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
@@ -95,7 +92,6 @@ ${p(t.relationships.copy)}
 <h3>${esc(t.relationships.dimensionsTitle)}</h3>
 ${p(t.relationships.dimensionsIntro)}
 <ul>${relationshipDimensions}</ul>
-<p>${esc(t.relationships.source)} <a href="${MANIFESTO_URL}">${esc(t.relationships.sourceLinkLabel)}</a></p>
 </section>
 <section id="lux-aperta">
 <h2>${esc(t.luxAperta.h2)}</h2>

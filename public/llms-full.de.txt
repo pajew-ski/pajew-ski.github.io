@@ -135,7 +135,7 @@ SecDevOps, GitOps, kausale Inferenz-Modellierung.
 
 ## Beziehungen
 
-Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Der Rahmen dafür ist die Beziehungsanarchie, nach Andie Nordgrens Manifest (2006).
+Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Der Rahmen dafür ist die Beziehungsanarchie.
 
 ### Prinzipien
 * **Liebe ist keine knappe Ressource**: Mehrere Bindungen schmälern einander nicht. Jede Beziehung zählt für sich, ohne Vergleich und ohne Rangfolge.
@@ -153,8 +153,6 @@ Jede Verbindung wählt ihre eigenen Bausteine. Keine Kombination ist ein Defizit
 * **Fürsorge**: Unterstützung, Geteilte Verantwortung.
 * **Struktur**: Verflechtung (gemeinsames Wohnen, Finanzen, Alltag), Zusammenarbeit.
 * **Modalitäten**: Kink, Bewusstes Gefälle (Mentorschaft, Begleitung mit klarer Rollenasymmetrie).
-
-Quelle: Andie Nordgren, "The Short Instructional Manifesto for Relationship Anarchy" (2006), https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy
 
 ---
 
