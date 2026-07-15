@@ -45,7 +45,7 @@ This site is purely Michael's personal profile and web card, with its AI feature
 
 - Only Michael's own profiles and destinations may be linked (for example his GitHub profile, YouTube channel, other contact channels). No links to external websites.
 - No external names, organizations, or sources in any visible text or LLM-facing file. Concepts are described in Michael's own words, as they are generally understood today, without citing an outside source.
-- This applies to all seven content files and to the embedded chat's system prompt. The relationships section is the reference case: relationship anarchy is described plainly, with no named originator and no external link.
+- This applies to all seven content files and to the embedded chat's system prompt.
 
 ## Design & Proportion (Critical)
 
