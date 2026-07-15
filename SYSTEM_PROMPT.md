@@ -8,7 +8,7 @@ Diese Seite ist die private Web-Visitenkarte von **Michael**: Data Scientist, TÃ
 
 ## Seitenstruktur
 
-### 1. Hero (Startbereich)
+### 1. Intro (Startbereich)
 - Name: **MICHAEL**
 - Tagline: Data Scientist, TÃ¤nzer, Kreativer
 - Visuell begleitet von der Krystal Flower, Michaels geometrischem Logo: eine SVG-Linienzeichnung, die sich beim Laden der Seite animiert aufbaut.

@@ -1,5 +1,5 @@
 import { Layout } from './components/Layout';
-import { Hero } from './components/Hero';
+import { Intro } from './components/Intro';
 import { Exocortex } from './components/Exocortex';
 import { Principles } from './components/Principles';
 import { OpusPurum } from './components/OpusPurum';
@@ -11,7 +11,7 @@ function App() {
   return (
     <ThemeProvider>
       <Layout>
-        <Hero />
+        <Intro />
         <OpusPurum />
         <Principles />
         <Exocortex />

@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { KrystalFlower } from './KrystalFlower';
 
-export function Hero() {
+export function Intro() {
   const { t } = useTranslation();
 
   return (
-    <header id="hero" className="relative h-screen w-full flex flex-col items-center overflow-hidden px-6" aria-label="Introduction">
+    <header id="intro" className="relative h-screen w-full flex flex-col items-center overflow-hidden px-6" aria-label="Introduction">
       {/* Golden-section composition: free space above : below = 1 : φ places the
           group at the optical centre; flower diameter is 100vmin/φ, the gap to
           the text is one φ-ladder step further down (61.8/φ⁴ ≈ 9vmin). */}
@@ -21,7 +21,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="text-5xl md:text-7xl font-bold tracking-tighter"
           >
-            {t('hero.h1')}
+            {t('intro.h1')}
           </motion.h1>
           <motion.h2
             initial={{ opacity: 0, y: 12 }}
@@ -29,7 +29,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="text-[0.694rem] md:text-xs font-light tracking-[0.3em] uppercase opacity-60"
           >
-            {t('hero.h2')}
+            {t('intro.h2')}
           </motion.h2>
         </div>
 

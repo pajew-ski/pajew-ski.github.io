@@ -31,7 +31,12 @@ export function Principles() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
-            {t('principles.h2')}
+            <a
+              href="#principles"
+              className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
+            >
+              {t('principles.h2')}
+            </a>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

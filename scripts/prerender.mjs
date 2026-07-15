@@ -59,9 +59,9 @@ const luxFormats = t.luxAperta.formats
 // clients without JavaScript still render it.
 const staticHtml = `<div id="root">
 <div data-snapshot>
-<header id="hero">
-<h1>${esc(t.hero.h1)}</h1>
-${p(t.hero.h2)}
+<header id="intro">
+<h1>${esc(t.intro.h1)}</h1>
+${p(t.intro.h2)}
 <nav><a href="https://github.com/pajew-ski">GitHub</a> · <a href="https://youtube.com/@m_pajew_ski">YouTube</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></nav>
 </header>
 <main>

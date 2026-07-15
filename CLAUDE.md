@@ -39,15 +39,23 @@ The copy must read as written by a person, not generated:
 - No grandiose self-description; plain, concrete claims
 - German copy avoids unnecessary anglicisms and consulting jargon
 
+## Links & Attribution (Critical)
+
+This site is purely Michael's personal profile and web card, with its AI features. It links to Michael and nothing else.
+
+- Only Michael's own profiles and destinations may be linked (for example his GitHub profile, YouTube channel, other contact channels). No links to external websites.
+- No external names, organizations, or sources in any visible text or LLM-facing file. Concepts are described in Michael's own words, as they are generally understood today, without citing an outside source.
+- This applies to all seven content files and to the embedded chat's system prompt. The relationships section is the reference case: relationship anarchy is described plainly, with no named originator and no external link.
+
 ## Design & Proportion (Critical)
 
 Guiding premise for all work on this site: natural beauty and semantic purity first. The first impression of every view must be pure beauty, on desktop and on mobile alike. This is a standing requirement, not a per-task instruction: every session that adds or changes anything visible applies and verifies the rules below proactively, without being asked.
 
 - Proportions derive from the golden ratio (φ ≈ 1.618). Macro composition uses the φ ladder in vmin (100, 61.8, 38.2, 23.6, 14.6, 9, 5.6); element spacing uses the named Tailwind tokens `phi-3xs` … `phi-6xl` (powers of √φ in rem, see `tailwind.config.js`). Pick values from these ladders instead of inventing new ones.
-- The type scale keeps the default Tailwind names but every size is a power of φ^(1/4) rem (base 1rem, see `tailwind.config.js`); line heights step from φ for running text down to 1 for display sizes. No ad-hoc pixel sizes; rely on the per-size line heights instead of `leading-*` utilities. The hero tagline's `text-[0.694rem]` (φ^(-3/4)) is the only sub-xs step.
+- The type scale keeps the default Tailwind names but every size is a power of φ^(1/4) rem (base 1rem, see `tailwind.config.js`); line heights step from φ for running text down to 1 for display sizes. No ad-hoc pixel sizes; rely on the per-size line heights instead of `leading-*` utilities. The intro tagline's `text-[0.694rem]` (φ^(-3/4)) is the only sub-xs step.
 - Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps or floors (e.g. `max-w`, `min(...)`, `max(...)`).
 - Section shell, identical for every content section: `py-[max(14.6vmin,6.854rem)]`, header `mb-phi-5xl space-y-phi-lg`, h2 `text-4xl md:text-6xl font-bold tracking-tighter`, lead copy `text-xl md:text-2xl max-w-3xl font-light`, card grids `gap-phi-xl`, uppercase micro-labels `tracking-[0.3em]`.
-- Vertical composition is optically centred: free space above : below = 1 : φ. Reference implementation: `Hero.tsx` (flower diameter 61.8vmin capped at 32rem, text gap 9vmin, spacers `grow` and `grow-[1.618]`).
+- Vertical composition is optically centred: free space above : below = 1 : φ. Reference implementation: `Intro.tsx` (flower diameter 61.8vmin capped at 32rem, text gap 9vmin, spacers `grow` and `grow-[1.618]`).
 - Whitespace is a design element; prefer removing elements over adding. No helper graphics, no decoration without meaning. The Krystal Flower consists of its 24 curves and nothing else.
 - Semantic purity: semantic HTML, minimal DOM, no wrapper elements without purpose; ids, i18n keys, and component names stay aligned (see Component Conventions).
 - Every visual change is verified with headless-browser screenshots before committing: mobile (390×844) and desktop (1440×900), each in light and dark mode. Animations are checked mid-run too, not only in their final state; WebKit has mis-rendered animated `stroke-dasharray` (motion's `pathLength`) here before, so avoid dash-based drawing.
@@ -56,9 +64,9 @@ Guiding premise for all work on this site: natural beauty and semantic purity fi
 ## Site Structure (Sections)
 
 Ordered inside-out: worldview, principles, own infrastructure, relationships, open spaces.
-Each section element carries an `id` matching the anchors used in `llms.txt`.
+Each section element carries an `id` matching the anchors used in `llms.txt`. Every content section's `h2` is a self-link to that `id` (the heading text is wrapped in an `<a href="#id">`), so each section is directly shareable. The affordance stays deliberately quiet: no glyph, only a pointer cursor and a faint underline that fades in on hover; never add a visible anchor icon.
 
-1. **Hero** (`#hero`): Name, tagline, Krystal Flower animation
+1. **Intro** (`#intro`): Name, tagline, Krystal Flower animation
 2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters
 3. **Principles** (`#principles`, heading "Prinzipien"): three modules
    - Erkennen/Cognition: 4 sequential formal axioms (single-column layout)
