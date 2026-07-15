@@ -88,6 +88,16 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 - Because the snapshot is generated from `de.json`, it needs no manual syncing; new sections must be added to the script's section list, though.
 - Discovery: `public/robots.txt` points to `public/sitemap.xml`, which lists `/` and all four llms files; robots.txt also names them in a comment. `index.html` carries `<link rel="llms.txt">` and a meta description. The app footer links the llms files of the active language; the English and German llms files cross-reference each other.
 
+## Discoverability & Semantic Web (Critical)
+
+This site is Michael Pajewski's public identity for humans, search engines, and AI systems alike. Every session that touches content, links, or the head must keep the machine-readable layer truthful and in sync. This is a standing requirement, applied proactively, not per task.
+
+- The `<head>` in `index.html` is the semantic anchor. Keep in sync with the actual content and with each other: the `<title>`, `meta[name=description]`, the JSON-LD `@graph` (Person + WebSite), Open Graph tags, and Twitter Card tags. When a self-description, job, location, language, or profile link changes, update the JSON-LD (`jobTitle`, `knowsAbout`, `knowsLanguage`, `address`, `sameAs`) in the same pass. `sameAs` and OG/Twitter follow the same Links & Attribution rule: only Michael's own destinations, no external names or organizations.
+- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language switch is client-side, so there are no per-language URLs and therefore no `hreflang` page alternates.
+- The llms files are the HTML-free Markdown mirror of the site and are declared via `<link rel="alternate" type="text/markdown">`. That is the supported clean-content mechanism. Do not attempt a dynamic `.md`-suffix feature: GitHub Pages is a static host with no content negotiation, and per-section `.md` files would only duplicate `llms-full.txt` while multiplying the content-sync surface.
+- `public/sitemap.xml` lists only real, fetchable URLs (`/` and the four llms files). Never add fragment URLs (`/#section`): search engines strip the fragment and treat them as duplicates of `/`. All `<lastmod>` values are stamped with the build date by `scripts/prerender.mjs`; leave the source dates as placeholders and let the build overwrite them.
+- New sections: add the `id`/`h2` self-link (see Site Structure), the anchor in `llms.txt`, and the section to the prerender script's section list. Sections are made shareable through anchors and the prerender snapshot, not through the sitemap.
+
 ## i18n
 
 - Framework: `i18next` + `react-i18next` + browser language detector
