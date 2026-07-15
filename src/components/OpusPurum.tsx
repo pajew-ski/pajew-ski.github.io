@@ -44,7 +44,12 @@ export function OpusPurum() {
           transition={{ delay: 0.1 }}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
-          {t('opusPurum.h2')}
+          <a
+            href="#opus-purum"
+            className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
+          >
+            {t('opusPurum.h2')}
+          </a>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 20 }}

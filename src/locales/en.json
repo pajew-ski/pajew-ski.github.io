@@ -1,5 +1,5 @@
 {
-  "hero": {
+  "intro": {
     "h1": "MICHAEL",
     "h2": "Data Scientist, Dancer, Creative"
   },
@@ -409,9 +409,7 @@
         "label": "Modalities",
         "items": ["Kink", "Deliberate asymmetry"]
       }
-    ],
-    "source": "Based on Andie Nordgren's manifesto on relationship anarchy (2006).",
-    "sourceLinkLabel": "Original text"
+    ]
   },
   "luxAperta": {
     "subtitle": "The Open Light",

@@ -1,5 +1,5 @@
 {
-  "hero": {
+  "intro": {
     "h1": "MICHAEL",
     "h2": "Data Scientist, Tänzer, Kreativer"
   },
@@ -409,9 +409,7 @@
         "label": "Modalitäten",
         "items": ["Kink", "Bewusstes Gefälle"]
       }
-    ],
-    "source": "Nach Andie Nordgrens Manifest zur Beziehungsanarchie (2006).",
-    "sourceLinkLabel": "Zum Originaltext"
+    ]
   },
   "luxAperta": {
     "subtitle": "Das offene Licht",

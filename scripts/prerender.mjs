@@ -14,9 +14,6 @@ import { fileURLToPath } from 'node:url';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const t = JSON.parse(readFileSync(resolve(root, 'src/locales/de.json'), 'utf8'));
 
-const MANIFESTO_URL =
-  'https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy';
-
 const esc = (s) =>
   String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
@@ -62,9 +59,9 @@ const luxFormats = t.luxAperta.formats
 // clients without JavaScript still render it.
 const staticHtml = `<div id="root">
 <div data-snapshot>
-<header id="hero">
-<h1>${esc(t.hero.h1)}</h1>
-${p(t.hero.h2)}
+<header id="intro">
+<h1>${esc(t.intro.h1)}</h1>
+${p(t.intro.h2)}
 <nav><a href="https://github.com/pajew-ski">GitHub</a> · <a href="https://youtube.com/@m_pajew_ski">YouTube</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></nav>
 </header>
 <main>
@@ -95,7 +92,6 @@ ${p(t.relationships.copy)}
 <h3>${esc(t.relationships.dimensionsTitle)}</h3>
 ${p(t.relationships.dimensionsIntro)}
 <ul>${relationshipDimensions}</ul>
-<p>${esc(t.relationships.source)} <a href="${MANIFESTO_URL}">${esc(t.relationships.sourceLinkLabel)}</a></p>
 </section>
 <section id="lux-aperta">
 <h2>${esc(t.luxAperta.h2)}</h2>

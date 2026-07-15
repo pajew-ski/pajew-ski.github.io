@@ -135,7 +135,7 @@ SecDevOps, GitOps, causal inference modeling.
 
 ## Relationships
 
-How Michael shapes relationships: without ranking and without ready-made scripts. What a connection is, the people in it negotiate themselves: what closeness, what commitments, what form. The frame for this is relationship anarchy, based on Andie Nordgren's manifesto (2006).
+How Michael shapes relationships: without ranking and without ready-made scripts. What a connection is, the people in it negotiate themselves: what closeness, what commitments, what form. The frame for this is relationship anarchy.
 
 ### Principles
 * **Love is not a scarce resource**: Several bonds do not diminish one another. Each relationship counts on its own, without comparison or ranking.
@@ -153,8 +153,6 @@ Every connection chooses its own building blocks. No combination is a deficit or
 * **Care**: support, shared responsibility.
 * **Structure**: entanglement (shared living, finances, everyday life), collaboration.
 * **Modalities**: kink, deliberate asymmetry (mentorship, guidance with clear role asymmetry).
-
-Source: Andie Nordgren, "The Short Instructional Manifesto for Relationship Anarchy" (2006), https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy
 
 ---
 

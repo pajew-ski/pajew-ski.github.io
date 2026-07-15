@@ -7,9 +7,6 @@ interface DimensionGroup {
   items: string[];
 }
 
-const MANIFESTO_URL =
-  'https://theanarchistlibrary.org/library/andie-nordgren-the-short-instructional-manifesto-for-relationship-anarchy';
-
 export function Relationships() {
   const { t } = useTranslation();
 
@@ -31,7 +28,12 @@ export function Relationships() {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
-            {t('relationships.h2')}
+            <a
+              href="#relationships"
+              className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
+            >
+              {t('relationships.h2')}
+            </a>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -94,23 +96,6 @@ export function Relationships() {
               </motion.div>
             ))}
           </div>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-sm text-muted-foreground font-light"
-          >
-            {t('relationships.source')}{' '}
-            <a
-              href={MANIFESTO_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-4 hover:text-foreground transition-colors"
-            >
-              {t('relationships.sourceLinkLabel')}
-            </a>
-          </motion.p>
         </div>
       </div>
     </section>
