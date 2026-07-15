@@ -123,4 +123,13 @@ for (const file of ['llms.txt', 'llms-full.txt', 'llms.de.txt', 'llms-full.de.tx
   writeFileSync(filePath, lines.join('\n'));
 }
 
-console.log(`prerender: static snapshot injected, llms files stamped (${stamp})`);
+// Stamp every sitemap <lastmod> with the build date so the source file needs no
+// manual date edits and CDN caches stay honest, mirroring the llms stamps above.
+const sitemapPath = resolve(root, 'dist', 'sitemap.xml');
+const sitemap = readFileSync(sitemapPath, 'utf8');
+writeFileSync(
+  sitemapPath,
+  sitemap.replace(/<lastmod>[^<]*<\/lastmod>/g, `<lastmod>${stamp}</lastmod>`)
+);
+
+console.log(`prerender: static snapshot injected, llms files + sitemap stamped (${stamp})`);

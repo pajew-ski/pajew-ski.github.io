@@ -14,27 +14,67 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <title>Michael</title>
     <meta name="description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Beziehungen und Lux Aperta Bavaria." />
-    <link rel="llms.txt" href="/llms.txt" />
     <meta name="author" content="Michael Pajewski" />
+    <link rel="canonical" href="https://pajew.ski/" />
+    <link rel="llms.txt" href="/llms.txt" />
+    <!-- The llms files are the HTML-free Markdown mirror of the site content -->
+    <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full site content as Markdown" />
+    <link rel="alternate" type="text/markdown" href="/llms-full.de.txt" hreflang="de" title="Vollständiger Seiteninhalt als Markdown" />
+    <!-- Open Graph / social & crawler previews -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Michael Pajewski" />
+    <meta property="og:description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Beziehungen und Lux Aperta Bavaria." />
+    <meta property="og:url" content="https://pajew.ski/" />
+    <meta property="og:image" content="https://pajew.ski/favicon.svg" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta property="profile:first_name" content="Michael" />
+    <meta property="profile:last_name" content="Pajewski" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Michael Pajewski" />
+    <meta name="twitter:description" content="Data Scientist, Tänzer, Kreativer aus Regensburg." />
+    <meta name="twitter:image" content="https://pajew.ski/favicon.svg" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Michael Pajewski",
-        "givenName": "Michael",
-        "familyName": "Pajewski",
-        "url": "https://pajew.ski/",
-        "jobTitle": "Data Scientist",
-        "description": "Data Scientist, Dancer, Creative.",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Regensburg",
-          "addressRegion": "Bayern",
-          "addressCountry": "DE"
-        },
-        "sameAs": [
-          "https://github.com/pajew-ski",
-          "https://youtube.com/@m_pajew_ski"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://pajew.ski/#michael",
+            "name": "Michael Pajewski",
+            "givenName": "Michael",
+            "familyName": "Pajewski",
+            "url": "https://pajew.ski/",
+            "jobTitle": "Data Scientist",
+            "description": "Data Scientist, Dancer, Creative.",
+            "knowsLanguage": ["de", "en"],
+            "knowsAbout": [
+              "Data Science",
+              "Machine Learning",
+              "Dance",
+              "Relationship Anarchy",
+              "Self-hosted infrastructure"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Regensburg",
+              "addressRegion": "Bayern",
+              "addressCountry": "DE"
+            },
+            "sameAs": [
+              "https://github.com/pajew-ski",
+              "https://youtube.com/@m_pajew_ski"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://pajew.ski/#website",
+            "url": "https://pajew.ski/",
+            "name": "Michael Pajewski",
+            "inLanguage": ["de", "en"],
+            "about": { "@id": "https://pajew.ski/#michael" },
+            "author": { "@id": "https://pajew.ski/#michael" }
+          }
         ]
       }
     </script>
