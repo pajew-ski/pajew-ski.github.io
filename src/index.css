@@ -22,7 +22,8 @@
     --secondary-foreground: 0 0% 9%;
 
     --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
+    /* 42% keeps 4.5:1 AA contrast on the neutral-100 section background */
+    --muted-foreground: 0 0% 42%;
 
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
@@ -70,8 +71,10 @@
   }
 }
 
-/* n8n Chat Overrides - Light Mode */
-:root {
+/* n8n Chat Overrides - Light Mode. The chat stylesheet is lazy-loaded after
+   this one, so the doubled :root keeps these overrides winning on
+   specificity instead of load order. */
+:root:root {
   --chat--color-primary: hsl(0 0% 90%);
   --chat--color-primary-shade-50: hsl(0 0% 90%);
   --chat--color-primary-shade-100: hsl(0 0% 90%);
@@ -105,7 +108,7 @@
 }
 
 /* n8n Chat Overrides - Dark Mode */
-.dark {
+:root:root.dark {
   --chat--color-primary: hsl(0 0% 15%);
   --chat--color-primary-shade-50: hsl(0 0% 15%);
   --chat--color-primary-shade-100: hsl(0 0% 15%);

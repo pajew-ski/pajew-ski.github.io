@@ -1,6 +1,7 @@
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { EASE, reveal, viewportOnce } from '../motion';
 
 interface ChapterEntry {
   heading: string;
@@ -28,20 +29,21 @@ export function OpusPurum() {
       aria-labelledby="opus-purum-heading"
     >
       <div className="mb-phi-5xl space-y-phi-lg">
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={viewportOnce}
+          transition={reveal()}
           className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('opusPurum.subtitle')}
-        </motion.p>
-        <motion.h2
+        </m.p>
+        <m.h2
           id="opus-purum-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={viewportOnce}
+          transition={reveal(0.1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
           <a
@@ -50,28 +52,28 @@ export function OpusPurum() {
           >
             {t('opusPurum.h2')}
           </a>
-        </motion.h2>
-        <motion.p
+        </m.h2>
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={viewportOnce}
+          transition={reveal(0.15)}
           className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
         >
           {t('opusPurum.premise')}
-        </motion.p>
+        </m.p>
       </div>
 
       <div className="border-t border-foreground/10">
         {chapters.map((chapter, idx) => {
           const isOpen = openId === chapter.id;
           return (
-            <motion.div
+            <m.div
               key={chapter.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.04 }}
+              viewport={viewportOnce}
+              transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
               <button
@@ -103,23 +105,23 @@ export function OpusPurum() {
 
               <AnimatePresence initial={false}>
                 {isOpen && (
-                  <motion.div
+                  <m.div
                     id={`opus-purum-panel-${chapter.id}`}
                     role="region"
                     aria-labelledby={`opus-purum-btn-${chapter.id}`}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: 'auto', opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
+                    transition={{ duration: 0.35, ease: EASE }}
                     className="overflow-hidden"
                   >
                     <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
                       {chapter.content.map((entry, i) => (
                         <div key={i} className="space-y-phi-xs">
                           {entry.heading && (
-                            <h4 className="text-lg md:text-xl font-semibold tracking-tight">
+                            <h3 className="text-lg md:text-xl font-semibold tracking-tight">
                               {entry.heading}
-                            </h4>
+                            </h3>
                           )}
                           <p className="text-foreground/75 font-light">
                             {entry.body}
@@ -127,10 +129,10 @@ export function OpusPurum() {
                         </div>
                       ))}
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.div>
+            </m.div>
           );
         })}
       </div>

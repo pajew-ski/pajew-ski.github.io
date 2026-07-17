@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
+import { EASE } from '../motion';
 
 const CX = 250;
 const CY = 250;
@@ -31,7 +32,6 @@ const SPIRALS: { path: string; dir: 1 | -1 }[] = Array.from({ length: 12 }, (_, 
   ];
 }).flat();
 
-const EASE = [0.4, 0, 0.2, 1] as const;
 const DRAW_DURATION = 3.4;
 const CLIP_ID = 'krystal-flower-reveal';
 
@@ -55,7 +55,7 @@ export function KrystalFlower({ animated = true, delay = 0, className = '' }: Kr
     >
       <defs>
         <clipPath id={CLIP_ID}>
-          <motion.circle
+          <m.circle
             cx={CX}
             cy={CY}
             initial={animated ? { r: 0 } : false}

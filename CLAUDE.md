@@ -85,6 +85,7 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 - `scripts/prerender.mjs` runs as part of `npm run build`. It generates a static HTML snapshot of the full site content from `src/locales/de.json` (same source of truth as the app) and injects it into `dist/index.html` inside `#root`, wrapped in `[data-snapshot]`. React replaces the snapshot on mount; the interactive app is unaffected.
 - Browsers never flash the snapshot: the inline head script tags `<html>` with a `js` class before first paint and `index.css` hides `[data-snapshot]` under `.js`. Clients without JavaScript render the snapshot as before. Keep script, wrapper, and CSS rule in sync.
 - The script also stamps all four llms files in `dist/` (`llms.txt`, `llms-full.txt`, `llms.de.txt`, `llms-full.de.txt`) with an `Updated: YYYY-MM-DD` line (build date) so stale CDN caches are recognizable. The source files in `public/` carry no stamp.
+- The script also inlines the built entry stylesheet into `dist/index.html` and removes the `<link rel="stylesheet">`, so first paint needs no render-blocking CSS request. The hashed CSS file stays in `dist/` for browsers still holding previously cached HTML.
 - Because the snapshot is generated from `de.json`, it needs no manual syncing; new sections must be added to the script's section list, though.
 - Discovery: `public/robots.txt` points to `public/sitemap.xml`, which lists `/` and all four llms files; robots.txt also names them in a comment. `index.html` carries `<link rel="llms.txt">` and a meta description. The app footer links the llms files of the active language; the English and German llms files cross-reference each other.
 
@@ -93,11 +94,22 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 This site is Michael Pajewski's public identity for humans, search engines, and AI systems alike. Every session that touches content, links, or the head must keep the machine-readable layer truthful and in sync. This is a standing requirement, applied proactively, not per task.
 
 - The `<head>` in `index.html` is the semantic anchor. Keep in sync with the actual content and with each other: the `<title>`, `meta[name=description]`, the JSON-LD `@graph` (Person + WebSite), Open Graph tags, and Twitter Card tags. When a self-description, job, location, language, or profile link changes, update the JSON-LD (`jobTitle`, `knowsAbout`, `knowsLanguage`, `address`, `sameAs`) in the same pass. `sameAs` and OG/Twitter follow the same Links & Attribution rule: only Michael's own destinations, no external names or organizations.
-- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language switch is client-side, so there are no per-language URLs and therefore no `hreflang` page alternates.
+- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language switch is client-side, so there are no per-language URLs and therefore no `hreflang` page alternates for HTML. The markdown alternate links carry `hreflang` for the llms files; their `href` values must stay absolute (Lighthouse rejects relative hreflang URLs).
 - The social preview image is `public/og-image.png` (1200x630 at 2x), referenced by `og:image` and `twitter:image` (`summary_large_image`). It is a committed static asset, not built by `npm run build`. Regenerate it with `node scripts/generate-og-image.mjs` when the name, tagline, or card design changes; that script reproduces the Krystal Flower with the exact math from `KrystalFlower.tsx`, so keep the two in sync (24 spirals, same opacities, monochrome, pure-black dark background). Update the `og:image:width`/`height` tags if the output dimensions change.
 - The llms files are the HTML-free Markdown mirror of the site and are declared via `<link rel="alternate" type="text/markdown">`. That is the supported clean-content mechanism. Do not attempt a dynamic `.md`-suffix feature: GitHub Pages is a static host with no content negotiation, and per-section `.md` files would only duplicate `llms-full.txt` while multiplying the content-sync surface.
 - `public/sitemap.xml` lists only real, fetchable URLs (`/` and the four llms files). Never add fragment URLs (`/#section`): search engines strip the fragment and treat them as duplicates of `/`. All `<lastmod>` values are stamped with the build date by `scripts/prerender.mjs`; leave the source dates as placeholders and let the build overwrite them.
 - New sections: add the `id`/`h2` self-link (see Site Structure), the anchor in `llms.txt`, and the section to the prerender script's section list. Sections are made shareable through anchors and the prerender snapshot, not through the sitemap.
+
+## Performance (Critical)
+
+The Lighthouse mobile score is kept at the top of the green range. Standing rules:
+
+- The chat bundle (`@n8n/chat` plus its Vue runtime, roughly two thirds of all JavaScript) must never be imported eagerly. Only `src/chat.ts` imports it; `ChatWidget` loads that chunk on the first user interaction, with a timer 6 s after `load` as fallback. This keeps the chat out of the critical path and out of the lab metrics window.
+- Framer Motion loads through `LazyMotion` with `domAnimation` in strict mode (see Component Conventions); importing `motion.*` anywhere throws at runtime and would pull the full bundle back in.
+- Scroll reveals use the shared presets in `src/motion.ts`. The viewport pre-trigger margin and the capped stagger delays are what keep cards from sitting blank inside the viewport; do not reintroduce long per-index delays or default viewport configs.
+- Elements animated by Framer Motion must not also have CSS transitions on `opacity` or `transform` (no `transition-all` on animated cards); the two systems fight and the animation stutters.
+- The n8n chat theme overrides in `src/index.css` use doubled `:root:root` selectors because the chat stylesheet loads after `index.css`; keep the doubling, load order no longer decides the cascade.
+- `index.html` preconnects to `https://n8n.pajewski.net` for the deferred webhook call.
 
 ## i18n
 
@@ -113,7 +125,7 @@ This site is Michael Pajewski's public identity for humans, search engines, and 
 
 - Functional components with TypeScript interfaces
 - Component file names, i18n keys, and section ids match the section they render (e.g. `Principles.tsx`, key `principles`, id `#principles`)
-- Framer Motion for all animations (`initial`, `whileInView`, `viewport={{ once: true }}`)
+- Framer Motion for all animations, via `LazyMotion` (`domAnimation`, strict) in `App.tsx`: always `m.*` components, never `motion.*`. Scroll reveals combine `initial`, `whileInView`, `viewport={viewportOnce}` and `transition={reveal(delay)}` from `src/motion.ts`
 - Tailwind utilities only (no CSS modules, no inline styles)
 - `clsx` + `tailwind-merge` for conditional classnames
 - Accessibility: `aria-label`, `aria-labelledby`, `aria-expanded`, `tabIndex`, semantic HTML, keyboard handlers
@@ -125,6 +137,7 @@ This site is Michael Pajewski's public identity for humans, search engines, and 
 - Colors defined as CSS variables in `src/index.css` (`:root` and `.dark`)
 - System font stack, no web fonts
 - Responsive: mobile-first with `md:` and `lg:` breakpoints
+- Contrast is WCAG AA everywhere: `--muted-foreground` stays at 42% lightness in light mode (anything lighter fails 4.5:1 on the neutral-100 section background), and muted text never gets an additional opacity reduction
 
 ## TypeScript
 

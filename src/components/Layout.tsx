@@ -38,25 +38,25 @@ export function Layout({ children }: LayoutProps) {
         {children}
       </main>
       {/* pb clears the floating chat toggle so the last line never sits under it */}
-      <footer className="w-full pt-phi-lg pb-phi-5xl px-phi-2xl text-center text-xs text-muted-foreground opacity-60 space-y-phi-2xs">
+      <footer className="w-full pt-phi-lg pb-phi-5xl px-phi-2xl text-center text-xs text-muted-foreground space-y-phi-2xs">
         <div>
           <LanguageSwitcher />
         </div>
         <div>
           <button
             onClick={() => setShowLegal(true)}
-            className="hover:opacity-100 transition-opacity cursor-pointer"
+            className="hover:text-foreground transition-colors cursor-pointer"
           >
             {t('legalLink')}
           </button>
         </div>
         <p>
           {t('aiContext')}{' '}
-          <a href={t('llmsHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+          <a href={t('llmsHref')} className="underline underline-offset-2 hover:text-foreground transition-colors">
             {t('llmsHref').slice(1)}
           </a>
           {' · '}
-          <a href={t('llmsFullHref')} className="underline underline-offset-2 hover:opacity-100 transition-opacity">
+          <a href={t('llmsFullHref')} className="underline underline-offset-2 hover:text-foreground transition-colors">
             {t('llmsFullHref').slice(1)}
           </a>
         </p>
