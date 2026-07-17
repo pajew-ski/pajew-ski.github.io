@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { revealViewport, revealTransition, revealDelay } from '../lib/reveal';
 
 interface ChapterEntry {
   heading: string;
@@ -31,7 +32,8 @@ export function OpusPurum() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={revealViewport}
+          transition={revealTransition}
           className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('opusPurum.subtitle')}
@@ -40,8 +42,8 @@ export function OpusPurum() {
           id="opus-purum-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={revealViewport}
+          transition={revealDelay(1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
           <a
@@ -54,8 +56,8 @@ export function OpusPurum() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={revealViewport}
+          transition={revealDelay(2)}
           className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
         >
           {t('opusPurum.premise')}
@@ -70,8 +72,8 @@ export function OpusPurum() {
               key={chapter.id}
               initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.04 }}
+              viewport={revealViewport}
+              transition={revealDelay(idx, 0.04)}
               className="border-b border-foreground/10"
             >
               <button

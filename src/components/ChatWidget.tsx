@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { createChat } from '@n8n/chat';
+import '@n8n/chat/style.css';
 import { useTranslation } from 'react-i18next';
 
 export function ChatWidget() {

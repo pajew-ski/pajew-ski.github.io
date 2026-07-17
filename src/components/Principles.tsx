@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { revealViewport, revealTransition, revealDelay } from '../lib/reveal';
 
 export interface PrincipleItemData {
   title: string;
@@ -28,7 +29,8 @@ export function Principles() {
             id="principles-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={revealViewport}
+            transition={revealTransition}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
             <a
@@ -41,8 +43,8 @@ export function Principles() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={revealViewport}
+            transition={revealDelay(2)}
             className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
           >
             {t('principles.copy')}
@@ -55,7 +57,8 @@ export function Principles() {
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={revealViewport}
+              transition={revealTransition}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
               {moduleCognition.title}
@@ -76,7 +79,8 @@ export function Principles() {
             <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={revealViewport}
+              transition={revealTransition}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
               {moduleBeing.title}
@@ -97,7 +101,8 @@ export function Principles() {
              <motion.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={revealViewport}
+              transition={revealTransition}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
               {moduleDoing.title}
@@ -125,9 +130,9 @@ export function PrincipleCard({ item, index }: { item: PrincipleItemData; index:
     <motion.article
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: index * 0.05 }}
-      className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-all duration-300 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+      viewport={revealViewport}
+      transition={revealDelay(index)}
+      className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-[color,box-shadow,border-color] duration-300 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}

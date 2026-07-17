@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { PrincipleCard, type PrincipleItemData } from './Principles';
+import { revealViewport, revealTransition, revealDelay } from '../lib/reveal';
 
 interface DimensionGroup {
   label: string;
@@ -25,7 +26,8 @@ export function Relationships() {
             id="relationships-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={revealViewport}
+            transition={revealTransition}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
             <a
@@ -38,8 +40,8 @@ export function Relationships() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
+            viewport={revealViewport}
+            transition={revealDelay(2)}
             className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
           >
             {t('relationships.copy')}
@@ -56,7 +58,8 @@ export function Relationships() {
           <motion.h3
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={revealViewport}
+            transition={revealTransition}
             className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
           >
             {t('relationships.dimensionsTitle')}
@@ -64,7 +67,8 @@ export function Relationships() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={revealViewport}
+            transition={revealTransition}
             className="text-foreground/80 font-light max-w-3xl"
           >
             {t('relationships.dimensionsIntro')}
@@ -76,8 +80,8 @@ export function Relationships() {
                 key={group.label}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
+                viewport={revealViewport}
+                transition={revealDelay(index)}
                 className="flex flex-col md:flex-row md:items-baseline gap-phi-xs md:gap-phi-xl"
               >
                 <span className="w-40 shrink-0 text-xs uppercase tracking-[0.3em] text-muted-foreground font-light">

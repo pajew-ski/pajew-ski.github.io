@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useEffect, useState } from 'react';
 import { Github, Youtube } from 'lucide-react';
 import { LanguageSwitcher } from './LanguageSwitcher';
-import { ChatWidget } from './ChatWidget';
 import { useTranslation } from 'react-i18next';
+
+// The chat pulls in Vue, highlight.js and the n8n design system (~1 MB). Loading
+// it lazily keeps that weight off the critical path so first paint and LCP stay
+// fast; it is mounted once the browser is idle or on the first user interaction.
+const ChatWidget = lazy(() =>
+  import('./ChatWidget').then((m) => ({ default: m.ChatWidget })),
+);
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,6 +17,51 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const { t } = useTranslation();
   const [showLegal, setShowLegal] = useState(false);
+  const [chatReady, setChatReady] = useState(false);
+
+  useEffect(() => {
+    if (chatReady) return;
+
+    let idleId: number | undefined;
+    const ready = () => setChatReady(true);
+
+    // A real interaction always wins: mount the chat immediately.
+    const events: Array<keyof WindowEventMap> = ['pointerdown', 'keydown', 'scroll', 'touchstart'];
+    events.forEach((e) => window.addEventListener(e, ready, { once: true, passive: true }));
+
+    const w = window as typeof window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+      cancelIdleCallback?: (id: number) => void;
+    };
+
+    // Otherwise wait for the page to finish loading, then mount on the first
+    // idle slot. This keeps the heavy chat chunk out of the first-paint / LCP
+    // window entirely instead of racing it.
+    const arm = () => {
+      if (w.requestIdleCallback) {
+        idleId = w.requestIdleCallback(ready, { timeout: 2000 });
+      } else {
+        idleId = window.setTimeout(ready, 1500);
+      }
+    };
+
+    let onLoad: (() => void) | undefined;
+    if (document.readyState === 'complete') {
+      arm();
+    } else {
+      onLoad = arm;
+      window.addEventListener('load', onLoad, { once: true });
+    }
+
+    return () => {
+      events.forEach((e) => window.removeEventListener(e, ready));
+      if (onLoad) window.removeEventListener('load', onLoad);
+      if (idleId !== undefined) {
+        if (w.cancelIdleCallback) w.cancelIdleCallback(idleId);
+        else window.clearTimeout(idleId);
+      }
+    };
+  }, [chatReady]);
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
@@ -86,7 +137,11 @@ export function Layout({ children }: LayoutProps) {
         </div>
       )}
 
-      <ChatWidget />
+      {chatReady && (
+        <Suspense fallback={null}>
+          <ChatWidget />
+        </Suspense>
+      )}
     </div>
   );
 }

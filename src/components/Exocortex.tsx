@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Brain, Cpu, ShieldCheck } from 'lucide-react';
+import { revealViewport, revealTransition, revealDelay } from '../lib/reveal';
 
 export function Exocortex() {
   const { t } = useTranslation();
@@ -18,7 +19,8 @@ export function Exocortex() {
           id="exocortex-heading"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          viewport={revealViewport}
+          transition={revealTransition}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
           <a
@@ -31,8 +33,8 @@ export function Exocortex() {
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={revealViewport}
+          transition={revealDelay(2)}
           className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-light"
         >
           {t('exocortex.copy')}
@@ -45,8 +47,8 @@ export function Exocortex() {
             key={feature.key}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.2, duration: 0.6 }}
+            viewport={revealViewport}
+            transition={revealDelay(index, 0.08)}
             className="group"
           >
             <div className="mb-phi-lg p-phi-sm w-fit rounded-2xl bg-secondary/50 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { revealViewport, revealTransition, revealDelay } from '../lib/reveal';
 
 interface FormatFact {
   label: string;
@@ -30,7 +31,8 @@ export function LuxAperta() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={revealViewport}
+          transition={revealTransition}
           className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('luxAperta.subtitle')}
@@ -39,8 +41,8 @@ export function LuxAperta() {
           id="lux-aperta-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={revealViewport}
+          transition={revealDelay(1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
           <a
@@ -53,8 +55,8 @@ export function LuxAperta() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={revealViewport}
+          transition={revealDelay(2)}
           className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
         >
           {t('luxAperta.lead')}
@@ -67,8 +69,8 @@ export function LuxAperta() {
             key={index}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
+            viewport={revealViewport}
+            transition={revealDelay(index)}
             className={
               index === paragraphs.length - 1
                 ? 'text-foreground'
@@ -86,8 +88,8 @@ export function LuxAperta() {
             key={format.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
+            viewport={revealViewport}
+            transition={revealDelay(index, 0.1)}
             className="border border-foreground/10 p-phi-xl md:p-phi-2xl space-y-phi-lg"
           >
             <div className="space-y-phi-2xs">
