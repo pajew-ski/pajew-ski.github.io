@@ -109,11 +109,25 @@ ${p(t.siteFooter)}
 </div>`;
 
 const indexPath = resolve(root, 'dist/index.html');
-const indexHtml = readFileSync(indexPath, 'utf8');
+let indexHtml = readFileSync(indexPath, 'utf8');
 if (!indexHtml.includes('<div id="root"></div>')) {
   throw new Error('dist/index.html: empty root container not found; prerender aborted');
 }
-writeFileSync(indexPath, indexHtml.replace('<div id="root"></div>', staticHtml));
+indexHtml = indexHtml.replace('<div id="root"></div>', staticHtml);
+
+// Inline the entry stylesheet: GitHub Pages cannot send preload headers, so
+// the render-blocking CSS request would cost an extra round trip before
+// first paint. The hashed file stays in dist/ for already-cached HTML.
+const cssLink = indexHtml.match(
+  /<link rel="stylesheet"[^>]*href="\/(assets\/index-[^"]+\.css)"[^>]*>/
+);
+if (!cssLink) {
+  throw new Error('dist/index.html: entry stylesheet link not found; prerender aborted');
+}
+const css = readFileSync(resolve(root, 'dist', cssLink[1]), 'utf8').trim();
+indexHtml = indexHtml.replace(cssLink[0], `<style>${css}</style>`);
+
+writeFileSync(indexPath, indexHtml);
 
 const stamp = new Date().toISOString().slice(0, 10);
 for (const file of ['llms.txt', 'llms-full.txt', 'llms.de.txt', 'llms-full.de.txt']) {

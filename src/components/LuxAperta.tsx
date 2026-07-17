@@ -1,5 +1,6 @@
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { reveal, viewportOnce } from '../motion';
 
 interface FormatFact {
   label: string;
@@ -27,20 +28,21 @@ export function LuxAperta() {
       aria-labelledby="lux-aperta-heading"
     >
       <div className="mb-phi-5xl space-y-phi-lg">
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={viewportOnce}
+          transition={reveal()}
           className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('luxAperta.subtitle')}
-        </motion.p>
-        <motion.h2
+        </m.p>
+        <m.h2
           id="lux-aperta-heading"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
+          viewport={viewportOnce}
+          transition={reveal(0.1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
           <a
@@ -49,26 +51,26 @@ export function LuxAperta() {
           >
             {t('luxAperta.h2')}
           </a>
-        </motion.h2>
-        <motion.p
+        </m.h2>
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
+          viewport={viewportOnce}
+          transition={reveal(0.15)}
           className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
         >
           {t('luxAperta.lead')}
-        </motion.p>
+        </m.p>
       </div>
 
       <div className="max-w-3xl space-y-phi-lg mb-phi-5xl">
         {paragraphs.map((paragraph, index) => (
-          <motion.p
+          <m.p
             key={index}
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.05 }}
+            viewport={viewportOnce}
+            transition={reveal(index * 0.05)}
             className={
               index === paragraphs.length - 1
                 ? 'text-foreground'
@@ -76,18 +78,18 @@ export function LuxAperta() {
             }
           >
             {paragraph}
-          </motion.p>
+          </m.p>
         ))}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-phi-xl">
         {formats.map((format, index) => (
-          <motion.article
+          <m.article
             key={format.id}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1, duration: 0.6 }}
+            viewport={viewportOnce}
+            transition={reveal(index * 0.1)}
             className="border border-foreground/10 p-phi-xl md:p-phi-2xl space-y-phi-lg"
           >
             <div className="space-y-phi-2xs">
@@ -115,7 +117,7 @@ export function LuxAperta() {
                 ))}
               </dl>
             )}
-          </motion.article>
+          </m.article>
         ))}
       </div>
     </section>
