@@ -1,6 +1,7 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useId, useState } from 'react';
+import { useEffect, useId, useState } from 'react';
+import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { reveal, viewportOnce } from '../motion';
 
 export interface PrincipleItemData {
@@ -33,10 +34,7 @@ export function Principles() {
             transition={reveal()}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
-            <a
-              href="#principles"
-              className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
-            >
+            <a href="#principles" className={anchorLinkClass}>
               {t('principles.h2')}
             </a>
           </m.h2>
@@ -59,9 +57,15 @@ export function Principles() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewportOnce}
               transition={reveal()}
+              id={slugify(enContent.principles.modules.moduleCognition.title)}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
-              {moduleCognition.title}
+              <a
+                href={`#${slugify(enContent.principles.modules.moduleCognition.title)}`}
+                className={anchorLinkClass}
+              >
+                {moduleCognition.title}
+              </a>
             </m.h3>
             <div className="grid grid-cols-1 gap-phi-xl max-w-4xl">
               {moduleCognition.list.map((item, index) => (
@@ -69,6 +73,7 @@ export function Principles() {
                   key={index}
                   item={item}
                   index={index}
+                  anchor={slugify(enContent.principles.modules.moduleCognition.list[index].title)}
                 />
               ))}
             </div>
@@ -81,9 +86,15 @@ export function Principles() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewportOnce}
               transition={reveal()}
+              id={slugify(enContent.principles.modules.moduleBeing.title)}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
-              {moduleBeing.title}
+              <a
+                href={`#${slugify(enContent.principles.modules.moduleBeing.title)}`}
+                className={anchorLinkClass}
+              >
+                {moduleBeing.title}
+              </a>
             </m.h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
               {moduleBeing.list.map((item, index) => (
@@ -91,6 +102,7 @@ export function Principles() {
                   key={index}
                   item={item}
                   index={index}
+                  anchor={slugify(enContent.principles.modules.moduleBeing.list[index].title)}
                 />
               ))}
             </div>
@@ -103,9 +115,15 @@ export function Principles() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewportOnce}
               transition={reveal()}
+              id={slugify(enContent.principles.modules.moduleDoing.title)}
               className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
             >
-              {moduleDoing.title}
+              <a
+                href={`#${slugify(enContent.principles.modules.moduleDoing.title)}`}
+                className={anchorLinkClass}
+              >
+                {moduleDoing.title}
+              </a>
             </m.h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
               {moduleDoing.list.map((item, index) => (
@@ -113,6 +131,7 @@ export function Principles() {
                   key={index}
                   item={item}
                   index={index}
+                  anchor={slugify(enContent.principles.modules.moduleDoing.list[index].title)}
                 />
               ))}
             </div>
@@ -126,14 +145,28 @@ export function Principles() {
 interface PrincipleCardProps {
   item: PrincipleItemData;
   index: number;
+  // Language-independent anchor slug, derived from the English title.
+  anchor: string;
   // Heading level follows the surrounding outline: h4 under a module h3
   // (Principles), h3 directly under the section h2 (Relationships).
   headingLevel?: 'h3' | 'h4';
 }
 
-export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: PrincipleCardProps) {
-  const [isHovered, setIsHovered] = useState(false);
+export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4' }: PrincipleCardProps) {
+  // Deep links open the card's description; reading the hash in the
+  // initializer keeps the first paint layout-stable for the fragment scroll.
+  const [isHovered, setIsHovered] = useState(
+    () => window.location.hash === `#${anchor}`
+  );
   const descId = useId();
+
+  useEffect(() => {
+    const openFromHash = () => {
+      if (window.location.hash === `#${anchor}`) setIsHovered(true);
+    };
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, [anchor]);
 
   return (
     <m.article
@@ -146,40 +179,41 @@ export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: Pri
       onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
     >
-      <div className="relative z-10">
-        {/* Disclosure control inside the heading (APG pattern): aria-expanded
-            is invalid on article, and a heading inside a button role would
-            lose its semantics. */}
-        <Heading className="text-2xl font-bold mb-phi-sm group-hover:text-primary transition-colors duration-300">
-          <span
-            role="button"
-            tabIndex={0}
+      {/* Anchor link doubling as the disclosure control (aria-expanded is
+          valid on links): Enter navigates to the anchor and the hash effect
+          opens the card, Space toggles, clicking the rest of the card
+          toggles. aria-expanded on the article itself would be invalid.
+          No wrapper div: a bare article is exempt from Readability's
+          conditional cleaning, which can delete short link-and-text divs. */}
+      <Heading id={anchor} className="text-2xl font-bold mb-phi-sm group-hover:text-primary transition-colors duration-300">
+          <a
+            href={`#${anchor}`}
             aria-expanded={isHovered}
             aria-controls={descId}
+            onClick={(e) => e.stopPropagation()}
             onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+              if (e.key === ' ') {
                 e.preventDefault();
                 setIsHovered(!isHovered);
               }
             }}
-            className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+            className={`${anchorLinkClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-primary`}
           >
             {item.title}
-          </span>
+          </a>
         </Heading>
-        {/* Class-driven collapse; inline height/opacity styles would hide the
-            description from reader-mode extractors. */}
-        <div
-          id={descId}
-          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
-            isHovered ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
-          }`}
-        >
-          <div className="overflow-clip min-h-0">
-            <p className="text-foreground/80 font-light pt-phi-2xs">
-              {item.desc}
-            </p>
-          </div>
+      {/* Class-driven collapse; inline height/opacity styles would hide the
+          description from reader-mode extractors. */}
+      <div
+        id={descId}
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+          isHovered ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+        }`}
+      >
+        <div className="overflow-clip min-h-0">
+          <p className="text-foreground/80 font-light pt-phi-2xs">
+            {item.desc}
+          </p>
         </div>
       </div>
     </m.article>

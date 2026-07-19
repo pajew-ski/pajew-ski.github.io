@@ -1,6 +1,7 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { reveal, viewportOnce } from '../motion';
 
 interface ChapterEntry {
@@ -15,12 +16,31 @@ interface Chapter {
   content: ChapterEntry[];
 }
 
+const chapterAnchors = enContent.opusPurum.chapters.map(
+  (chapter) => `opus-purum-${slugify(chapter.title)}`
+);
+
 export function OpusPurum() {
   const { t } = useTranslation();
   const chapters = t('opusPurum.chapters', { returnObjects: true }) as Chapter[];
-  const [openId, setOpenId] = useState<string>(chapters[0]?.id ?? '');
+  // Deep links open the targeted chapter (#opus-purum-axioms etc.); reading
+  // the hash in the initializer keeps the first paint layout-stable for the
+  // fragment scroll.
+  const [openId, setOpenId] = useState<string>(() => {
+    const index = chapterAnchors.indexOf(window.location.hash.slice(1));
+    return chapters[index >= 0 ? index : 0]?.id ?? '';
+  });
 
   const toggle = (id: string) => setOpenId((prev) => (prev === id ? '' : id));
+
+  useEffect(() => {
+    const openFromHash = () => {
+      const index = chapterAnchors.indexOf(window.location.hash.slice(1));
+      if (index >= 0) setOpenId(chapters[index]?.id ?? '');
+    };
+    window.addEventListener('hashchange', openFromHash);
+    return () => window.removeEventListener('hashchange', openFromHash);
+  }, [chapters]);
 
   return (
     <section
@@ -46,10 +66,7 @@ export function OpusPurum() {
           transition={reveal(0.1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
-          <a
-            href="#opus-purum"
-            className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
-          >
+          <a href="#opus-purum" className={anchorLinkClass}>
             {t('opusPurum.h2')}
           </a>
         </m.h2>
@@ -76,44 +93,44 @@ export function OpusPurum() {
               transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
-              {/* APG disclosure pattern: the control sits inside the heading,
-                  so the chapter keeps its h3 semantics for screen readers and
-                  reader-mode extractors alike. The toggle glyph is a CSS
+              {/* Disclosure heading: the anchor link inside the h3 carries the
+                  ARIA state (aria-expanded is valid on links). Clicking the
+                  title navigates to the anchor and opens the chapter via the
+                  hash effect; clicking the rest of the row toggles; Space on
+                  the focused link toggles. The toggle glyph is a CSS
                   pseudo-element, never a DOM text node. */}
-              <h3>
-                <span
-                  role="button"
-                  tabIndex={0}
-                  onClick={() => toggle(chapter.id)}
+              <h3
+                id={chapterAnchors[idx]}
+                onClick={() => toggle(chapter.id)}
+                className="flex items-center gap-phi-lg py-phi-md text-left group cursor-pointer"
+              >
+                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
+                  {chapter.label}
+                </span>
+                <span className="sr-only">{' · '}</span>
+                <a
+                  href={`#${chapterAnchors[idx]}`}
+                  aria-expanded={isOpen}
+                  aria-controls={`opus-purum-panel-${chapter.id}`}
+                  onClick={(e) => e.stopPropagation()}
                   onKeyDown={(e) => {
-                    if (e.key === 'Enter' || e.key === ' ') {
+                    if (e.key === ' ') {
                       e.preventDefault();
                       toggle(chapter.id);
                     }
                   }}
-                  aria-expanded={isOpen}
-                  aria-controls={`opus-purum-panel-${chapter.id}`}
-                  id={`opus-purum-btn-${chapter.id}`}
-                  className="w-full flex items-center gap-phi-lg py-phi-md text-left group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                  className={`flex-1 text-base md:text-lg font-light tracking-tight ${anchorLinkClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                    isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
+                  }`}
                 >
-                  <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
-                    {chapter.label}
-                  </span>
-                  <span className="sr-only">{' · '}</span>
-                  <span
-                    className={`flex-1 text-base md:text-lg font-light tracking-tight transition-colors duration-200 ${
-                      isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
-                    }`}
-                  >
-                    {chapter.title}
-                  </span>
-                  <span
-                    className={`shrink-0 text-muted-foreground transition-transform duration-300 after:content-['+'] ${
-                      isOpen ? 'rotate-45' : ''
-                    }`}
-                    aria-hidden="true"
-                  />
-                </span>
+                  {chapter.title}
+                </a>
+                <span
+                  className={`shrink-0 text-muted-foreground transition-transform duration-300 after:content-['+'] ${
+                    isOpen ? 'rotate-45' : ''
+                  }`}
+                  aria-hidden="true"
+                />
               </h3>
 
               {/* Collapse via CSS grid rows, driven only by class names: inline
@@ -122,7 +139,7 @@ export function OpusPurum() {
               <div
                 id={`opus-purum-panel-${chapter.id}`}
                 role="region"
-                aria-labelledby={`opus-purum-btn-${chapter.id}`}
+                aria-labelledby={chapterAnchors[idx]}
                 className={`grid transition-[grid-template-rows,opacity] duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
                   isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
                 }`}

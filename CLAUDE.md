@@ -67,7 +67,9 @@ Guiding premise for all work on this site: natural beauty and semantic purity fi
 ## Site Structure (Sections)
 
 Ordered inside-out: worldview, principles, own infrastructure, relationships, open spaces.
-Each section element carries an `id` matching the anchors used in `llms.txt`. Every content section's `h2` is a self-link to that `id` (the heading text is wrapped in an `<a href="#id">`), so each section is directly shareable. The affordance stays deliberately quiet: no glyph, only a pointer cursor and a faint underline that fades in on hover; never add a visible anchor icon.
+Each section element carries an `id` matching the anchors used in `llms.txt`. Every named heading (section `h2`s, module/chapter/stack/format headings, principle cards, Building Blocks) is a self-link to its own `id`, so everything is directly shareable, e.g. `/#iter-apertum` or `/#opus-purum-axioms`. The affordance stays deliberately quiet: no glyph, only a pointer cursor and a faint underline that fades in on hover (shared class `anchorLinkClass` in `src/anchors.ts`); never add a visible anchor icon.
+
+Anchor system (`src/anchors.ts`): slugs derive from the English titles via `slugify`, so ids are identical in both languages; renaming an English title changes its anchor. Chapter anchors carry the `opus-purum-` prefix; everything else is the bare slug. Deep links to collapsed targets (accordion chapters, principle cards) open the target: the hash is read in the state initializer (layout-stable first paint) and on `hashchange`; on disclosure headings the anchor link itself carries `aria-expanded`/`aria-controls` (valid on links), Space toggles, Enter navigates and opens, clicking the surrounding row or card toggles. `[id]` elements get `scroll-margin-top` (see `index.css`). The prerender snapshot mirrors the ids. `npm run check:site` asserts existence, uniqueness, self-links, and the open-on-deep-link behavior.
 
 1. **Intro** (`#intro`): Name, tagline, Krystal Flower animation
 2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters

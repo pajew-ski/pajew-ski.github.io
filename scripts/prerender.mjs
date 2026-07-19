@@ -13,32 +13,50 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const t = JSON.parse(readFileSync(resolve(root, 'src/locales/de.json'), 'utf8'));
+const en = JSON.parse(readFileSync(resolve(root, 'src/locales/en.json'), 'utf8'));
+
+// Same slug derivation as src/anchors.ts: anchors come from English titles so
+// they are language-independent.
+const slugify = (text) =>
+  String(text)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
 
 const esc = (s) =>
   String(s).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
 const p = (text) => `<p>${esc(text)}</p>`;
 
-function moduleHtml(mod) {
+function moduleHtml(mod, enMod) {
   const items = mod.list
-    .map((item) => `<li><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`)
+    .map(
+      (item, i) =>
+        `<li id="${slugify(enMod.list[i].title)}"><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`
+    )
     .join('');
-  return `<h3>${esc(mod.title)}</h3><ul>${items}</ul>`;
+  return `<h3 id="${slugify(enMod.title)}">${esc(mod.title)}</h3><ul>${items}</ul>`;
 }
 
 const opusChapters = t.opusPurum.chapters
-  .map((chapter) => {
+  .map((chapter, i) => {
     const entries = chapter.content
       .map((entry) =>
         entry.heading ? `<h4>${esc(entry.heading)}</h4>${p(entry.body)}` : p(entry.body)
       )
       .join('');
-    return `<h3>${esc(chapter.label)} · ${esc(chapter.title)}</h3>${entries}`;
+    const anchor = `opus-purum-${slugify(en.opusPurum.chapters[i].title)}`;
+    return `<h3 id="${anchor}">${esc(chapter.label)} · ${esc(chapter.title)}</h3>${entries}`;
   })
   .join('');
 
 const relationshipPrinciples = t.relationships.principles
-  .map((item) => `<li><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`)
+  .map(
+    (item, i) =>
+      `<li id="${slugify(en.relationships.principles[i].title)}"><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`
+  )
   .join('');
 
 const relationshipDimensions = t.relationships.dimensions
@@ -46,11 +64,12 @@ const relationshipDimensions = t.relationships.dimensions
   .join('');
 
 const luxFormats = t.luxAperta.formats
-  .map((format) => {
+  .map((format, i) => {
     const facts = format.facts
       ? `<ul>${format.facts.map((f) => `<li>${esc(f.label)}: ${esc(f.value)}</li>`).join('')}</ul>`
       : '';
-    return `<h3>${esc(format.title)} · ${esc(format.tagline)}</h3>${format.paragraphs.map(p).join('')}${facts}`;
+    const anchor = slugify(en.luxAperta.formats[i].title);
+    return `<h3 id="${anchor}">${esc(format.title)} · ${esc(format.tagline)}</h3>${format.paragraphs.map(p).join('')}${facts}`;
   })
   .join('');
 
@@ -74,22 +93,25 @@ ${opusChapters}
 <section id="principles">
 <h2>${esc(t.principles.h2)}</h2>
 ${p(t.principles.copy)}
-${moduleHtml(t.principles.modules.moduleCognition)}
-${moduleHtml(t.principles.modules.moduleBeing)}
-${moduleHtml(t.principles.modules.moduleDoing)}
+${moduleHtml(t.principles.modules.moduleCognition, en.principles.modules.moduleCognition)}
+${moduleHtml(t.principles.modules.moduleBeing, en.principles.modules.moduleBeing)}
+${moduleHtml(t.principles.modules.moduleDoing, en.principles.modules.moduleDoing)}
 </section>
 <section id="exocortex">
 <h2>${esc(t.exocortex.h2)}</h2>
 ${p(t.exocortex.copy)}
-<ul>${Object.values(t.exocortex.stack)
-  .map((item) => `<li><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`)
+<ul>${Object.entries(t.exocortex.stack)
+  .map(
+    ([key, item]) =>
+      `<li id="${slugify(en.exocortex.stack[key].title)}"><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`
+  )
   .join('')}</ul>
 </section>
 <section id="relationships">
 <h2>${esc(t.relationships.h2)}</h2>
 ${p(t.relationships.copy)}
 <ul>${relationshipPrinciples}</ul>
-<h3>${esc(t.relationships.dimensionsTitle)}</h3>
+<h3 id="${slugify(en.relationships.dimensionsTitle)}">${esc(t.relationships.dimensionsTitle)}</h3>
 ${p(t.relationships.dimensionsIntro)}
 <ul>${relationshipDimensions}</ul>
 </section>

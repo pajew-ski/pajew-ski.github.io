@@ -115,10 +115,10 @@ for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item
 copy.push(en.relationships.copy, en.relationships.dimensionsIntro);
 for (const item of en.relationships.principles) copy.push(item.title, item.desc);
 for (const group of en.relationships.dimensions) copy.push(...group.items);
-copy.push(en.luxAperta.lead, ...en.luxAperta.paragraphs);
+copy.push(en.opusPurum.subtitle, en.luxAperta.subtitle, en.luxAperta.lead, ...en.luxAperta.paragraphs);
 for (const format of en.luxAperta.formats) {
-  copy.push(...format.paragraphs);
-  for (const fact of format.facts ?? []) copy.push(fact.value);
+  copy.push(format.tagline, ...format.paragraphs);
+  for (const fact of format.facts ?? []) copy.push(fact.label, fact.value);
 }
 for (const text of copy) {
   const needle = normalize(text);
@@ -132,7 +132,92 @@ check(
 );
 
 // ---------------------------------------------------------------------------
-// 2. Accessibility (axe-core), light and dark, mobile and desktop
+// 2. Anchors: every named heading is deep-linkable
+// ---------------------------------------------------------------------------
+
+// Mirror of slugify in src/anchors.ts.
+const slugify = (text) =>
+  String(text)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const expectedAnchors = [
+  ...Object.values(en.principles.modules).map((mod) => slugify(mod.title)),
+  ...Object.values(en.principles.modules).flatMap((mod) => mod.list.map((i) => slugify(i.title))),
+  ...en.opusPurum.chapters.map((c) => `opus-purum-${slugify(c.title)}`),
+  ...Object.values(en.exocortex.stack).map((i) => slugify(i.title)),
+  slugify(en.relationships.dimensionsTitle),
+  ...en.relationships.principles.map((i) => slugify(i.title)),
+  ...en.luxAperta.formats.map((f) => slugify(f.title)),
+];
+check(
+  new Set(expectedAnchors).size === expectedAnchors.length,
+  'anchors: slug collision between two English titles'
+);
+
+const anchorContext = await browser.newContext({ locale: 'en-US' });
+const anchorPage = await anchorContext.newPage();
+await anchorPage.goto(url);
+await anchorPage.waitForTimeout(800);
+
+const anchorState = await anchorPage.evaluate((anchors) => {
+  const allIds = Array.from(document.querySelectorAll('[id]')).map((el) => el.id);
+  const duplicates = allIds.filter((id, i) => allIds.indexOf(id) !== i);
+  const results = {};
+  for (const anchor of anchors) {
+    const el = document.getElementById(anchor);
+    results[anchor] = {
+      exists: el !== null,
+      isHeading: el !== null && /^H[1-6]$/.test(el.tagName),
+      hasSelfLink: el !== null && el.querySelector(`a[href="#${anchor}"]`) !== null,
+    };
+  }
+  return { duplicates, results };
+}, expectedAnchors);
+
+check(anchorState.duplicates.length === 0, `anchors: duplicate DOM ids: ${anchorState.duplicates}`);
+for (const [anchor, state] of Object.entries(anchorState.results)) {
+  check(state.exists, `anchors: #${anchor} missing from DOM`);
+  check(!state.exists || state.isHeading, `anchors: #${anchor} is not on a heading`);
+  check(!state.exists || state.hasSelfLink, `anchors: #${anchor} has no self-link`);
+}
+await anchorContext.close();
+
+// Deep links must open collapsed targets: an accordion chapter and a card.
+const deepLinks = [
+  `opus-purum-${slugify(en.opusPurum.chapters[1].title)}`,
+  slugify(en.principles.modules.moduleBeing.list[0].title),
+  slugify(en.luxAperta.formats[0].title),
+];
+for (const anchor of deepLinks) {
+  const context = await browser.newContext({ locale: 'en-US' });
+  const page = await context.newPage();
+  await page.goto(`${url}#${anchor}`);
+  await page.waitForTimeout(1200);
+  const state = await page.evaluate((id) => {
+    const el = document.getElementById(id);
+    if (!el) return null;
+    const rect = el.getBoundingClientRect();
+    const link = el.querySelector('a[aria-expanded]');
+    return {
+      inViewport: rect.top >= -rect.height && rect.top < window.innerHeight,
+      expanded: link ? link.getAttribute('aria-expanded') : 'not-a-disclosure',
+    };
+  }, anchor);
+  check(state !== null, `deep link: #${anchor} target missing`);
+  check(state?.inViewport === true, `deep link: #${anchor} not scrolled into view`);
+  check(
+    state?.expanded === 'true' || state?.expanded === 'not-a-disclosure',
+    `deep link: #${anchor} did not open its disclosure (aria-expanded=${state?.expanded})`
+  );
+  await context.close();
+}
+
+// ---------------------------------------------------------------------------
+// 3. Accessibility (axe-core), light and dark, mobile and desktop
 // ---------------------------------------------------------------------------
 
 const viewports = [

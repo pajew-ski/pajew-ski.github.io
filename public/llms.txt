@@ -14,6 +14,8 @@ This site is Michael's public self-description, written to be fully transparent.
 - [Relationships](#relationships): How Michael shapes relationships, following relationship anarchy: no ranking, no ready-made scripts, everything negotiated by the people involved.
 - [Lux Aperta Bavaria](#lux-aperta): An open community for magic as direct experience, with free formats Michael hosts: Iter Apertum (a walk without an agenda) and Convivium Apertum (its stationary variant).
 
+Every named heading on the page is directly linkable through its anchor, derived from its English title: for example /#cognition, /#iter-apertum, or /#opus-purum-axioms.
+
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)
 
