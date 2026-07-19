@@ -1,5 +1,6 @@
 # MICHAEL
-## Data Scientist, Dancer, Creative
+
+*Data Scientist, Dancer, Creative*
 
 Deutsche Fassung: [llms-full.de.txt](llms-full.de.txt)
 
