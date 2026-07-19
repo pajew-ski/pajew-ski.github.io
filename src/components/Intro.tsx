@@ -23,14 +23,14 @@ export function Intro() {
           >
             {t('intro.h1')}
           </m.h1>
-          <m.h2
+          <m.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-[0.694rem] md:text-xs font-light tracking-[0.3em] uppercase opacity-60"
           >
             {t('intro.h2')}
-          </m.h2>
+          </m.p>
         </div>
 
         {/* Krystal Flower: visual centrepiece, reveals on load */}
