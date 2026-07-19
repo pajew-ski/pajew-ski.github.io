@@ -55,8 +55,8 @@ Die Grundsätze, nach denen Michael denkt und handelt. Zwei Module: Sein und Tun
 | Axiom | Bedeutung |
 |---|---|
 | Signal-Diskriminierung | Impuls von Intuition unterscheiden: Rauschen vom Signal. |
-| Hierarchische Kontrolle | Das responsive Zentrum führt, der reaktive Impuls folgt. |
-| Gesetzes-Konformität | Wirken über Intention, Einwilligung und Autorität, im Einklang mit der Ordnungsrichtung der Wirklichkeit. |
+| Innere Führung | Das responsive Zentrum führt, der reaktive Impuls folgt. |
+| Logos-Konformität | Wirken über Intention, Einwilligung und Autorität, im Einklang mit der Ordnungsrichtung der Wirklichkeit. |
 | Vektor-Ausrichtung | Motivation klären: dem Ganzen dienen, statt sich im isolierten Selbst zu verbrauchen. |
 | Homöostase | Gleichgewicht und Harmlosigkeit aktiv wiederherstellen. |
 | Interne Referenzierung | Aus der eigenen Mitte steuern: Souveränität statt äußerer Lenkung. |
@@ -65,7 +65,7 @@ Die Grundsätze, nach denen Michael denkt und handelt. Zwei Module: Sein und Tun
 | Mustererkennung | Täuschungen und die eigenen Wahrnehmungsfilter erkennen und durchdringen. |
 | Nullpunkt-Beobachtung | Beobachten ohne emotionale Ladung: der barmherzige Zeuge. |
 | Integrale Synthese | Die volle Wirklichkeit annehmen, ohne ihr auszuweichen. |
-| Signal-Kongruenz | Das Beispiel sein: durch die eigene Kohärenz wirken statt durch Rhetorik. |
+| Verkörperte Kohärenz | Das Beispiel sein: durch die eigene Kohärenz wirken statt durch Rhetorik. |
 
 ### 4. Exocortex
 Michaels externes Gedächtnis: ein verlängertes, explizit gemachtes Selbstmodell. Eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt. Damit ist der Exocortex die technische Instanziierung dessen, was Opus Purum als Selbst und als Semiotische Reorganisation beschreibt.
