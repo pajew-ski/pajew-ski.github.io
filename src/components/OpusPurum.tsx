@@ -1,4 +1,4 @@
-import { m, AnimatePresence } from 'framer-motion';
+import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { EASE, reveal, viewportOnce } from '../motion';
@@ -103,35 +103,30 @@ export function OpusPurum() {
                 </span>
               </button>
 
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <m.div
-                    id={`opus-purum-panel-${chapter.id}`}
-                    role="region"
-                    aria-labelledby={`opus-purum-btn-${chapter.id}`}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.35, ease: EASE }}
-                    className="overflow-hidden"
-                  >
-                    <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
-                      {chapter.content.map((entry, i) => (
-                        <div key={i} className="space-y-phi-xs">
-                          {entry.heading && (
-                            <h3 className="text-lg md:text-xl font-semibold tracking-tight">
-                              {entry.heading}
-                            </h3>
-                          )}
-                          <p className="text-foreground/75 font-light">
-                            {entry.body}
-                          </p>
-                        </div>
-                      ))}
+              <m.div
+                id={`opus-purum-panel-${chapter.id}`}
+                role="region"
+                aria-labelledby={`opus-purum-btn-${chapter.id}`}
+                initial={false}
+                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
+                transition={{ duration: 0.35, ease: EASE }}
+                className="overflow-hidden"
+              >
+                <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
+                  {chapter.content.map((entry, i) => (
+                    <div key={i} className="space-y-phi-xs">
+                      {entry.heading && (
+                        <h3 className="text-lg md:text-xl font-semibold tracking-tight">
+                          {entry.heading}
+                        </h3>
+                      )}
+                      <p className="text-foreground/75 font-light">
+                        {entry.body}
+                      </p>
                     </div>
-                  </m.div>
-                )}
-              </AnimatePresence>
+                  ))}
+                </div>
+              </m.div>
             </m.div>
           );
         })}
