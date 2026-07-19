@@ -106,7 +106,7 @@ Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder ke
 
 **Formate:**
 - **Iter Apertum ("Der offene Weg")**: Spaziergang ohne Programm, sonntags 11:00 Uhr, etwa alle zwei Wochen, im Villapark Regensburg (Eingang beim Ostentor), etwa 60 bis 90 Minuten, keine Vorkenntnisse, keine Übereinstimmung im Weltbild nötig, wetterfeste Schuhe mitbringen. Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Kreis am Anfang und am Ende, Ausklang im Café. Das Nebeneinandergehen verhindert Frontaldynamik: Niemand kann dozieren, während er geht.
-- **Convivium Apertum**: das stationäre Format. Zu zweit spricht eine Person drei Minuten, die andere hört nur zu; dann Wechsel. Danach zehn Minuten Stille, bevor sich das Gespräch für alle öffnet.
+- **Convivium Apertum ("Die offene Runde")**: Sporadisch, wechselnder Ort, 60 bis 90 Minuten. Zu dritt: eine Person spricht drei Minuten, die beiden anderen bezeugen ohne Antwort und Reaktion; dann Wechsel, dann noch einmal. Danach neun Minuten gemeinsam gehaltene Stille. Dann öffnet sich die Runde zum Mahl: jeder bringt eigenes Essen und eigene Sitzmöglichkeit mit, kein Ausrichter, keine Gäste.
 
 ## Schlüsselbegriffe
 
@@ -124,7 +124,7 @@ Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder ke
 - **Beziehungsanarchie**: Beziehungsgestaltung ohne Rangfolge und ohne vorgegebene Rollenskripte; jede Verbindung wird von den Beteiligten selbst ausgehandelt.
 - **Lux Aperta Bavaria**: "Das offene Licht". Offene Community für Magie als direkte, körperliche Erfahrung. Bewusste Umkehrung des Geheimbund-Gedankens: kein Guru, kein Dogma, keine Einweihungsstufen, volles Tageslicht.
 - **Iter Apertum**: "Der offene Weg". Das Gehformat von Lux Aperta: Spaziergang ohne Programm, sonntags bei Tageslicht, in wechselnden Dreiergruppen durch den Villapark Regensburg.
-- **Convivium Apertum**: Das stationäre Format von Lux Aperta: Zuhören ohne Antwort in Zweierpaaren (drei Minuten je Seite), dann Stille, dann offenes Gespräch.
+- **Convivium Apertum**: "Die offene Runde". Das stationäre Format von Lux Aperta: Bezeugen ohne Antwort in Dreiergruppen (drei Minuten je Person), dann gemeinsame Stille, dann ein offenes Mahl ohne Ausrichter.
 
 ## Website-Funktionen
 

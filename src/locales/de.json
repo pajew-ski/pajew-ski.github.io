@@ -442,10 +442,17 @@
       {
         "id": "convivium",
         "title": "Convivium Apertum",
-        "tagline": "Das stationäre Format",
+        "tagline": "Die offene Runde",
         "paragraphs": [
-          "Die gleiche Haltung ohne Bewegung. Zu zweit spricht eine Person drei Minuten, die andere hört nur zu; dann Wechsel. Danach zehn Minuten Stille, bevor sich das Gespräch für alle öffnet.",
-          "Das Zuhören ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert."
+          "Die gleiche Haltung ohne Bewegung, zu dritt. Eine Person spricht drei Minuten, die beiden anderen bezeugen: ohne Antwort, ohne Reaktion. Dann Wechsel, dann noch einmal.",
+          "Das Bezeugen ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert. Wer spricht, spricht in einen Raum, der nicht zurückspricht.",
+          "Nach den drei Runden neun Minuten Stille, gemeinsam gehalten. Dann öffnet sich die Runde zum Mahl: mitgebracht wird das eigene Essen, dazu eine eigene Sitzmöglichkeit. Kein Ausrichter, keine Gäste."
+        ],
+        "facts": [
+          { "label": "Rhythmus", "value": "Sporadisch" },
+          { "label": "Ort", "value": "Wechselnd" },
+          { "label": "Dauer", "value": "60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Eigenes Essen, eigene Sitzmöglichkeit" }
         ]
       }
     ]

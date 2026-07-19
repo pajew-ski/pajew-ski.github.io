@@ -442,10 +442,17 @@
       {
         "id": "convivium",
         "title": "Convivium Apertum",
-        "tagline": "The Stationary Format",
+        "tagline": "The Open Circle",
         "paragraphs": [
-          "The same stance without movement. In pairs, one person speaks for three minutes while the other only listens; then they switch. Ten minutes of silence follow before the conversation opens to everyone.",
-          "Listening without replying does here what walking side by side does outdoors: nobody performs, nobody lectures."
+          "The same stance without movement, in threes. One person speaks for three minutes, the other two bear witness: no answer, no reaction. Then a switch, then once more.",
+          "Witnessing without replying does here what walking side by side does outdoors: nobody performs, nobody lectures. Whoever speaks, speaks into a space that doesn't speak back.",
+          "After the three rounds, nine minutes of silence, held together. Then the circle opens into a shared meal: everyone brings their own food, plus their own seating. No host, no guests."
+        ],
+        "facts": [
+          { "label": "Rhythm", "value": "Sporadic" },
+          { "label": "Place", "value": "Rotating" },
+          { "label": "Duration", "value": "60 to 90 minutes" },
+          { "label": "Prerequisites", "value": "Own food, own seating" }
         ]
       }
     ]
