@@ -414,12 +414,12 @@
   "luxAperta": {
     "subtitle": "Das offene Licht",
     "h2": "Lux Aperta Bavaria",
-    "lead": "Bewusstsein ist ansteckend. Nicht als Metapher.",
+    "lead": "Bewusstsein ist ansteckend!",
     "paragraphs": [
-      "Lux Aperta Bavaria ist ein offenes Feld für Menschen, die Magie als direkte Erfahrung kennen oder kennenlernen wollen. Nicht als Theorie, nicht als Überzeugung: als körperliche Realität.",
-      "Was hier entsteht, wächst im Feld zwischen Menschen, die bewusst präsent sind. Das ist Magie in ihrer direktesten Form: spielerische Erkundung der Schöpfung, mit dem eigenen Körper als Instrument.",
+      "Lux Aperta Bavaria ist eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder kennenlernen wollen. Nicht als Theorie oder Überzeugung, sondern als körperliche Realität.",
+      "Was hier entsteht, wächst im Feld zwischen Menschen, die bewusst präsent sind. Wir praktizieren Magie in ihrer direktesten Form: durch spielerische Erkundung der Schöpfung mit dem eigenen Körper als Instrument.",
       "Du brauchst kein bestimmtes Weltbild. Nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen.",
-      "Lux Aperta ist kein geheimer Orden. Es ist sein Gegenteil."
+      "Lux Aperta Bavaria ist das Gegenteil von einem geheimen Orden: es ist ein offener und freier Raum für Austausch und Erkenntnis."
     ],
     "formats": [
       {
@@ -427,24 +427,49 @@
         "title": "Iter Apertum",
         "tagline": "Der offene Weg",
         "paragraphs": [
-          "Sonntag, 11:00 Uhr. Volles Licht. Wir gehen: ohne Programm, ohne Vortrag, ohne vorbereitete Antworten. Kein Guru, keine Einweihungsstufen.",
-          "Ein Spaziergang mit Absicht: Bewegung und Tageslicht als Praxisraum, offene Begegnung als Methode. Was entsteht, wenn Menschen bewusst präsent sind, interessiert uns mehr als das, was wir darüber denken.",
+          "Wir gehen: ohne Programm, ohne Vortrag, ohne vorbereitete Antworten. Kein Guru, keine Einweihungsstufen. Das Iter Apertum ist ein Spaziergang mit Absicht.",
+          "Bewegung und Tageslicht als Praxisraum, offene Begegnung als Methode. Uns interessiert, was entsteht, wenn Menschen bewusst präsent sind. Erwarte echte Gespräche, Fragen, die sonst keiner stellt, und gelegentlich Momente, in denen die Magie spürbar wird.",
           "Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Ein Kreis am Anfang, ein Kreis am Ende, zum Schluss Ausklang im Café."
         ],
         "facts": [
-          { "label": "Rhythmus", "value": "Sonntags 11:00 Uhr, etwa monatlich" },
-          { "label": "Ort", "value": "Ein Park in Regensburg" },
-          { "label": "Dauer", "value": "60 bis 90 Minuten" },
-          { "label": "Voraussetzungen", "value": "Keine" }
+          { "label": "Rhythmus", "value": "Sonntags 11:00 Uhr, etwa alle zwei Wochen" },
+          { "label": "Treffpunkt", "value": "Villapark Regensburg, Eingang beim Ostentor" },
+          { "label": "Dauer", "value": "Etwa 60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Keine Vorkenntnisse, keine Übereinstimmung im Weltbild erforderlich" },
+          { "label": "Mitzubringen", "value": "Wetterfeste Schuhe" }
         ]
       },
       {
         "id": "convivium",
         "title": "Convivium Apertum",
-        "tagline": "Das stationäre Format",
+        "tagline": "Die offene Runde",
         "paragraphs": [
-          "Die gleiche Haltung ohne Bewegung. Zu zweit spricht eine Person drei Minuten, die andere hört nur zu; dann Wechsel. Danach zehn Minuten Stille, bevor sich das Gespräch für alle öffnet.",
-          "Das Zuhören ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert."
+          "Die gleiche Haltung ohne Bewegung, zu dritt. Eine Person spricht drei Minuten, die beiden anderen bezeugen: ohne Antwort, ohne Reaktion. Dann Wechsel, dann noch einmal.",
+          "Das Bezeugen ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert. Wer spricht, spricht in einen Raum, der nicht zurückspricht.",
+          "Nach den drei Runden neun Minuten Stille, gemeinsam gehalten. Dann öffnet sich die Runde zum Mahl: mitgebracht wird das eigene Essen, dazu eine eigene Sitzmöglichkeit. Kein Ausrichter, keine Gäste."
+        ],
+        "facts": [
+          { "label": "Rhythmus", "value": "Sporadisch" },
+          { "label": "Ort", "value": "Wechselnd" },
+          { "label": "Dauer", "value": "60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Eigenes Essen, eigene Sitzmöglichkeit" }
+        ]
+      },
+      {
+        "id": "speculum",
+        "title": "Speculum Apertum",
+        "tagline": "Der offene Spiegel",
+        "paragraphs": [
+          "Die gleiche Haltung ohne Wort. Wir beginnen im Kreis und legen gemeinsam fest, wie lange eine Runde dauert; das ist die Höchstzeit für alle. Dann zu zweit: Blick in Blick, ohne Sprechen, bis die Zeit erreicht ist oder bis eine Person die Augen schließt. Das Schließen der Augen ist jederzeit erlaubt, ohne Erklärung; es bedeutet nur, dass es für diesen Moment genug ist.",
+          "Ab einer gewissen Dauer beginnt sich die Wahrnehmung des Gegenübers zu verschieben. Das ist Teil der Praxis, kein Nebeneffekt.",
+          "Nach jeder Runde eine kurze Zwischenzeit zum Lösen und Strecken, mit Raum für ein paar Worte über das Erlebte, ohne es zu deuten. Keine Analyse, kein Gespräch darüber, was es bedeutet hat; nur, was da war. Dann wird gewechselt.",
+          "Wer aussteigen möchte, tut das jederzeit mit gefalteten Händen als Dank, ohne weitere Erklärung. Zum Schluss gemeinsames Schweigen; wer bereit ist, geht, die anderen bleiben, solange sie möchten."
+        ],
+        "facts": [
+          { "label": "Rhythmus", "value": "Sporadisch" },
+          { "label": "Ort", "value": "Wechselnd, drinnen wie draußen" },
+          { "label": "Dauer", "value": "60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Eigene Sitzunterlage" }
         ]
       }
     ]

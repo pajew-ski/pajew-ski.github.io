@@ -12,7 +12,7 @@ Diese Seite ist Michaels öffentliche Selbstbeschreibung, angelegt auf volle Tra
 - [Prinzipien](#principles): Die Grundsätze, nach denen Michael denkt und handelt, in drei Modulen: Erkennen (formale Axiome kognitiver Systeme), Sein und Tun.
 - [Exocortex](#exocortex): Michaels externes Gedächtnis, eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.
 - [Beziehungen](#relationships): Wie Michael Beziehungen gestaltet, nach der Beziehungsanarchie: ohne Rangfolge, ohne fertige Skripte, alles von den Beteiligten ausgehandelt.
-- [Lux Aperta Bavaria](#lux-aperta): Eine offene Community für Magie als direkte Erfahrung, mit kostenlosen Formaten, die Michael anbietet: Iter Apertum (Spaziergang ohne Programm) und Convivium Apertum (die stationäre Variante).
+- [Lux Aperta Bavaria](#lux-aperta): Eine offene Community für Magie als direkte Erfahrung, mit kostenlosen Formaten, die Michael anbietet: Iter Apertum (Spaziergang ohne Programm), Convivium Apertum (stationäre Runde aus Bezeugen und gemeinsamem Mahl) und Speculum Apertum (wortloser Blickkontakt zu zweit).
 
 Jede benannte Überschrift der Seite ist direkt verlinkbar über ihren Anker, abgeleitet vom englischen Titel: zum Beispiel /#cognition, /#iter-apertum oder /#opus-purum-axioms.
 
