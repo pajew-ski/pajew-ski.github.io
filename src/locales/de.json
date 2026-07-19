@@ -86,12 +86,12 @@
             "desc": "Impuls von Intuition unterscheiden: Rauschen vom Signal."
           },
           {
-            "title": "Innere Führung",
-            "desc": "Responsiv statt reaktiv: aus der eigenen Mitte steuern, nicht aus äußerer Lenkung."
+            "title": "Hierarchische Kontrolle",
+            "desc": "Das responsive Zentrum führt, der reaktive Impuls folgt."
           },
           {
-            "title": "Logos-Konformität",
-            "desc": "Wirken über Intention und Einwilligung, im Einklang mit der Ordnungsrichtung der Wirklichkeit."
+            "title": "Gesetzes-Konformität",
+            "desc": "Wirken über Intention, Einwilligung und Autorität, im Einklang mit der Ordnungsrichtung der Wirklichkeit."
           },
           {
             "title": "Vektor-Ausrichtung",
@@ -100,6 +100,10 @@
           {
             "title": "Homöostase",
             "desc": "Gleichgewicht und Harmlosigkeit aktiv wiederherstellen."
+          },
+          {
+            "title": "Interne Referenzierung",
+            "desc": "Aus der eigenen Mitte steuern: Souveränität statt äußerer Lenkung."
           },
           {
             "title": "Ressourcen-Logik",
@@ -114,11 +118,15 @@
             "desc": "Täuschungen und die eigenen Wahrnehmungsfilter erkennen und durchdringen."
           },
           {
+            "title": "Nullpunkt-Beobachtung",
+            "desc": "Beobachten ohne emotionale Ladung: der barmherzige Zeuge."
+          },
+          {
             "title": "Integrale Synthese",
             "desc": "Die volle Wirklichkeit annehmen, ohne ihr auszuweichen."
           },
           {
-            "title": "Verkörperte Kohärenz",
+            "title": "Signal-Kongruenz",
             "desc": "Das Beispiel sein: durch die eigene Kohärenz wirken statt durch Rhetorik."
           }
         ]

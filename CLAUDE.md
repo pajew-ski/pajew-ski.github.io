@@ -77,7 +77,7 @@ Anchor system (`src/anchors.ts`): slugs derive from the English titles via `slug
 2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters. Chapter III (The Self) also carries the four formal axioms of cognitive systems (Interpretive Asymmetry, Syntactic Integration, Symbolic Organization, Semantic Communication), rendered as plain `heading`+`body` entries (no per-item anchor).
 3. **Principles** (`#principles`, heading "Prinzipien"): two modules
    - Sein/Being: 12 principles (3-column grid)
-   - Tun/Doing: 10 principles (3-column grid). Written in Opus Purum's process-philosophical/cybernetic diction (attractor, Logos, coherence, alignment), not the Ra/Q'uo vocabulary it once used.
+   - Tun/Doing: 12 principles (3-column grid). Descriptions written in Opus Purum's process-philosophical/cybernetic diction (attractor, Logos, order-direction, coherence, alignment), not the Ra/Q'uo vocabulary they once carried (service-to-self/-others, negentropy, natural law). Titles are preserved so anchors stay stable.
 4. **Exocortex** (`#exocortex`): Technical infrastructure (Orchestration, Memory & Inference, Operations)
 5. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards (reuses `PrincipleCard`) + Building Blocks as bold-term + one-line definitions (`dimensions` = `{label, desc}`, matching the card compression and the llms files)
 6. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum, Speculum Apertum)
