@@ -1,6 +1,6 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { reveal, viewportOnce } from '../motion';
 
 export interface PrincipleItemData {
@@ -21,7 +21,7 @@ export function Principles() {
   const moduleDoing = t('principles.modules.moduleDoing', { returnObjects: true }) as PrincipleModuleData;
 
   return (
-    <section id="principles" className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden" aria-labelledby="principles-heading">
+    <section id="principles" className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-clip" aria-labelledby="principles-heading">
       <div className="max-w-7xl mx-auto px-phi-sm md:px-phi-xl">
         {/* Header Section */}
         <div className="mb-phi-5xl space-y-phi-lg">
@@ -133,6 +133,7 @@ interface PrincipleCardProps {
 
 export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: PrincipleCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const descId = useId();
 
   return (
     <m.article
@@ -140,36 +141,46 @@ export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: Pri
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewportOnce}
       transition={reveal(index * 0.05)}
-      className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-[border-color,box-shadow] duration-300 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
+      className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-[border-color,box-shadow] duration-300 relative group cursor-pointer"
       onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
       onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setIsHovered(!isHovered);
-        }
-      }}
-      tabIndex={0}
-      aria-expanded={isHovered}
     >
       <div className="relative z-10">
+        {/* Disclosure control inside the heading (APG pattern): aria-expanded
+            is invalid on article, and a heading inside a button role would
+            lose its semantics. */}
         <Heading className="text-2xl font-bold mb-phi-sm group-hover:text-primary transition-colors duration-300">
-          {item.title}
+          <span
+            role="button"
+            tabIndex={0}
+            aria-expanded={isHovered}
+            aria-controls={descId}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                setIsHovered(!isHovered);
+              }
+            }}
+            className="focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            {item.title}
+          </span>
         </Heading>
-        <m.div
-          initial={{ opacity: 0, height: 0 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            height: isHovered ? 'auto' : 0
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          style={{ overflow: 'hidden' }}
+        {/* Class-driven collapse; inline height/opacity styles would hide the
+            description from reader-mode extractors. */}
+        <div
+          id={descId}
+          className={`grid transition-[grid-template-rows,opacity] duration-300 ease-out ${
+            isHovered ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+          }`}
         >
-          <p className="text-foreground/80 font-light pt-phi-2xs">
-            {item.desc}
-          </p>
-        </m.div>
+          <div className="overflow-clip min-h-0">
+            <p className="text-foreground/80 font-light pt-phi-2xs">
+              {item.desc}
+            </p>
+          </div>
+        </div>
       </div>
     </m.article>
   );

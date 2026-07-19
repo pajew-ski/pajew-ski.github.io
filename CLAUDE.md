@@ -12,6 +12,9 @@ Purpose of the site: a fully transparent self-description for human visitors, mi
 - `npm run build`: TypeScript check + Vite production build + prerender step (must pass before committing)
 - `npm run lint`: ESLint (flat config, strict TS rules)
 - `npm run dev`: Dev server
+- `npm run check:site`: Reader-mode extraction + axe accessibility scans (light/dark, mobile/desktop); needs a fresh build
+- `npm run check:lighthouse`: Lighthouse with thresholds (performance >= 90, accessibility/best-practices/SEO = 100); set `CHROME_PATH` if no system Chrome
+- `npm run check`: build + both checks. CI runs all of this on every push (`.github/workflows/checks.yml`); run `check:site` locally before committing changes to markup or interactions
 
 ## Content Sync Rule (Critical)
 
@@ -78,6 +81,18 @@ Each section element carries an `id` matching the anchors used in `llms.txt`. Ev
 7. **Chat Widget**: N8N-powered assistant
 8. **Footer**: Language switcher (EN/DE), legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
 
+## Reader Mode & Content Extraction (Critical)
+
+The page must extract completely in browser reader modes. There is no standard: Safari, Firefox (Readability.js), and Chromium-family readers (including Vivaldi) each use their own heuristics, so the markup has to satisfy the common denominator. These rules exist because each one was violated and produced a real reader-mode bug:
+
+- All text stays in the DOM at all times. Never conditionally mount content (no `AnimatePresence` around body text) and never collapse it with inline styles (`height: 0`, `opacity: 0`, Framer Motion height animations); some extractors read inline styles as hidden. Collapse via CSS classes only, using the grid-rows pattern: outer `grid grid-rows-[0fr]/[1fr] opacity-0/100 transition-[grid-template-rows,opacity]`, inner `overflow-clip min-h-0`.
+- No class name may contain the substring `hidden` (Readability scores it as boilerplate and deletes the element). Use `overflow-clip`, never `overflow-hidden`.
+- Never put a heading inside a `<button>` (extractors strip buttons wholesale) and never put `aria-expanded` on non-widget elements. Disclosure pattern: the heading contains a `span role="button"` with `tabIndex`, `aria-expanded`, `aria-controls`, and Enter/Space handling; pointer clicks may additionally be handled on the surrounding row or card.
+- Decorative glyphs (the accordion `+`) are CSS pseudo-elements (`after:content-['+']`), never DOM text nodes; Safari extracts DOM text even under `aria-hidden`.
+- Adjacent heading fragments in separate spans need a real separator (`sr-only` span with a text separator); CSS gaps do not exist in extracted text.
+- The whole card is wrapped in `<main><article>` so extractors anchor on the h1 instead of electing an inner heading as the article title.
+- `npm run check:site` asserts all of this (every heading and every body string from the locale files must survive extraction) and must pass before committing.
+
 ## Prerendering & AI Discovery
 
 The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents, scrapers) would receive an empty `<div id="root">`. Therefore:
@@ -125,7 +140,7 @@ The Lighthouse mobile score is kept at the top of the green range. Standing rule
 
 - Functional components with TypeScript interfaces
 - Component file names, i18n keys, and section ids match the section they render (e.g. `Principles.tsx`, key `principles`, id `#principles`)
-- Framer Motion for all animations, via `LazyMotion` (`domAnimation`, strict) in `App.tsx`: always `m.*` components, never `motion.*`. Scroll reveals combine `initial`, `whileInView`, `viewport={viewportOnce}` and `transition={reveal(delay)}` from `src/motion.ts`
+- Framer Motion for scroll reveals and load animations, via `LazyMotion` (`domAnimation`, strict) in `App.tsx`: always `m.*` components, never `motion.*`. Scroll reveals combine `initial`, `whileInView`, `viewport={viewportOnce}` and `transition={reveal(delay)}` from `src/motion.ts`. Expand/collapse is the one exception: it uses the CSS grid-rows pattern (see Reader Mode section), never Framer height animations
 - Tailwind utilities only (no CSS modules, no inline styles)
 - `clsx` + `tailwind-merge` for conditional classnames
 - Accessibility: `aria-label`, `aria-labelledby`, `aria-expanded`, `tabIndex`, semantic HTML, keyboard handlers

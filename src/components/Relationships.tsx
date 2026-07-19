@@ -17,7 +17,7 @@ export function Relationships() {
   return (
     <section
       id="relationships"
-      className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-hidden"
+      className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-clip"
       aria-labelledby="relationships-heading"
     >
       <div className="max-w-7xl mx-auto px-phi-sm md:px-phi-xl">

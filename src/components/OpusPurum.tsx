@@ -1,7 +1,7 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
-import { EASE, reveal, viewportOnce } from '../motion';
+import { reveal, viewportOnce } from '../motion';
 
 interface ChapterEntry {
   heading: string;
@@ -76,22 +76,26 @@ export function OpusPurum() {
               transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
-              <div
-                role="button"
-                tabIndex={0}
-                onClick={() => toggle(chapter.id)}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    toggle(chapter.id);
-                  }
-                }}
-                aria-expanded={isOpen}
-                aria-controls={`opus-purum-panel-${chapter.id}`}
-                id={`opus-purum-btn-${chapter.id}`}
-                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none cursor-pointer"
-              >
-                <h3 className="contents">
+              {/* APG disclosure pattern: the control sits inside the heading,
+                  so the chapter keeps its h3 semantics for screen readers and
+                  reader-mode extractors alike. The toggle glyph is a CSS
+                  pseudo-element, never a DOM text node. */}
+              <h3>
+                <span
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => toggle(chapter.id)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      toggle(chapter.id);
+                    }
+                  }}
+                  aria-expanded={isOpen}
+                  aria-controls={`opus-purum-panel-${chapter.id}`}
+                  id={`opus-purum-btn-${chapter.id}`}
+                  className="w-full flex items-center gap-phi-lg py-phi-md text-left group cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+                >
                   <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
                     {chapter.label}
                   </span>
@@ -103,41 +107,43 @@ export function OpusPurum() {
                   >
                     {chapter.title}
                   </span>
-                </h3>
-                <span
-                  className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
-                    isOpen ? 'rotate-45' : ''
-                  }`}
-                  aria-hidden="true"
-                >
-                  +
+                  <span
+                    className={`shrink-0 text-muted-foreground transition-transform duration-300 after:content-['+'] ${
+                      isOpen ? 'rotate-45' : ''
+                    }`}
+                    aria-hidden="true"
+                  />
                 </span>
-              </div>
+              </h3>
 
-              <m.div
+              {/* Collapse via CSS grid rows, driven only by class names: inline
+                  height/opacity styles read as "hidden" to some reader-mode
+                  extractors and would drop the chapter text. */}
+              <div
                 id={`opus-purum-panel-${chapter.id}`}
                 role="region"
                 aria-labelledby={`opus-purum-btn-${chapter.id}`}
-                initial={false}
-                animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
-                transition={{ duration: 0.35, ease: EASE }}
-                style={{ overflow: 'hidden' }}
+                className={`grid transition-[grid-template-rows,opacity] duration-[350ms] ease-[cubic-bezier(0.4,0,0.2,1)] ${
+                  isOpen ? 'grid-rows-[1fr] opacity-100' : 'grid-rows-[0fr] opacity-0'
+                }`}
               >
-                <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
-                  {chapter.content.map((entry, i) => (
-                    <div key={i} className="space-y-phi-xs">
-                      {entry.heading && (
-                        <h4 className="text-lg md:text-xl font-semibold tracking-tight">
-                          {entry.heading}
-                        </h4>
-                      )}
-                      <p className="text-foreground/75 font-light">
-                        {entry.body}
-                      </p>
-                    </div>
-                  ))}
+                <div className="overflow-clip min-h-0">
+                  <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
+                    {chapter.content.map((entry, i) => (
+                      <div key={i} className="space-y-phi-xs">
+                        {entry.heading && (
+                          <h4 className="text-lg md:text-xl font-semibold tracking-tight">
+                            {entry.heading}
+                          </h4>
+                        )}
+                        <p className="text-foreground/75 font-light">
+                          {entry.body}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </m.div>
+              </div>
             </m.div>
           );
         })}

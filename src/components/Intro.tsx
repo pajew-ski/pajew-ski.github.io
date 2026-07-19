@@ -6,7 +6,7 @@ export function Intro() {
   const { t } = useTranslation();
 
   return (
-    <header id="intro" className="relative h-screen w-full flex flex-col items-center overflow-hidden px-6" aria-label="Introduction">
+    <header id="intro" className="relative h-screen w-full flex flex-col items-center overflow-clip px-6" aria-label="Introduction">
       {/* Golden-section composition: free space above : below = 1 : φ places the
           group at the optical centre; flower diameter is 100vmin/φ, the gap to
           the text is one φ-ladder step further down (61.8/φ⁴ ≈ 9vmin). */}
