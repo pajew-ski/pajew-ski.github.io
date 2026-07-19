@@ -165,7 +165,6 @@ export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: Pri
           }}
           transition={{ duration: 0.3, ease: "easeOut" }}
           className="overflow-hidden"
-          aria-hidden={!isHovered}
         >
           <p className="text-foreground/80 font-light pt-phi-2xs">
             {item.desc}
