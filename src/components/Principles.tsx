@@ -141,8 +141,8 @@ export function PrincipleCard({ item, index, headingLevel: Heading = 'h4' }: Pri
       viewport={viewportOnce}
       transition={reveal(index * 0.05)}
       className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-[border-color,box-shadow] duration-300 relative overflow-hidden group cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
+      onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
       onKeyDown={(e) => {
         if (e.key === 'Enter' || e.key === ' ') {
