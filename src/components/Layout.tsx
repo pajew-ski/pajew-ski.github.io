@@ -34,8 +34,13 @@ export function Layout({ children }: LayoutProps) {
           <Youtube className="w-5 h-5" />
         </a>
       </nav>
+      {/* The article wrapper marks the whole card as the extractable unit for
+          reader modes, so their candidate search starts at the h1 instead of
+          picking an accordion heading as the article title. */}
       <main className="w-full relative">
-        {children}
+        <article>
+          {children}
+        </article>
       </main>
       {/* pb clears the floating chat toggle so the last line never sits under it */}
       <footer className="w-full pt-phi-lg pb-phi-5xl px-phi-2xl text-center text-xs text-muted-foreground space-y-phi-2xs">
