@@ -6,7 +6,7 @@ import { reveal, viewportOnce } from '../motion';
 
 interface DimensionGroup {
   label: string;
-  items: string[];
+  desc: string;
 }
 
 export function Relationships() {
@@ -84,32 +84,22 @@ export function Relationships() {
             {t('relationships.dimensionsIntro')}
           </m.p>
 
-          <div className="space-y-phi-lg">
+          <ul className="space-y-phi-md max-w-3xl">
             {dimensions.map((group, index) => (
-              <m.div
+              <m.li
                 key={group.label}
                 initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={viewportOnce}
                 transition={reveal(index * 0.05)}
-                className="flex flex-col md:flex-row md:items-baseline gap-phi-xs md:gap-phi-xl"
+                className="text-foreground/80 font-light"
               >
-                <span className="w-40 shrink-0 text-xs uppercase tracking-[0.3em] text-muted-foreground font-light">
-                  {group.label}
-                </span>
-                <ul className="flex flex-wrap gap-phi-xs">
-                  {group.items.map((item) => (
-                    <li
-                      key={item}
-                      className="border border-foreground/15 rounded-full px-phi-sm py-phi-3xs text-sm font-light text-foreground/80"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </m.div>
+                <strong className="font-bold text-foreground">{group.label}</strong>
+                {': '}
+                {group.desc}
+              </m.li>
             ))}
-          </div>
+          </ul>
         </div>
       </div>
     </section>

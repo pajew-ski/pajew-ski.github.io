@@ -114,7 +114,7 @@ copy.push(en.exocortex.copy);
 for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item.desc);
 copy.push(en.relationships.copy, en.relationships.dimensionsIntro);
 for (const item of en.relationships.principles) copy.push(item.title, item.desc);
-for (const group of en.relationships.dimensions) copy.push(...group.items);
+for (const group of en.relationships.dimensions) copy.push(group.desc);
 copy.push(en.opusPurum.subtitle, en.luxAperta.subtitle, en.luxAperta.lead, ...en.luxAperta.paragraphs);
 for (const format of en.luxAperta.formats) {
   copy.push(format.tagline, ...format.paragraphs);

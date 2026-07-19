@@ -17,7 +17,6 @@ interface PrincipleModuleData {
 export function Principles() {
   const { t } = useTranslation();
 
-  const moduleCognition = t('principles.modules.moduleCognition', { returnObjects: true }) as PrincipleModuleData;
   const moduleBeing = t('principles.modules.moduleBeing', { returnObjects: true }) as PrincipleModuleData;
   const moduleDoing = t('principles.modules.moduleDoing', { returnObjects: true }) as PrincipleModuleData;
 
@@ -50,35 +49,6 @@ export function Principles() {
         </div>
 
         <div className="space-y-phi-6xl">
-          {/* Module: Erkennen */}
-          <div className="space-y-phi-3xl">
-            <m.h3
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={viewportOnce}
-              transition={reveal()}
-              id={slugify(enContent.principles.modules.moduleCognition.title)}
-              className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
-            >
-              <a
-                href={`#${slugify(enContent.principles.modules.moduleCognition.title)}`}
-                className={anchorLinkClass}
-              >
-                {moduleCognition.title}
-              </a>
-            </m.h3>
-            <div className="grid grid-cols-1 gap-phi-xl max-w-4xl">
-              {moduleCognition.list.map((item, index) => (
-                <PrincipleCard
-                  key={index}
-                  item={item}
-                  index={index}
-                  anchor={slugify(enContent.principles.modules.moduleCognition.list[index].title)}
-                />
-              ))}
-            </div>
-          </div>
-
           {/* Module: Sein */}
           <div className="space-y-phi-3xl">
             <m.h3

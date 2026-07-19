@@ -60,7 +60,7 @@ const relationshipPrinciples = t.relationships.principles
   .join('');
 
 const relationshipDimensions = t.relationships.dimensions
-  .map((group) => `<li><strong>${esc(group.label)}</strong>: ${group.items.map(esc).join(', ')}</li>`)
+  .map((group) => `<li><strong>${esc(group.label)}</strong>: ${esc(group.desc)}</li>`)
   .join('');
 
 const luxFormats = t.luxAperta.formats
@@ -81,7 +81,7 @@ const staticHtml = `<div id="root">
 <header id="intro">
 <h1>${esc(t.intro.h1)}</h1>
 ${p(t.intro.h2)}
-<nav><a href="https://github.com/pajew-ski">GitHub</a> · <a href="https://youtube.com/@m_pajew_ski">YouTube</a> · <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></nav>
+<nav><a href="https://github.com/pajew-ski">GitHub</a> · <a href="https://youtube.com/@m_pajew_ski">YouTube</a></nav>
 </header>
 <main>
 <section id="opus-purum">
@@ -93,7 +93,6 @@ ${opusChapters}
 <section id="principles">
 <h2>${esc(t.principles.h2)}</h2>
 ${p(t.principles.copy)}
-${moduleHtml(t.principles.modules.moduleCognition, en.principles.modules.moduleCognition)}
 ${moduleHtml(t.principles.modules.moduleBeing, en.principles.modules.moduleBeing)}
 ${moduleHtml(t.principles.modules.moduleDoing, en.principles.modules.moduleDoing)}
 </section>

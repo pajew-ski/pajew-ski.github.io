@@ -8,13 +8,13 @@ Diese Seite ist Michaels öffentliche Selbstbeschreibung, angelegt auf volle Tra
 
 ## Sektionen
 - [Intro](#intro): Einstieg und Überblick.
-- [Opus Purum](#opus-purum): Das Reine Wirken, ein axiomatisches Framework, das Magie ohne Mythos und Apparat fasst. Acht Kapitel: Das Eine, Axiome, Das Göttliche, Das Selbst, Wirkungsmechanismus, Souveränität, Freiheit und Praxis.
-- [Prinzipien](#principles): Die Grundsätze, nach denen Michael denkt und handelt, in drei Modulen: Erkennen (formale Axiome kognitiver Systeme), Sein und Tun.
+- [Opus Purum](#opus-purum): Das Reine Wirken, ein axiomatisches Framework, das Magie ohne Mythos und Apparat fasst. Acht Kapitel: Das Eine, Axiome, Das Göttliche, Das Selbst (das auch die vier formalen Axiome kognitiver Systeme trägt), Wirkungsmechanismus, Souveränität, Freiheit und Praxis.
+- [Prinzipien](#principles): Die Grundsätze, nach denen Michael denkt und handelt, in zwei Modulen: Sein und Tun.
 - [Exocortex](#exocortex): Michaels externes Gedächtnis, eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.
 - [Beziehungen](#relationships): Wie Michael Beziehungen gestaltet, nach der Beziehungsanarchie: ohne Rangfolge, ohne fertige Skripte, alles von den Beteiligten ausgehandelt.
 - [Lux Aperta Bavaria](#lux-aperta): Eine offene Community für Magie als direkte Erfahrung, mit kostenlosen Formaten, die Michael anbietet: Iter Apertum (Spaziergang ohne Programm), Convivium Apertum (stationäre Runde aus Bezeugen und gemeinsamem Mahl) und Speculum Apertum (wortloser Blickkontakt zu zweit).
 
-Jede benannte Überschrift der Seite ist direkt verlinkbar über ihren Anker, abgeleitet vom englischen Titel: zum Beispiel /#cognition, /#iter-apertum oder /#opus-purum-axioms.
+Jede benannte Überschrift der Seite ist direkt verlinkbar über ihren Anker, abgeleitet vom englischen Titel: zum Beispiel /#doing, /#iter-apertum oder /#opus-purum-axioms.
 
 Der vollständige Inhalt aller Sektionen steht in der Langfassung:
 [Vollständiger Inhalt](llms-full.de.txt)
