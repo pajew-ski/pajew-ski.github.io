@@ -105,7 +105,7 @@ Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was 
 Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder kennenlernen wollen. Kernsatz: "Bewusstsein ist ansteckend!" Praktiziert wird Magie in ihrer direktesten Form: durch spielerische Erkundung der Schöpfung mit dem eigenen Körper als Instrument. Kein bestimmtes Weltbild vorausgesetzt, nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen. "Lux Aperta Bavaria ist das Gegenteil von einem geheimen Orden: es ist ein offener und freier Raum für Austausch und Erkenntnis." Kein Guru, kein Dogma, keine Einweihungsstufen. Alle Formate sind kostenlos; Michael hält diese Räume offen. Lux Aperta ist der gelebte, offene Raum, in dem die Haltung von Opus Purum praktisch wird.
 
 **Formate:**
-- **Iter Apertum ("Der offene Weg")**: Spaziergang ohne Programm, sonntags 11:00 Uhr bei vollem Tageslicht, etwa monatlich, in einem Park in Regensburg, 60 bis 90 Minuten, keine Vorkenntnisse. Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Kreis am Anfang und am Ende, Ausklang im Café. Das Nebeneinandergehen verhindert Frontaldynamik: Niemand kann dozieren, während er geht.
+- **Iter Apertum ("Der offene Weg")**: Spaziergang ohne Programm, sonntags 11:00 Uhr, etwa monatlich, im Villapark Regensburg (Eingang beim Ostentor), etwa 60 bis 90 Minuten, keine Vorkenntnisse, keine Übereinstimmung im Weltbild nötig, wetterfeste Schuhe mitbringen. Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Kreis am Anfang und am Ende, Ausklang im Café. Das Nebeneinandergehen verhindert Frontaldynamik: Niemand kann dozieren, während er geht.
 - **Convivium Apertum**: das stationäre Format. Zu zweit spricht eine Person drei Minuten, die andere hört nur zu; dann Wechsel. Danach zehn Minuten Stille, bevor sich das Gespräch für alle öffnet.
 
 ## Schlüsselbegriffe
@@ -123,7 +123,7 @@ Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder ke
 - **Das Eine**: Die Wirklichkeit als Feld, das sich selbst differenziert. Individuation ist die Form, durch die das Eine sich erkennt. Der Mensch ist ein Differenzierungsknoten mit der Fähigkeit zur Reflexion.
 - **Beziehungsanarchie**: Beziehungsgestaltung ohne Rangfolge und ohne vorgegebene Rollenskripte; jede Verbindung wird von den Beteiligten selbst ausgehandelt.
 - **Lux Aperta Bavaria**: "Das offene Licht". Offene Community für Magie als direkte, körperliche Erfahrung. Bewusste Umkehrung des Geheimbund-Gedankens: kein Guru, kein Dogma, keine Einweihungsstufen, volles Tageslicht.
-- **Iter Apertum**: "Der offene Weg". Das Gehformat von Lux Aperta: Spaziergang ohne Programm, sonntags bei Tageslicht, in wechselnden Dreiergruppen durch einen Park in Regensburg.
+- **Iter Apertum**: "Der offene Weg". Das Gehformat von Lux Aperta: Spaziergang ohne Programm, sonntags bei Tageslicht, in wechselnden Dreiergruppen durch den Villapark Regensburg.
 - **Convivium Apertum**: Das stationäre Format von Lux Aperta: Zuhören ohne Antwort in Zweierpaaren (drei Minuten je Seite), dann Stille, dann offenes Gespräch.
 
 ## Website-Funktionen
