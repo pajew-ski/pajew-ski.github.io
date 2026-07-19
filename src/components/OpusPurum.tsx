@@ -76,12 +76,20 @@ export function OpusPurum() {
               transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
-              <button
+              <div
+                role="button"
+                tabIndex={0}
                 onClick={() => toggle(chapter.id)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle(chapter.id);
+                  }
+                }}
                 aria-expanded={isOpen}
                 aria-controls={`opus-purum-panel-${chapter.id}`}
                 id={`opus-purum-btn-${chapter.id}`}
-                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
+                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none cursor-pointer"
               >
                 <h3 className="contents">
                   <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
@@ -104,7 +112,7 @@ export function OpusPurum() {
                 >
                   +
                 </span>
-              </button>
+              </div>
 
               <m.div
                 id={`opus-purum-panel-${chapter.id}`}
@@ -113,7 +121,7 @@ export function OpusPurum() {
                 initial={false}
                 animate={{ height: isOpen ? 'auto' : 0, opacity: isOpen ? 1 : 0 }}
                 transition={{ duration: 0.35, ease: EASE }}
-                className="overflow-hidden"
+                style={{ overflow: 'hidden' }}
               >
                 <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
                   {chapter.content.map((entry, i) => (
