@@ -76,17 +76,18 @@ export function OpusPurum() {
               transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
-              <h3 className="contents">
-                <button
-                  onClick={() => toggle(chapter.id)}
-                  aria-expanded={isOpen}
-                  aria-controls={`opus-purum-panel-${chapter.id}`}
-                  id={`opus-purum-btn-${chapter.id}`}
-                  className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
-                >
+              <button
+                onClick={() => toggle(chapter.id)}
+                aria-expanded={isOpen}
+                aria-controls={`opus-purum-panel-${chapter.id}`}
+                id={`opus-purum-btn-${chapter.id}`}
+                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
+              >
+                <h3 className="contents">
                   <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
                     {chapter.label}
                   </span>
+                  <span className="sr-only">{' · '}</span>
                   <span
                     className={`flex-1 text-base md:text-lg font-light tracking-tight transition-colors duration-200 ${
                       isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
@@ -94,16 +95,16 @@ export function OpusPurum() {
                   >
                     {chapter.title}
                   </span>
-                  <span
-                    className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
-                      isOpen ? 'rotate-45' : ''
-                    }`}
-                    aria-hidden="true"
-                  >
-                    +
-                  </span>
-                </button>
-              </h3>
+                </h3>
+                <span
+                  className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
+                    isOpen ? 'rotate-45' : ''
+                  }`}
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </button>
 
               <m.div
                 id={`opus-purum-panel-${chapter.id}`}
