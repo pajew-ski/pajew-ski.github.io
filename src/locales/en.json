@@ -5,47 +5,26 @@
   },
   "exocortex": {
     "h2": "Exocortex",
-    "copy": "My external memory: a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.",
+    "copy": "My external memory: an extended, explicit self-model. A local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.",
     "stack": {
       "orchestration": {
         "title": "Orchestration",
-        "desc": "Home Assistant (action layer) coupled with N8N (decision layer)."
+        "desc": "Intention becomes action: Home Assistant (action layer) coupled with N8N (decision layer)."
       },
       "memory": {
         "title": "Memory & Inference",
-        "desc": "RDF store as single source of truth. Local LLMs."
+        "desc": "The explicit structure of meaning: RDF store as single source of truth, local LLMs."
       },
       "operations": {
         "title": "Operations",
-        "desc": "SecDevOps, GitOps, causal inference modeling."
+        "desc": "Keeping the system coherent and sovereign: SecDevOps, GitOps, causal inference modeling."
       }
     }
   },
   "principles": {
     "h2": "Principles",
-    "copy": "The principles I think and act by. Three modules: cognition, being, doing.",
+    "copy": "The principles I think and act by. Two modules: being and doing.",
     "modules": {
-      "moduleCognition": {
-        "title": "Cognition",
-        "list": [
-          {
-            "title": "Interpretive Asymmetry",
-            "desc": "No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed."
-          },
-          {
-            "title": "Syntactic Integration",
-            "desc": "Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states."
-          },
-          {
-            "title": "Symbolic Organization",
-            "desc": "Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences."
-          },
-          {
-            "title": "Semantic Communication",
-            "desc": "Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs."
-          }
-        ]
-      },
       "moduleBeing": {
         "title": "Being",
         "list": [
@@ -107,24 +86,20 @@
             "desc": "Telling impulse from intuition: noise from signal."
           },
           {
-            "title": "Hierarchical Control",
-            "desc": "The higher mind leads, the lower follows."
+            "title": "Inner Governance",
+            "desc": "Responsive rather than reactive: steering from one's own center, not from external direction."
           },
           {
-            "title": "Law Compliance",
-            "desc": "Acting through intent, consent, and authority, in alignment with natural law."
+            "title": "Logos Compliance",
+            "desc": "Acting through intent and consent, in keeping with the order-direction of reality."
           },
           {
             "title": "Vector Alignment",
-            "desc": "Clarifying motivation: away from service-to-self (entropy), toward service-to-others (negentropy)."
+            "desc": "Clarifying motivation: serving the whole instead of spending oneself in the isolated self."
           },
           {
             "title": "Homeostasis",
             "desc": "Actively restoring balance and harmlessness."
-          },
-          {
-            "title": "Internal Referencing",
-            "desc": "Guidance from within. Autonomous control instead of external manipulation."
           },
           {
             "title": "Resource Logic",
@@ -136,19 +111,15 @@
           },
           {
             "title": "Pattern Recognition",
-            "desc": "Recognizing and seeing through deception and ego filters."
-          },
-          {
-            "title": "Zero-Point Observation",
-            "desc": "Observing without emotional charge: the merciful witness."
+            "desc": "Recognizing and seeing through deceptions and one's own perceptual filters."
           },
           {
             "title": "Integral Synthesis",
-            "desc": "Accepting the whole of reality, without spiritual bypassing."
+            "desc": "Accepting the whole of reality without evading it."
           },
           {
-            "title": "Signal Congruence",
-            "desc": "Being the example. Teaching through resonance rather than rhetoric: being the frequency you emit."
+            "title": "Embodied Coherence",
+            "desc": "Being the example: working through one's own coherence rather than through rhetoric."
           }
         ]
       }
@@ -252,6 +223,22 @@
           {
             "heading": "Attention Architecture",
             "body": "The structure that decides which signals are granted access. Attention is not neutral observation but an intervention."
+          },
+          {
+            "heading": "Interpretive Asymmetry",
+            "body": "No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed."
+          },
+          {
+            "heading": "Syntactic Integration",
+            "body": "Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states."
+          },
+          {
+            "heading": "Symbolic Organization",
+            "body": "Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences."
+          },
+          {
+            "heading": "Semantic Communication",
+            "body": "Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs."
           },
           {
             "heading": "",
@@ -391,23 +378,23 @@
     "dimensions": [
       {
         "label": "Intimacy",
-        "items": ["Emotional closeness", "Physical closeness", "Sexuality"]
+        "desc": "Emotional closeness, physical closeness, and sexuality."
       },
       {
         "label": "Connection",
-        "items": ["Companionship", "Long-term commitment", "Visibility"]
+        "desc": "Companionship, long-term commitment, and visibility."
       },
       {
         "label": "Care",
-        "items": ["Support", "Shared responsibility"]
+        "desc": "Support and shared responsibility."
       },
       {
         "label": "Structure",
-        "items": ["Entanglement", "Collaboration"]
+        "desc": "Entanglement (shared living, finances, everyday life) and collaboration."
       },
       {
         "label": "Modalities",
-        "items": ["Kink", "Deliberate asymmetry"]
+        "desc": "Kink and deliberate asymmetry (mentorship, guidance with clear role asymmetry)."
       }
     ]
   },

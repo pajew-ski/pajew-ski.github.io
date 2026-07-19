@@ -42,6 +42,13 @@ The Self is the magician's operating system, and like any operating system it ca
 * **Narratives**: Causal stories about identity and world. They do not describe, they construct: they produce the continuity that makes the self appear coherent.
 * **Attention Architecture**: The structure that decides which signals are granted access. Attention is not neutral observation but an intervention.
 
+Four formal axioms describe the conditions and limits of the self-model:
+
+* **Interpretive Asymmetry**: No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.
+* **Syntactic Integration**: Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.
+* **Symbolic Organization**: Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.
+* **Semantic Communication**: Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.
+
 The most common mistake is to take the Self as given. The rarer one, to take it as arbitrary. The Self is the point from which one acts: stable enough to act, permeable enough for what wants to work through it. The Great Work is not to become more powerful, but more transparent.
 
 ### IV. Mechanism of Effect
@@ -79,15 +86,7 @@ That is all there is to it. No myth, no apparatus. Less a technique than a remem
 
 ## Principles
 
-The principles Michael thinks and acts by. Three modules: cognition, being, doing.
-
-### Cognition
-Four sequential axioms describing the formal conditions and limits of cognitive systems:
-
-1. **Interpretive Asymmetry**: No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.
-2. **Syntactic Integration**: Cognitive coherence is a function of the precision of a system's rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.
-3. **Symbolic Organization**: Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.
-4. **Semantic Communication**: Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.
+The principles Michael thinks and acts by. Two modules: being and doing. (The formal axioms of cognitive systems that once formed a third module now live in Opus Purum, chapter III, The Self.)
 
 ### Being
 * **Love**: Recognition of truth/unity.
@@ -105,32 +104,30 @@ Four sequential axioms describing the formal conditions and limits of cognitive 
 
 ### Doing
 * **Signal Discrimination**: Telling impulse from intuition: noise from signal.
-* **Hierarchical Control**: The higher mind leads, the lower follows.
-* **Law Compliance**: Acting through intent, consent, and authority, in alignment with natural law.
-* **Vector Alignment**: Clarifying motivation: away from service-to-self (entropy), toward service-to-others (negentropy).
+* **Inner Governance**: Responsive rather than reactive: steering from one's own center, not from external direction.
+* **Logos Compliance**: Acting through intent and consent, in keeping with the order-direction of reality.
+* **Vector Alignment**: Clarifying motivation: serving the whole instead of spending oneself in the isolated self.
 * **Homeostasis**: Actively restoring balance and harmlessness.
-* **Internal Referencing**: Guidance from within. Autonomous control instead of external manipulation.
 * **Resource Logic**: Releasing ownership, taking up stewardship: managing energy instead of holding it.
 * **Applied Cognition**: Knowledge only counts once it is acted on. Wisdom validates itself through service.
-* **Pattern Recognition**: Recognizing and seeing through deception and ego filters.
-* **Zero-Point Observation**: Observing without emotional charge: the merciful witness.
-* **Integral Synthesis**: Accepting the whole of reality, without spiritual bypassing.
-* **Signal Congruence**: Being the example. Teaching through resonance rather than rhetoric: being the frequency you emit.
+* **Pattern Recognition**: Recognizing and seeing through deceptions and one's own perceptual filters.
+* **Integral Synthesis**: Accepting the whole of reality without evading it.
+* **Embodied Coherence**: Being the example: working through one's own coherence rather than through rhetoric.
 
 ---
 
 ## Exocortex
 
-Michael's external memory: a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
+Michael's external memory: an extended, explicit self-model. A local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
 
 ### Orchestration
-Home Assistant (action layer) coupled with N8N (decision layer).
+Intention becomes action: Home Assistant (action layer) coupled with N8N (decision layer).
 
 ### Memory & Inference
-RDF store as single source of truth. Local LLMs.
+The explicit structure of meaning: RDF store as single source of truth, local LLMs.
 
 ### Operations
-SecDevOps, GitOps, causal inference modeling.
+Keeping the system coherent and sovereign: SecDevOps, GitOps, causal inference modeling.
 
 ---
 
@@ -149,11 +146,11 @@ How Michael shapes relationships: without ranking and without ready-made scripts
 ### Building Blocks
 Every connection chooses its own building blocks. No combination is a deficit or a preliminary stage of something more complete.
 
-* **Intimacy**: emotional closeness, physical closeness, sexuality.
-* **Connection**: companionship, long-term commitment, visibility.
-* **Care**: support, shared responsibility.
-* **Structure**: entanglement (shared living, finances, everyday life), collaboration.
-* **Modalities**: kink, deliberate asymmetry (mentorship, guidance with clear role asymmetry).
+* **Intimacy**: Emotional closeness, physical closeness, and sexuality.
+* **Connection**: Companionship, long-term commitment, and visibility.
+* **Care**: Support and shared responsibility.
+* **Structure**: Entanglement (shared living, finances, everyday life) and collaboration.
+* **Modalities**: Kink and deliberate asymmetry (mentorship, guidance with clear role asymmetry).
 
 ---
 

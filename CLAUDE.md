@@ -41,6 +41,8 @@ The copy must read as written by a person, not generated:
 - No dramatic one-word fragment endings ("Not a metaphor.") outside deliberately kept manifesto lines
 - No grandiose self-description; plain, concrete claims
 - German copy avoids unnecessary anglicisms and consulting jargon
+- Two registers, applied without exception: first person ("ich") for everything self-describing (Opus Purum, Principles, Exocortex, Relationships); direct address ("du") only in the invitation context of Lux Aperta Bavaria (Iter/Convivium/Speculum Apertum). No section outside Lux Aperta addresses the reader directly. Chat-widget UI strings are conversational and exempt.
+- One vocabulary for one territory: the whole card speaks Opus Purum's process-philosophical/cybernetic language (attractor, Logos, order-direction, coherence, alignment, self-model). Do not reintroduce a parallel idiom (e.g. Ra/Q'uo terms like service-to-self/-others, negentropy, natural law) for the same ideas.
 
 ## Links & Attribution (Critical)
 
@@ -72,13 +74,12 @@ Each section element carries an `id` matching the anchors used in `llms.txt`. Ev
 Anchor system (`src/anchors.ts`): slugs derive from the English titles via `slugify`, so ids are identical in both languages; renaming an English title changes its anchor. Chapter anchors carry the `opus-purum-` prefix; everything else is the bare slug. Deep links to collapsed targets (accordion chapters, principle cards) open the target: the hash is read in the state initializer (layout-stable first paint) and on `hashchange`; on disclosure headings the anchor link itself carries `aria-expanded`/`aria-controls` (valid on links), Space toggles, Enter navigates and opens, clicking the surrounding row or card toggles. `[id]` elements get `scroll-margin-top` (see `index.css`). The prerender snapshot mirrors the ids. `npm run check:site` asserts existence, uniqueness, self-links, and the open-on-deep-link behavior.
 
 1. **Intro** (`#intro`): Name, tagline, Krystal Flower animation
-2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters
-3. **Principles** (`#principles`, heading "Prinzipien"): three modules
-   - Erkennen/Cognition: 4 sequential formal axioms (single-column layout)
+2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters. Chapter III (The Self) also carries the four formal axioms of cognitive systems (Interpretive Asymmetry, Syntactic Integration, Symbolic Organization, Semantic Communication), rendered as plain `heading`+`body` entries (no per-item anchor).
+3. **Principles** (`#principles`, heading "Prinzipien"): two modules
    - Sein/Being: 12 principles (3-column grid)
-   - Tun/Doing: 12 principles (3-column grid)
+   - Tun/Doing: 10 principles (3-column grid). Written in Opus Purum's process-philosophical/cybernetic diction (attractor, Logos, coherence, alignment), not the Ra/Q'uo vocabulary it once used.
 4. **Exocortex** (`#exocortex`): Technical infrastructure (Orchestration, Memory & Inference, Operations)
-5. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards (reuses `PrincipleCard`) + building-block chips + source link
+5. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards (reuses `PrincipleCard`) + Building Blocks as bold-term + one-line definitions (`dimensions` = `{label, desc}`, matching the card compression and the llms files)
 6. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum, Speculum Apertum)
 7. **Chat Widget**: N8N-powered assistant
 8. **Footer**: Language switcher (EN/DE), legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`

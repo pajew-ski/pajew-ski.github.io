@@ -5,47 +5,26 @@
   },
   "exocortex": {
     "h2": "Exocortex",
-    "copy": "Mein externes Gedächtnis: eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.",
+    "copy": "Mein externes Gedächtnis: ein verlängertes, explizit gemachtes Selbstmodell. Eine lokale, selbst gehostete Architektur, die Wissen speichert, verknüpft und Signal von Rauschen trennt.",
     "stack": {
       "orchestration": {
         "title": "Orchestrierung",
-        "desc": "Home Assistant (Aktionsschicht) gekoppelt mit N8N (Entscheidungsschicht)."
+        "desc": "Aus Absicht wird Handlung: Home Assistant (Aktionsschicht) gekoppelt mit N8N (Entscheidungsschicht)."
       },
       "memory": {
         "title": "Gedächtnis & Inferenz",
-        "desc": "RDF-Store als zentrale Wahrheitsquelle. Lokale LLMs."
+        "desc": "Die explizite Bedeutungsstruktur: RDF-Store als zentrale Wahrheitsquelle, lokale LLMs."
       },
       "operations": {
         "title": "Operationen",
-        "desc": "SecDevOps, GitOps, kausale Inferenz-Modellierung."
+        "desc": "Kohärenz und Souveränität sichern: SecDevOps, GitOps, kausale Inferenz-Modellierung."
       }
     }
   },
   "principles": {
     "h2": "Prinzipien",
-    "copy": "Die Grundsätze, nach denen ich denke und handle. Drei Module: Erkennen, Sein, Tun.",
+    "copy": "Die Grundsätze, nach denen ich denke und handle. Zwei Module: Sein und Tun.",
     "modules": {
-      "moduleCognition": {
-        "title": "Erkennen",
-        "list": [
-          {
-            "title": "Interpretative Asymmetrie",
-            "desc": "Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab."
-          },
-          {
-            "title": "Syntaktische Integration",
-            "desc": "Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände."
-          },
-          {
-            "title": "Symbolische Organisation",
-            "desc": "Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen."
-          },
-          {
-            "title": "Semantische Kommunikation",
-            "desc": "Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs."
-          }
-        ]
-      },
       "moduleBeing": {
         "title": "Sein",
         "list": [
@@ -107,24 +86,20 @@
             "desc": "Impuls von Intuition unterscheiden: Rauschen vom Signal."
           },
           {
-            "title": "Hierarchische Kontrolle",
-            "desc": "Der höhere Geist führt, der niedere folgt."
+            "title": "Innere Führung",
+            "desc": "Responsiv statt reaktiv: aus der eigenen Mitte steuern, nicht aus äußerer Lenkung."
           },
           {
-            "title": "Gesetzes-Konformität",
-            "desc": "Wirken über Intention, Einwilligung und Autorität, im Einklang mit dem Naturrecht."
+            "title": "Logos-Konformität",
+            "desc": "Wirken über Intention und Einwilligung, im Einklang mit der Ordnungsrichtung der Wirklichkeit."
           },
           {
             "title": "Vektor-Ausrichtung",
-            "desc": "Motivation klären: weg von Service-to-Self (Entropie), hin zu Service-to-Others (Negentropie)."
+            "desc": "Motivation klären: dem Ganzen dienen, statt sich im isolierten Selbst zu verbrauchen."
           },
           {
             "title": "Homöostase",
             "desc": "Gleichgewicht und Harmlosigkeit aktiv wiederherstellen."
-          },
-          {
-            "title": "Interne Referenzierung",
-            "desc": "Führung von innen. Autonome Steuerung statt äußerer Manipulation."
           },
           {
             "title": "Ressourcen-Logik",
@@ -136,19 +111,15 @@
           },
           {
             "title": "Mustererkennung",
-            "desc": "Täuschungen und Ego-Filter erkennen und durchdringen."
-          },
-          {
-            "title": "Nullpunkt-Beobachtung",
-            "desc": "Beobachten ohne emotionale Ladung: der barmherzige Zeuge."
+            "desc": "Täuschungen und die eigenen Wahrnehmungsfilter erkennen und durchdringen."
           },
           {
             "title": "Integrale Synthese",
-            "desc": "Die volle Realität annehmen, ohne spirituelles Ausweichen (Spiritual Bypassing)."
+            "desc": "Die volle Wirklichkeit annehmen, ohne ihr auszuweichen."
           },
           {
-            "title": "Signal-Kongruenz",
-            "desc": "Das Beispiel sein. Lehren durch Resonanz statt Rhetorik: die Frequenz sein, die man aussendet."
+            "title": "Verkörperte Kohärenz",
+            "desc": "Das Beispiel sein: durch die eigene Kohärenz wirken statt durch Rhetorik."
           }
         ]
       }
@@ -252,6 +223,22 @@
           {
             "heading": "Aufmerksamkeitsarchitektur",
             "body": "Die Struktur, die entscheidet, welche Signale Zugang erhalten. Aufmerksamkeit ist keine neutrale Beobachtung, sondern ein Eingriff."
+          },
+          {
+            "heading": "Interpretative Asymmetrie",
+            "body": "Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab."
+          },
+          {
+            "heading": "Syntaktische Integration",
+            "body": "Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände."
+          },
+          {
+            "heading": "Symbolische Organisation",
+            "body": "Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen."
+          },
+          {
+            "heading": "Semantische Kommunikation",
+            "body": "Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs."
           },
           {
             "heading": "",
@@ -391,23 +378,23 @@
     "dimensions": [
       {
         "label": "Intimität",
-        "items": ["Emotionale Nähe", "Körperliche Nähe", "Sexualität"]
+        "desc": "Emotionale Nähe, körperliche Nähe und Sexualität."
       },
       {
         "label": "Verbindung",
-        "items": ["Gefährtenschaft", "Langfristige Bindung", "Sichtbarkeit"]
+        "desc": "Gefährtenschaft, langfristige Bindung und Sichtbarkeit."
       },
       {
         "label": "Fürsorge",
-        "items": ["Unterstützung", "Geteilte Verantwortung"]
+        "desc": "Unterstützung und geteilte Verantwortung."
       },
       {
         "label": "Struktur",
-        "items": ["Verflechtung", "Zusammenarbeit"]
+        "desc": "Verflechtung (gemeinsames Wohnen, Finanzen, Alltag) und Zusammenarbeit."
       },
       {
         "label": "Modalitäten",
-        "items": ["Kink", "Bewusstes Gefälle"]
+        "desc": "Kink und bewusstes Gefälle (Mentorschaft, Begleitung mit klarer Rollenasymmetrie)."
       }
     ]
   },

@@ -8,13 +8,13 @@ This site is Michael's public self-description, written to be fully transparent.
 
 ## Sections
 - [Intro](#intro): Introduction and high-level overview.
-- [Opus Purum](#opus-purum): The Pure Working, an axiomatic framework stating magic without myth or apparatus. Eight chapters: The One, Axioms, The Divine, The Self, Mechanism of Effect, Sovereignty, Freedom, and Practice.
-- [Principles](#principles): The principles Michael thinks and acts by, in three modules: Cognition (formal axioms of cognitive systems), Being, and Doing.
+- [Opus Purum](#opus-purum): The Pure Working, an axiomatic framework stating magic without myth or apparatus. Eight chapters: The One, Axioms, The Divine, The Self (which also carries the four formal axioms of cognitive systems), Mechanism of Effect, Sovereignty, Freedom, and Practice.
+- [Principles](#principles): The principles Michael thinks and acts by, in two modules: Being and Doing.
 - [Exocortex](#exocortex): Michael's external memory, a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
 - [Relationships](#relationships): How Michael shapes relationships, following relationship anarchy: no ranking, no ready-made scripts, everything negotiated by the people involved.
 - [Lux Aperta Bavaria](#lux-aperta): An open community for magic as direct experience, with free formats Michael hosts: Iter Apertum (a walk without an agenda), Convivium Apertum (a stationary circle of witnessing and a shared meal), and Speculum Apertum (wordless eye contact in pairs).
 
-Every named heading on the page is directly linkable through its anchor, derived from its English title: for example /#cognition, /#iter-apertum, or /#opus-purum-axioms.
+Every named heading on the page is directly linkable through its anchor, derived from its English title: for example /#doing, /#iter-apertum, or /#opus-purum-axioms.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)
