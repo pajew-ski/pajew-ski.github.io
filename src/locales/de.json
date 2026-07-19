@@ -454,6 +454,23 @@
           { "label": "Dauer", "value": "60 bis 90 Minuten" },
           { "label": "Voraussetzungen", "value": "Eigenes Essen, eigene Sitzmöglichkeit" }
         ]
+      },
+      {
+        "id": "speculum",
+        "title": "Speculum Apertum",
+        "tagline": "Der offene Spiegel",
+        "paragraphs": [
+          "Die gleiche Haltung ohne Wort. Wir beginnen im Kreis und legen gemeinsam fest, wie lange eine Runde dauert; das ist die Höchstzeit für alle. Dann zu zweit: Blick in Blick, ohne Sprechen, bis die Zeit erreicht ist oder bis eine Person die Augen schließt. Das Schließen der Augen ist jederzeit erlaubt, ohne Erklärung; es bedeutet nur, dass es für diesen Moment genug ist.",
+          "Ab einer gewissen Dauer beginnt sich die Wahrnehmung des Gegenübers zu verschieben. Das ist Teil der Praxis, kein Nebeneffekt.",
+          "Nach jeder Runde eine kurze Zwischenzeit zum Lösen und Strecken, mit Raum für ein paar Worte über das Erlebte, ohne es zu deuten. Keine Analyse, kein Gespräch darüber, was es bedeutet hat; nur, was da war. Dann wird gewechselt.",
+          "Wer aussteigen möchte, tut das jederzeit mit gefalteten Händen als Dank, ohne weitere Erklärung. Zum Schluss gemeinsames Schweigen; wer bereit ist, geht, die anderen bleiben, solange sie möchten."
+        ],
+        "facts": [
+          { "label": "Rhythmus", "value": "Sporadisch" },
+          { "label": "Ort", "value": "Wechselnd, drinnen wie draußen" },
+          { "label": "Dauer", "value": "60 bis 90 Minuten" },
+          { "label": "Voraussetzungen", "value": "Eigene Sitzunterlage" }
+        ]
       }
     ]
   },

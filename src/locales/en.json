@@ -454,6 +454,23 @@
           { "label": "Duration", "value": "60 to 90 minutes" },
           { "label": "Prerequisites", "value": "Own food, own seating" }
         ]
+      },
+      {
+        "id": "speculum",
+        "title": "Speculum Apertum",
+        "tagline": "The Open Mirror",
+        "paragraphs": [
+          "The same stance without words. We begin in a circle and agree together on how long a round lasts; that is the maximum time for everyone. Then in pairs: eye to eye, without speaking, until the time is reached or one person closes their eyes. Closing your eyes is allowed at any time, without explanation; it only means that this is enough for this moment.",
+          "Past a certain duration, the perception of the person across from you begins to shift. That is part of the practice, not a side effect.",
+          "After each round, a short interval to release and stretch, with room for a few words about what was experienced, without interpreting it. No analysis, no conversation about what it meant; only what was there. Then we switch.",
+          "Anyone who wants to step out can do so at any time with folded hands as thanks, without further explanation. At the end, shared silence; whoever is ready leaves, the others stay as long as they like."
+        ],
+        "facts": [
+          { "label": "Rhythm", "value": "Sporadic" },
+          { "label": "Place", "value": "Rotating, indoors and outdoors" },
+          { "label": "Duration", "value": "60 to 90 minutes" },
+          { "label": "Prerequisites", "value": "Own seating mat" }
+        ]
       }
     ]
   },
