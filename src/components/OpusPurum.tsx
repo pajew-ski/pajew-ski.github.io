@@ -76,32 +76,34 @@ export function OpusPurum() {
               transition={reveal(idx * 0.04)}
               className="border-b border-foreground/10"
             >
-              <button
-                onClick={() => toggle(chapter.id)}
-                aria-expanded={isOpen}
-                aria-controls={`opus-purum-panel-${chapter.id}`}
-                id={`opus-purum-btn-${chapter.id}`}
-                className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
-              >
-                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
-                  {chapter.label}
-                </span>
-                <span
-                  className={`flex-1 text-base md:text-lg font-light tracking-tight transition-colors duration-200 ${
-                    isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
-                  }`}
+              <h3 className="contents">
+                <button
+                  onClick={() => toggle(chapter.id)}
+                  aria-expanded={isOpen}
+                  aria-controls={`opus-purum-panel-${chapter.id}`}
+                  id={`opus-purum-btn-${chapter.id}`}
+                  className="w-full flex items-center gap-phi-lg py-phi-md text-left group focus:outline-none"
                 >
-                  {chapter.title}
-                </span>
-                <span
-                  className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
-                    isOpen ? 'rotate-45' : ''
-                  }`}
-                  aria-hidden="true"
-                >
-                  +
-                </span>
-              </button>
+                  <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
+                    {chapter.label}
+                  </span>
+                  <span
+                    className={`flex-1 text-base md:text-lg font-light tracking-tight transition-colors duration-200 ${
+                      isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
+                    }`}
+                  >
+                    {chapter.title}
+                  </span>
+                  <span
+                    className={`shrink-0 text-muted-foreground transition-transform duration-300 ${
+                      isOpen ? 'rotate-45' : ''
+                    }`}
+                    aria-hidden="true"
+                  >
+                    +
+                  </span>
+                </button>
+              </h3>
 
               <m.div
                 id={`opus-purum-panel-${chapter.id}`}
@@ -116,9 +118,9 @@ export function OpusPurum() {
                   {chapter.content.map((entry, i) => (
                     <div key={i} className="space-y-phi-xs">
                       {entry.heading && (
-                        <h3 className="text-lg md:text-xl font-semibold tracking-tight">
+                        <h4 className="text-lg md:text-xl font-semibold tracking-tight">
                           {entry.heading}
-                        </h3>
+                        </h4>
                       )}
                       <p className="text-foreground/75 font-light">
                         {entry.body}
