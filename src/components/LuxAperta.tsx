@@ -1,5 +1,6 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { reveal, viewportOnce } from '../motion';
 
 interface FormatFact {
@@ -45,10 +46,7 @@ export function LuxAperta() {
           transition={reveal(0.1)}
           className="text-4xl md:text-6xl font-bold tracking-tighter"
         >
-          <a
-            href="#lux-aperta"
-            className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
-          >
+          <a href="#lux-aperta" className={anchorLinkClass}>
             {t('luxAperta.h2')}
           </a>
         </m.h2>
@@ -92,14 +90,24 @@ export function LuxAperta() {
             transition={reveal(index * 0.1)}
             className="border border-foreground/10 p-phi-xl md:p-phi-2xl space-y-phi-lg"
           >
-            <div className="space-y-phi-2xs">
+            {/* header, not div: Readability conditionally deletes small
+                link-and-text divs, and the title is a link now */}
+            <header className="space-y-phi-2xs">
               <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-light">
                 {format.tagline}
               </p>
-              <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
-                {format.title}
+              <h3
+                id={slugify(enContent.luxAperta.formats[index].title)}
+                className="text-2xl md:text-3xl font-semibold tracking-tight"
+              >
+                <a
+                  href={`#${slugify(enContent.luxAperta.formats[index].title)}`}
+                  className={anchorLinkClass}
+                >
+                  {format.title}
+                </a>
               </h3>
-            </div>
+            </header>
             {format.paragraphs.map((paragraph, i) => (
               <p key={i} className="text-foreground/75 font-light">
                 {paragraph}

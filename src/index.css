@@ -177,4 +177,9 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Breathing room above deep-link targets (phi-2xl). */
+  [id] {
+    scroll-margin-top: 2.618rem;
+  }
 }

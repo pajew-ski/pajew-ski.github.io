@@ -1,5 +1,6 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { PrincipleCard, type PrincipleItemData } from './Principles';
 import { reveal, viewportOnce } from '../motion';
 
@@ -30,10 +31,7 @@ export function Relationships() {
             transition={reveal()}
             className="text-4xl md:text-6xl font-bold tracking-tighter"
           >
-            <a
-              href="#relationships"
-              className="underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40"
-            >
+            <a href="#relationships" className={anchorLinkClass}>
               {t('relationships.h2')}
             </a>
           </m.h2>
@@ -50,7 +48,13 @@ export function Relationships() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
           {principles.map((item, index) => (
-            <PrincipleCard key={index} item={item} index={index} headingLevel="h3" />
+            <PrincipleCard
+              key={index}
+              item={item}
+              index={index}
+              anchor={slugify(enContent.relationships.principles[index].title)}
+              headingLevel="h3"
+            />
           ))}
         </div>
 
@@ -60,9 +64,15 @@ export function Relationships() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
+            id={slugify(enContent.relationships.dimensionsTitle)}
             className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
           >
-            {t('relationships.dimensionsTitle')}
+            <a
+              href={`#${slugify(enContent.relationships.dimensionsTitle)}`}
+              className={anchorLinkClass}
+            >
+              {t('relationships.dimensionsTitle')}
+            </a>
           </m.h3>
           <m.p
             initial={{ opacity: 0, y: 20 }}
