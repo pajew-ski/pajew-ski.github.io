@@ -89,7 +89,19 @@ Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was 
 - Kein Anspruchsdenken: Gefühle oder gemeinsame Geschichte begründen kein Recht, das Verhalten der anderen Person zu kontrollieren.
 - Selbstklärung: Eigene Werte, Grenzen und Erwartungen benennen, statt sie aus Rollenskripten zu übernehmen.
 
-**Bausteine** (frei kombinierbar; keine Kombination ist ein Defizit oder eine Vorstufe zu etwas Vollständigerem): Intimität (emotionale Nähe, körperliche Nähe und Sexualität), Verbindung (Gefährtenschaft, langfristige Bindung und Sichtbarkeit), Fürsorge (Unterstützung und geteilte Verantwortung), Struktur (Verflechtung, also gemeinsames Wohnen, Finanzen und Alltag, sowie Zusammenarbeit), Modalitäten (Kink und bewusstes Gefälle, etwa Mentorschaft oder Begleitung mit klarer Rollenasymmetrie).
+**Bausteine** (frei kombinierbar; keine Kombination ist ein Defizit oder eine Vorstufe zu etwas Vollständigerem):
+- Vertrauen: Verletzlichkeit zeigen, Vertraute:r sein, Zuneigung aussprechen.
+- Berührung: Kontakt im Alltag, Umarmung, Nähe ohne sexuelle Absicht.
+- Verlangen: Körperliche Begegnung, offenes Sprechen über Begehren, erotische Anziehung.
+- Gefährtenschaft: Gemeinsames Spiel, geteilte Interessen, Freundschaft als eigener Wert.
+- Bindung: Gemeinsame Zukunftsvorstellungen, Verbindlichkeit, gewählte Familie.
+- Fürsorge: Unterstützung geben und nehmen, füreinander da sein im Ernstfall.
+- Mitsorge: Geteilte Verantwortung für Kranke, Kinder, Tiere, Pflanzen.
+- Verflechtung: Gemeinsames Wohnen, geteilte Finanzen, gemeinsamer Alltag.
+- Wirken: Künstlerisch, geschäftlich, lehrend zusammenwirken.
+- Machtspiel: Bewusst gestaltete Machtdynamik, geteilte Vorlieben.
+- Gefälle: Mentorschaft, Patenschaft, Begleitung mit klarer Rollenasymmetrie.
+- Sichtbarkeit: Gemeinsames Auftreten, geteilter sozialer Kreis, offene Zuneigung.
 
 ### 6. Lux Aperta Bavaria – Das offene Licht
 Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder kennenlernen wollen. Kernsatz: "Bewusstsein ist ansteckend!" Praktiziert wird Magie in ihrer direktesten Form: durch spielerische Erkundung der Schöpfung mit dem eigenen Körper als Instrument. Kein bestimmtes Weltbild vorausgesetzt, nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen. "Lux Aperta Bavaria ist das Gegenteil von einem geheimen Orden: es ist ein offener und freier Raum für Austausch und Erkenntnis." Kein Guru, kein Dogma, keine Einweihungsstufen. Alle Formate sind kostenlos; Michael hält diese Räume offen. Lux Aperta ist der gelebte, offene Raum, in dem die Haltung von Opus Purum praktisch wird.

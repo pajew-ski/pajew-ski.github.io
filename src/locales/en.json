@@ -381,28 +381,56 @@
         "desc": "Naming one's own values, boundaries, and expectations instead of adopting them from role scripts."
       }
     ],
-    "dimensionsTitle": "Building Blocks",
-    "dimensionsIntro": "Every connection chooses its own building blocks. No combination is a deficit or a preliminary stage of something more complete.",
-    "dimensions": [
+    "blocksTitle": "Building Blocks",
+    "blocksIntro": "Every connection chooses its own building blocks. No combination is a deficit or a preliminary stage of something more complete.",
+    "blocks": [
       {
-        "label": "Intimacy",
-        "desc": "Emotional closeness, physical closeness, and sexuality."
+        "title": "Trust",
+        "desc": "Showing vulnerability, being a confidant, speaking affection."
       },
       {
-        "label": "Connection",
-        "desc": "Companionship, long-term commitment, and visibility."
+        "title": "Touch",
+        "desc": "Everyday contact, embrace, closeness without sexual intent."
       },
       {
-        "label": "Care",
-        "desc": "Support and shared responsibility."
+        "title": "Desire",
+        "desc": "Physical encounter, open speech about longing, erotic attraction."
       },
       {
-        "label": "Structure",
-        "desc": "Entanglement (shared living, finances, everyday life) and collaboration."
+        "title": "Companionship",
+        "desc": "Shared play, shared interests, friendship as its own value."
       },
       {
-        "label": "Modalities",
-        "desc": "Kink and deliberate asymmetry (mentorship, guidance with clear role asymmetry)."
+        "title": "Bond",
+        "desc": "Shared vision of the future, commitment, chosen family."
+      },
+      {
+        "title": "Care",
+        "desc": "Giving and receiving support, being there in emergency."
+      },
+      {
+        "title": "Co-Care",
+        "desc": "Shared responsibility for the sick, children, animals, plants."
+      },
+      {
+        "title": "Entanglement",
+        "desc": "Cohabitation, shared finances, shared routine."
+      },
+      {
+        "title": "Craft",
+        "desc": "Working together artistically, in business, in teaching."
+      },
+      {
+        "title": "Power Play",
+        "desc": "Consciously shaped power dynamic, shared inclinations."
+      },
+      {
+        "title": "Incline",
+        "desc": "Mentorship, sponsorship, guidance with clear role asymmetry."
+      },
+      {
+        "title": "Visibility",
+        "desc": "Appearing together, shared social circle, open affection."
       }
     ]
   },

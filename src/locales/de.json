@@ -381,28 +381,56 @@
         "desc": "Eigene Werte, Grenzen und Erwartungen benennen, statt sie aus Rollenskripten zu übernehmen."
       }
     ],
-    "dimensionsTitle": "Bausteine",
-    "dimensionsIntro": "Jede Verbindung wählt ihre eigenen Bausteine. Keine Kombination ist ein Defizit oder eine Vorstufe zu etwas Vollständigerem.",
-    "dimensions": [
+    "blocksTitle": "Bausteine",
+    "blocksIntro": "Jede Verbindung wählt ihre eigenen Bausteine. Keine Kombination ist ein Defizit oder eine Vorstufe zu etwas Vollständigerem.",
+    "blocks": [
       {
-        "label": "Intimität",
-        "desc": "Emotionale Nähe, körperliche Nähe und Sexualität."
+        "title": "Vertrauen",
+        "desc": "Verletzlichkeit zeigen, Vertraute:r sein, Zuneigung aussprechen."
       },
       {
-        "label": "Verbindung",
-        "desc": "Gefährtenschaft, langfristige Bindung und Sichtbarkeit."
+        "title": "Berührung",
+        "desc": "Kontakt im Alltag, Umarmung, Nähe ohne sexuelle Absicht."
       },
       {
-        "label": "Fürsorge",
-        "desc": "Unterstützung und geteilte Verantwortung."
+        "title": "Verlangen",
+        "desc": "Körperliche Begegnung, offenes Sprechen über Begehren, erotische Anziehung."
       },
       {
-        "label": "Struktur",
-        "desc": "Verflechtung (gemeinsames Wohnen, Finanzen, Alltag) und Zusammenarbeit."
+        "title": "Gefährtenschaft",
+        "desc": "Gemeinsames Spiel, geteilte Interessen, Freundschaft als eigener Wert."
       },
       {
-        "label": "Modalitäten",
-        "desc": "Kink und bewusstes Gefälle (Mentorschaft, Begleitung mit klarer Rollenasymmetrie)."
+        "title": "Bindung",
+        "desc": "Gemeinsame Zukunftsvorstellungen, Verbindlichkeit, gewählte Familie."
+      },
+      {
+        "title": "Fürsorge",
+        "desc": "Unterstützung geben und nehmen, füreinander da sein im Ernstfall."
+      },
+      {
+        "title": "Mitsorge",
+        "desc": "Geteilte Verantwortung für Kranke, Kinder, Tiere, Pflanzen."
+      },
+      {
+        "title": "Verflechtung",
+        "desc": "Gemeinsames Wohnen, geteilte Finanzen, gemeinsamer Alltag."
+      },
+      {
+        "title": "Wirken",
+        "desc": "Künstlerisch, geschäftlich, lehrend zusammenwirken."
+      },
+      {
+        "title": "Machtspiel",
+        "desc": "Bewusst gestaltete Machtdynamik, geteilte Vorlieben."
+      },
+      {
+        "title": "Gefälle",
+        "desc": "Mentorschaft, Patenschaft, Begleitung mit klarer Rollenasymmetrie."
+      },
+      {
+        "title": "Sichtbarkeit",
+        "desc": "Gemeinsames Auftreten, geteilter sozialer Kreis, offene Zuneigung."
       }
     ]
   },

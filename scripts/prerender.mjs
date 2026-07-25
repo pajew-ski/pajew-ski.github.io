@@ -59,8 +59,16 @@ const relationshipPrinciples = t.relationships.principles
   )
   .join('');
 
-const relationshipDimensions = t.relationships.dimensions
-  .map((group) => `<li><strong>${esc(group.label)}</strong>: ${esc(group.desc)}</li>`)
+// Building-block anchors are prefixed with the subsection slug (see
+// src/components/Relationships.tsx): the bare slugs would collide with the
+// principles of Being.
+const blocksAnchor = slugify(en.relationships.blocksTitle);
+
+const relationshipBlocks = t.relationships.blocks
+  .map(
+    (item, i) =>
+      `<li id="${blocksAnchor}-${slugify(en.relationships.blocks[i].title)}"><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`
+  )
   .join('');
 
 const luxFormats = t.luxAperta.formats
@@ -110,9 +118,9 @@ ${p(t.exocortex.copy)}
 <h2>${esc(t.relationships.h2)}</h2>
 ${p(t.relationships.copy)}
 <ul>${relationshipPrinciples}</ul>
-<h3 id="${slugify(en.relationships.dimensionsTitle)}">${esc(t.relationships.dimensionsTitle)}</h3>
-${p(t.relationships.dimensionsIntro)}
-<ul>${relationshipDimensions}</ul>
+<h3 id="${blocksAnchor}">${esc(t.relationships.blocksTitle)}</h3>
+${p(t.relationships.blocksIntro)}
+<ul>${relationshipBlocks}</ul>
 </section>
 <section id="lux-aperta">
 <h2>${esc(t.luxAperta.h2)}</h2>

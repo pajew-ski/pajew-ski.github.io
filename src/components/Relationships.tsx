@@ -4,16 +4,16 @@ import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { PrincipleCard, type PrincipleItemData } from './Principles';
 import { reveal, viewportOnce } from '../motion';
 
-interface DimensionGroup {
-  label: string;
-  desc: string;
-}
+// Building-block anchors carry the subsection slug as a prefix, the same way
+// Opus Purum chapters do: "Trust" is both a principle of Being and a building
+// block, so the bare slugs would collide.
+const blocksAnchor = slugify(enContent.relationships.blocksTitle);
 
 export function Relationships() {
   const { t } = useTranslation();
 
   const principles = t('relationships.principles', { returnObjects: true }) as PrincipleItemData[];
-  const dimensions = t('relationships.dimensions', { returnObjects: true }) as DimensionGroup[];
+  const blocks = t('relationships.blocks', { returnObjects: true }) as PrincipleItemData[];
 
   return (
     <section
@@ -64,14 +64,11 @@ export function Relationships() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
-            id={slugify(enContent.relationships.dimensionsTitle)}
+            id={blocksAnchor}
             className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
           >
-            <a
-              href={`#${slugify(enContent.relationships.dimensionsTitle)}`}
-              className={anchorLinkClass}
-            >
-              {t('relationships.dimensionsTitle')}
+            <a href={`#${blocksAnchor}`} className={anchorLinkClass}>
+              {t('relationships.blocksTitle')}
             </a>
           </m.h3>
           <m.p
@@ -81,25 +78,19 @@ export function Relationships() {
             transition={reveal()}
             className="text-foreground/80 font-light max-w-3xl"
           >
-            {t('relationships.dimensionsIntro')}
+            {t('relationships.blocksIntro')}
           </m.p>
 
-          <ul className="space-y-phi-md max-w-3xl">
-            {dimensions.map((group, index) => (
-              <m.li
-                key={group.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={viewportOnce}
-                transition={reveal(index * 0.05)}
-                className="text-foreground/80 font-light"
-              >
-                <strong className="font-bold text-foreground">{group.label}</strong>
-                {': '}
-                {group.desc}
-              </m.li>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+            {blocks.map((item, index) => (
+              <PrincipleCard
+                key={index}
+                item={item}
+                index={index}
+                anchor={`${blocksAnchor}-${slugify(enContent.relationships.blocks[index].title)}`}
+              />
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>

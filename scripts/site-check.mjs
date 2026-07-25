@@ -112,9 +112,9 @@ for (const mod of Object.values(en.principles.modules)) {
 }
 copy.push(en.exocortex.copy);
 for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item.desc);
-copy.push(en.relationships.copy, en.relationships.dimensionsIntro);
+copy.push(en.relationships.copy, en.relationships.blocksIntro);
 for (const item of en.relationships.principles) copy.push(item.title, item.desc);
-for (const group of en.relationships.dimensions) copy.push(group.desc);
+for (const item of en.relationships.blocks) copy.push(item.title, item.desc);
 copy.push(en.opusPurum.subtitle, en.luxAperta.subtitle, en.luxAperta.lead, ...en.luxAperta.paragraphs);
 for (const format of en.luxAperta.formats) {
   copy.push(format.tagline, ...format.paragraphs);
@@ -149,8 +149,13 @@ const expectedAnchors = [
   ...Object.values(en.principles.modules).flatMap((mod) => mod.list.map((i) => slugify(i.title))),
   ...en.opusPurum.chapters.map((c) => `opus-purum-${slugify(c.title)}`),
   ...Object.values(en.exocortex.stack).map((i) => slugify(i.title)),
-  slugify(en.relationships.dimensionsTitle),
+  slugify(en.relationships.blocksTitle),
   ...en.relationships.principles.map((i) => slugify(i.title)),
+  // Building-block anchors carry the subsection slug as a prefix; "Trust" is
+  // both a principle of Being and a building block.
+  ...en.relationships.blocks.map(
+    (i) => `${slugify(en.relationships.blocksTitle)}-${slugify(i.title)}`
+  ),
   ...en.luxAperta.formats.map((f) => slugify(f.title)),
 ];
 check(
@@ -190,6 +195,7 @@ await anchorContext.close();
 const deepLinks = [
   `opus-purum-${slugify(en.opusPurum.chapters[1].title)}`,
   slugify(en.principles.modules.moduleBeing.list[0].title),
+  `${slugify(en.relationships.blocksTitle)}-${slugify(en.relationships.blocks[0].title)}`,
   slugify(en.luxAperta.formats[0].title),
 ];
 for (const anchor of deepLinks) {
