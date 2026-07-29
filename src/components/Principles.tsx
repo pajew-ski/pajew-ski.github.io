@@ -150,9 +150,12 @@ export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4
       onClick={() => setIsHovered(!isHovered)}
     >
       {/* Anchor link doubling as the disclosure control (aria-expanded is
-          valid on links): Enter navigates to the anchor and the hash effect
-          opens the card, Space toggles, clicking the rest of the card
-          toggles. aria-expanded on the article itself would be invalid.
+          valid on links): plain activation (click, Enter, Space) only toggles
+          the card; fragment navigation would smooth-scroll the page, which
+          belongs to the accordion alone. The href keeps the card shareable
+          (copy link, modified clicks open in a new tab) and incoming deep
+          links open it via the hash initializer and hashchange.
+          aria-expanded on the article itself would be invalid.
           No wrapper div: a bare article is exempt from Readability's
           conditional cleaning, which can delete short link-and-text divs. */}
       <Heading id={anchor} className="text-2xl font-bold mb-phi-sm group-hover:text-primary transition-colors duration-300">
@@ -160,7 +163,13 @@ export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4
             href={`#${anchor}`}
             aria-expanded={isHovered}
             aria-controls={descId}
-            onClick={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) {
+                e.stopPropagation();
+                return;
+              }
+              e.preventDefault();
+            }}
             onKeyDown={(e) => {
               if (e.key === ' ') {
                 e.preventDefault();
