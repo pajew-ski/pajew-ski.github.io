@@ -1,6 +1,6 @@
 import { m } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { anchorLinkClass, enContent, slugify } from '../anchors';
 import { reveal, viewportOnce } from '../motion';
 
@@ -19,6 +19,50 @@ interface Chapter {
 const chapterAnchors = enContent.opusPurum.chapters.map(
   (chapter) => `opus-purum-${slugify(chapter.title)}`
 );
+
+// Opening a chapter collapses the previously open one, which reflows the page
+// while both grid-rows transitions run. To keep orientation, the opened
+// heading glides to the top of the viewport and is re-measured every frame,
+// so the moving layout underneath cannot drag it around. Any user scroll
+// input cancels the glide.
+const PANEL_TRANSITION_MS = 350;
+const GLIDE_MS = 500; // pins a little past the panel transition to absorb timing drift
+
+function glideHeadingToTop(heading: HTMLElement): () => void {
+  const margin = parseFloat(getComputedStyle(heading).scrollMarginTop) || 0;
+  const startTop = heading.getBoundingClientRect().top;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const start = performance.now();
+  let frame = 0;
+
+  const cancel = () => {
+    cancelAnimationFrame(frame);
+    window.removeEventListener('wheel', cancel);
+    window.removeEventListener('touchstart', cancel);
+  };
+
+  const step = (now: number) => {
+    const t = Math.min((now - start) / PANEL_TRANSITION_MS, 1);
+    const eased = reduceMotion ? 1 : 1 - Math.pow(1 - t, 3);
+    const desiredTop = startTop + (margin - startTop) * eased;
+    // 'instant' opts out of the page's `scroll-behavior: smooth`, which would
+    // otherwise animate every frame's correction and let the pin lag behind.
+    window.scrollTo({
+      top: window.scrollY + heading.getBoundingClientRect().top - desiredTop,
+      behavior: 'instant',
+    });
+    if (now - start < GLIDE_MS) {
+      frame = requestAnimationFrame(step);
+    } else {
+      cancel();
+    }
+  };
+
+  window.addEventListener('wheel', cancel, { passive: true });
+  window.addEventListener('touchstart', cancel, { passive: true });
+  frame = requestAnimationFrame(step);
+  return cancel;
+}
 
 export function OpusPurum() {
   const { t } = useTranslation();
@@ -41,6 +85,20 @@ export function OpusPurum() {
     window.addEventListener('hashchange', openFromHash);
     return () => window.removeEventListener('hashchange', openFromHash);
   }, [chapters]);
+
+  // Glide only on a change to a newly opened chapter, never on mount: on a
+  // deep-linked first paint the browser's own fragment scroll already
+  // positions the heading, and the initializer opened it layout-stable.
+  const prevOpenId = useRef(openId);
+  useEffect(() => {
+    const prev = prevOpenId.current;
+    prevOpenId.current = openId;
+    if (!openId || openId === prev) return;
+    const index = chapters.findIndex((chapter) => chapter.id === openId);
+    const heading = index >= 0 ? document.getElementById(chapterAnchors[index]) : null;
+    if (!heading) return;
+    return glideHeadingToTop(heading);
+  }, [openId, chapters]);
 
   return (
     <section
