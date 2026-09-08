@@ -172,7 +172,7 @@ Jede benannte Überschrift der Seite ist direkt verlinkbar, in der Form `https:/
 
 **Beziehungen, Prinzipien**: Liebe ist keine knappe Ressource → `love-is-not-a-scarce-resource`, Kein Primärstatus → `no-primary-status`, Spontanität statt Pflicht → `spontaneity-over-obligation`, Zusagen werden ausgehandelt → `commitments-are-negotiated`, Kein Anspruchsdenken → `no-entitlement`, Selbstklärung → `self-clarity`
 
-**Beziehungen, Bausteine** (die Überschrift selbst → `building-blocks`): Vertrauen → `building-blocks-trust`, Berührung → `building-blocks-touch`, Verlangen → `building-blocks-desire`, Gefährtenschaft → `building-blocks-companionship`, Bindung → `building-blocks-bond`, Fürsorge → `building-blocks-care`, Mitsorge → `building-blocks-co-care`, Verflechtung → `building-blocks-entanglement`, Wirken → `building-blocks-craft`, Machtspiel → `building-blocks-power-play`, Gefälle → `building-blocks-incline`, Sichtbarkeit → `building-blocks-visibility`
+**Beziehungen, Bausteine**: Bausteine (Überschrift) → `building-blocks`, Vertrauen → `building-blocks-trust`, Berührung → `building-blocks-touch`, Verlangen → `building-blocks-desire`, Gefährtenschaft → `building-blocks-companionship`, Bindung → `building-blocks-bond`, Fürsorge → `building-blocks-care`, Mitsorge → `building-blocks-co-care`, Verflechtung → `building-blocks-entanglement`, Wirken → `building-blocks-craft`, Machtspiel → `building-blocks-power-play`, Gefälle → `building-blocks-incline`, Sichtbarkeit → `building-blocks-visibility`
 
 **Lux Aperta, Formate**: Iter Apertum → `iter-apertum`, Convivium Apertum → `convivium-apertum`, Speculum Apertum → `speculum-apertum`
 

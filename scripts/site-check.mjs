@@ -7,7 +7,13 @@
 //    body copy from the locale files survives extraction, in document order,
 //    with no stray UI glyphs. Guards the accordion/card markup against
 //    regressions that hide content from readers.
-// 2. Accessibility: axe-core full-page scans in light and dark mode, at
+// 2. Anchors: every named heading is deep-linkable, ids are unique, and deep
+//    links open collapsed targets.
+// 3. The anchor table in SYSTEM_PROMPT.md matches the page. The chat prompt
+//    lists deep links it cannot derive (anchors come from the English titles
+//    the prompt does not carry), so a rename would leave it handing out dead
+//    links; this check fails instead.
+// 4. Accessibility: axe-core full-page scans in light and dark mode, at
 //    mobile and desktop viewports. Fails on any violation.
 //
 // Requires a fresh `npm run build` (checks dist/ via vite preview).
@@ -23,6 +29,7 @@ import { chromium } from 'playwright-core';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const en = JSON.parse(readFileSync(resolve(root, 'src/locales/en.json'), 'utf8'));
+const de = JSON.parse(readFileSync(resolve(root, 'src/locales/de.json'), 'utf8'));
 
 if (!existsSync(resolve(root, 'dist/index.html'))) {
   console.error('dist/index.html not found; run `npm run build` first.');
@@ -185,7 +192,7 @@ const anchorState = await anchorPage.evaluate((anchors) => {
       hasSelfLink: el !== null && el.querySelector(`a[href="#${anchor}"]`) !== null,
     };
   }
-  return { duplicates, results };
+  return { duplicates, results, ids: allIds };
 }, expectedAnchors);
 
 check(anchorState.duplicates.length === 0, `anchors: duplicate DOM ids: ${anchorState.duplicates}`);
@@ -228,7 +235,124 @@ for (const anchor of deepLinks) {
 }
 
 // ---------------------------------------------------------------------------
-// 3. Accessibility (axe-core), light and dark, mobile and desktop
+// 3. Anchor table in SYSTEM_PROMPT.md
+// ---------------------------------------------------------------------------
+
+// The chat prompt hands out deep links. Anchors derive from the English titles,
+// which that prompt does not carry, so it cannot compute them and lists them
+// instead. Renaming a title would leave the list pointing at anchors the page
+// no longer has, and nothing on the page would look wrong.
+
+const blocksPrefix = slugify(en.relationships.blocksTitle);
+
+const pairs = (deItems, enItems, prefix = '', label = (item) => item.title) =>
+  deItems.map((item, i) => ({
+    label: label(item),
+    anchor: `${prefix}${slugify(enItems[i].title)}`,
+  }));
+
+const expectedTable = [
+  {
+    group: 'Sektionen',
+    entries: [
+      { label: 'Intro', anchor: 'intro' },
+      { label: de.opusPurum.h2, anchor: 'opus-purum' },
+      { label: de.principles.h2, anchor: 'principles' },
+      { label: de.exocortex.h2, anchor: 'exocortex' },
+      { label: de.projects.h2, anchor: 'projects' },
+      { label: de.relationships.h2, anchor: 'relationships' },
+      { label: de.luxAperta.h2, anchor: 'lux-aperta' },
+    ],
+  },
+  {
+    group: 'Opus Purum, Kapitel',
+    entries: pairs(
+      de.opusPurum.chapters,
+      en.opusPurum.chapters,
+      'opus-purum-',
+      (chapter) => `${chapter.label} ${chapter.title}`
+    ),
+  },
+  {
+    group: 'Prinzipien, Module',
+    entries: Object.values(de.principles.modules).map((mod, i) => ({
+      label: mod.title,
+      anchor: slugify(Object.values(en.principles.modules)[i].title),
+    })),
+  },
+  {
+    group: `Prinzipien, ${de.principles.modules.moduleBeing.title}`,
+    entries: pairs(de.principles.modules.moduleBeing.list, en.principles.modules.moduleBeing.list),
+  },
+  {
+    group: `Prinzipien, ${de.principles.modules.moduleDoing.title}`,
+    entries: pairs(de.principles.modules.moduleDoing.list, en.principles.modules.moduleDoing.list),
+  },
+  {
+    group: 'Exocortex',
+    entries: Object.keys(en.exocortex.stack).map((key) => ({
+      label: de.exocortex.stack[key].title,
+      anchor: slugify(en.exocortex.stack[key].title),
+    })),
+  },
+  { group: 'Projekte', entries: pairs(de.projects.items, en.projects.items) },
+  {
+    group: 'Beziehungen, Prinzipien',
+    entries: pairs(de.relationships.principles, en.relationships.principles),
+  },
+  {
+    group: `Beziehungen, ${de.relationships.blocksTitle}`,
+    entries: [
+      { label: `${de.relationships.blocksTitle} (Überschrift)`, anchor: blocksPrefix },
+      ...pairs(de.relationships.blocks, en.relationships.blocks, `${blocksPrefix}-`),
+    ],
+  },
+  { group: 'Lux Aperta, Formate', entries: pairs(de.luxAperta.formats, en.luxAperta.formats) },
+];
+
+const renderRow = (entries) =>
+  entries.map((entry) => `${entry.label} → \`${entry.anchor}\``).join(', ');
+
+const prompt = readFileSync(resolve(root, 'SYSTEM_PROMPT.md'), 'utf8');
+const tableStart = prompt.indexOf('## Anker (Direktlinks)');
+const tableEnd = prompt.indexOf('\n## ', tableStart + 1);
+const tableText =
+  tableStart === -1 ? '' : prompt.slice(tableStart, tableEnd === -1 ? undefined : tableEnd);
+check(tableStart !== -1, 'prompt: SYSTEM_PROMPT.md has no "## Anker (Direktlinks)" section');
+
+const promptRows = new Map();
+for (const line of tableText.split('\n')) {
+  const row = line.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
+  if (row) promptRows.set(row[1], row[2].trim());
+}
+
+for (const { group, entries } of expectedTable) {
+  const expectedRow = renderRow(entries);
+  const actualRow = promptRows.get(group);
+  if (actualRow === undefined) {
+    check(false, `prompt: anchor table has no row "**${group}**:", expected\n      **${group}**: ${expectedRow}`);
+    continue;
+  }
+  check(
+    actualRow === expectedRow,
+    `prompt: anchor table row "${group}" is stale, expected\n      **${group}**: ${expectedRow}\n    got\n      **${group}**: ${actualRow}`
+  );
+}
+const expectedGroups = new Set(expectedTable.map((row) => row.group));
+for (const group of promptRows.keys()) {
+  check(expectedGroups.has(group), `prompt: anchor table has an unknown row "**${group}**:"`);
+}
+
+// Every anchor the prompt promises has to exist on the page.
+const domIds = new Set(anchorState.ids);
+for (const { group, entries } of expectedTable) {
+  for (const { anchor } of entries) {
+    check(domIds.has(anchor), `prompt: anchor #${anchor} (${group}) is missing from the page`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 4. Accessibility (axe-core), light and dark, mobile and desktop
 // ---------------------------------------------------------------------------
 
 const viewports = [
@@ -264,4 +388,4 @@ if (failures.length) {
   for (const failure of failures) console.error(`  ✗ ${failure}`);
   process.exit(1);
 }
-console.log('site-check: reader extraction and accessibility checks passed');
+console.log('site-check: reader extraction, anchors, prompt anchor table and accessibility checks passed');
