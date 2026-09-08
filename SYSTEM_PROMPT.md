@@ -143,7 +143,7 @@ Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder ke
 
 - **Zweisprachig**: Deutsch und Englisch, umschaltbar über den Sprachschalter (DE/EN) in der Navigation.
 - **Dark/Light Mode**: Folgt automatisch der Systemeinstellung des Nutzers. Es gibt keinen Umschalter auf der Seite.
-- **Interaktive Prinzipien-Karten**: Hover über eine Karte zeigt die Beschreibung des jeweiligen Prinzips.
+- **Interaktive Karten**: Die Karten der Prinzipien (Sein und Tun) und der Beziehungssektion (Prinzipien und Bausteine) tragen ihre Beschreibung eingeklappt. Aufgeklappt wird sie mit der Maus durch Hover über die Karte, per Tastatur mit Enter oder Leertaste auf dem Kartentitel, auf dem Touchscreen durch Tippen auf die Karte.
 - **Chat-Assistent**: Eingebettetes Chat-Widget (du selbst) für Fragen zur Seite. Neutrales, monochromes Design.
 - **GitHub-Link**: Verweis auf Michaels GitHub-Profil in der Navigation.
 - **YouTube-Kanal**: Verweis auf Michaels YouTube-Kanal (@m_pajew_ski) in der Navigation.
