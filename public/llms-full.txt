@@ -133,6 +133,42 @@ Keeping the system coherent and sovereign: SecDevOps, GitOps, causal inference m
 
 ---
 
+## Projects
+
+What Michael builds is out in the open: tools for practice, an ontology as open data, extensions for his own infrastructure. Every project stands on its own and is free to use.
+
+### Prima Materia · Ontology
+A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain. It models processes instead of substances, and every term has an address of its own it can be cited by.
+
+* **Page**: https://pajew.ski/prima-materia/
+
+### Temet Nosce · Knowledge graph
+An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database.
+
+* **Page**: https://pajew.ski/temet-nosce/
+
+### Open Entrainer · Sound tool
+Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, lucid dreaming, and focused work.
+
+* **Page**: https://pajew.ski/open-entrainer/
+
+### Open Desensitizer · Practice tool
+Bilateral stimulation through eye and ear, for working through stress and difficult emotions. It runs entirely in the browser, with a guided breathing exercise as the way out.
+
+* **Page**: https://pajew.ski/open-desensitizer/
+
+### Chronotope · Home automation
+A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.
+
+* **Repository**: https://github.com/pajew-ski/ha-chronotope
+
+### Mermaid Diagram Card · Home automation
+A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.
+
+* **Repository**: https://github.com/pajew-ski/ha-mermaid
+
+---
+
 ## Relationships
 
 How Michael shapes relationships: without ranking and without ready-made scripts. What a connection is, the people in it negotiate themselves: what closeness, what commitments, what form. The frame for this is relationship anarchy.

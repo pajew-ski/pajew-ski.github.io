@@ -15,7 +15,7 @@
     <!-- The chat widget talks to this origin once it loads after page idle -->
     <link rel="preconnect" href="https://n8n.pajewski.net" crossorigin>
     <title>Michael</title>
-    <meta name="description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Beziehungen und Lux Aperta Bavaria." />
+    <meta name="description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Projekten, Beziehungen und Lux Aperta Bavaria." />
     <meta name="author" content="Michael Pajewski" />
     <link rel="canonical" href="https://pajew.ski/" />
     <link rel="llms.txt" href="/llms.txt" />
@@ -25,7 +25,7 @@
     <!-- Open Graph / social & crawler previews -->
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="Michael Pajewski" />
-    <meta property="og:description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Beziehungen und Lux Aperta Bavaria." />
+    <meta property="og:description" content="Michael: Data Scientist, Tänzer, Kreativer. Web-Visitenkarte mit Opus Purum, Prinzipien, Exocortex, Projekten, Beziehungen und Lux Aperta Bavaria." />
     <meta property="og:url" content="https://pajew.ski/" />
     <meta property="og:image" content="https://pajew.ski/og-image.png" />
     <meta property="og:image:width" content="2400" />
@@ -59,7 +59,9 @@
               "Machine Learning",
               "Dance",
               "Relationship Anarchy",
-              "Self-hosted infrastructure"
+              "Self-hosted infrastructure",
+              "Knowledge graphs",
+              "Ontology engineering"
             ],
             "address": {
               "@type": "PostalAddress",
@@ -79,6 +81,52 @@
             "name": "Michael Pajewski",
             "inLanguage": ["de", "en"],
             "about": { "@id": "https://pajew.ski/#michael" },
+            "author": { "@id": "https://pajew.ski/#michael" },
+            "hasPart": [
+              { "@id": "https://pajew.ski/prima-materia/" },
+              { "@id": "https://pajew.ski/temet-nosce/" },
+              { "@id": "https://pajew.ski/open-entrainer/" },
+              { "@id": "https://pajew.ski/open-desensitizer/" }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pajew.ski/prima-materia/",
+            "url": "https://pajew.ski/prima-materia/",
+            "name": "Prima Materia",
+            "description": "A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://pajew.ski/#website" },
+            "author": { "@id": "https://pajew.ski/#michael" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pajew.ski/temet-nosce/",
+            "url": "https://pajew.ski/temet-nosce/",
+            "name": "Temet Nosce",
+            "description": "An agent that explains itself through a knowledge graph of the repository it lives in, without a vector database.",
+            "inLanguage": "en",
+            "isPartOf": { "@id": "https://pajew.ski/#website" },
+            "author": { "@id": "https://pajew.ski/#michael" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pajew.ski/open-entrainer/",
+            "url": "https://pajew.ski/open-entrainer/",
+            "name": "Open Entrainer",
+            "description": "Binaural frequencies generated in the browser in real time, for meditation, lucid dreaming, and focused work.",
+            "inLanguage": "de",
+            "isPartOf": { "@id": "https://pajew.ski/#website" },
+            "author": { "@id": "https://pajew.ski/#michael" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://pajew.ski/open-desensitizer/",
+            "url": "https://pajew.ski/open-desensitizer/",
+            "name": "Open Desensitizer",
+            "description": "Bilateral stimulation through eye and ear, running entirely in the browser, for working through stress and difficult emotions.",
+            "inLanguage": "de",
+            "isPartOf": { "@id": "https://pajew.ski/#website" },
             "author": { "@id": "https://pajew.ski/#michael" }
           }
         ]

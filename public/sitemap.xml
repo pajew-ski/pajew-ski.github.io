@@ -26,4 +26,27 @@
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
   </url>
+  <!-- Project pages under the same domain. They deploy from their own
+       repositories, so they carry no lastmod: the build stamp of this site
+       would say nothing true about them. -->
+  <url>
+    <loc>https://pajew.ski/prima-materia/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pajew.ski/temet-nosce/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pajew.ski/open-entrainer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pajew.ski/open-desensitizer/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>

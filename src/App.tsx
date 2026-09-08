@@ -3,6 +3,7 @@ import { LazyMotion, domAnimation } from 'framer-motion';
 import { Layout } from './components/Layout';
 import { Intro } from './components/Intro';
 import { Exocortex } from './components/Exocortex';
+import { Projects } from './components/Projects';
 import { Principles } from './components/Principles';
 import { OpusPurum } from './components/OpusPurum';
 import { Relationships } from './components/Relationships';
@@ -31,6 +32,7 @@ function App() {
           <OpusPurum />
           <Principles />
           <Exocortex />
+          <Projects />
           <Relationships />
           <LuxAperta />
         </Layout>

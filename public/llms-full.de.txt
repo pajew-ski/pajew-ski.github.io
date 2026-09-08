@@ -133,6 +133,42 @@ Kohärenz und Souveränität sichern: SecDevOps, GitOps, kausale Inferenz-Modell
 
 ---
 
+## Projekte
+
+Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar.
+
+### Prima Materia · Ontologie
+Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.
+
+* **Seite**: https://pajew.ski/prima-materia/
+
+### Temet Nosce · Wissensgraph
+Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank.
+
+* **Seite**: https://pajew.ski/temet-nosce/
+
+### Open Entrainer · Klangwerkzeug
+Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, luzides Träumen und konzentriertes Arbeiten.
+
+* **Seite**: https://pajew.ski/open-entrainer/
+
+### Open Desensitizer · Übungswerkzeug
+Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
+
+* **Seite**: https://pajew.ski/open-desensitizer/
+
+### Chronotope · Hausautomation
+Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.
+
+* **Repository**: https://github.com/pajew-ski/ha-chronotope
+
+### Mermaid Diagram Card · Hausautomation
+Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.
+
+* **Repository**: https://github.com/pajew-ski/ha-mermaid
+
+---
+
 ## Beziehungen
 
 Wie Michael Beziehungen gestaltet: ohne Rangfolge und ohne fertige Skripte. Was eine Verbindung ist, handeln die Beteiligten selbst aus: welche Nähe, welche Zusagen, welche Form. Der Rahmen dafür ist die Beziehungsanarchie.
