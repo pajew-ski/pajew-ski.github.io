@@ -112,6 +112,10 @@ for (const mod of Object.values(en.principles.modules)) {
 }
 copy.push(en.exocortex.copy);
 for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item.desc);
+copy.push(en.projects.copy);
+for (const project of en.projects.items) {
+  copy.push(project.kind, project.title, project.desc, project.linkLabel);
+}
 copy.push(en.relationships.copy, en.relationships.blocksIntro);
 for (const item of en.relationships.principles) copy.push(item.title, item.desc);
 for (const item of en.relationships.blocks) copy.push(item.title, item.desc);
@@ -149,6 +153,7 @@ const expectedAnchors = [
   ...Object.values(en.principles.modules).flatMap((mod) => mod.list.map((i) => slugify(i.title))),
   ...en.opusPurum.chapters.map((c) => `opus-purum-${slugify(c.title)}`),
   ...Object.values(en.exocortex.stack).map((i) => slugify(i.title)),
+  ...en.projects.items.map((i) => slugify(i.title)),
   slugify(en.relationships.blocksTitle),
   ...en.relationships.principles.map((i) => slugify(i.title)),
   // Building-block anchors carry the subsection slug as a prefix; "Trust" is

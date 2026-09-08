@@ -52,6 +52,13 @@ const opusChapters = t.opusPurum.chapters
   })
   .join('');
 
+const projects = t.projects.items
+  .map((project, i) => {
+    const anchor = slugify(en.projects.items[i].title);
+    return `<h3 id="${anchor}">${esc(project.title)} · ${esc(project.kind)}</h3>${p(project.desc)}<p><a href="${esc(project.href)}">${esc(project.linkLabel)}</a></p>`;
+  })
+  .join('');
+
 const relationshipPrinciples = t.relationships.principles
   .map(
     (item, i) =>
@@ -113,6 +120,11 @@ ${p(t.exocortex.copy)}
       `<li id="${slugify(en.exocortex.stack[key].title)}"><strong>${esc(item.title)}</strong>: ${esc(item.desc)}</li>`
   )
   .join('')}</ul>
+</section>
+<section id="projects">
+<h2>${esc(t.projects.h2)}</h2>
+${p(t.projects.copy)}
+${projects}
 </section>
 <section id="relationships">
 <h2>${esc(t.relationships.h2)}</h2>

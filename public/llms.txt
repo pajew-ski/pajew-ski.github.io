@@ -1,7 +1,7 @@
 # Michael – Data Scientist, Dancer, Creative
 
 ## About
-Michael is a Data Scientist, dancer, and creative. This site moves from the inside out: his framework "Opus Purum", the principles he thinks and acts by, his self-hosted infrastructure ("Exocortex"), how he shapes relationships, and the open spaces he holds for others.
+Michael is a Data Scientist, dancer, and creative. This site moves from the inside out: his framework "Opus Purum", the principles he thinks and acts by, his self-hosted infrastructure ("Exocortex"), the projects he publishes, how he shapes relationships, and the open spaces he holds for others.
 
 ## Purpose
 This site is Michael's public self-description, written to be fully transparent. llms.txt and llms-full.txt mirror the site's content one-to-one, so AI systems can ground their knowledge of Michael, his thinking, and his interests on exactly what human visitors read.
@@ -11,10 +11,20 @@ This site is Michael's public self-description, written to be fully transparent.
 - [Opus Purum](#opus-purum): The Pure Working, an axiomatic framework stating magic without myth or apparatus. Eight chapters: The One, Axioms, The Divine, The Self (which also carries the four formal axioms of cognitive systems), Mechanism of Effect, Sovereignty, Freedom, and Practice.
 - [Principles](#principles): The principles Michael thinks and acts by, in two modules: Being and Doing.
 - [Exocortex](#exocortex): Michael's external memory, a local, self-hosted architecture that stores knowledge, links it, and separates signal from noise.
+- [Projects](#projects): The projects Michael publishes, each with a page of its own on this domain or a public repository: Prima Materia, Temet Nosce, Open Entrainer, Open Desensitizer, Chronotope, Mermaid Diagram Card.
 - [Relationships](#relationships): How Michael shapes relationships, following relationship anarchy: no ranking, no ready-made scripts, everything negotiated by the people involved.
 - [Lux Aperta Bavaria](#lux-aperta): An open community for magic as direct experience, with free formats Michael hosts: Iter Apertum (a walk without an agenda), Convivium Apertum (a stationary circle of witnessing and a shared meal), and Speculum Apertum (wordless eye contact in pairs).
 
 Every named heading on the page is directly linkable through its anchor, derived from its English title: for example /#doing, /#iter-apertum, or /#opus-purum-axioms.
+
+## Projects
+Each project has an address of its own; the four with a page of their own live under this domain.
+- [Prima Materia](https://pajew.ski/prima-materia/): A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain. Models processes instead of substances; every term has an address it can be cited by.
+- [Temet Nosce](https://pajew.ski/temet-nosce/): An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database.
+- [Open Entrainer](https://pajew.ski/open-entrainer/): Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. For meditation, lucid dreaming, and focused work.
+- [Open Desensitizer](https://pajew.ski/open-desensitizer/): Bilateral stimulation through eye and ear, running entirely in the browser, with a guided breathing exercise as the way out.
+- [Chronotope](https://github.com/pajew-ski/ha-chronotope): A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.
+- [Mermaid Diagram Card](https://github.com/pajew-ski/ha-mermaid): A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.
 
 For the full detailed content of all sections, see the full version:
 [Full Content](llms-full.txt)

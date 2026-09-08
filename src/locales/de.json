@@ -21,6 +21,60 @@
       }
     }
   },
+  "projects": {
+    "h2": "Projekte",
+    "copy": "Was ich baue, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für meine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar.",
+    "items": [
+      {
+        "id": "prima-materia",
+        "kind": "Ontologie",
+        "title": "Prima Materia",
+        "desc": "Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.",
+        "href": "/prima-materia/",
+        "linkLabel": "pajew.ski/prima-materia"
+      },
+      {
+        "id": "temet-nosce",
+        "kind": "Wissensgraph",
+        "title": "Temet Nosce",
+        "desc": "Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank.",
+        "href": "/temet-nosce/",
+        "linkLabel": "pajew.ski/temet-nosce"
+      },
+      {
+        "id": "open-entrainer",
+        "kind": "Klangwerkzeug",
+        "title": "Open Entrainer",
+        "desc": "Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, luzides Träumen und konzentriertes Arbeiten.",
+        "href": "/open-entrainer/",
+        "linkLabel": "pajew.ski/open-entrainer"
+      },
+      {
+        "id": "open-desensitizer",
+        "kind": "Übungswerkzeug",
+        "title": "Open Desensitizer",
+        "desc": "Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.",
+        "href": "/open-desensitizer/",
+        "linkLabel": "pajew.ski/open-desensitizer"
+      },
+      {
+        "id": "chronotope",
+        "kind": "Hausautomation",
+        "title": "Chronotope",
+        "desc": "Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.",
+        "href": "https://github.com/pajew-ski/ha-chronotope",
+        "linkLabel": "github.com/pajew-ski/ha-chronotope"
+      },
+      {
+        "id": "mermaid-diagram-card",
+        "kind": "Hausautomation",
+        "title": "Mermaid Diagram Card",
+        "desc": "Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.",
+        "href": "https://github.com/pajew-ski/ha-mermaid",
+        "linkLabel": "github.com/pajew-ski/ha-mermaid"
+      }
+    ]
+  },
   "principles": {
     "h2": "Prinzipien",
     "copy": "Die Grundsätze, nach denen ich denke und handle. Zwei Module: Sein und Tun.",
