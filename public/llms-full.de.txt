@@ -148,7 +148,7 @@ Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository
 * **Seite**: https://pajew.ski/temet-nosce/
 
 ### Open Entrainer · Klangwerkzeug
-Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, luzides Träumen und konzentriertes Arbeiten.
+Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.
 
 * **Seite**: https://pajew.ski/open-entrainer/
 
@@ -156,6 +156,11 @@ Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über
 Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
 
 * **Seite**: https://pajew.ski/open-desensitizer/
+
+### Open Helix · Hörillusion
+Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.
+
+* **Seite**: https://pajew.ski/open-helix/
 
 ### Chronotope · Hausautomation
 Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.

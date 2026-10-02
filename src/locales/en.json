@@ -45,7 +45,7 @@
         "id": "open-entrainer",
         "kind": "Sound tool",
         "title": "Open Entrainer",
-        "desc": "Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, lucid dreaming, and focused work.",
+        "desc": "Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, falling asleep, and focused work.",
         "href": "/open-entrainer/",
         "linkLabel": "pajew.ski/open-entrainer"
       },
@@ -56,6 +56,14 @@
         "desc": "Bilateral stimulation through eye and ear, for working through stress and difficult emotions. It runs entirely in the browser, with a guided breathing exercise as the way out.",
         "href": "/open-desensitizer/",
         "linkLabel": "pajew.ski/open-desensitizer"
+      },
+      {
+        "id": "open-helix",
+        "kind": "Auditory illusion",
+        "title": "Open Helix",
+        "desc": "A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time. Every parameter sits openly on one page, and a spectrogram draws what is playing.",
+        "href": "/open-helix/",
+        "linkLabel": "pajew.ski/open-helix"
       },
       {
         "id": "chronotope",
