@@ -148,7 +148,7 @@ An agent that explains itself. Its knowledge graph describes the repository it l
 * **Page**: https://pajew.ski/temet-nosce/
 
 ### Open Entrainer · Sound tool
-Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, lucid dreaming, and focused work.
+Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, falling asleep, and focused work.
 
 * **Page**: https://pajew.ski/open-entrainer/
 
@@ -156,6 +156,11 @@ Binaural frequencies generated in the browser in real time, with full control ov
 Bilateral stimulation through eye and ear, for working through stress and difficult emotions. It runs entirely in the browser, with a guided breathing exercise as the way out.
 
 * **Page**: https://pajew.ski/open-desensitizer/
+
+### Open Helix · Auditory illusion
+A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time. Every parameter sits openly on one page, and a spectrogram draws what is playing.
+
+* **Page**: https://pajew.ski/open-helix/
 
 ### Chronotope · Home automation
 A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.

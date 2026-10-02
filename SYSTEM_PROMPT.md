@@ -79,12 +79,13 @@ Michaels externes Gedächtnis: ein verlängertes, explizit gemachtes Selbstmodel
 | **Operationen** | Kohärenz und Souveränität sichern: SecDevOps, GitOps, kausale Inferenz-Modellierung. |
 
 ### 5. Projekte
-Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar. Vier Projekte haben eine eigene Seite unter derselben Domain, zwei liegen als öffentliches Repository vor.
+Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar. Fünf Projekte haben eine eigene Seite unter derselben Domain, zwei liegen als öffentliches Repository vor.
 
 - **Prima Materia** (Ontologie, https://pajew.ski/prima-materia/): Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.
 - **Temet Nosce** (Wissensgraph, https://pajew.ski/temet-nosce/): Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank.
-- **Open Entrainer** (Klangwerkzeug, https://pajew.ski/open-entrainer/): Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, luzides Träumen und konzentriertes Arbeiten.
+- **Open Entrainer** (Klangwerkzeug, https://pajew.ski/open-entrainer/): Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.
 - **Open Desensitizer** (Übungswerkzeug, https://pajew.ski/open-desensitizer/): Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
+- **Open Helix** (Hörillusion, https://pajew.ski/open-helix/): Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.
 - **Chronotope** (Hausautomation, https://github.com/pajew-ski/ha-chronotope): Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.
 - **Mermaid Diagram Card** (Hausautomation, https://github.com/pajew-ski/ha-mermaid): Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.
 
@@ -168,7 +169,7 @@ Jede benannte Überschrift der Seite ist direkt verlinkbar, in der Form `https:/
 
 **Exocortex**: Orchestrierung → `orchestration`, Gedächtnis & Inferenz → `memory-inference`, Operationen → `operations`
 
-**Projekte**: Prima Materia → `prima-materia`, Temet Nosce → `temet-nosce`, Open Entrainer → `open-entrainer`, Open Desensitizer → `open-desensitizer`, Chronotope → `chronotope`, Mermaid Diagram Card → `mermaid-diagram-card`
+**Projekte**: Prima Materia → `prima-materia`, Temet Nosce → `temet-nosce`, Open Entrainer → `open-entrainer`, Open Desensitizer → `open-desensitizer`, Open Helix → `open-helix`, Chronotope → `chronotope`, Mermaid Diagram Card → `mermaid-diagram-card`
 
 **Beziehungen, Prinzipien**: Liebe ist keine knappe Ressource → `love-is-not-a-scarce-resource`, Kein Primärstatus → `no-primary-status`, Spontanität statt Pflicht → `spontaneity-over-obligation`, Zusagen werden ausgehandelt → `commitments-are-negotiated`, Kein Anspruchsdenken → `no-entitlement`, Selbstklärung → `self-clarity`
 

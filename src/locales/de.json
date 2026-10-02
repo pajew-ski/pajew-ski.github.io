@@ -45,7 +45,7 @@
         "id": "open-entrainer",
         "kind": "Klangwerkzeug",
         "title": "Open Entrainer",
-        "desc": "Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, luzides Träumen und konzentriertes Arbeiten.",
+        "desc": "Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.",
         "href": "/open-entrainer/",
         "linkLabel": "pajew.ski/open-entrainer"
       },
@@ -56,6 +56,14 @@
         "desc": "Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.",
         "href": "/open-desensitizer/",
         "linkLabel": "pajew.ski/open-desensitizer"
+      },
+      {
+        "id": "open-helix",
+        "kind": "Hörillusion",
+        "title": "Open Helix",
+        "desc": "Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.",
+        "href": "/open-helix/",
+        "linkLabel": "pajew.ski/open-helix"
       },
       {
         "id": "chronotope",
