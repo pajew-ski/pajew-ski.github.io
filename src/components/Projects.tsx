@@ -8,6 +8,7 @@ interface ProjectData {
   kind: string;
   title: string;
   desc: string;
+  note?: string;
   href: string;
   linkLabel: string;
 }
@@ -81,6 +82,9 @@ export function Projects() {
               </h3>
             </header>
             <p className="text-foreground/75 font-light">{project.desc}</p>
+            {project.note && (
+              <p className="text-sm text-muted-foreground font-light">{project.note}</p>
+            )}
             <a href={project.href} className={projectLinkClass}>
               {project.linkLabel}
             </a>

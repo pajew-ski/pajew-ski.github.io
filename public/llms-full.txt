@@ -135,42 +135,60 @@ Keeping the system coherent and sovereign: SecDevOps, GitOps, causal inference m
 
 ## Projects
 
-What Michael builds is out in the open: tools for practice, an ontology as open data, extensions for his own infrastructure. Every project stands on its own and is free to use.
+What Michael builds is out in the open: tools for practice, an ontology as open data, extensions for his own infrastructure. It carries on what comes before: Opus Purum as data, the Exocortex as an agent and as extensions, the practice as tools. Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.
 
 ### Prima Materia · Ontology
 A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain. It models processes instead of substances, and every term has an address of its own it can be cited by.
 
 * **Page**: https://pajew.ski/prima-materia/
+* **Repository**: https://github.com/pajew-ski/prima-materia
+* **License**: CC0 1.0 (public domain), covering code, ontology, and specification
 
 ### Temet Nosce · Knowledge graph
-An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database.
+An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database. The same graph is open to any client through an MCP server, for reading and writing.
 
 * **Page**: https://pajew.ski/temet-nosce/
+* **Repository**: https://github.com/pajew-ski/temet-nosce
+* **License**: MIT for the code; the knowledge graph is CC0 1.0 (public domain)
 
 ### Open Entrainer · Sound tool
-Binaural frequencies generated in the browser in real time, with full control over the curve and the carrier. Made for meditation, falling asleep, and focused work.
+Binaural frequencies generated in the browser in real time and sent nowhere, with full control over the curve and the carrier. Over minutes, brain activity tends to follow the beat; made for meditation, falling asleep, and focused work.
+
+Needs headphones; through speakers the two tones mix in the air and the beat disappears. Not a medical device: not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.
 
 * **Page**: https://pajew.ski/open-entrainer/
+* **Repository**: https://github.com/pajew-ski/open-entrainer
+* **License**: Unlicense (public domain)
 
 ### Open Desensitizer · Practice tool
-Bilateral stimulation through eye and ear, for working through stress and difficult emotions. It runs entirely in the browser, with a guided breathing exercise as the way out.
+Bilateral stimulation through eye and ear. On its own it tends to settle the nervous system; held together with a difficult memory, it can make that memory easier to carry. It runs entirely in the browser, with a guided breathing exercise as the way out.
+
+Not a replacement for therapy; working through trauma belongs with professional support. Not with photosensitive epilepsy, and with a dissociative disorder, ask a clinician first. The tone is optional and needs headphones.
 
 * **Page**: https://pajew.ski/open-desensitizer/
+* **Repository**: https://github.com/pajew-ski/open-desensitizer
+* **License**: Unlicense (public domain)
 
 ### Open Helix · Auditory illusion
-A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time. Every parameter sits openly on one page, and a spectrogram draws what is playing.
+A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time and sent nowhere. Every parameter sits openly on one page, and a spectrogram draws what is playing.
+
+Headphones for the beat, the panning, and the tremolo phase. Not a medical device: the effect needs no volume, and fast runs with many components feel more intense than expected; not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.
 
 * **Page**: https://pajew.ski/open-helix/
+* **Repository**: https://github.com/pajew-ski/open-helix
+* **License**: Unlicense (public domain)
 
 ### Chronotope · Home automation
 A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.
 
 * **Repository**: https://github.com/pajew-ski/ha-chronotope
+* **License**: MIT
 
 ### Mermaid Diagram Card · Home automation
 A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.
 
 * **Repository**: https://github.com/pajew-ski/ha-mermaid
+* **License**: MIT
 
 ---
 

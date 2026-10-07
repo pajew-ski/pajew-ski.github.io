@@ -135,42 +135,60 @@ Kohärenz und Souveränität sichern: SecDevOps, GitOps, kausale Inferenz-Modell
 
 ## Projekte
 
-Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar.
+Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Es führt fort, was davor steht: Opus Purum als Daten, der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.
 
 ### Prima Materia · Ontologie
 Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.
 
 * **Seite**: https://pajew.ski/prima-materia/
+* **Repository**: https://github.com/pajew-ski/prima-materia
+* **Lizenz**: CC0 1.0 (gemeinfrei), für Code, Ontologie und Spezifikation
 
 ### Temet Nosce · Wissensgraph
-Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank.
+Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank. Derselbe Graph steht über einen MCP-Server jedem Client offen, lesend und schreibend.
 
 * **Seite**: https://pajew.ski/temet-nosce/
+* **Repository**: https://github.com/pajew-ski/temet-nosce
+* **Lizenz**: MIT für den Code; der Wissensgraph ist CC0 1.0 (gemeinfrei)
 
 ### Open Entrainer · Klangwerkzeug
-Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.
+Binaurale Frequenzen, im Browser in Echtzeit erzeugt und nirgendwohin gesendet, mit voller Kontrolle über Verlauf und Trägerfrequenz. Die Hirnaktivität neigt über Minuten dazu, der Schwebung zu folgen; gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.
+
+Braucht Kopfhörer; über Lautsprecher mischen sich die beiden Töne in der Luft und die Schwebung verschwindet. Kein Medizinprodukt: nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.
 
 * **Seite**: https://pajew.ski/open-entrainer/
+* **Repository**: https://github.com/pajew-ski/open-entrainer
+* **Lizenz**: Unlicense (gemeinfrei)
 
 ### Open Desensitizer · Übungswerkzeug
-Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
+Bilaterale Stimulation über Auge und Ohr. Für sich genommen beruhigt sie meist das Nervensystem; mit einer belastenden Erinnerung im Sinn kann sie die Erinnerung leichter tragbar machen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
+
+Kein Therapieersatz; die Arbeit an Traumata gehört in fachliche Begleitung. Nicht bei fotosensibler Epilepsie, und bei dissoziativen Störungen vorher ärztlich abklären. Der Ton ist wählbar und braucht Kopfhörer.
 
 * **Seite**: https://pajew.ski/open-desensitizer/
+* **Repository**: https://github.com/pajew-ski/open-desensitizer
+* **Lizenz**: Unlicense (gemeinfrei)
 
 ### Open Helix · Hörillusion
-Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.
+Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt und nirgendwohin gesendet. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.
+
+Kopfhörer für Schwebung, Panorama und Tremolo-Phase. Kein Medizinprodukt: die Wirkung braucht keine Lautstärke, und schnelle Läufe mit vielen Komponenten wirken stärker als erwartet; nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.
 
 * **Seite**: https://pajew.ski/open-helix/
+* **Repository**: https://github.com/pajew-ski/open-helix
+* **Lizenz**: Unlicense (gemeinfrei)
 
 ### Chronotope · Hausautomation
 Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.
 
 * **Repository**: https://github.com/pajew-ski/ha-chronotope
+* **Lizenz**: MIT
 
 ### Mermaid Diagram Card · Hausautomation
 Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.
 
 * **Repository**: https://github.com/pajew-ski/ha-mermaid
+* **Lizenz**: MIT
 
 ---
 

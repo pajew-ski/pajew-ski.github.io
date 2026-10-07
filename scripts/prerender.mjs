@@ -55,7 +55,7 @@ const opusChapters = t.opusPurum.chapters
 const projects = t.projects.items
   .map((project, i) => {
     const anchor = slugify(en.projects.items[i].title);
-    return `<h3 id="${anchor}">${esc(project.title)} · ${esc(project.kind)}</h3>${p(project.desc)}<p><a href="${esc(project.href)}">${esc(project.linkLabel)}</a></p>`;
+    return `<h3 id="${anchor}">${esc(project.title)} · ${esc(project.kind)}</h3>${p(project.desc)}${project.note ? p(project.note) : ''}<p><a href="${esc(project.href)}">${esc(project.linkLabel)}</a></p>`;
   })
   .join('');
 
