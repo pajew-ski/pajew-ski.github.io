@@ -122,6 +122,7 @@ for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item
 copy.push(en.projects.copy);
 for (const project of en.projects.items) {
   copy.push(project.kind, project.title, project.desc, project.linkLabel);
+  if (project.note) copy.push(project.note);
 }
 copy.push(en.relationships.copy, en.relationships.blocksIntro);
 for (const item of en.relationships.principles) copy.push(item.title, item.desc);

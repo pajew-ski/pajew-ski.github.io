@@ -23,7 +23,7 @@
   },
   "projects": {
     "h2": "Projekte",
-    "copy": "Was ich baue, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für meine eigene Infrastruktur. Jedes Projekt steht für sich und ist frei nutzbar.",
+    "copy": "Was ich baue, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für meine eigene Infrastruktur. Es führt fort, was davor steht: Opus Purum als Daten, der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.",
     "items": [
       {
         "id": "prima-materia",
@@ -37,7 +37,7 @@
         "id": "temet-nosce",
         "kind": "Wissensgraph",
         "title": "Temet Nosce",
-        "desc": "Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank.",
+        "desc": "Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank. Derselbe Graph steht über einen MCP-Server jedem Client offen, lesend und schreibend.",
         "href": "/temet-nosce/",
         "linkLabel": "pajew.ski/temet-nosce"
       },
@@ -45,7 +45,8 @@
         "id": "open-entrainer",
         "kind": "Klangwerkzeug",
         "title": "Open Entrainer",
-        "desc": "Binaurale Frequenzen, im Browser in Echtzeit erzeugt, mit voller Kontrolle über Verlauf und Trägerfrequenz. Gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.",
+        "desc": "Binaurale Frequenzen, im Browser in Echtzeit erzeugt und nirgendwohin gesendet, mit voller Kontrolle über Verlauf und Trägerfrequenz. Die Hirnaktivität neigt über Minuten dazu, der Schwebung zu folgen; gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.",
+        "note": "Braucht Kopfhörer; über Lautsprecher mischen sich die beiden Töne in der Luft und die Schwebung verschwindet. Kein Medizinprodukt: nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.",
         "href": "/open-entrainer/",
         "linkLabel": "pajew.ski/open-entrainer"
       },
@@ -53,7 +54,8 @@
         "id": "open-desensitizer",
         "kind": "Übungswerkzeug",
         "title": "Open Desensitizer",
-        "desc": "Bilaterale Stimulation über Auge und Ohr, zur Verarbeitung von Stress und belastenden Emotionen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.",
+        "desc": "Bilaterale Stimulation über Auge und Ohr. Für sich genommen beruhigt sie meist das Nervensystem; mit einer belastenden Erinnerung im Sinn kann sie die Erinnerung leichter tragbar machen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.",
+        "note": "Kein Therapieersatz; die Arbeit an Traumata gehört in fachliche Begleitung. Nicht bei fotosensibler Epilepsie, und bei dissoziativen Störungen vorher ärztlich abklären. Der Ton ist wählbar und braucht Kopfhörer.",
         "href": "/open-desensitizer/",
         "linkLabel": "pajew.ski/open-desensitizer"
       },
@@ -61,7 +63,8 @@
         "id": "open-helix",
         "kind": "Hörillusion",
         "title": "Open Helix",
-        "desc": "Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.",
+        "desc": "Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt und nirgendwohin gesendet. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.",
+        "note": "Kopfhörer für Schwebung, Panorama und Tremolo-Phase. Kein Medizinprodukt: die Wirkung braucht keine Lautstärke, und schnelle Läufe mit vielen Komponenten wirken stärker als erwartet; nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.",
         "href": "/open-helix/",
         "linkLabel": "pajew.ski/open-helix"
       },
