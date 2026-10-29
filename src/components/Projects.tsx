@@ -17,7 +17,7 @@ interface ProjectData {
 // one thing on the card that leads somewhere else, and the site's depth hangs
 // on it being taken.
 const projectLinkClass =
-  'mt-auto text-sm font-light text-muted-foreground underline decoration-1 underline-offset-[0.25em] decoration-foreground/20 hover:text-foreground hover:decoration-foreground/40 focus-visible:text-foreground transition-colors duration-300';
+  'mt-auto text-type-sm font-light text-muted-foreground underline decoration-1 underline-offset-[0.25em] decoration-border hover:text-foreground hover:decoration-muted-foreground focus-visible:text-foreground transition-colors duration-300';
 
 export function Projects() {
   const { t } = useTranslation();
@@ -27,17 +27,17 @@ export function Projects() {
   return (
     <section
       id="projects"
-      className="py-[max(14.6vmin,6.854rem)] px-phi-sm md:px-phi-xl max-w-7xl mx-auto"
+      className="py-[max(16vmin,128px)] px-step-4 md:px-step-5 max-w-shell mx-auto"
       aria-labelledby="projects-heading"
     >
-      <div className="mb-phi-5xl space-y-phi-lg">
+      <div className="mb-step-6 space-y-step-5">
         <m.h2
           id="projects-heading"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={viewportOnce}
           transition={reveal()}
-          className="text-4xl md:text-6xl font-bold tracking-tighter"
+          className="text-type-2 md:text-type-3 font-bold tracking-tighter"
         >
           <a href="#projects" className={anchorLinkClass}>
             {t('projects.h2')}
@@ -48,13 +48,13 @@ export function Projects() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={viewportOnce}
           transition={reveal(0.1)}
-          className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-light"
+          className="text-type-1 text-muted-foreground max-w-text font-light"
         >
           {t('projects.copy')}
         </m.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-step-5">
         {items.map((project, index) => (
           <m.article
             key={project.id}
@@ -62,16 +62,16 @@ export function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal(index * 0.07)}
-            className="flex flex-col gap-phi-lg border border-foreground/10 p-phi-xl md:p-phi-2xl"
+            className="flex flex-col gap-step-5 border border-border p-step-5"
           >
             {/* header, not div: Readability deletes small link-and-text divs */}
-            <header className="space-y-phi-2xs">
-              <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-light">
+            <header className="space-y-step-3">
+              <p className="text-type-sm uppercase tracking-[0.3em] text-muted-foreground font-light">
                 {project.kind}
               </p>
               <h3
                 id={slugify(enContent.projects.items[index].title)}
-                className="text-2xl font-semibold tracking-tight"
+                className="text-type-1 font-semibold tracking-tight"
               >
                 <a
                   href={`#${slugify(enContent.projects.items[index].title)}`}
@@ -81,9 +81,9 @@ export function Projects() {
                 </a>
               </h3>
             </header>
-            <p className="text-foreground/75 font-light">{project.desc}</p>
+            <p className="text-muted-foreground font-light">{project.desc}</p>
             {project.note && (
-              <p className="text-sm text-muted-foreground font-light">{project.note}</p>
+              <p className="text-type-sm text-muted-foreground font-light">{project.note}</p>
             )}
             <a href={project.href} className={projectLinkClass}>
               {project.linkLabel}

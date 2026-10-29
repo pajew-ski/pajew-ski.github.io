@@ -144,7 +144,7 @@ Eine offene Quelle für Menschen, die Magie als direkte Erfahrung kennen oder ke
 
 ## Website-Funktionen
 
-- **Zweisprachig**: Deutsch und Englisch, umschaltbar über den Sprachschalter (DE/EN) in der Navigation.
+- **Zweisprachig**: Deutsch und Englisch, automatisch nach der Sprache des Browsers. Es gibt keinen Sprachschalter auf der Seite.
 - **Dark/Light Mode**: Folgt automatisch der Systemeinstellung des Nutzers. Es gibt keinen Umschalter auf der Seite.
 - **Interaktive Karten**: Die Karten der Prinzipien (Sein und Tun) und der Beziehungssektion (Prinzipien und Bausteine) tragen ihre Beschreibung eingeklappt. Aufgeklappt wird sie mit der Maus durch Hover über die Karte, per Tastatur mit Enter oder Leertaste auf dem Kartentitel, auf dem Touchscreen durch Tippen auf die Karte.
 - **Akkordeon in Opus Purum**: Die acht Kapitel sind eingeklappt. Ein Klick auf eine Kapitelzeile öffnet sie und schließt die zuvor offene, es ist immer nur ein Kapitel zugleich offen; die geöffnete Überschrift gleitet dabei an den oberen Rand des Fensters.

@@ -103,16 +103,16 @@ export function OpusPurum() {
   return (
     <section
       id="opus-purum"
-      className="py-[max(14.6vmin,6.854rem)] px-phi-sm md:px-phi-xl max-w-7xl mx-auto"
+      className="py-[max(16vmin,128px)] px-step-4 md:px-step-5 max-w-shell mx-auto"
       aria-labelledby="opus-purum-heading"
     >
-      <div className="mb-phi-5xl space-y-phi-lg">
+      <div className="mb-step-6 space-y-step-5">
         <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
           transition={reveal()}
-          className="text-xs md:text-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
+          className="text-type-sm uppercase tracking-[0.3em] text-muted-foreground font-light"
         >
           {t('opusPurum.subtitle')}
         </m.p>
@@ -122,7 +122,7 @@ export function OpusPurum() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
           transition={reveal(0.1)}
-          className="text-4xl md:text-6xl font-bold tracking-tighter"
+          className="text-type-2 md:text-type-3 font-bold tracking-tighter"
         >
           <a href="#opus-purum" className={anchorLinkClass}>
             {t('opusPurum.h2')}
@@ -133,13 +133,13 @@ export function OpusPurum() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={viewportOnce}
           transition={reveal(0.15)}
-          className="text-xl md:text-2xl text-foreground/80 font-light italic max-w-3xl"
+          className="text-type-1 text-muted-foreground font-light italic max-w-text"
         >
           {t('opusPurum.premise')}
         </m.p>
       </div>
 
-      <div className="border-t border-foreground/10">
+      <div className="border-t border-border">
         {chapters.map((chapter, idx) => {
           const isOpen = openId === chapter.id;
           return (
@@ -149,7 +149,7 @@ export function OpusPurum() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={viewportOnce}
               transition={reveal(idx * 0.04)}
-              className="border-b border-foreground/10"
+              className="border-b border-border"
             >
               {/* Disclosure heading: the anchor link inside the h3 carries the
                   ARIA state (aria-expanded is valid on links). Clicking the
@@ -160,9 +160,9 @@ export function OpusPurum() {
               <h3
                 id={chapterAnchors[idx]}
                 onClick={() => toggle(chapter.id)}
-                className="flex items-center gap-phi-lg py-phi-md text-left group cursor-pointer"
+                className="flex items-center gap-step-5 py-step-4 text-left group cursor-pointer"
               >
-                <span className="text-xs font-light tracking-[0.3em] text-muted-foreground tabular-nums w-phi-lg shrink-0">
+                <span className="text-type-sm font-light tracking-[0.3em] text-muted-foreground tabular-nums w-step-5 shrink-0">
                   {chapter.label}
                 </span>
                 <span className="sr-only">{' · '}</span>
@@ -177,8 +177,8 @@ export function OpusPurum() {
                       toggle(chapter.id);
                     }
                   }}
-                  className={`flex-1 text-base md:text-lg font-light tracking-tight ${anchorLinkClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                    isOpen ? 'text-foreground' : 'text-foreground/60 group-hover:text-foreground'
+                  className={`flex-1 text-type-0 font-light tracking-tight ${anchorLinkClass} focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                    isOpen ? 'text-foreground' : 'text-muted-foreground group-hover:text-foreground'
                   }`}
                 >
                   {chapter.title}
@@ -203,15 +203,15 @@ export function OpusPurum() {
                 }`}
               >
                 <div className="overflow-clip min-h-0">
-                  <div className="pb-phi-3xl max-w-3xl space-y-phi-2xl ml-[3.236rem]">
+                  <div className="pb-step-6 max-w-text space-y-step-5 ml-step-6">
                     {chapter.content.map((entry, i) => (
-                      <div key={i} className="space-y-phi-xs">
+                      <div key={i} className="space-y-step-4">
                         {entry.heading && (
-                          <h4 className="text-lg md:text-xl font-semibold tracking-tight">
+                          <h4 className="text-type-0 md:text-type-1 font-semibold tracking-tight">
                             {entry.heading}
                           </h4>
                         )}
-                        <p className="text-foreground/75 font-light">
+                        <p className="text-muted-foreground font-light">
                           {entry.body}
                         </p>
                       </div>
