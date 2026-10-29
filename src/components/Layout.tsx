@@ -14,24 +14,24 @@ export function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-500">
-      <nav className="fixed top-phi-lg right-phi-2xl z-50 flex items-center gap-phi-lg mix-blend-difference text-white pointer-events-auto">
+      <nav className="fixed top-step-5 right-step-5 z-50 flex items-center gap-step-5 mix-blend-difference text-white pointer-events-auto">
         <a
           href="https://github.com/pajew-ski"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          className="p-step-3 rounded-full hover:bg-secondary transition-colors"
           aria-label="GitHub Profile"
         >
-          <Github className="w-5 h-5" />
+          <Github className="w-step-4 h-step-4" />
         </a>
         <a
           href="https://youtube.com/@m_pajew_ski"
           target="_blank"
           rel="noopener noreferrer"
-          className="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+          className="p-step-3 rounded-full hover:bg-secondary transition-colors"
           aria-label="YouTube Channel"
         >
-          <Youtube className="w-5 h-5" />
+          <Youtube className="w-step-4 h-step-4" />
         </a>
       </nav>
       {/* The article wrapper marks the whole card as the extractable unit for
@@ -42,8 +42,9 @@ export function Layout({ children }: LayoutProps) {
           {children}
         </article>
       </main>
-      {/* pb clears the floating chat toggle so the last line never sits under it */}
-      <footer className="w-full pt-phi-lg pb-phi-5xl px-phi-2xl text-center text-xs text-muted-foreground space-y-phi-2xs">
+      {/* pb clears the floating chat toggle (64px plus its offset) so the last
+          line never sits under it; the log-nearest step-6 would not */}
+      <footer className="w-full pt-step-5 pb-step-7 px-step-5 text-center text-type-sm text-muted-foreground space-y-step-3">
         <div>
           <LanguageSwitcher />
         </div>
@@ -73,18 +74,18 @@ export function Layout({ children }: LayoutProps) {
           onClick={() => setShowLegal(false)}
         >
           <div
-            className="bg-background text-foreground rounded-lg shadow-xl max-w-lg w-full mx-4 p-6 relative"
+            className="bg-background text-foreground rounded-md shadow-xl max-w-text w-full mx-step-4 p-step-5 relative"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setShowLegal(false)}
-              className="absolute top-3 right-3 text-muted-foreground hover:text-foreground transition-colors text-lg cursor-pointer"
+              className="absolute top-step-4 right-step-4 text-muted-foreground hover:text-foreground transition-colors text-type-0 cursor-pointer"
               aria-label="Close"
             >
               ✕
             </button>
-            <h2 className="text-sm font-semibold mb-3">{t('legalLink')}</h2>
-            <p className="text-xs text-muted-foreground leading-relaxed">
+            <h2 className="text-type-sm font-semibold mb-step-4">{t('legalLink')}</h2>
+            <p className="text-type-sm text-muted-foreground">
               {t('siteFooter')}
             </p>
           </div>

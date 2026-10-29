@@ -21,17 +21,17 @@ export function Principles() {
   const moduleDoing = t('principles.modules.moduleDoing', { returnObjects: true }) as PrincipleModuleData;
 
   return (
-    <section id="principles" className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-clip" aria-labelledby="principles-heading">
-      <div className="max-w-7xl mx-auto px-phi-sm md:px-phi-xl">
+    <section id="principles" className="py-[max(16vmin,128px)] bg-secondary text-foreground transition-colors duration-500 overflow-clip" aria-labelledby="principles-heading">
+      <div className="max-w-shell mx-auto px-step-4 md:px-step-5">
         {/* Header Section */}
-        <div className="mb-phi-5xl space-y-phi-lg">
+        <div className="mb-step-6 space-y-step-5">
           <m.h2
             id="principles-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
-            className="text-4xl md:text-6xl font-bold tracking-tighter"
+            className="text-type-2 md:text-type-3 font-bold tracking-tighter"
           >
             <a href="#principles" className={anchorLinkClass}>
               {t('principles.h2')}
@@ -42,22 +42,22 @@ export function Principles() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal(0.1)}
-            className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
+            className="text-type-1 text-muted-foreground font-light max-w-text"
           >
             {t('principles.copy')}
           </m.p>
         </div>
 
-        <div className="space-y-phi-6xl">
+        <div className="space-y-step-7">
           {/* Module: Sein */}
-          <div className="space-y-phi-3xl">
+          <div className="space-y-step-6">
             <m.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewportOnce}
               transition={reveal()}
               id={slugify(enContent.principles.modules.moduleBeing.title)}
-              className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
+              className="text-type-1 font-bold border-b border-border pb-step-4"
             >
               <a
                 href={`#${slugify(enContent.principles.modules.moduleBeing.title)}`}
@@ -66,7 +66,7 @@ export function Principles() {
                 {moduleBeing.title}
               </a>
             </m.h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-step-5">
               {moduleBeing.list.map((item, index) => (
                 <PrincipleCard
                   key={index}
@@ -79,14 +79,14 @@ export function Principles() {
           </div>
 
           {/* Module: Tun */}
-          <div className="space-y-phi-3xl">
+          <div className="space-y-step-6">
              <m.h3
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={viewportOnce}
               transition={reveal()}
               id={slugify(enContent.principles.modules.moduleDoing.title)}
-              className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
+              className="text-type-1 font-bold border-b border-border pb-step-4"
             >
               <a
                 href={`#${slugify(enContent.principles.modules.moduleDoing.title)}`}
@@ -95,7 +95,7 @@ export function Principles() {
                 {moduleDoing.title}
               </a>
             </m.h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-step-5">
               {moduleDoing.list.map((item, index) => (
                 <PrincipleCard
                   key={index}
@@ -144,7 +144,7 @@ export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4
       whileInView={{ opacity: 1, y: 0 }}
       viewport={viewportOnce}
       transition={reveal(index * 0.05)}
-      className="bg-white dark:bg-neutral-800 text-foreground p-phi-xl md:p-phi-2xl flex flex-col justify-center min-h-[240px] border border-neutral-200 dark:border-neutral-700 shadow-sm hover:shadow-md hover:border-neutral-300 dark:hover:border-neutral-600 transition-[border-color,box-shadow] duration-300 relative group cursor-pointer"
+      className="bg-background text-foreground p-step-5 flex flex-col justify-center min-h-[256px] border border-border shadow-sm hover:shadow-md hover:border-muted-foreground transition-[border-color,box-shadow] duration-300 relative group cursor-pointer"
       onPointerEnter={(e) => e.pointerType === 'mouse' && setIsHovered(true)}
       onPointerLeave={(e) => e.pointerType === 'mouse' && setIsHovered(false)}
       onClick={() => setIsHovered(!isHovered)}
@@ -158,7 +158,7 @@ export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4
           aria-expanded on the article itself would be invalid.
           No wrapper div: a bare article is exempt from Readability's
           conditional cleaning, which can delete short link-and-text divs. */}
-      <Heading id={anchor} className="text-2xl font-bold mb-phi-sm group-hover:text-primary transition-colors duration-300">
+      <Heading id={anchor} className="text-type-1 font-bold mb-step-4 group-hover:text-primary transition-colors duration-300">
           <a
             href={`#${anchor}`}
             aria-expanded={isHovered}
@@ -190,7 +190,7 @@ export function PrincipleCard({ item, index, anchor, headingLevel: Heading = 'h4
         }`}
       >
         <div className="overflow-clip min-h-0">
-          <p className="text-foreground/80 font-light pt-phi-2xs">
+          <p className="text-muted-foreground font-light pt-step-3">
             {item.desc}
           </p>
         </div>

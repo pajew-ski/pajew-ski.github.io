@@ -17,4 +17,4 @@ export const enContent = en;
 // Quiet self-link affordance shared by every linkable heading: no glyph, only
 // a pointer cursor and an underline that fades in on hover.
 export const anchorLinkClass =
-  'underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-foreground/30 focus-visible:decoration-foreground/40';
+  'underline decoration-1 underline-offset-[0.25em] decoration-transparent transition-colors duration-300 hover:decoration-muted-foreground focus-visible:decoration-foreground';

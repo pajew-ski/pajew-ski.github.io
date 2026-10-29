@@ -3,142 +3,75 @@
 @tailwind utilities;
 
 @layer base {
+  /* Albedo tones: oklch lightness with chroma 0, so nothing can tint. Five
+     tones per scheme (bg, surface, border, text-muted, text); every color
+     variable below is one of them. Values are oklch components for
+     `oklch(var(--x) / <alpha-value>)` in tailwind.config.js.
+     Contrast (WCAG, Y = L³ for achromatic oklch): text-muted on surface is
+     7.7:1 light (40 on 94) and 6.3:1 dark (70 on 23), on bg 8.7:1 and 7.4:1. */
   :root {
     color-scheme: light;
 
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
+    --bg: 98% 0 0;
+    --surface: 94% 0 0;
+    --line: 85% 0 0;
+    --text-muted: 40% 0 0;
+    --text: 15% 0 0;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-
-    --muted: 0 0% 96.1%;
-    /* 42% keeps 4.5:1 AA contrast on the neutral-100 section background */
-    --muted-foreground: 0 0% 42%;
-
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
-
-    --radius: 0.5rem;
+    --background: var(--bg);
+    --foreground: var(--text);
+    --primary: var(--text);
+    --primary-foreground: var(--bg);
+    --secondary: var(--surface);
+    --muted-foreground: var(--text-muted);
+    --border: var(--line);
   }
 
   .dark {
     color-scheme: dark;
 
-    --background: 0 0% 0%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 14.9%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-
-    --accent: 0 0% 14.9%;
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
+    --bg: 15% 0 0;
+    --surface: 23% 0 0;
+    --line: 32% 0 0;
+    --text-muted: 70% 0 0;
+    --text: 95% 0 0;
   }
 }
 
-/* n8n Chat Overrides - Light Mode. The chat stylesheet is lazy-loaded after
-   this one, so the doubled :root keeps these overrides winning on
-   specificity instead of load order. */
+/* n8n Chat Overrides. The chat stylesheet is lazy-loaded after this one, so
+   the doubled :root keeps these overrides winning on specificity instead of
+   load order. The tones follow the scheme through the variables above. */
 :root:root {
-  --chat--color-primary: hsl(0 0% 90%);
-  --chat--color-primary-shade-50: hsl(0 0% 90%);
-  --chat--color-primary-shade-100: hsl(0 0% 90%);
-  --chat--color--primary: hsl(0 0% 90%);
-  --chat--color--primary--shade-100: hsl(0 0% 90%);
-  --chat--color--primary-shade-50: hsl(0 0% 90%);
-  --chat--color-secondary: hsl(0 0% 90%);
-  --chat--color--secondary: hsl(0 0% 90%);
-  --chat--color-secondary-shade-50: hsl(0 0% 90%);
+  --chat--color-primary: oklch(var(--surface));
+  --chat--color-primary-shade-50: oklch(var(--surface));
+  --chat--color-primary-shade-100: oklch(var(--surface));
+  --chat--color--primary: oklch(var(--surface));
+  --chat--color--primary--shade-100: oklch(var(--surface));
+  --chat--color--primary-shade-50: oklch(var(--surface));
+  --chat--color-secondary: oklch(var(--surface));
+  --chat--color--secondary: oklch(var(--surface));
+  --chat--color-secondary-shade-50: oklch(var(--surface));
 
-  --chat--color-dark: hsl(var(--foreground));
-  --chat--color-light: hsl(var(--background));
-  --chat--color-white: hsl(var(--card));
+  --chat--color-dark: oklch(var(--text));
+  --chat--color-light: oklch(var(--bg));
+  --chat--color-white: oklch(var(--bg));
 
-  --chat--message--user--background: hsl(0 0% 90%);
-  --chat--message--user--color: hsl(0 0% 9%);
-  --chat--message--bot--background: hsl(0 0% 90%);
-  --chat--message--bot--color: hsl(0 0% 9%);
+  --chat--message--user--background: oklch(var(--surface));
+  --chat--message--user--color: oklch(var(--text));
+  --chat--message--bot--background: oklch(var(--surface));
+  --chat--message--bot--color: oklch(var(--text));
 
-  --chat--header--background: hsl(0 0% 90%);
-  --chat--header--color: hsl(0 0% 9%);
+  --chat--header--background: oklch(var(--surface));
+  --chat--header--color: oklch(var(--text));
 
-  --chat--body--background: hsl(var(--background));
-  --chat--footer--background: hsl(var(--background));
-  --chat--input--background: hsl(var(--background));
-  --chat--input--text-color: hsl(var(--foreground));
+  --chat--body--background: oklch(var(--bg));
+  --chat--footer--background: oklch(var(--bg));
+  --chat--input--background: oklch(var(--bg));
+  --chat--input--text-color: oklch(var(--text));
 
-  --chat--toggle--background: hsl(0 0% 90%);
-  --chat--toggle--color: hsl(0 0% 9%);
-  --chat--toggle--hover--background: hsl(0 0% 85%);
-}
-
-/* n8n Chat Overrides - Dark Mode */
-:root:root.dark {
-  --chat--color-primary: hsl(0 0% 15%);
-  --chat--color-primary-shade-50: hsl(0 0% 15%);
-  --chat--color-primary-shade-100: hsl(0 0% 15%);
-  --chat--color--primary: hsl(0 0% 15%);
-  --chat--color--primary--shade-100: hsl(0 0% 15%);
-  --chat--color--primary-shade-50: hsl(0 0% 15%);
-  --chat--color-secondary: hsl(0 0% 15%);
-  --chat--color--secondary: hsl(0 0% 15%);
-  --chat--color-secondary-shade-50: hsl(0 0% 15%);
-
-  --chat--color-dark: hsl(var(--foreground));
-  --chat--color-light: hsl(var(--background));
-  --chat--color-white: hsl(var(--card));
-
-  --chat--message--user--background: hsl(0 0% 15%);
-  --chat--message--user--color: hsl(0 0% 98%);
-  --chat--message--bot--background: hsl(0 0% 15%);
-  --chat--message--bot--color: hsl(0 0% 98%);
-
-  --chat--header--background: hsl(0 0% 15%);
-  --chat--header--color: hsl(0 0% 98%);
-
-  --chat--body--background: hsl(var(--background));
-  --chat--footer--background: hsl(var(--background));
-  --chat--input--background: hsl(var(--background));
-  --chat--input--text-color: hsl(var(--foreground));
-
-  --chat--toggle--background: hsl(0 0% 15%);
-  --chat--toggle--color: hsl(0 0% 98%);
-  --chat--toggle--hover--background: hsl(0 0% 20%);
+  --chat--toggle--background: oklch(var(--surface));
+  --chat--toggle--color: oklch(var(--text));
+  --chat--toggle--hover--background: oklch(var(--line));
 }
 
 /* Hide n8n branding */
@@ -152,11 +85,7 @@
 
 /* Ensure "Neue Konversation" button text is readable */
 .chat-get-started button {
-  color: hsl(0 0% 9%) !important;
-}
-
-.dark .chat-get-started button {
-  color: hsl(0 0% 98%) !important;
+  color: oklch(var(--text)) !important;
 }
 
 /* The prerender snapshot is for clients without JavaScript; browsers that will
@@ -171,15 +100,15 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased font-sans selection:bg-neutral-200 dark:selection:bg-neutral-800;
+    @apply bg-background text-foreground antialiased font-sans selection:bg-border text-type-0;
   }
 
   html {
     scroll-behavior: smooth;
   }
 
-  /* Breathing room above deep-link targets (phi-2xl). */
+  /* Breathing room above deep-link targets (step-5). */
   [id] {
-    scroll-margin-top: 2.618rem;
+    scroll-margin-top: theme('spacing.step-5');
   }
 }

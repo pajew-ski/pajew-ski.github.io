@@ -18,18 +18,18 @@ export function Relationships() {
   return (
     <section
       id="relationships"
-      className="py-[max(14.6vmin,6.854rem)] bg-neutral-100 dark:bg-neutral-900 text-foreground transition-colors duration-500 overflow-clip"
+      className="py-[max(16vmin,128px)] bg-secondary text-foreground transition-colors duration-500 overflow-clip"
       aria-labelledby="relationships-heading"
     >
-      <div className="max-w-7xl mx-auto px-phi-sm md:px-phi-xl">
-        <div className="mb-phi-5xl space-y-phi-lg">
+      <div className="max-w-shell mx-auto px-step-4 md:px-step-5">
+        <div className="mb-step-6 space-y-step-5">
           <m.h2
             id="relationships-heading"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
-            className="text-4xl md:text-6xl font-bold tracking-tighter"
+            className="text-type-2 md:text-type-3 font-bold tracking-tighter"
           >
             <a href="#relationships" className={anchorLinkClass}>
               {t('relationships.h2')}
@@ -40,13 +40,13 @@ export function Relationships() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal(0.1)}
-            className="text-xl md:text-2xl text-foreground/80 font-light max-w-3xl"
+            className="text-type-1 text-muted-foreground font-light max-w-text"
           >
             {t('relationships.copy')}
           </m.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-step-5">
           {principles.map((item, index) => (
             <PrincipleCard
               key={index}
@@ -58,14 +58,14 @@ export function Relationships() {
           ))}
         </div>
 
-        <div className="mt-phi-6xl space-y-phi-3xl">
+        <div className="mt-step-7 space-y-step-6">
           <m.h3
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
             id={blocksAnchor}
-            className="text-3xl font-bold border-b border-foreground/10 pb-phi-sm"
+            className="text-type-1 font-bold border-b border-border pb-step-4"
           >
             <a href={`#${blocksAnchor}`} className={anchorLinkClass}>
               {t('relationships.blocksTitle')}
@@ -76,12 +76,12 @@ export function Relationships() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={viewportOnce}
             transition={reveal()}
-            className="text-foreground/80 font-light max-w-3xl"
+            className="text-muted-foreground font-light max-w-text"
           >
             {t('relationships.blocksIntro')}
           </m.p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-phi-xl">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-step-5">
             {blocks.map((item, index) => (
               <PrincipleCard
                 key={index}

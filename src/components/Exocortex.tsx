@@ -14,15 +14,15 @@ export function Exocortex() {
   ] as const;
 
   return (
-    <section id="exocortex" className="py-[max(14.6vmin,6.854rem)] px-phi-sm md:px-phi-xl max-w-7xl mx-auto" aria-labelledby="exocortex-heading">
-      <div className="mb-phi-5xl space-y-phi-lg">
+    <section id="exocortex" className="py-[max(16vmin,128px)] px-step-4 md:px-step-5 max-w-shell mx-auto" aria-labelledby="exocortex-heading">
+      <div className="mb-step-6 space-y-step-5">
         <m.h2
           id="exocortex-heading"
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={viewportOnce}
           transition={reveal()}
-          className="text-4xl md:text-6xl font-bold tracking-tighter"
+          className="text-type-2 md:text-type-3 font-bold tracking-tighter"
         >
           <a href="#exocortex" className={anchorLinkClass}>
             {t('exocortex.h2')}
@@ -33,13 +33,13 @@ export function Exocortex() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={viewportOnce}
           transition={reveal(0.1)}
-          className="text-xl md:text-2xl text-muted-foreground max-w-3xl font-light"
+          className="text-type-1 text-muted-foreground max-w-text font-light"
         >
           {t('exocortex.copy')}
         </m.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-phi-3xl">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-step-6">
         {features.map((feature, index) => (
           <m.article
             key={feature.key}
@@ -49,12 +49,12 @@ export function Exocortex() {
             transition={reveal(index * 0.07)}
             className="group"
           >
-            <div className="mb-phi-lg p-phi-sm w-fit rounded-2xl bg-secondary/50 group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
-              <feature.icon className="w-phi-xl h-phi-xl" strokeWidth={1.5} />
+            <div className="mb-step-5 p-step-4 w-fit rounded-lg bg-secondary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-500">
+              <feature.icon className="w-step-5 h-step-5" strokeWidth={1.5} />
             </div>
             <h3
               id={slugify(enContent.exocortex.stack[feature.key].title)}
-              className="text-2xl font-semibold mb-phi-sm tracking-tight"
+              className="text-type-1 font-semibold mb-step-4 tracking-tight"
             >
               <a
                 href={`#${slugify(enContent.exocortex.stack[feature.key].title)}`}

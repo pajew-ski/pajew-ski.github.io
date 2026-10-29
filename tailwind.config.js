@@ -6,82 +6,66 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    // Albedo, measure from 2. Spacing, type, line height, radii and widths
+    // replace the Tailwind defaults instead of extending them, so no value
+    // outside the scale can slip back in through a default utility.
+    // Spacing steps are powers of two in px: step-n = 2^n px.
+    spacing: {
+      0: '0',
+      px: '1px',
+      'step-2': '4px',
+      'step-3': '8px',
+      'step-4': '16px',
+      'step-5': '32px',
+      'step-6': '64px',
+      'step-7': '128px',
+    },
+    // Type sizes are 2^(k/2) rem, with 0.875rem (1 - 2^-3) as the legibility
+    // floor. Running text and the first steps carry √2 line height; the two
+    // display steps sit at 1.
+    fontSize: {
+      'type-sm': ['0.875rem', { lineHeight: '1.414' }],
+      'type-0': ['1rem', { lineHeight: '1.414' }],
+      'type-1': ['1.414rem', { lineHeight: '1.414' }],
+      'type-2': ['2rem', { lineHeight: '1.414' }],
+      'type-3': ['2.828rem', { lineHeight: '1' }],
+      'type-4': ['4rem', { lineHeight: '1' }],
+    },
+    lineHeight: {
+      none: '1',
+      normal: '1.414',
+    },
+    borderRadius: {
+      none: '0',
+      sm: '4px',
+      md: '8px',
+      lg: '16px',
+      full: '9999px',
+    },
+    // Shell 1024px. The text column is 32em: 32rem at body size, and the same
+    // measure in characters for lead copy set a step larger.
+    maxWidth: {
+      none: 'none',
+      full: '100%',
+      shell: '1024px',
+      text: '32em',
+    },
     extend: {
       fontFamily: {
         sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
-      // Type scale on the golden ratio: every size is φ^(n/4) rem, base 1rem.
-      // Line heights step down the same ladder: φ for running text to 1 for display.
-      fontSize: {
-        xs: ['0.786rem', { lineHeight: '1.618' }],
-        sm: ['0.887rem', { lineHeight: '1.618' }],
-        base: ['1rem', { lineHeight: '1.618' }],
-        lg: ['1.128rem', { lineHeight: '1.618' }],
-        xl: ['1.272rem', { lineHeight: '1.618' }],
-        '2xl': ['1.434rem', { lineHeight: '1.618' }],
-        '3xl': ['1.618rem', { lineHeight: '1.272' }],
-        '4xl': ['2.058rem', { lineHeight: '1.272' }],
-        '5xl': ['2.618rem', { lineHeight: '1.128' }],
-        '6xl': ['3.33rem', { lineHeight: '1.128' }],
-        '7xl': ['4.236rem', { lineHeight: '1' }],
-        '8xl': ['5.388rem', { lineHeight: '1' }],
-        '9xl': ['6.854rem', { lineHeight: '1' }],
-      },
-      // Spacing tokens on the same ladder: φ^(n/2) rem. Use these instead of the
-      // default numeric spacing for gaps, margins, and paddings.
-      spacing: {
-        'phi-3xs': '0.382rem',
-        'phi-2xs': '0.618rem',
-        'phi-xs': '0.786rem',
-        'phi-sm': '1rem',
-        'phi-md': '1.272rem',
-        'phi-lg': '1.618rem',
-        'phi-xl': '2.058rem',
-        'phi-2xl': '2.618rem',
-        'phi-3xl': '3.33rem',
-        'phi-4xl': '4.236rem',
-        'phi-5xl': '5.388rem',
-        'phi-6xl': '6.854rem',
-      },
       colors: {
-        border: "hsl(var(--border) / <alpha-value>)",
-        input: "hsl(var(--input) / <alpha-value>)",
-        ring: "hsl(var(--ring) / <alpha-value>)",
-        background: "hsl(var(--background) / <alpha-value>)",
-        foreground: "hsl(var(--foreground) / <alpha-value>)",
+        border: "oklch(var(--border) / <alpha-value>)",
+        background: "oklch(var(--background) / <alpha-value>)",
+        foreground: "oklch(var(--foreground) / <alpha-value>)",
         primary: {
-          DEFAULT: "hsl(var(--primary) / <alpha-value>)",
-          foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
+          DEFAULT: "oklch(var(--primary) / <alpha-value>)",
+          foreground: "oklch(var(--primary-foreground) / <alpha-value>)",
         },
-        secondary: {
-          DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
-          foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
-        },
-        destructive: {
-          DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
-          foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
-        },
+        secondary: "oklch(var(--secondary) / <alpha-value>)",
         muted: {
-          DEFAULT: "hsl(var(--muted) / <alpha-value>)",
-          foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
+          foreground: "oklch(var(--muted-foreground) / <alpha-value>)",
         },
-        accent: {
-          DEFAULT: "hsl(var(--accent) / <alpha-value>)",
-          foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
-        },
-        popover: {
-          DEFAULT: "hsl(var(--popover) / <alpha-value>)",
-          foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
-        },
-        card: {
-          DEFAULT: "hsl(var(--card) / <alpha-value>)",
-          foreground: "hsl(var(--card-foreground) / <alpha-value>)",
-        },
-      },
-      borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-out forwards',

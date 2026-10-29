@@ -56,11 +56,13 @@ This site is purely Michael's personal profile and web card, with its AI feature
 
 Guiding premise for all work on this site: natural beauty and semantic purity first. The first impression of every view must be pure beauty, on desktop and on mobile alike. This is a standing requirement, not a per-task instruction: every session that adds or changes anything visible applies and verifies the rules below proactively, without being asked.
 
-- Proportions derive from the golden ratio (φ ≈ 1.618). Macro composition uses the φ ladder in vmin (100, 61.8, 38.2, 23.6, 14.6, 9, 5.6); element spacing uses the named Tailwind tokens `phi-3xs` … `phi-6xl` (powers of √φ in rem, see `tailwind.config.js`). Pick values from these ladders instead of inventing new ones.
-- The type scale keeps the default Tailwind names but every size is a power of φ^(1/4) rem (base 1rem, see `tailwind.config.js`); line heights step from φ for running text down to 1 for display sizes. No ad-hoc pixel sizes; rely on the per-size line heights instead of `leading-*` utilities. The intro tagline's `text-[0.694rem]` (φ^(-3/4)) is the only sub-xs step.
+- Albedo, measure from 2 (pajew-ski/config#378): every length, size, and line height derives from 2, the same growth as the Krystal Flower. φ is gone. `tailwind.config.js` replaces the Tailwind defaults for spacing, type, line height, radii, and max widths instead of extending them, so a value outside the scale has no utility to arrive through.
+- Spacing uses the tokens `step-2` … `step-7` = 2ⁿ px (4, 8, 16, 32, 64, 128), plus `0` and `px` for hairlines. Macro composition uses powers of two in vmin (64, 32, 16, 8, 4). Pick values from these ladders instead of inventing new ones; an old or foreign value goes to the log-nearest step. The only arbitrary values are composites of the steps (`py-[max(16vmin,128px)]`, the principle card's `min-h-[256px]`, the facts grid's `minmax(min(256px,100%),1fr)`).
+- Type uses `text-type-sm`, `text-type-0` … `text-type-4`: 0.875, 1, 1.414, 2, 2.828, 4 rem, i.e. 2^(k/2) rem with 0.875rem (1 − 2⁻³) as the legibility floor. Line height is √2 (1.414) from `type-sm` to `type-2` and 1 for the display steps `type-3` and `type-4`; it comes with the size, so no `leading-*` utilities. The body carries `text-type-0`, so text without a size class inherits √2 too.
+- Radii are `rounded-sm/md/lg` = 4/8/16 px; `rounded-full` only for circles. Widths: `max-w-shell` (1024px) for every section, `max-w-text` (32em) for running text and leads; 32em is the Albedo text column of 32rem at body size and keeps the same measure in characters for a lead one step larger.
 - Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps or floors (e.g. `max-w`, `min(...)`, `max(...)`).
-- Section shell, identical for every content section: `py-[max(14.6vmin,6.854rem)]`, header `mb-phi-5xl space-y-phi-lg`, h2 `text-4xl md:text-6xl font-bold tracking-tighter`, lead copy `text-xl md:text-2xl max-w-3xl font-light`, card grids `gap-phi-xl`, uppercase micro-labels `tracking-[0.3em]`.
-- Vertical composition is optically centred: free space above : below = 1 : φ. Reference implementation: `Intro.tsx` (flower diameter 61.8vmin capped at 32rem, text gap 9vmin, spacers `grow` and `grow-[1.618]`).
+- Section shell, identical for every content section: `py-[max(16vmin,128px)] px-step-4 md:px-step-5 max-w-shell mx-auto`, header `mb-step-6 space-y-step-5`, h2 `text-type-2 md:text-type-3 font-bold tracking-tighter`, lead copy `text-type-1 max-w-text font-light`, card grids `gap-step-5`, uppercase micro-labels `text-type-sm tracking-[0.3em]`.
+- Vertical composition is optically centred: free space above : below = 1 : √2, which puts the group just above the middle, the classical optical centre; 1 : 2 would lift it into the upper third. Reference implementation: `Intro.tsx` (flower diameter 64vmin capped at 32rem, text gap 8vmin, spacers `grow` and `grow-[1.414]`).
 - Whitespace is a design element; prefer removing elements over adding. No helper graphics, no decoration without meaning. The Krystal Flower consists of its 24 curves and nothing else.
 - Semantic purity: semantic HTML, minimal DOM, no wrapper elements without purpose; ids, i18n keys, and component names stay aligned (see Component Conventions).
 - Every visual change is verified with headless-browser screenshots before committing: mobile (390×844) and desktop (1440×900), each in light and dark mode. Animations are checked mid-run too, not only in their final state; WebKit has mis-rendered animated `stroke-dasharray` (motion's `pathLength`) here before, so avoid dash-based drawing.
@@ -151,12 +153,12 @@ The Lighthouse mobile score is kept at the top of the green range. Standing rule
 
 ## Styling
 
-- Monochromatic grayscale, no color hues. All HSL values use `0 0% X%`.
+- Monochromatic grayscale, no color hues: the five Albedo tones in oklch with chroma 0, light bg 98 / surface 94 / border 85 / text-muted 40 / text 15 %, dark 15 / 23 / 32 / 70 / 95 %. Every color variable in `src/index.css` is one of them (`--background` = bg, `--secondary` = surface, `--border`, `--muted-foreground` = text-muted, `--foreground` and `--primary` = text); no opacity-blended text or border colors, no Tailwind palette grays. Sections alternate bg and surface; cards inside a surface section sit on bg (a surface band around a bg interior).
 - Dark mode via `class` strategy (`<html class="dark">`), automatic only: it follows `prefers-color-scheme`, there is no manual toggle. The class is set before first paint by an inline script in `index.html` and kept in sync by `ThemeProvider`.
-- Colors defined as CSS variables in `src/index.css` (`:root` and `.dark`)
+- Colors defined as CSS variables in `src/index.css`: the five tones in `:root` and `.dark`, the semantic names as aliases of them, used as `oklch(var(--x) / <alpha-value>)` in `tailwind.config.js`
 - System font stack, no web fonts
 - Responsive: mobile-first with `md:` and `lg:` breakpoints
-- Contrast is WCAG AA everywhere: `--muted-foreground` stays at 42% lightness in light mode (anything lighter fails 4.5:1 on the neutral-100 section background), and muted text never gets an additional opacity reduction
+- Contrast is WCAG AA everywhere. For achromatic oklch the relative luminance is L³, so text-muted on surface is 7.7:1 light and 6.3:1 dark, on bg 8.7:1 and 7.4:1. Muted text never gets an additional opacity reduction
 
 ## TypeScript
 
