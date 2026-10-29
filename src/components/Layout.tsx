@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Github, Youtube } from 'lucide-react';
-import { LanguageSwitcher } from './LanguageSwitcher';
 import { ChatWidget } from './ChatWidget';
 import { useTranslation } from 'react-i18next';
 
@@ -45,9 +44,6 @@ export function Layout({ children }: LayoutProps) {
       {/* pb clears the floating chat toggle (64px plus its offset) so the last
           line never sits under it; the log-nearest step-6 would not */}
       <footer className="w-full pt-step-5 pb-step-7 px-step-5 text-center text-type-sm text-muted-foreground space-y-step-3">
-        <div>
-          <LanguageSwitcher />
-        </div>
         <div>
           <button
             onClick={() => setShowLegal(true)}

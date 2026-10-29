@@ -85,7 +85,7 @@ Anchor system (`src/anchors.ts`): slugs derive from the English titles via `slug
 6. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards + 12 Building Block cards (both reuse `PrincipleCard`; `blocks` = `{title, desc}`, one-line definitions matching the card compression and the llms files)
 7. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum, Speculum Apertum)
 8. **Chat Widget**: N8N-powered assistant
-9. **Footer**: Language switcher (EN/DE), legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
+9. **Footer**: Legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
 
 ## Reader Mode & Content Extraction (Critical)
 
@@ -115,7 +115,7 @@ The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents,
 This site is Michael Pajewski's public identity for humans, search engines, and AI systems alike. Every session that touches content, links, or the head must keep the machine-readable layer truthful and in sync. This is a standing requirement, applied proactively, not per task.
 
 - The `<head>` in `index.html` is the semantic anchor. Keep in sync with the actual content and with each other: the `<title>`, `meta[name=description]`, the JSON-LD `@graph` (Person + WebSite + one WebPage per project page, tied together by `hasPart`/`isPartOf`), Open Graph tags, and Twitter Card tags. When a self-description, job, location, language, or profile link changes, update the JSON-LD (`jobTitle`, `knowsAbout`, `knowsLanguage`, `address`, `sameAs`) in the same pass. `sameAs` and OG/Twitter follow the same Links & Attribution rule: only Michael's own destinations, no external names or organizations.
-- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language switch is client-side, so there are no per-language URLs and therefore no `hreflang` page alternates for HTML. The markdown alternate links carry `hreflang` for the llms files; their `href` values must stay absolute (Lighthouse rejects relative hreflang URLs).
+- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language follows the browser on the client, so there are no per-language URLs and therefore no `hreflang` page alternates for HTML. The markdown alternate links carry `hreflang` for the llms files; their `href` values must stay absolute (Lighthouse rejects relative hreflang URLs).
 - The social preview image is `public/og-image.png` (1200x630 at 2x), referenced by `og:image` and `twitter:image` (`summary_large_image`). It is a committed static asset, not built by `npm run build`. Regenerate it with `node scripts/generate-og-image.mjs` when the name, tagline, or card design changes; that script reproduces the Krystal Flower with the exact math from `KrystalFlower.tsx`, so keep the two in sync (24 spirals, same opacities, monochrome, pure-black dark background). Update the `og:image:width`/`height` tags if the output dimensions change.
 - The llms files are the HTML-free Markdown mirror of the site and are declared via `<link rel="alternate" type="text/markdown">`. That is the supported clean-content mechanism. Do not attempt a dynamic `.md`-suffix feature: GitHub Pages is a static host with no content negotiation, and per-section `.md` files would only duplicate `llms-full.txt` while multiplying the content-sync surface.
 - `public/sitemap.xml` lists only real, fetchable URLs (`/`, the four llms files, and the five project pages under the same domain). Never add fragment URLs (`/#section`): search engines strip the fragment and treat them as duplicates of `/`. All `<lastmod>` values are stamped with the build date by `scripts/prerender.mjs`; leave the source dates as placeholders and let the build overwrite them. The project entries deliberately carry no `<lastmod>`: they deploy from their own repositories, so this site's build date would say nothing true about them.
@@ -135,7 +135,7 @@ The Lighthouse mobile score is kept at the top of the green range. Standing rule
 ## i18n
 
 - Framework: `i18next` + `react-i18next` + browser language detector
-- Languages: `de` (German), `en` (English, fallback)
+- Languages: `de` (German), `en` (English, fallback); the language follows the browser (`navigator` only, nothing cached), there is no switch, same as the color scheme
 - Files: `src/locales/{de,en}.json`
 - Usage: `const { t } = useTranslation()` in all components
 - Nested objects: `t('key', { returnObjects: true }) as Type`
