@@ -28,7 +28,7 @@ All visible text lives in the i18n translation files. When content changes, **al
 | `public/llms-full.txt` | LLM-facing full site content (English) |
 | `public/llms.de.txt` | LLM-facing site summary (German) |
 | `public/llms-full.de.txt` | LLM-facing full site content (German) |
-| `SYSTEM_PROMPT.md` | System prompt for the embedded chat agent (copy to N8N separately) |
+| `SYSTEM_PROMPT.md` | System prompt for the embedded chat agent. Read live from main by the n8n workflow on every message (raw.githubusercontent.com, up to 5 min CDN delay); path and filename are an interface, do not move or rename the file |
 
 Never add text directly in components; always use `t('key')` from `react-i18next`.
 
