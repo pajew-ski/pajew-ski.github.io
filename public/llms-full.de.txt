@@ -178,12 +178,6 @@ Kopfhörer für Schwebung, Panorama und Tremolo-Phase. Kein Medizinprodukt: die 
 * **Repository**: https://github.com/pajew-ski/open-helix
 * **Lizenz**: Unlicense (gemeinfrei)
 
-### Chronotope · Hausautomation
-Eine Ereignis-Engine für Ort und Zeit in Home Assistant. Termine aus beliebigen Quellen laufen durch persönliche Filterprofile und erscheinen als Kartenpanel, Kalender, Sensor oder Benachrichtigung.
-
-* **Repository**: https://github.com/pajew-ski/ha-chronotope
-* **Lizenz**: MIT
-
 ### Mermaid Diagram Card · Hausautomation
 Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.
 

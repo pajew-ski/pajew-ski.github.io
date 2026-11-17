@@ -178,12 +178,6 @@ Headphones for the beat, the panning, and the tremolo phase. Not a medical devic
 * **Repository**: https://github.com/pajew-ski/open-helix
 * **License**: Unlicense (public domain)
 
-### Chronotope · Home automation
-A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.
-
-* **Repository**: https://github.com/pajew-ski/ha-chronotope
-* **License**: MIT
-
 ### Mermaid Diagram Card · Home automation
 A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.
 
