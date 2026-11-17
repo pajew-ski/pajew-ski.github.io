@@ -69,14 +69,6 @@
         "linkLabel": "pajew.ski/open-helix"
       },
       {
-        "id": "chronotope",
-        "kind": "Home automation",
-        "title": "Chronotope",
-        "desc": "A geo-time event engine for Home Assistant. Events from any source run through personal filter profiles and come out as a map panel, calendars, sensors, or notifications.",
-        "href": "https://github.com/pajew-ski/ha-chronotope",
-        "linkLabel": "github.com/pajew-ski/ha-chronotope"
-      },
-      {
         "id": "mermaid-diagram-card",
         "kind": "Home automation",
         "title": "Mermaid Diagram Card",
