@@ -135,14 +135,7 @@ Kohärenz und Souveränität sichern: SecDevOps, GitOps, kausale Inferenz-Modell
 
 ## Projekte
 
-Was Michael baut, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für seine eigene Infrastruktur. Es führt fort, was davor steht: Opus Purum als Daten, der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.
-
-### Prima Materia · Ontologie
-Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.
-
-* **Seite**: https://pajew.ski/prima-materia/
-* **Repository**: https://github.com/pajew-ski/prima-materia
-* **Lizenz**: CC0 1.0 (gemeinfrei), für Code, Ontologie und Spezifikation
+Was Michael baut, liegt offen: Werkzeuge für die Praxis, Erweiterungen für seine eigene Infrastruktur. Es führt fort, was davor steht: der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.
 
 ### Temet Nosce · Wissensgraph
 Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank. Derselbe Graph steht über einen MCP-Server jedem Client offen, lesend und schreibend.
