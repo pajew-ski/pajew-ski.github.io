@@ -23,16 +23,8 @@
   },
   "projects": {
     "h2": "Projects",
-    "copy": "What I build is out in the open: tools for practice, an ontology as open data, extensions for my own infrastructure. It carries on what comes before: Opus Purum as data, the Exocortex as an agent and as extensions, the practice as tools. Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.",
+    "copy": "What I build is out in the open: tools for practice, extensions for my own infrastructure. It carries on what comes before: the Exocortex as an agent and as extensions, the practice as tools. Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.",
     "items": [
-      {
-        "id": "prima-materia",
-        "kind": "Ontology",
-        "title": "Prima Materia",
-        "desc": "A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain. It models processes instead of substances, and every term has an address of its own it can be cited by.",
-        "href": "/prima-materia/",
-        "linkLabel": "pajew.ski/prima-materia"
-      },
       {
         "id": "temet-nosce",
         "kind": "Knowledge graph",

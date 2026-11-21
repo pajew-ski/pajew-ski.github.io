@@ -135,14 +135,7 @@ Keeping the system coherent and sovereign: SecDevOps, GitOps, causal inference m
 
 ## Projects
 
-What Michael builds is out in the open: tools for practice, an ontology as open data, extensions for his own infrastructure. It carries on what comes before: Opus Purum as data, the Exocortex as an agent and as extensions, the practice as tools. Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.
-
-### Prima Materia · Ontology
-A machine-readable ontology of esoteric and magical knowledge across traditions, released into the public domain. It models processes instead of substances, and every term has an address of its own it can be cited by.
-
-* **Page**: https://pajew.ski/prima-materia/
-* **Repository**: https://github.com/pajew-ski/prima-materia
-* **License**: CC0 1.0 (public domain), covering code, ontology, and specification
+What Michael builds is out in the open: tools for practice, extensions for his own infrastructure. It carries on what comes before: the Exocortex as an agent and as extensions, the practice as tools. Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.
 
 ### Temet Nosce · Knowledge graph
 An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database. The same graph is open to any client through an MCP server, for reading and writing.

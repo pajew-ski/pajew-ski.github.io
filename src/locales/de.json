@@ -23,16 +23,8 @@
   },
   "projects": {
     "h2": "Projekte",
-    "copy": "Was ich baue, liegt offen: Werkzeuge für die Praxis, eine Ontologie als offene Daten, Erweiterungen für meine eigene Infrastruktur. Es führt fort, was davor steht: Opus Purum als Daten, der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.",
+    "copy": "Was ich baue, liegt offen: Werkzeuge für die Praxis, Erweiterungen für meine eigene Infrastruktur. Es führt fort, was davor steht: der Exocortex als Agent und als Erweiterung, die Praxis als Werkzeug. Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.",
     "items": [
-      {
-        "id": "prima-materia",
-        "kind": "Ontologie",
-        "title": "Prima Materia",
-        "desc": "Eine maschinenlesbare Ontologie esoterischen und magischen Wissens über Traditionen hinweg, gemeinfrei veröffentlicht. Sie modelliert Prozesse statt Substanzen, und jeder Begriff hat eine eigene Adresse, unter der er zitierbar ist.",
-        "href": "/prima-materia/",
-        "linkLabel": "pajew.ski/prima-materia"
-      },
       {
         "id": "temet-nosce",
         "kind": "Wissensgraph",
