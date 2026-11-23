@@ -1,13 +1,7 @@
-# Digital Web Card with AI Chat Integration as Technical Demo
+# pajew.ski
 
-## Development
+Opus Purum, open formats for groups without a leader, and open-source tools, free to copy, change, and pass on.
 
-```bash
-npm install
-npm run dev
-```
+The site has no build: `site/` is what gets published, as it stands. `npm run serve` shows it locally; `npm ci && npm run check` runs the checks.
 
-## Deployment
-
-This project is configured to deploy to GitHub Pages via GitHub Actions.
-Push to `main` branch to trigger deployment.
+Public domain under the Unlicense, see `LICENSE`.

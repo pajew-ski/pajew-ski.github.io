@@ -1,0 +1,245 @@
+# pajew.ski: Frei zum Mitnehmen
+
+Die Seite pajew.ski als Markdown, vollständig. Sie enthält ein Modell (Opus Purum), offene Formate für Gruppen ohne Leitung und quelloffene Werkzeuge. Die Texte der Seite sind gemeinfrei (Unlicense); jedes Projekt nennt seine Lizenz.
+
+English version: [llms-full.txt](https://pajew.ski/llms-full.txt)
+
+---
+
+## Opus Purum (#opus-purum)
+
+*Das Reine Wirken · Ein axiomatisches Framework*
+
+Ein Versuch, Magie ohne Mythos und ohne Apparat zu fassen: als nüchternes Modell dafür, wie Bewusstsein Wirklichkeit formt.
+
+### 0 · Das Eine (#opus-purum-the-one)
+
+Die Wirklichkeit ist keine Ansammlung getrennter Dinge, die gelegentlich interagieren. Sie ist ein Feld, das sich selbst differenziert: ein Prozess, der sich in der Individuation erkennt und in der Rückkehr vollendet.
+
+Trennung ist real, aber als Funktion: als die Form, durch die das Eine sich selbst erfahren kann. Der Mensch ist eine solche Form, ein Differenzierungsknoten mit der Fähigkeit zur Reflexion.
+
+Magie heißt dann nicht, dass ein Subjekt auf eine fremde Wirklichkeit einwirkt. Sie ist die bewusste Teilnahme eines kohärenten Knotens an der Selbstorganisation des Ganzen.
+
+Das höchste Wirken bringt den eigenen Willen mit dem Logos der Wirklichkeit zur Deckung. Dann verschwindet der Widerstand, weil es keinen Gegner mehr gibt.
+
+### I · Axiome (#opus-purum-axioms)
+
+**I · Wirklichkeit ist Prozess, nicht Zustand.**
+
+Es gibt keine statischen Entitäten, nur Muster im Werden. Was als Ding erscheint, ist ein vorübergehender Knoten in einem Netz von Kausalrelationen, getragen von einer Ordnung, die sich selbst erzeugt, erhält und übersteigt.
+
+**II · Bewusstsein ist kausal, nicht epiphänomenal.**
+
+Aufmerksamkeit, Intention und die Revision von Modellen sind keine Begleiterscheinungen realer Prozesse. Sie sind reale Prozesse. Der Beobachter steht nicht außerhalb des Systems.
+
+**III · Das Selbst ist plastisch.**
+
+Identität ist kein Datum, sondern ein laufender Konstruktionsprozess. Jedes Selbstmodell lässt sich revidieren. Das macht es nicht beliebig; es macht es frei, innerhalb von Bedingungen.
+
+**IV · Keine Wahrheit ist absolut, deshalb ist alle Wahrheit operational.**
+
+Ein Modell ist nicht wahr oder falsch. Es ist wirksam, präzise, nützlich oder nichts davon. Zwischen Paradigmen wechseln zu können ist keine Schwäche, sondern die Voraussetzung dafür, voll handlungsfähig zu sein.
+
+**V · Ausrichtung ist wirksamer als Kontrolle.**
+
+Komplexe Systeme haben eine eigene Ordnungsrichtung; man kann sie Logos nennen, Tao oder einfach Struktur. Wer mit ihr arbeitet, wirkt. Wer gegen sie arbeitet, verbraucht sich.
+
+### II · Das Göttliche (#opus-purum-the-divine)
+
+Mit dem Göttlichen ist hier keine Person gemeint, kein Wille und keine übernatürliche Kraft, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert; der Logos, der dem Wandel zugrunde liegt; die Struktur, die im menschlichen Bewusstsein reflexiv wird.
+
+Das Göttliche zu kennen heißt nicht, zu glauben. Es heißt, die Richtung des Flusses zu kennen und mit ihr zu arbeiten.
+
+Magie ist in diesem Sinn Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nichts; er stimmt sich auf sie ein, bis sein Wollen und ihr Werden zusammenfallen.
+
+Das Göttliche liegt nicht jenseits des Magiers. Es ist das, wovon er eine Differenzierung ist. Wer das erkennt, sucht keine äußere Kraft mehr, sondern erinnert sich an die innere.
+
+### III · Das Selbst (#opus-purum-the-self)
+
+Das Selbst ist das Betriebssystem des Magiers, und wie jedes Betriebssystem ist es revidierbar, erweiterbar, transformierbar.
+
+**Priors**
+
+Eingeschliffene Überzeugungen, die Wahrnehmung filtern, bevor sie bewusst wird. Sie entscheiden, welche Wirklichkeit überhaupt zugänglich ist.
+
+**Narrative**
+
+Kausalgeschichten über Identität und Welt. Sie beschreiben nicht, sie konstruieren: Sie erzeugen die Kontinuität, die das Selbst kohärent erscheinen lässt.
+
+**Aufmerksamkeitsarchitektur**
+
+Die Struktur, die entscheidet, welche Signale Zugang erhalten. Aufmerksamkeit ist keine neutrale Beobachtung, sondern ein Eingriff.
+
+**Interpretative Asymmetrie**
+
+Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab.
+
+**Syntaktische Integration**
+
+Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände.
+
+**Symbolische Organisation**
+
+Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen.
+
+**Semantische Kommunikation**
+
+Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs.
+
+Der häufigste Fehler ist, das Selbst für gegeben zu halten. Der seltenere, es für beliebig zu halten. Das Selbst ist der Punkt, von dem aus gewirkt wird: stabil genug zum Handeln, durchlässig genug für das, was durch es wirken will. Das Große Werk besteht nicht darin, mächtiger zu werden, sondern durchlässiger.
+
+### IV · Wirkungsmechanismus (#opus-purum-mechanism-of-effect)
+
+**Aufmerksamkeits-Kausalität**
+
+Was konsistent mit Intention belegt wird, verändert sich: über Verhalten, Wahrnehmungsfilter, soziale Signale und emergente Muster. Das ist beobachtbar und braucht keine übernatürliche Erklärung.
+
+**Zustandsabhängige Revision**
+
+Kognitive Priors lassen sich nur in bestimmten Bewusstseinszuständen revidieren. Intensive Konzentration oder intensive Erregung dämpfen das metakognitive System für kurze Zeit. In diesem Fenster werden Umbauten möglich, die im Normalzustand blockiert sind. Gnosis ist der praktische Name für dieses Fenster.
+
+**Semiotische Reorganisation**
+
+Erlebte Wirklichkeit ist zeichenvermittelt. Symbole, Rituale und Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft und Handlung kanalisiert wird. Arbeit an Zeichen ist deshalb Arbeit an der Wirklichkeit.
+
+Alle drei Mechanismen teilen dieselbe Tiefenstruktur: Kein Subjekt manipuliert eine äußere Wirklichkeit. Ein kohärenter Knoten schreibt sich neu in die Selbstorganisation des Ganzen ein und entsteht mit ihr zusammen.
+
+### V · Souveränität (#opus-purum-sovereignty)
+
+Souveränität ist das Ziel des Magiers: nicht Macht über andere, sondern volle Urheberschaft über das eigene Leben, aus der eigenen Mitte heraus.
+
+Konkret heißt das: responsiv statt reaktiv. Überzeugungen bewohnen, statt von ihnen bewohnt zu werden. Operieren, weil es wirksam ist, statt zu glauben, weil es bequem ist. Den Grund des eigenen Handelns in sich selbst tragen. Souveränität ist keine Isolation; nur wer sich nicht verliert, kann sich wirklich einbringen.
+
+**Die Konsequenz**
+
+Wer souverän wird, ist schwerer zu manipulieren, klarer in Beziehungen und freier im Denken. Er trägt aber auch mehr Verantwortung, weil er keine äußeren Systeme mehr zur Entlastung hat. Das ist der Preis.
+
+### VI · Freiheit (#opus-purum-freedom)
+
+Freiheit ist nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert.
+
+Unfrei ist nicht, wer Regeln hat, sondern wer seine Regeln nicht kennt: wer nicht weiß, welche seiner Überzeugungen er gewählt hat und welche ihm widerfahren sind.
+
+Mit dieser Unterscheidung beginnt Magie.
+
+### VII · Praxis: Die essentielle Form (#opus-purum-practice-the-essential-form)
+
+**I · Stille**
+
+Das Selbst beobachten, ohne es zu bewegen. Sehen, was automatisch läuft.
+
+**II · Intention**
+
+Präzise formulieren, was werden soll. Eine Entscheidung, kein Wunsch.
+
+**III · Zustand**
+
+Einen Bewusstseinszustand herstellen, in dem Revision möglich ist.
+
+**IV · Symbol**
+
+Den Willen in eine Form verdichten, die am rationalen Bewusstsein vorbeigeht.
+
+**V · Vergessen**
+
+Loslassen. Das rationale Ich steht seinen eigenen Wünschen am meisten im Weg.
+
+**VI · Ausrichtung**
+
+Im Alltag so handeln, als hätte das Gewollte bereits Richtung.
+
+Mehr ist es nicht. Kein Mythos, kein Apparat. Weniger eine Technik als eine Erinnerung an das, was man ohnehin ist.
+
+---
+
+## Offene Formate (#open-formats)
+
+Drei Formate für Menschen, die sich ohne Leitung treffen wollen. Jede Gruppe kann sie übernehmen, abwandeln und weitergeben, ohne jemanden zu fragen. Ein bestimmtes Weltbild braucht es nicht, nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen.
+
+### Iter Apertum · Der offene Weg (#iter-apertum)
+
+Wir gehen: ohne Programm, ohne Vortrag, ohne vorbereitete Antworten. Kein Guru, keine Einweihungsstufen. Das Iter Apertum ist ein Spaziergang mit Absicht.
+
+Bewegung und Tageslicht als Praxisraum, offene Begegnung als Methode. Uns interessiert, was entsteht, wenn Menschen bewusst präsent sind. Erwarte echte Gespräche, Fragen, die sonst keiner stellt, und gelegentlich Momente, in denen die Magie spürbar wird.
+
+Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Ein Kreis am Anfang, ein Kreis am Ende, zum Schluss Ausklang im Café.
+
+* **Dauer**: Etwa 60 bis 90 Minuten
+* **Voraussetzungen**: Keine Vorkenntnisse, keine Übereinstimmung im Weltbild erforderlich
+* **Mitzubringen**: Wetterfeste Schuhe
+
+### Convivium Apertum · Die offene Runde (#convivium-apertum)
+
+Die gleiche Haltung ohne Bewegung, zu dritt. Eine Person spricht drei Minuten, die beiden anderen bezeugen: ohne Antwort, ohne Reaktion. Dann Wechsel, dann noch einmal.
+
+Das Bezeugen ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert. Wer spricht, spricht in einen Raum, der nicht zurückspricht.
+
+Nach den drei Runden neun Minuten Stille, gemeinsam gehalten. Dann öffnet sich die Runde zum Mahl: mitgebracht wird das eigene Essen, dazu eine eigene Sitzmöglichkeit. Kein Ausrichter, keine Gäste.
+
+* **Dauer**: 60 bis 90 Minuten
+* **Voraussetzungen**: Eigenes Essen, eigene Sitzmöglichkeit
+
+### Speculum Apertum · Der offene Spiegel (#speculum-apertum)
+
+Die gleiche Haltung ohne Wort. Wir beginnen im Kreis und legen gemeinsam fest, wie lange eine Runde dauert; das ist die Höchstzeit für alle. Dann zu zweit: Blick in Blick, ohne Sprechen, bis die Zeit erreicht ist oder bis eine Person die Augen schließt. Das Schließen der Augen ist jederzeit erlaubt, ohne Erklärung; es bedeutet nur, dass es für diesen Moment genug ist.
+
+Ab einer gewissen Dauer beginnt sich die Wahrnehmung des Gegenübers zu verschieben. Das ist Teil der Praxis, kein Nebeneffekt.
+
+Nach jeder Runde eine kurze Zwischenzeit zum Lösen und Strecken, mit Raum für ein paar Worte über das Erlebte, ohne es zu deuten. Keine Analyse, kein Gespräch darüber, was es bedeutet hat; nur, was da war. Dann wird gewechselt.
+
+Wer aussteigen möchte, tut das jederzeit mit gefalteten Händen als Dank, ohne weitere Erklärung. Zum Schluss gemeinsames Schweigen; wer bereit ist, geht, die anderen bleiben, solange sie möchten.
+
+* **Ort**: Drinnen wie draußen
+* **Dauer**: 60 bis 90 Minuten
+* **Voraussetzungen**: Eigene Sitzunterlage
+
+---
+
+## Projekte (#projects)
+
+Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.
+
+### Temet Nosce · Wissensgraph (#temet-nosce)
+
+Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank. Derselbe Graph steht über einen MCP-Server jedem Client offen, lesend und schreibend.
+
+* **Seite**: https://pajew.ski/temet-nosce/
+* **Repository**: https://github.com/pajew-ski/temet-nosce
+* **Lizenz**: MIT für den Code, der Wissensgraph ist gemeinfrei (CC0 1.0)
+
+### Open Entrainer · Klangwerkzeug (#open-entrainer)
+
+Binaurale Frequenzen, im Browser in Echtzeit erzeugt und nirgendwohin gesendet, mit voller Kontrolle über Verlauf und Trägerfrequenz. Die Hirnaktivität neigt über Minuten dazu, der Schwebung zu folgen; gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.
+
+Braucht Kopfhörer; über Lautsprecher mischen sich die beiden Töne in der Luft und die Schwebung verschwindet. Kein Medizinprodukt: nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.
+
+* **Seite**: https://pajew.ski/open-entrainer/
+* **Repository**: https://github.com/pajew-ski/open-entrainer
+* **Lizenz**: Unlicense (gemeinfrei)
+
+### Open Desensitizer · Übungswerkzeug (#open-desensitizer)
+
+Bilaterale Stimulation über Auge und Ohr. Für sich genommen beruhigt sie meist das Nervensystem; mit einer belastenden Erinnerung im Sinn kann sie die Erinnerung leichter tragbar machen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.
+
+Kein Therapieersatz; die Arbeit an Traumata gehört in fachliche Begleitung. Nicht bei fotosensibler Epilepsie, und bei dissoziativen Störungen vorher ärztlich abklären. Der Ton ist wählbar und braucht Kopfhörer.
+
+* **Seite**: https://pajew.ski/open-desensitizer/
+* **Repository**: https://github.com/pajew-ski/open-desensitizer
+* **Lizenz**: Unlicense (gemeinfrei)
+
+### Open Helix · Hörillusion (#open-helix)
+
+Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt und nirgendwohin gesendet. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.
+
+Kopfhörer für Schwebung, Panorama und Tremolo-Phase. Kein Medizinprodukt: die Wirkung braucht keine Lautstärke, und schnelle Läufe mit vielen Komponenten wirken stärker als erwartet; nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.
+
+* **Seite**: https://pajew.ski/open-helix/
+* **Repository**: https://github.com/pajew-ski/open-helix
+* **Lizenz**: Unlicense (gemeinfrei)
+
+### Mermaid Diagram Card · Hausautomation (#mermaid-diagram-card)
+
+Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.
+
+* **Repository**: https://github.com/pajew-ski/ha-mermaid
+* **Lizenz**: MIT

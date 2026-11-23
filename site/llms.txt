@@ -1,0 +1,22 @@
+# pajew.ski: Free to Take
+
+> A model, open formats, and open-source tools. All of it may be copied, changed, and passed on; the texts are in the public domain (Unlicense), every project names its license.
+
+## Sections
+
+- [Opus Purum](https://pajew.ski/#opus-purum): An attempt to state magic without myth and without apparatus: a sober model of how consciousness shapes reality. Eight chapters, each directly linkable, for example /#opus-purum-axioms.
+- [Open Formats](https://pajew.ski/#open-formats): Three formats for people who want to meet without a leader. Any group can take them up, change them, and pass them on without asking anyone. No particular worldview is needed, only the willingness to put direct experience above concepts. Iter Apertum, Convivium Apertum, Speculum Apertum.
+- [Projects](https://pajew.ski/#projects): Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.
+
+## Projects
+
+- [Temet Nosce](https://pajew.ski/temet-nosce/): An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database. The same graph is open to any client through an MCP server, for reading and writing.
+- [Open Entrainer](https://pajew.ski/open-entrainer/): Binaural frequencies generated in the browser in real time and sent nowhere, with full control over the curve and the carrier. Over minutes, brain activity tends to follow the beat; made for meditation, falling asleep, and focused work. Needs headphones; through speakers the two tones mix in the air and the beat disappears. Not a medical device: not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.
+- [Open Desensitizer](https://pajew.ski/open-desensitizer/): Bilateral stimulation through eye and ear. On its own it tends to settle the nervous system; held together with a difficult memory, it can make that memory easier to carry. It runs entirely in the browser, with a guided breathing exercise as the way out. Not a replacement for therapy; working through trauma belongs with professional support. Not with photosensitive epilepsy, and with a dissociative disorder, ask a clinician first. The tone is optional and needs headphones.
+- [Open Helix](https://pajew.ski/open-helix/): A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time and sent nowhere. Every parameter sits openly on one page, and a spectrogram draws what is playing. Headphones for the beat, the panning, and the tremolo phase. Not a medical device: the effect needs no volume, and fast runs with many components feel more intense than expected; not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.
+- [Mermaid Diagram Card](https://github.com/pajew-ski/ha-mermaid): A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.
+
+## Full content
+
+- [llms-full.txt](https://pajew.ski/llms-full.txt): the whole content of the site
+- Deutsch: [llms.de.txt](https://pajew.ski/llms.de.txt)
