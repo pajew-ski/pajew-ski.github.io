@@ -1,0 +1,643 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+/* Before first paint: the page language follows the browser (German when
+   the first preferred language starts with de, English otherwise); ?lang=de
+   or ?lang=en overrides. Without script the page stays German. */
+(function () {
+  var q = new URLSearchParams(location.search).get('lang');
+  var nav = ((navigator.languages && navigator.languages[0]) || navigator.language || 'en').toLowerCase();
+  document.documentElement.lang = q === 'de' || q === 'en' ? q : (nav.indexOf('de') === 0 ? 'de' : 'en');
+})();
+</script>
+<title>pajew.ski</title>
+<meta name="description" content="Opus Purum, offene Formate für Gruppen ohne Leitung und quelloffene Werkzeuge. Alles darf kopiert, verändert und weitergegeben werden.">
+<link rel="canonical" href="https://pajew.ski/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="llms.txt" href="/llms.txt">
+<link rel="alternate" type="text/markdown" href="https://pajew.ski/llms-full.txt" hreflang="en" title="Full site content as Markdown">
+<link rel="alternate" type="text/markdown" href="https://pajew.ski/llms-full.de.txt" hreflang="de" title="Vollständiger Seiteninhalt als Markdown">
+<meta property="og:type" content="website">
+<meta property="og:title" content="pajew.ski: Frei zum Mitnehmen">
+<meta property="og:description" content="Opus Purum, offene Formate für Gruppen ohne Leitung und quelloffene Werkzeuge.">
+<meta property="og:url" content="https://pajew.ski/">
+<meta property="og:image" content="https://pajew.ski/og-image.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:alt" content="Die Krystal-Blume: zwölf Paare logarithmischer Spiralen auf dunklem Grund.">
+<meta property="og:locale" content="de_DE">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="pajew.ski: Frei zum Mitnehmen">
+<meta name="twitter:description" content="Opus Purum, offene Formate und quelloffene Werkzeuge.">
+<meta name="twitter:image" content="https://pajew.ski/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://pajew.ski/#website",
+      "url": "https://pajew.ski/",
+      "name": "pajew.ski",
+      "description": "Opus Purum, open formats for groups without a leader, and open-source tools, free to copy, change, and pass on.",
+      "inLanguage": ["de", "en"],
+      "hasPart": [
+        { "@id": "https://pajew.ski/temet-nosce/" },
+        { "@id": "https://pajew.ski/open-entrainer/" },
+        { "@id": "https://pajew.ski/open-desensitizer/" },
+        { "@id": "https://pajew.ski/open-helix/" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pajew.ski/temet-nosce/",
+      "url": "https://pajew.ski/temet-nosce/",
+      "name": "Temet Nosce",
+      "description": "An agent that explains itself through a knowledge graph of the repository it lives in, without a vector database.",
+      "inLanguage": "en",
+      "isPartOf": { "@id": "https://pajew.ski/#website" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pajew.ski/open-entrainer/",
+      "url": "https://pajew.ski/open-entrainer/",
+      "name": "Open Entrainer",
+      "description": "Binaural frequencies generated in the browser in real time, for meditation, falling asleep, and focused work.",
+      "inLanguage": ["en", "de"],
+      "isPartOf": { "@id": "https://pajew.ski/#website" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pajew.ski/open-desensitizer/",
+      "url": "https://pajew.ski/open-desensitizer/",
+      "name": "Open Desensitizer",
+      "description": "Bilateral stimulation through eye and ear, running entirely in the browser, for working through stress and difficult emotions.",
+      "inLanguage": ["en", "de"],
+      "isPartOf": { "@id": "https://pajew.ski/#website" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://pajew.ski/open-helix/",
+      "url": "https://pajew.ski/open-helix/",
+      "name": "Open Helix",
+      "description": "A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time, with every parameter on one page and a spectrogram of what is playing.",
+      "inLanguage": ["en", "de"],
+      "isPartOf": { "@id": "https://pajew.ski/#website" }
+    }
+  ]
+}
+</script>
+<style>
+/* albedo: Anfang */
+/* Design tokens (albedo). Color is strictly achromatic: oklch with chroma 0
+   cannot tint, light and dark share one scale and flip with
+   prefers-color-scheme. Geometry derives from 2: spacing steps are powers of
+   two, type sizes are 2^(k/2) rem, line height is √2, the same growth as the
+   Krystal Flower. Hue exists only as a data channel:
+   oklch(var(--hue-l) var(--hue-c) H), lightness and chroma fixed per scheme,
+   the angle free. */
+:root {
+  color-scheme: light dark;
+  --bg: oklch(98% 0 0);
+  --surface: oklch(94% 0 0);
+  --border: oklch(85% 0 0);
+  --text: oklch(15% 0 0);
+  --text-muted: oklch(40% 0 0);
+  --hue-l: 45%;
+  --hue-c: 0.11;
+
+  --step-2: 4px;
+  --step-3: 8px;
+  --step-4: 16px;
+  --step-5: 32px;
+  --step-6: 64px;
+  --step-7: 128px;
+  --radius-sm: var(--step-2);
+  --radius-md: var(--step-3);
+  --radius-lg: var(--step-4);
+
+  --type-sm: 0.875rem;     /* 14px, captions; 1 - 2^-3, legibility floor */
+  --type-0: 1rem;          /* browser default, respects user zoom */
+  --type-1: 1.414rem;      /* 2^(1/2) */
+  --type-2: 2rem;          /* 2^1 */
+  --type-3: 2.828rem;      /* 2^(3/2) */
+  --type-4: 4rem;          /* 2^2 */
+  --leading: 1.414;        /* √2 */
+
+  font-family: system-ui, sans-serif;
+  font-size: var(--type-0);
+  line-height: var(--leading);
+  background: var(--bg);
+  color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(15% 0 0);
+    --surface: oklch(23% 0 0);
+    --border: oklch(32% 0 0);
+    --text: oklch(95% 0 0);
+    --text-muted: oklch(70% 0 0);
+    --hue-l: 75%;
+  }
+}
+/* albedo: Ende */
+
+/* Language: prose exists once per language as sibling elements; the one
+   that does not match the root is not shown. */
+html[lang="de"] [lang="en"], html[lang="en"] [lang="de"] { display: none; }
+
+:root { interpolate-size: allow-keywords; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, p, dl, dd { margin: 0; }
+::selection { background: var(--border); }
+[id] { scroll-margin-top: var(--step-5); }
+:focus-visible { outline: 2px solid var(--text); outline-offset: 2px; border-radius: var(--radius-sm); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: clip; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Quiet self-link on every named heading: no glyph, an underline that fades
+   in on hover. */
+a.self { color: inherit; text-decoration: underline 1px transparent; text-underline-offset: 0.25em; transition: text-decoration-color 0.3s; }
+a.self:hover { text-decoration-color: var(--text-muted); }
+
+.shell { max-width: 1024px; margin-inline: auto; padding: max(16vmin, var(--step-7)) var(--step-4); }
+@media (min-width: 768px) { .shell { padding-inline: var(--step-5); } }
+.band { background: var(--surface); }
+
+.micro { font-size: var(--type-sm); text-transform: uppercase; letter-spacing: 0.3em; color: var(--text-muted); font-weight: 300; }
+.lead { font-size: var(--type-1); font-weight: 300; color: var(--text-muted); max-width: 32em; }
+.premise { font-style: italic; }
+
+/* Intro: the flower is the centre. Free space above : below = 1 : √2 puts
+   the group at the optical centre, just above the middle. */
+.intro { min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; align-items: center; padding-inline: var(--step-4); overflow: clip; }
+.spacer-top { flex-grow: 1; }
+.spacer-bottom { flex-grow: 1.414; }
+.intro-group { display: flex; flex-direction: column; align-items: center; gap: 8vmin; }
+.intro-text { text-align: center; display: grid; gap: var(--step-4); max-width: 32rem; }
+.intro h1 { font-size: var(--type-3); line-height: 1; font-weight: 700; letter-spacing: -0.05em; text-wrap: balance; }
+.intro-lead { color: var(--text-muted); font-weight: 300; text-wrap: balance; }
+@media (min-width: 768px) { .intro h1 { font-size: var(--type-4); } }
+
+/* The Krystal Flower is drawn by the script below and revealed by a circle
+   growing from the centre. Radius grows monotonically along a log spiral, so
+   the radial wipe draws every curve along its length; no dash animation,
+   which WebKit has mis-rendered on these paths. */
+.flower { width: min(64vmin, 32rem); height: min(64vmin, 32rem); color: var(--text); clip-path: circle(41% at 50% 50%); animation: reveal 3.4s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both; }
+.flower path:nth-child(odd) { opacity: 0.52; }
+.flower path:nth-child(even) { opacity: 0.34; }
+@keyframes reveal { from { clip-path: circle(0% at 50% 50%); } }
+@media (prefers-reduced-motion: reduce) { .flower { animation: none; } }
+
+.section-head { display: grid; gap: var(--step-5); margin-bottom: var(--step-6); }
+h2 { font-size: var(--type-2); font-weight: 700; letter-spacing: -0.05em; }
+@media (min-width: 768px) { h2 { font-size: var(--type-3); line-height: 1; } }
+
+/* Opus Purum: one chapter open at a time (details name). Opening glides,
+   closing is immediate, so the page settles before the opened heading is
+   checked against the viewport. A summary may not contain a link, so a
+   chapter is reachable by its id (#opus-purum-axioms) without a self-link. */
+.chapters { border-top: 1px solid var(--border); }
+.chapter { border-bottom: 1px solid var(--border); }
+.chapter summary { display: flex; align-items: baseline; gap: var(--step-5); padding-block: var(--step-4); cursor: pointer; list-style: none; }
+.chapter summary::-webkit-details-marker { display: none; }
+.chapter summary::after { content: "+"; margin-left: auto; color: var(--text-muted); transition: transform 0.3s; }
+.chapter[open] summary::after { transform: rotate(45deg); }
+.num { flex: none; width: var(--step-5); font-size: var(--type-sm); letter-spacing: 0.3em; color: var(--text-muted); font-weight: 300; font-variant-numeric: tabular-nums; }
+.chapter h3 { font-size: var(--type-0); font-weight: 300; letter-spacing: -0.01em; color: var(--text-muted); }
+.chapter summary:hover h3, .chapter[open] h3 { color: var(--text); }
+.chapter-body { display: grid; gap: var(--step-5); max-width: 32rem; padding-bottom: var(--step-6); }
+.chapter-body h4 { font-size: var(--type-0); font-weight: 600; letter-spacing: -0.01em; margin-bottom: calc(var(--step-4) - var(--step-5)); }
+.chapter-body p { color: var(--text-muted); font-weight: 300; }
+@media (min-width: 768px) { .chapter-body { margin-left: var(--step-6); } .chapter-body h4 { font-size: var(--type-1); } }
+.chapter::details-content { block-size: 0; opacity: 0; overflow: clip; }
+.chapter[open]::details-content { block-size: auto; opacity: 1; transition: block-size 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s; }
+@media (prefers-reduced-motion: reduce) { .chapter[open]::details-content { transition: none; } }
+
+/* Cards: equal heights in a row. On bg a card is a surface band around a bg
+   interior; inside a surface section the section is the band. */
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(256px, 100%), 1fr)); gap: var(--step-5); }
+.card { display: flex; flex-direction: column; gap: var(--step-4); padding: var(--step-4); background: var(--bg); border-radius: var(--radius-sm); }
+@media (min-width: 768px) { .card { padding: var(--step-5); } }
+section:not(.band) .card { border: var(--step-3) solid var(--surface); }
+.card header { display: grid; gap: var(--step-3); margin-bottom: var(--step-4); }
+.card h3 { font-size: var(--type-1); font-weight: 600; letter-spacing: -0.01em; }
+.card > p { color: var(--text-muted); font-weight: 300; }
+.card > p.note { font-size: var(--type-sm); }
+.go { margin-top: auto; font-size: var(--type-sm); color: var(--text-muted); text-decoration: underline 1px var(--border); text-underline-offset: 0.25em; transition: color 0.3s, text-decoration-color 0.3s; }
+.go:hover { color: var(--text); text-decoration-color: var(--text-muted); }
+.facts { display: grid; gap: var(--step-3); margin-top: auto; padding-top: var(--step-4); border-top: 1px solid var(--border); font-size: var(--type-sm); }
+.facts dt { color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.3em; font-weight: 300; }
+.facts dd { font-weight: 300; }
+
+footer { padding: var(--step-5) var(--step-4) var(--step-6); text-align: center; font-size: var(--type-sm); color: var(--text-muted); display: grid; gap: var(--step-3); justify-items: center; }
+footer p { max-width: 32rem; }
+footer a { color: inherit; text-decoration: underline 1px var(--border); text-underline-offset: 0.25em; }
+footer a:hover { color: var(--text); }
+</style>
+</head>
+<body>
+<main><article>
+<header id="intro" class="intro">
+<div class="spacer-top"></div>
+<div class="intro-group">
+<div class="intro-text">
+<h1><span lang="de">Frei zum Mitnehmen</span><span lang="en">Free to Take</span></h1>
+<p class="intro-lead" lang="de">Ein Modell, offene Formate und quelloffene Werkzeuge. Alles darf kopiert, verändert und weitergegeben werden.</p>
+<p class="intro-lead" lang="en">A model, open formats, and open-source tools. All of it may be copied, changed, and passed on.</p>
+</div>
+<svg class="flower" viewBox="0 0 500 500" aria-hidden="true" focusable="false"><g fill="none" stroke="currentColor" stroke-width="2"></g></svg>
+</div>
+<div class="spacer-bottom"></div>
+</header>
+
+<section id="opus-purum" aria-labelledby="opus-purum-heading">
+<div class="shell">
+<header class="section-head">
+<p class="micro" lang="de">Das Reine Wirken · Ein axiomatisches Framework</p>
+<p class="micro" lang="en">The Pure Working · An Axiomatic Framework</p>
+<h2 id="opus-purum-heading"><a class="self" href="#opus-purum">Opus Purum</a></h2>
+<p class="lead premise" lang="de">Ein Versuch, Magie ohne Mythos und ohne Apparat zu fassen: als nüchternes Modell dafür, wie Bewusstsein Wirklichkeit formt.</p>
+<p class="lead premise" lang="en">An attempt to state magic without myth and without apparatus: a sober model of how consciousness shapes reality.</p>
+</header>
+<div class="chapters">
+<details class="chapter" name="opus-purum" id="opus-purum-the-one" open>
+<summary><span class="num">0</span><span class="sr-only"> · </span><h3><span lang="de">Das Eine</span><span lang="en">The One</span></h3></summary>
+<div class="chapter-body">
+<p lang="de">Die Wirklichkeit ist keine Ansammlung getrennter Dinge, die gelegentlich interagieren. Sie ist ein Feld, das sich selbst differenziert: ein Prozess, der sich in der Individuation erkennt und in der Rückkehr vollendet.</p>
+<p lang="en">Reality is not a collection of separate things that occasionally interact. It is a field that differentiates itself: a process that comes to know itself through individuation and completes itself through return.</p>
+<p lang="de">Trennung ist real, aber als Funktion: als die Form, durch die das Eine sich selbst erfahren kann. Der Mensch ist eine solche Form, ein Differenzierungsknoten mit der Fähigkeit zur Reflexion.</p>
+<p lang="en">Separation is real, but as a function: the form through which the One can experience itself. A human being is such a form, a node of differentiation with the capacity for reflection.</p>
+<p lang="de">Magie heißt dann nicht, dass ein Subjekt auf eine fremde Wirklichkeit einwirkt. Sie ist die bewusste Teilnahme eines kohärenten Knotens an der Selbstorganisation des Ganzen.</p>
+<p lang="en">Magic, then, does not mean a subject acting on an alien reality. It is the conscious participation of a coherent node in the self-organization of the whole.</p>
+<p lang="de">Das höchste Wirken bringt den eigenen Willen mit dem Logos der Wirklichkeit zur Deckung. Dann verschwindet der Widerstand, weil es keinen Gegner mehr gibt.</p>
+<p lang="en">The highest working brings one&#x27;s own will into alignment with the Logos of reality. Then resistance disappears, because there is no opponent left.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-axioms">
+<summary><span class="num">I</span><span class="sr-only"> · </span><h3><span lang="de">Axiome</span><span lang="en">Axioms</span></h3></summary>
+<div class="chapter-body">
+<h4 lang="de">I · Wirklichkeit ist Prozess, nicht Zustand.</h4>
+<h4 lang="en">I · Reality is process, not state.</h4>
+<p lang="de">Es gibt keine statischen Entitäten, nur Muster im Werden. Was als Ding erscheint, ist ein vorübergehender Knoten in einem Netz von Kausalrelationen, getragen von einer Ordnung, die sich selbst erzeugt, erhält und übersteigt.</p>
+<p lang="en">There are no static entities, only patterns in becoming. What appears as a thing is a temporary node in a web of causal relations, carried by an order that generates, sustains, and transcends itself.</p>
+<h4 lang="de">II · Bewusstsein ist kausal, nicht epiphänomenal.</h4>
+<h4 lang="en">II · Consciousness is causal, not epiphenomenal.</h4>
+<p lang="de">Aufmerksamkeit, Intention und die Revision von Modellen sind keine Begleiterscheinungen realer Prozesse. Sie sind reale Prozesse. Der Beobachter steht nicht außerhalb des Systems.</p>
+<p lang="en">Attention, intention, and the revision of models are not byproducts of real processes. They are real processes. The observer does not stand outside the system.</p>
+<h4 lang="de">III · Das Selbst ist plastisch.</h4>
+<h4 lang="en">III · The Self is plastic.</h4>
+<p lang="de">Identität ist kein Datum, sondern ein laufender Konstruktionsprozess. Jedes Selbstmodell lässt sich revidieren. Das macht es nicht beliebig; es macht es frei, innerhalb von Bedingungen.</p>
+<p lang="en">Identity is not a given, but an ongoing process of construction. Every self-model can be revised. That does not make it arbitrary; it makes it free, within constraints.</p>
+<h4 lang="de">IV · Keine Wahrheit ist absolut, deshalb ist alle Wahrheit operational.</h4>
+<h4 lang="en">IV · No truth is absolute, therefore all truth is operational.</h4>
+<p lang="de">Ein Modell ist nicht wahr oder falsch. Es ist wirksam, präzise, nützlich oder nichts davon. Zwischen Paradigmen wechseln zu können ist keine Schwäche, sondern die Voraussetzung dafür, voll handlungsfähig zu sein.</p>
+<p lang="en">A model is not true or false. It is effective, precise, useful, or none of these. Being able to move between paradigms is not a weakness but the precondition of full agency.</p>
+<h4 lang="de">V · Ausrichtung ist wirksamer als Kontrolle.</h4>
+<h4 lang="en">V · Alignment is more effective than control.</h4>
+<p lang="de">Komplexe Systeme haben eine eigene Ordnungsrichtung; man kann sie Logos nennen, Tao oder einfach Struktur. Wer mit ihr arbeitet, wirkt. Wer gegen sie arbeitet, verbraucht sich.</p>
+<p lang="en">Complex systems have an order-direction of their own; call it Logos, Tao, or simply structure. Work with it and you have effect. Work against it and you wear yourself out.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-the-divine">
+<summary><span class="num">II</span><span class="sr-only"> · </span><h3><span lang="de">Das Göttliche</span><span lang="en">The Divine</span></h3></summary>
+<div class="chapter-body">
+<p lang="de">Mit dem Göttlichen ist hier keine Person gemeint, kein Wille und keine übernatürliche Kraft, sondern das Prinzip der Selbstorganisation der Wirklichkeit: der Attraktor, zu dem Komplexität tendiert; der Logos, der dem Wandel zugrunde liegt; die Struktur, die im menschlichen Bewusstsein reflexiv wird.</p>
+<p lang="en">The Divine, as used here, means no person, no will, and no supernatural force, but the principle of self-organization of reality itself: the attractor toward which complexity tends; the Logos underlying all change; the structure that becomes reflexive in human consciousness.</p>
+<p lang="de">Das Göttliche zu kennen heißt nicht, zu glauben. Es heißt, die Richtung des Flusses zu kennen und mit ihr zu arbeiten.</p>
+<p lang="en">To know the Divine is not to believe. It is to know the direction of the flow and to work with it.</p>
+<p lang="de">Magie ist in diesem Sinn Ausrichtung, nicht Befehl. Der Magier befiehlt der Wirklichkeit nichts; er stimmt sich auf sie ein, bis sein Wollen und ihr Werden zusammenfallen.</p>
+<p lang="en">Magic, in this sense, is alignment, not command. The magician commands nothing of reality; he tunes himself to it until his willing and its becoming coincide.</p>
+<p lang="de">Das Göttliche liegt nicht jenseits des Magiers. Es ist das, wovon er eine Differenzierung ist. Wer das erkennt, sucht keine äußere Kraft mehr, sondern erinnert sich an die innere.</p>
+<p lang="en">The Divine is not beyond the magician. It is that of which he is a differentiation. Whoever recognizes this stops looking for an external force and remembers the internal one.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-the-self">
+<summary><span class="num">III</span><span class="sr-only"> · </span><h3><span lang="de">Das Selbst</span><span lang="en">The Self</span></h3></summary>
+<div class="chapter-body">
+<p lang="de">Das Selbst ist das Betriebssystem des Magiers, und wie jedes Betriebssystem ist es revidierbar, erweiterbar, transformierbar.</p>
+<p lang="en">The Self is the magician&#x27;s operating system, and like any operating system it can be revised, extended, transformed.</p>
+<h4 lang="de">Priors</h4>
+<h4 lang="en">Priors</h4>
+<p lang="de">Eingeschliffene Überzeugungen, die Wahrnehmung filtern, bevor sie bewusst wird. Sie entscheiden, welche Wirklichkeit überhaupt zugänglich ist.</p>
+<p lang="en">Ingrained beliefs that filter perception before it becomes conscious. They decide which reality is accessible at all.</p>
+<h4 lang="de">Narrative</h4>
+<h4 lang="en">Narratives</h4>
+<p lang="de">Kausalgeschichten über Identität und Welt. Sie beschreiben nicht, sie konstruieren: Sie erzeugen die Kontinuität, die das Selbst kohärent erscheinen lässt.</p>
+<p lang="en">Causal stories about identity and world. They do not describe, they construct: they produce the continuity that makes the self appear coherent.</p>
+<h4 lang="de">Aufmerksamkeitsarchitektur</h4>
+<h4 lang="en">Attention Architecture</h4>
+<p lang="de">Die Struktur, die entscheidet, welche Signale Zugang erhalten. Aufmerksamkeit ist keine neutrale Beobachtung, sondern ein Eingriff.</p>
+<p lang="en">The structure that decides which signals are granted access. Attention is not neutral observation but an intervention.</p>
+<h4 lang="de">Interpretative Asymmetrie</h4>
+<h4 lang="en">Interpretive Asymmetry</h4>
+<p lang="de">Kein kognitives System kann ein System höherer Komplexität vollständig modellieren. Die interpretative Genauigkeit nimmt monoton mit dem Komplexitätsgefälle zwischen Beobachter und Beobachtetem ab.</p>
+<p lang="en">No cognitive system can fully model a system of higher complexity. Interpretive accuracy decreases monotonically with the complexity differential between observer and observed.</p>
+<h4 lang="de">Syntaktische Integration</h4>
+<h4 lang="en">Syntactic Integration</h4>
+<p lang="de">Kognitive Kohärenz ist eine Funktion der Präzision des regelbasierten Selbstmodells eines Systems. Die Vollständigkeit syntaktischer Selbstrepräsentation bestimmt den Grad der Einheitlichkeit interner Zustände.</p>
+<p lang="en">Cognitive coherence is a function of the precision of a system&#x27;s rule-based self-model. The completeness of syntactic self-representation determines the degree of uniformity of internal states.</p>
+<h4 lang="de">Symbolische Organisation</h4>
+<h4 lang="en">Symbolic Organization</h4>
+<p lang="de">Verhaltensorganisation skaliert mit der Robustheit und Kompositionalität des symbolischen Selbstmodells. Stärker kompositionelle interne Repräsentationen erzeugen stabilere und planbarere Handlungssequenzen.</p>
+<p lang="en">Behavioral organization scales with the robustness and compositionality of the symbolic self-model. More compositional internal representations produce more stable and plannable action sequences.</p>
+<h4 lang="de">Semantische Kommunikation</h4>
+<h4 lang="en">Semantic Communication</h4>
+<p lang="de">Kommunikative Kapazität ist proportional zur semantischen Dichte des Selbstmodells. Je größer die Bedeutungszuweisung an interne Zustände, desto höher die Transmissibilität und Verständlichkeit erzeugter Outputs.</p>
+<p lang="en">Communicative capacity is proportional to the semantic density of the self-model. The greater the meaning-assignment to internal states, the higher the transmissibility and comprehensibility of generated outputs.</p>
+<p lang="de">Der häufigste Fehler ist, das Selbst für gegeben zu halten. Der seltenere, es für beliebig zu halten. Das Selbst ist der Punkt, von dem aus gewirkt wird: stabil genug zum Handeln, durchlässig genug für das, was durch es wirken will. Das Große Werk besteht nicht darin, mächtiger zu werden, sondern durchlässiger.</p>
+<p lang="en">The most common mistake is to take the Self as given. The rarer one, to take it as arbitrary. The Self is the point from which one acts: stable enough to act, permeable enough for what wants to work through it. The Great Work is not to become more powerful, but more transparent.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-mechanism-of-effect">
+<summary><span class="num">IV</span><span class="sr-only"> · </span><h3><span lang="de">Wirkungsmechanismus</span><span lang="en">Mechanism of Effect</span></h3></summary>
+<div class="chapter-body">
+<h4 lang="de">Aufmerksamkeits-Kausalität</h4>
+<h4 lang="en">Attention Causality</h4>
+<p lang="de">Was konsistent mit Intention belegt wird, verändert sich: über Verhalten, Wahrnehmungsfilter, soziale Signale und emergente Muster. Das ist beobachtbar und braucht keine übernatürliche Erklärung.</p>
+<p lang="en">What is consistently invested with intention changes: through behavior, perceptual filters, social signals, and emergent patterns. This is observable and needs no supernatural explanation.</p>
+<h4 lang="de">Zustandsabhängige Revision</h4>
+<h4 lang="en">State-Dependent Revision</h4>
+<p lang="de">Kognitive Priors lassen sich nur in bestimmten Bewusstseinszuständen revidieren. Intensive Konzentration oder intensive Erregung dämpfen das metakognitive System für kurze Zeit. In diesem Fenster werden Umbauten möglich, die im Normalzustand blockiert sind. Gnosis ist der praktische Name für dieses Fenster.</p>
+<p lang="en">Cognitive priors can only be revised in certain states of consciousness. Intense concentration or intense arousal briefly dampens the metacognitive system. In that window, reconditioning becomes possible that is blocked in the normal state. Gnosis is the practical name for this window.</p>
+<h4 lang="de">Semiotische Reorganisation</h4>
+<h4 lang="en">Semiotic Reorganization</h4>
+<p lang="de">Erlebte Wirklichkeit ist zeichenvermittelt. Symbole, Rituale und Namen reorganisieren die Bedeutungsstruktur, durch die Wahrnehmung läuft und Handlung kanalisiert wird. Arbeit an Zeichen ist deshalb Arbeit an der Wirklichkeit.</p>
+<p lang="en">Experienced reality is mediated by signs. Symbols, rituals, and names reorganize the structure of meaning through which perception runs and action is channeled. Work on signs is therefore work on reality.</p>
+<p lang="de">Alle drei Mechanismen teilen dieselbe Tiefenstruktur: Kein Subjekt manipuliert eine äußere Wirklichkeit. Ein kohärenter Knoten schreibt sich neu in die Selbstorganisation des Ganzen ein und entsteht mit ihr zusammen.</p>
+<p lang="en">All three mechanisms share the same deep structure: no subject manipulates an external reality. A coherent node re-inscribes itself into the self-organization of the whole and arises together with it.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-sovereignty">
+<summary><span class="num">V</span><span class="sr-only"> · </span><h3><span lang="de">Souveränität</span><span lang="en">Sovereignty</span></h3></summary>
+<div class="chapter-body">
+<p lang="de">Souveränität ist das Ziel des Magiers: nicht Macht über andere, sondern volle Urheberschaft über das eigene Leben, aus der eigenen Mitte heraus.</p>
+<p lang="en">Sovereignty is the magician&#x27;s goal: not power over others, but full authorship of one&#x27;s own life, from one&#x27;s own center.</p>
+<p lang="de">Konkret heißt das: responsiv statt reaktiv. Überzeugungen bewohnen, statt von ihnen bewohnt zu werden. Operieren, weil es wirksam ist, statt zu glauben, weil es bequem ist. Den Grund des eigenen Handelns in sich selbst tragen. Souveränität ist keine Isolation; nur wer sich nicht verliert, kann sich wirklich einbringen.</p>
+<p lang="en">Concretely, that means: responsive rather than reactive. Inhabiting convictions instead of being inhabited by them. Operating because it works, rather than believing because it is comfortable. Carrying the ground of one&#x27;s actions within oneself. Sovereignty is not isolation; only those who do not lose themselves can truly contribute.</p>
+<h4 lang="de">Die Konsequenz</h4>
+<h4 lang="en">The Consequence</h4>
+<p lang="de">Wer souverän wird, ist schwerer zu manipulieren, klarer in Beziehungen und freier im Denken. Er trägt aber auch mehr Verantwortung, weil er keine äußeren Systeme mehr zur Entlastung hat. Das ist der Preis.</p>
+<p lang="en">Whoever becomes sovereign is harder to manipulate, clearer in relationships, and freer in thought. They also carry more responsibility, because no external system relieves them anymore. That is the price.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-freedom">
+<summary><span class="num">VI</span><span class="sr-only"> · </span><h3><span lang="de">Freiheit</span><span lang="en">Freedom</span></h3></summary>
+<div class="chapter-body">
+<p lang="de">Freiheit ist nicht die Abwesenheit von Struktur, sondern die Fähigkeit, die Struktur zu wählen, in der man operiert.</p>
+<p lang="en">Freedom is not the absence of structure, but the ability to choose the structure within which one operates.</p>
+<p lang="de">Unfrei ist nicht, wer Regeln hat, sondern wer seine Regeln nicht kennt: wer nicht weiß, welche seiner Überzeugungen er gewählt hat und welche ihm widerfahren sind.</p>
+<p lang="en">Unfree is not the one who has rules, but the one who does not know their rules: who cannot tell which of their convictions they chose and which merely happened to them.</p>
+<p lang="de">Mit dieser Unterscheidung beginnt Magie.</p>
+<p lang="en">Magic begins with this distinction.</p>
+</div>
+</details>
+<details class="chapter" name="opus-purum" id="opus-purum-practice-the-essential-form">
+<summary><span class="num">VII</span><span class="sr-only"> · </span><h3><span lang="de">Praxis: Die essentielle Form</span><span lang="en">Practice: The Essential Form</span></h3></summary>
+<div class="chapter-body">
+<h4 lang="de">I · Stille</h4>
+<h4 lang="en">I · Stillness</h4>
+<p lang="de">Das Selbst beobachten, ohne es zu bewegen. Sehen, was automatisch läuft.</p>
+<p lang="en">Observe the Self without moving it. See what runs on its own.</p>
+<h4 lang="de">II · Intention</h4>
+<h4 lang="en">II · Intention</h4>
+<p lang="de">Präzise formulieren, was werden soll. Eine Entscheidung, kein Wunsch.</p>
+<p lang="en">Formulate precisely what is to become. A decision, not a wish.</p>
+<h4 lang="de">III · Zustand</h4>
+<h4 lang="en">III · State</h4>
+<p lang="de">Einen Bewusstseinszustand herstellen, in dem Revision möglich ist.</p>
+<p lang="en">Produce a state of consciousness in which revision is possible.</p>
+<h4 lang="de">IV · Symbol</h4>
+<h4 lang="en">IV · Symbol</h4>
+<p lang="de">Den Willen in eine Form verdichten, die am rationalen Bewusstsein vorbeigeht.</p>
+<p lang="en">Condense the will into a form that bypasses rational consciousness.</p>
+<h4 lang="de">V · Vergessen</h4>
+<h4 lang="en">V · Forgetting</h4>
+<p lang="de">Loslassen. Das rationale Ich steht seinen eigenen Wünschen am meisten im Weg.</p>
+<p lang="en">Let go. The rational ego stands most in the way of its own desires.</p>
+<h4 lang="de">VI · Ausrichtung</h4>
+<h4 lang="en">VI · Alignment</h4>
+<p lang="de">Im Alltag so handeln, als hätte das Gewollte bereits Richtung.</p>
+<p lang="en">Act in everyday life as if what is willed already had direction.</p>
+<p lang="de">Mehr ist es nicht. Kein Mythos, kein Apparat. Weniger eine Technik als eine Erinnerung an das, was man ohnehin ist.</p>
+<p lang="en">That is all there is to it. No myth, no apparatus. Less a technique than a remembering of what one already is.</p>
+</div>
+</details>
+</div>
+</div>
+</section>
+
+<section id="open-formats" class="band" aria-labelledby="open-formats-heading">
+<div class="shell">
+<header class="section-head">
+<h2 id="open-formats-heading"><a class="self" href="#open-formats"><span lang="de">Offene Formate</span><span lang="en">Open Formats</span></a></h2>
+<p class="lead" lang="de">Drei Formate für Menschen, die sich ohne Leitung treffen wollen. Jede Gruppe kann sie übernehmen, abwandeln und weitergeben, ohne jemanden zu fragen. Ein bestimmtes Weltbild braucht es nicht, nur die Bereitschaft, direkte Erfahrung über Konzepte zu stellen.</p>
+<p class="lead" lang="en">Three formats for people who want to meet without a leader. Any group can take them up, change them, and pass them on without asking anyone. No particular worldview is needed, only the willingness to put direct experience above concepts.</p>
+</header>
+<div class="grid">
+<article class="card format" id="iter-apertum">
+<header>
+<p class="micro" lang="de">Der offene Weg</p>
+<p class="micro" lang="en">The Open Way</p>
+<h3><a class="self" href="#iter-apertum">Iter Apertum</a></h3>
+</header>
+<p lang="de">Wir gehen: ohne Programm, ohne Vortrag, ohne vorbereitete Antworten. Kein Guru, keine Einweihungsstufen. Das Iter Apertum ist ein Spaziergang mit Absicht.</p>
+<p lang="en">We walk: no agenda, no lecture, no prepared answers. No guru, no degrees of initiation. The Iter Apertum is a walk with intent.</p>
+<p lang="de">Bewegung und Tageslicht als Praxisraum, offene Begegnung als Methode. Uns interessiert, was entsteht, wenn Menschen bewusst präsent sind. Erwarte echte Gespräche, Fragen, die sonst keiner stellt, und gelegentlich Momente, in denen die Magie spürbar wird.</p>
+<p lang="en">Movement and daylight as the practice space, open encounter as the method. We&#x27;re interested in what emerges when people are consciously present. Expect real conversations, questions no one else asks, and occasionally moments where the magic becomes tangible.</p>
+<p lang="de">Gegangen wird in Dreiergruppen, jeweils eine Runde durch den Park; danach mischen sich die Gruppen neu. Ein Kreis am Anfang, ein Kreis am Ende, zum Schluss Ausklang im Café.</p>
+<p lang="en">We walk in groups of three, one lap through the park each; then the groups reshuffle. A circle to open, a circle to close, and a slow wind-down at a café.</p>
+<dl class="facts">
+<div><dt><span lang="de">Dauer</span><span lang="en">Duration</span></dt><dd><span lang="de">Etwa 60 bis 90 Minuten</span><span lang="en">About 60 to 90 minutes</span></dd></div>
+<div><dt><span lang="de">Voraussetzungen</span><span lang="en">Prerequisites</span></dt><dd><span lang="de">Keine Vorkenntnisse, keine Übereinstimmung im Weltbild erforderlich</span><span lang="en">No prior experience, no shared worldview required</span></dd></div>
+<div><dt><span lang="de">Mitzubringen</span><span lang="en">To bring</span></dt><dd><span lang="de">Wetterfeste Schuhe</span><span lang="en">Weatherproof shoes</span></dd></div>
+</dl>
+</article>
+<article class="card format" id="convivium-apertum">
+<header>
+<p class="micro" lang="de">Die offene Runde</p>
+<p class="micro" lang="en">The Open Circle</p>
+<h3><a class="self" href="#convivium-apertum">Convivium Apertum</a></h3>
+</header>
+<p lang="de">Die gleiche Haltung ohne Bewegung, zu dritt. Eine Person spricht drei Minuten, die beiden anderen bezeugen: ohne Antwort, ohne Reaktion. Dann Wechsel, dann noch einmal.</p>
+<p lang="en">The same stance without movement, in threes. One person speaks for three minutes, the other two bear witness: no answer, no reaction. Then a switch, then once more.</p>
+<p lang="de">Das Bezeugen ohne Antwort leistet hier, was draußen das Nebeneinandergehen leistet: Niemand performt, niemand doziert. Wer spricht, spricht in einen Raum, der nicht zurückspricht.</p>
+<p lang="en">Witnessing without replying does here what walking side by side does outdoors: nobody performs, nobody lectures. Whoever speaks, speaks into a space that doesn&#x27;t speak back.</p>
+<p lang="de">Nach den drei Runden neun Minuten Stille, gemeinsam gehalten. Dann öffnet sich die Runde zum Mahl: mitgebracht wird das eigene Essen, dazu eine eigene Sitzmöglichkeit. Kein Ausrichter, keine Gäste.</p>
+<p lang="en">After the three rounds, nine minutes of silence, held together. Then the circle opens into a shared meal: everyone brings their own food, plus their own seating. No host, no guests.</p>
+<dl class="facts">
+<div><dt><span lang="de">Dauer</span><span lang="en">Duration</span></dt><dd><span lang="de">60 bis 90 Minuten</span><span lang="en">60 to 90 minutes</span></dd></div>
+<div><dt><span lang="de">Voraussetzungen</span><span lang="en">Prerequisites</span></dt><dd><span lang="de">Eigenes Essen, eigene Sitzmöglichkeit</span><span lang="en">Own food, own seating</span></dd></div>
+</dl>
+</article>
+<article class="card format" id="speculum-apertum">
+<header>
+<p class="micro" lang="de">Der offene Spiegel</p>
+<p class="micro" lang="en">The Open Mirror</p>
+<h3><a class="self" href="#speculum-apertum">Speculum Apertum</a></h3>
+</header>
+<p lang="de">Die gleiche Haltung ohne Wort. Wir beginnen im Kreis und legen gemeinsam fest, wie lange eine Runde dauert; das ist die Höchstzeit für alle. Dann zu zweit: Blick in Blick, ohne Sprechen, bis die Zeit erreicht ist oder bis eine Person die Augen schließt. Das Schließen der Augen ist jederzeit erlaubt, ohne Erklärung; es bedeutet nur, dass es für diesen Moment genug ist.</p>
+<p lang="en">The same stance without words. We begin in a circle and agree together on how long a round lasts; that is the maximum time for everyone. Then in pairs: eye to eye, without speaking, until the time is reached or one person closes their eyes. Closing your eyes is allowed at any time, without explanation; it only means that this is enough for this moment.</p>
+<p lang="de">Ab einer gewissen Dauer beginnt sich die Wahrnehmung des Gegenübers zu verschieben. Das ist Teil der Praxis, kein Nebeneffekt.</p>
+<p lang="en">Past a certain duration, the perception of the person across from you begins to shift. That is part of the practice, not a side effect.</p>
+<p lang="de">Nach jeder Runde eine kurze Zwischenzeit zum Lösen und Strecken, mit Raum für ein paar Worte über das Erlebte, ohne es zu deuten. Keine Analyse, kein Gespräch darüber, was es bedeutet hat; nur, was da war. Dann wird gewechselt.</p>
+<p lang="en">After each round, a short interval to release and stretch, with room for a few words about what was experienced, without interpreting it. No analysis, no conversation about what it meant; only what was there. Then we switch.</p>
+<p lang="de">Wer aussteigen möchte, tut das jederzeit mit gefalteten Händen als Dank, ohne weitere Erklärung. Zum Schluss gemeinsames Schweigen; wer bereit ist, geht, die anderen bleiben, solange sie möchten.</p>
+<p lang="en">Anyone who wants to step out can do so at any time with folded hands as thanks, without further explanation. At the end, shared silence; whoever is ready leaves, the others stay as long as they like.</p>
+<dl class="facts">
+<div><dt><span lang="de">Ort</span><span lang="en">Place</span></dt><dd><span lang="de">Drinnen wie draußen</span><span lang="en">Indoors or outdoors</span></dd></div>
+<div><dt><span lang="de">Dauer</span><span lang="en">Duration</span></dt><dd><span lang="de">60 bis 90 Minuten</span><span lang="en">60 to 90 minutes</span></dd></div>
+<div><dt><span lang="de">Voraussetzungen</span><span lang="en">Prerequisites</span></dt><dd><span lang="de">Eigene Sitzunterlage</span><span lang="en">Own seating mat</span></dd></div>
+</dl>
+</article>
+</div>
+</div>
+</section>
+
+<section id="projects" aria-labelledby="projects-heading">
+<div class="shell">
+<header class="section-head">
+<h2 id="projects-heading"><a class="self" href="#projects"><span lang="de">Projekte</span><span lang="en">Projects</span></a></h2>
+<p class="lead" lang="de">Jedes Projekt steht für sich, quelloffen unter freier Lizenz, gebaut mit Coding-Agenten aus einer Spezifikation im Repository.</p>
+<p class="lead" lang="en">Every project stands on its own, open source under a free license, built with coding agents from a specification in its repository.</p>
+</header>
+<div class="grid">
+<article class="card project" id="temet-nosce">
+<header>
+<p class="micro" lang="de">Wissensgraph</p>
+<p class="micro" lang="en">Knowledge graph</p>
+<h3><a class="self" href="#temet-nosce">Temet Nosce</a></h3>
+</header>
+<p lang="de">Ein Agent, der sich selbst erklärt. Sein Wissensgraph beschreibt das Repository, in dem er lebt, samt der Spezifikation, aus der er entstanden ist; abgerufen wird über explizite Kanten, ohne Vektordatenbank. Derselbe Graph steht über einen MCP-Server jedem Client offen, lesend und schreibend.</p>
+<p lang="en">An agent that explains itself. Its knowledge graph describes the repository it lives in, including the spec it was generated from; retrieval runs over explicit edges, without a vector database. The same graph is open to any client through an MCP server, for reading and writing.</p>
+<p class="note"><span lang="de">Lizenz: MIT für den Code, der Wissensgraph ist gemeinfrei (CC0&nbsp;1.0)</span><span lang="en">License: MIT for the code; the knowledge graph is CC0 1.0 (public domain)</span></p>
+<a class="go" href="/temet-nosce/">pajew.ski/temet-nosce</a>
+</article>
+<article class="card project" id="open-entrainer">
+<header>
+<p class="micro" lang="de">Klangwerkzeug</p>
+<p class="micro" lang="en">Sound tool</p>
+<h3><a class="self" href="#open-entrainer">Open Entrainer</a></h3>
+</header>
+<p lang="de">Binaurale Frequenzen, im Browser in Echtzeit erzeugt und nirgendwohin gesendet, mit voller Kontrolle über Verlauf und Trägerfrequenz. Die Hirnaktivität neigt über Minuten dazu, der Schwebung zu folgen; gedacht für Meditation, das Einschlafen und konzentriertes Arbeiten.</p>
+<p lang="en">Binaural frequencies generated in the browser in real time and sent nowhere, with full control over the curve and the carrier. Over minutes, brain activity tends to follow the beat; made for meditation, falling asleep, and focused work.</p>
+<p class="note" lang="de">Braucht Kopfhörer; über Lautsprecher mischen sich die beiden Töne in der Luft und die Schwebung verschwindet. Kein Medizinprodukt: nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.</p>
+<p class="note" lang="en">Needs headphones; through speakers the two tones mix in the air and the beat disappears. Not a medical device: not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.</p>
+<p class="note"><span lang="de">Lizenz: Unlicense (gemeinfrei)</span><span lang="en">License: Unlicense (public domain)</span></p>
+<a class="go" href="/open-entrainer/">pajew.ski/open-entrainer</a>
+</article>
+<article class="card project" id="open-desensitizer">
+<header>
+<p class="micro" lang="de">Übungswerkzeug</p>
+<p class="micro" lang="en">Practice tool</p>
+<h3><a class="self" href="#open-desensitizer">Open Desensitizer</a></h3>
+</header>
+<p lang="de">Bilaterale Stimulation über Auge und Ohr. Für sich genommen beruhigt sie meist das Nervensystem; mit einer belastenden Erinnerung im Sinn kann sie die Erinnerung leichter tragbar machen. Läuft vollständig im Browser, mit einer geführten Atemübung als Notausstieg.</p>
+<p lang="en">Bilateral stimulation through eye and ear. On its own it tends to settle the nervous system; held together with a difficult memory, it can make that memory easier to carry. It runs entirely in the browser, with a guided breathing exercise as the way out.</p>
+<p class="note" lang="de">Kein Therapieersatz; die Arbeit an Traumata gehört in fachliche Begleitung. Nicht bei fotosensibler Epilepsie, und bei dissoziativen Störungen vorher ärztlich abklären. Der Ton ist wählbar und braucht Kopfhörer.</p>
+<p class="note" lang="en">Not a replacement for therapy; working through trauma belongs with professional support. Not with photosensitive epilepsy, and with a dissociative disorder, ask a clinician first. The tone is optional and needs headphones.</p>
+<p class="note"><span lang="de">Lizenz: Unlicense (gemeinfrei)</span><span lang="en">License: Unlicense (public domain)</span></p>
+<a class="go" href="/open-desensitizer/">pajew.ski/open-desensitizer</a>
+</article>
+<article class="card project" id="open-helix">
+<header>
+<p class="micro" lang="de">Hörillusion</p>
+<p class="micro" lang="en">Auditory illusion</p>
+<h3><a class="self" href="#open-helix">Open Helix</a></h3>
+</header>
+<p lang="de">Ein Ton, der immer weiter steigt oder fällt und nie ankommt, im Browser in Echtzeit erzeugt und nirgendwohin gesendet. Jeder Parameter liegt offen auf einer Seite, und ein Spektrogramm zeichnet mit, was gerade klingt.</p>
+<p lang="en">A tone that keeps rising, or falling, and never arrives, synthesized in the browser in real time and sent nowhere. Every parameter sits openly on one page, and a spectrogram draws what is playing.</p>
+<p class="note" lang="de">Kopfhörer für Schwebung, Panorama und Tremolo-Phase. Kein Medizinprodukt: die Wirkung braucht keine Lautstärke, und schnelle Läufe mit vielen Komponenten wirken stärker als erwartet; nicht beim Autofahren, und bei Epilepsie, Herzschrittmacher oder psychischer Erkrankung vorher ärztlich abklären.</p>
+<p class="note" lang="en">Headphones for the beat, the panning, and the tremolo phase. Not a medical device: the effect needs no volume, and fast runs with many components feel more intense than expected; not while driving, and with epilepsy, a pacemaker, or a psychiatric condition, ask a clinician first.</p>
+<p class="note"><span lang="de">Lizenz: Unlicense (gemeinfrei)</span><span lang="en">License: Unlicense (public domain)</span></p>
+<a class="go" href="/open-helix/">pajew.ski/open-helix</a>
+</article>
+<article class="card project" id="mermaid-diagram-card">
+<header>
+<p class="micro" lang="de">Hausautomation</p>
+<p class="micro" lang="en">Home automation</p>
+<h3><a class="self" href="#mermaid-diagram-card">Mermaid Diagram Card</a></h3>
+</header>
+<p lang="de">Eine Karte für Home Assistant, die Mermaid-Diagramme direkt im Dashboard zeichnet, in den Farben des aktiven Themes und mit Live-Werten aus Entitäten.</p>
+<p lang="en">A card for Home Assistant that draws Mermaid diagrams straight in the dashboard, in the colors of the active theme and with live values from entities.</p>
+<p class="note"><span lang="de">Lizenz: MIT</span><span lang="en">License: MIT</span></p>
+<a class="go" href="https://github.com/pajew-ski/ha-mermaid">github.com/pajew-ski/ha-mermaid</a>
+</article>
+</div>
+</div>
+</section>
+</article></main>
+
+<footer>
+<p lang="de">Die Texte dieser Seite sind gemeinfrei (Unlicense); jedes Projekt nennt seine Lizenz. Quellen und Kontakt: <a href="https://github.com/pajew-ski">github.com/pajew-ski</a></p>
+<p lang="en">The texts on this site are in the public domain (Unlicense); every project names its license. Sources and contact: <a href="https://github.com/pajew-ski">github.com/pajew-ski</a></p>
+<p lang="de">Für KI-Systeme: <a href="/llms.de.txt">llms.de.txt</a> · <a href="/llms-full.de.txt">llms-full.de.txt</a></p>
+<p lang="en">For AI systems: <a href="/llms.txt">llms.txt</a> · <a href="/llms-full.txt">llms-full.txt</a></p>
+<p lang="de">Private Seite ohne geschäftsmäßiges Angebot, daher ohne Impressum (§&nbsp;5&nbsp;DDG). Gehostet auf GitHub Pages; GitHub Inc. erfasst dabei IP-Adressen. Die Seite selbst setzt keine Cookies und lädt nichts von fremden Adressen.</p>
+<p lang="en">A private site with no commercial offering. Hosted on GitHub Pages; GitHub Inc. records IP addresses in doing so. The site itself sets no cookies and loads nothing from other addresses.</p>
+</footer>
+<script>
+/* Krystal Flower: twelve pairs of logarithmic spirals r = r0 * 2^(2θ/π),
+   one and a half turns each, plus half a turn below r0 to close the centre.
+   Decoration only; without script the flower is simply absent. */
+(function () {
+  var g = document.querySelector('.flower g');
+  if (!g) return;
+  var CX = 250, CY = 250, R = 200, r0 = R / 64, TURNS = 1.5, INNER = 0.5, STEPS = 480;
+  var ns = 'http://www.w3.org/2000/svg';
+  function spiral(base, dir) {
+    var d = '';
+    for (var i = 0; i <= STEPS; i++) {
+      var t = (-INNER + (i / STEPS) * (TURNS + INNER)) * 2 * Math.PI;
+      var r = r0 * Math.pow(2, (2 * t) / Math.PI);
+      var a = base + dir * t;
+      d += (i ? 'L' : 'M') + (CX + r * Math.cos(a)).toFixed(2) + ',' + (CY + r * Math.sin(a)).toFixed(2);
+    }
+    var p = document.createElementNS(ns, 'path');
+    p.setAttribute('d', d);
+    g.appendChild(p);
+  }
+  for (var k = 0; k < 12; k++) {
+    var base = -Math.PI / 2 + k * (Math.PI / 6);
+    spiral(base, 1);
+    spiral(base, -1);
+  }
+})();
+
+/* Opus Purum: a deep link to a chapter, or to anything inside one, opens
+   it; an opened chapter whose heading has left the viewport is brought back
+   to the top. */
+(function () {
+  function openFromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var el = id && document.getElementById(id);
+    var d = el && el.closest('details');
+    if (d && !d.open) {
+      d.open = true;
+      requestAnimationFrame(function () { el.scrollIntoView(); });
+    }
+  }
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  document.querySelectorAll('details[name]').forEach(function (d) {
+    d.addEventListener('toggle', function () {
+      if (!d.open) return;
+      requestAnimationFrame(function () {
+        var s = d.querySelector('summary');
+        if (s.getBoundingClientRect().top < 0) s.scrollIntoView({ block: 'start', behavior: reduce.matches ? 'auto' : 'smooth' });
+      });
+    });
+  });
+  addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
+</body>
+</html>

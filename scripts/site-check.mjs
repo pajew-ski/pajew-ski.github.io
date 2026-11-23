@@ -1,40 +1,29 @@
-// Automated post-build checks, run via `npm run check:site` (CI runs it on
-// every push, see .github/workflows/checks.yml):
+// Checks for site/, run via `npm run check:site` (CI runs it on every push,
+// see .github/workflows/checks.yml). Nothing here builds the site; when a
+// check breaks, the site still deploys as it stands in the repo.
 //
-// 1. Reader-mode extraction: parses the rendered page with Mozilla's
-//    Readability (the engine family behind Firefox Reader View and most
-//    derived reader modes) and asserts that every heading and every piece of
-//    body copy from the locale files survives extraction, in document order,
-//    with no stray UI glyphs. Guards the accordion/card markup against
-//    regressions that hide content from readers.
-// 2. Anchors: every named heading is deep-linkable, ids are unique, and deep
-//    links open collapsed targets.
-// 3. The anchor table in SYSTEM_PROMPT.md matches the page. The chat prompt
-//    lists deep links it cannot derive (anchors come from the English titles
-//    the prompt does not carry), so a rename would leave it handing out dead
-//    links; this check fails instead.
-// 4. Accessibility: axe-core full-page scans in light and dark mode, at
-//    mobile and desktop viewports. Fails on any violation.
-//
-// Requires a fresh `npm run build` (checks dist/ via vite preview).
+// 1. Own origin only: no shipped file pulls code or style from an absolute
+//    http(s) address (script src, stylesheet link, import, @import). Links a
+//    reader follows are allowed.
+// 2. Albedo: the token block in index.html is the one of the family, and no
+//    color outside it carries chroma.
+// 3. Anchors: ids are unique, every h2 and every card h3 links to its own
+//    id, and a deep link into a closed chapter opens it (a summary may not
+//    hold a link, so chapters are reached by id alone).
+// 4. Language: German and English each show one heading per section and
+//    hide the other language; ?lang overrides the browser.
+// 5. Reader mode: Readability (the engine behind Firefox Reader View)
+//    extracts every heading of the page.
+// 6. Layout and accessibility: at 360, 390 and 1440 px, light and dark, no
+//    horizontal scroll, no console error, no axe violation.
 
-import { readFileSync, existsSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { preview } from 'vite';
+import { readFileSync, readdirSync } from 'node:fs';
+import { join } from 'node:path';
 import { JSDOM } from 'jsdom';
 import { Readability } from '@mozilla/readability';
 import { AxeBuilder } from '@axe-core/playwright';
 import { chromium } from 'playwright-core';
-
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-const en = JSON.parse(readFileSync(resolve(root, 'src/locales/en.json'), 'utf8'));
-const de = JSON.parse(readFileSync(resolve(root, 'src/locales/de.json'), 'utf8'));
-
-if (!existsSync(resolve(root, 'dist/index.html'))) {
-  console.error('dist/index.html not found; run `npm run build` first.');
-  process.exit(1);
-}
+import { serve, siteRoot } from './serve.mjs';
 
 const failures = [];
 const check = (ok, message) => {
@@ -42,11 +31,41 @@ const check = (ok, message) => {
   return ok;
 };
 
+// 1. Own origin only ---------------------------------------------------------
+const foreign = [
+  /<script[^>]+src=["']https?:/i,
+  /<link[^>]+rel=["']stylesheet["'][^>]+href=["']https?:/i,
+  /<link[^>]+href=["']https?:[^>]+rel=["']stylesheet["']/i,
+  /\bimport\s*\(?\s*["']https?:/i,
+  /@import\s+(url\()?["']?https?:/i,
+];
+for (const name of readdirSync(siteRoot)) {
+  if (!/\.(html|css|js|svg)$/.test(name)) continue;
+  const text = readFileSync(join(siteRoot, name), 'utf8');
+  for (const pattern of foreign) check(!pattern.test(text), `${name}: loads from a foreign address (${pattern})`);
+}
+
+// 2. Albedo -------------------------------------------------------------------
+const html = readFileSync(join(siteRoot, 'index.html'), 'utf8');
+const block = html.match(/\/\* albedo: Anfang \*\/[\s\S]*?\/\* albedo: Ende \*\//);
+if (check(block, 'index.html: albedo token block missing')) {
+  for (const token of ['--bg: oklch(98% 0 0)', '--surface: oklch(94% 0 0)', '--border: oklch(85% 0 0)',
+    '--text: oklch(15% 0 0)', '--text-muted: oklch(40% 0 0)', '--step-7: 128px', '--type-4: 4rem', '--leading: 1.414']) {
+    check(block[0].includes(token), `albedo block: ${token} missing`);
+  }
+  // Every style outside the block: the rest of <style> and inline styles.
+  const styles = (html.match(/<style>([\s\S]*?)<\/style>/)?.[1] ?? '').replace(block[0], '');
+  const chromatic = styles.match(/oklch\(\s*[\d.]+%?\s+(?!0[\s)])[\d.]+[^)]*\)/g) ?? [];
+  check(chromatic.length === 0, `colour with chroma outside the albedo block: ${chromatic.join(', ')}`);
+  check(!/#[0-9a-f]{3,8}\b|rgb\(|hsl\(/i.test(styles), 'hex, rgb or hsl colour outside the albedo block');
+  check(!/\sstyle=/.test(html), 'inline style attribute in index.html');
+}
+
+// Browser ---------------------------------------------------------------------
 async function launchBrowser() {
   const attempts = [
-    process.env.CHROMIUM_PATH && { executablePath: process.env.CHROMIUM_PATH },
+    process.env.CHROME_PATH && { executablePath: process.env.CHROME_PATH },
     { channel: 'chrome' },
-    { executablePath: '/opt/pw-browsers/chromium' },
     {},
   ].filter(Boolean);
   let lastError;
@@ -60,333 +79,108 @@ async function launchBrowser() {
   throw lastError;
 }
 
-const server = await preview({ preview: { port: 4173, strictPort: false } });
-const url = server.resolvedUrls.local[0];
+const server = await serve(0);
+const url = `http://127.0.0.1:${server.address().port}/`;
 const browser = await launchBrowser();
 
-// ---------------------------------------------------------------------------
-// 1. Reader-mode extraction
-// ---------------------------------------------------------------------------
-
-const readerContext = await browser.newContext({ locale: 'en-US' });
-const readerPage = await readerContext.newPage();
-await readerPage.goto(url);
-await readerPage.waitForTimeout(1200);
-
-const domHeadings = await readerPage.evaluate(() =>
-  Array.from(document.querySelectorAll('h1,h2,h3,h4,h5,h6')).map(
-    (h) => `${h.tagName} ${h.textContent.trim().replace(/\s+/g, ' ')}`
-  )
-);
-const liveHtml = await readerPage.content();
-await readerContext.close();
-
-const readerDoc = new JSDOM(liveHtml, { url }).window.document;
-const article = new Readability(readerDoc).parse();
-check(article !== null, 'reader: Readability failed to extract an article at all');
-
-const normalize = (s) => String(s).replace(/\s+/g, ' ').trim();
-const readerText = normalize(article?.textContent ?? '');
-const readerDom = new JSDOM(article?.content ?? '').window.document;
-const readerHeadings = new Set(
-  Array.from(readerDom.querySelectorAll('h1,h2,h3,h4,h5,h6')).map(
-    (h) => `${h.tagName} ${normalize(h.textContent)}`
-  )
-);
-
-check(
-  normalize(article?.title ?? '').includes('Michael'),
-  `reader: article title is ${JSON.stringify(article?.title)}, expected the page title`
-);
-
-// Every DOM heading must survive extraction. H1 is exempt: readers drop it as
-// a duplicate of the article title they display themselves.
-for (const heading of domHeadings) {
-  if (heading.startsWith('H1 ')) continue;
-  check(readerHeadings.has(heading), `reader: heading missing from extraction: ${heading}`);
-}
-
-// Every piece of body copy must survive extraction, including content that is
-// visually collapsed (closed accordion chapters, unopened card descriptions).
-const copy = [];
-copy.push(en.intro.h2, en.opusPurum.premise);
-for (const chapter of en.opusPurum.chapters) {
-  for (const entry of chapter.content) copy.push(entry.body);
-}
-copy.push(en.principles.copy);
-for (const mod of Object.values(en.principles.modules)) {
-  for (const item of mod.list) copy.push(item.title, item.desc);
-}
-copy.push(en.exocortex.copy);
-for (const item of Object.values(en.exocortex.stack)) copy.push(item.title, item.desc);
-copy.push(en.projects.copy);
-for (const project of en.projects.items) {
-  copy.push(project.kind, project.title, project.desc, project.linkLabel);
-  if (project.note) copy.push(project.note);
-}
-copy.push(en.relationships.copy, en.relationships.blocksIntro);
-for (const item of en.relationships.principles) copy.push(item.title, item.desc);
-for (const item of en.relationships.blocks) copy.push(item.title, item.desc);
-copy.push(en.opusPurum.subtitle, en.luxAperta.subtitle, en.luxAperta.lead, ...en.luxAperta.paragraphs);
-for (const format of en.luxAperta.formats) {
-  copy.push(format.tagline, ...format.paragraphs);
-  for (const fact of format.facts ?? []) copy.push(fact.label, fact.value);
-}
-for (const text of copy) {
-  const needle = normalize(text);
-  check(readerText.includes(needle), `reader: body copy missing: ${needle.slice(0, 60)}...`);
-}
-
-// UI glyphs must never surface as extracted text (e.g. the accordion "+").
-check(
-  !/>\s*\+\s*</.test(article?.content ?? ''),
-  'reader: stray "+" glyph extracted as content'
-);
-
-// ---------------------------------------------------------------------------
-// 2. Anchors: every named heading is deep-linkable
-// ---------------------------------------------------------------------------
-
-// Mirror of slugify in src/anchors.ts.
-const slugify = (text) =>
-  String(text)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '');
-
-const expectedAnchors = [
-  ...Object.values(en.principles.modules).map((mod) => slugify(mod.title)),
-  ...Object.values(en.principles.modules).flatMap((mod) => mod.list.map((i) => slugify(i.title))),
-  ...en.opusPurum.chapters.map((c) => `opus-purum-${slugify(c.title)}`),
-  ...Object.values(en.exocortex.stack).map((i) => slugify(i.title)),
-  ...en.projects.items.map((i) => slugify(i.title)),
-  slugify(en.relationships.blocksTitle),
-  ...en.relationships.principles.map((i) => slugify(i.title)),
-  // Building-block anchors carry the subsection slug as a prefix; "Trust" is
-  // both a principle of Being and a building block.
-  ...en.relationships.blocks.map(
-    (i) => `${slugify(en.relationships.blocksTitle)}-${slugify(i.title)}`
-  ),
-  ...en.luxAperta.formats.map((f) => slugify(f.title)),
-];
-check(
-  new Set(expectedAnchors).size === expectedAnchors.length,
-  'anchors: slug collision between two English titles'
-);
-
-const anchorContext = await browser.newContext({ locale: 'en-US' });
-const anchorPage = await anchorContext.newPage();
-await anchorPage.goto(url);
-await anchorPage.waitForTimeout(800);
-
-const anchorState = await anchorPage.evaluate((anchors) => {
-  const allIds = Array.from(document.querySelectorAll('[id]')).map((el) => el.id);
-  const duplicates = allIds.filter((id, i) => allIds.indexOf(id) !== i);
-  const results = {};
-  for (const anchor of anchors) {
-    const el = document.getElementById(anchor);
-    results[anchor] = {
-      exists: el !== null,
-      isHeading: el !== null && /^H[1-6]$/.test(el.tagName),
-      hasSelfLink: el !== null && el.querySelector(`a[href="#${anchor}"]`) !== null,
-    };
+// 3. Anchors ------------------------------------------------------------------
+{
+  const page = await (await browser.newContext({ locale: 'de-DE' })).newPage();
+  await page.goto(url);
+  const state = await page.evaluate(() => {
+    const ids = Array.from(document.querySelectorAll('[id]'), (el) => el.id);
+    const selfLinks = Array.from(document.querySelectorAll('section h2, .card h3')).map((h) => ({
+      text: h.textContent.trim(),
+      ok: h.querySelector('a.self')?.getAttribute('href') === `#${(h.closest('.card') ?? h.closest('section')).id}`,
+    }));
+    return { ids, selfLinks };
+  });
+  const seen = new Set();
+  for (const id of state.ids) {
+    check(!seen.has(id), `duplicate id #${id}`);
+    seen.add(id);
   }
-  return { duplicates, results, ids: allIds };
-}, expectedAnchors);
+  for (const link of state.selfLinks) check(link.ok, `heading "${link.text}" does not link to its own id`);
+  for (const id of ['intro', 'opus-purum', 'open-formats', 'projects', 'opus-purum-axioms', 'iter-apertum', 'temet-nosce']) {
+    check(seen.has(id), `anchor #${id} missing`);
+  }
 
-check(anchorState.duplicates.length === 0, `anchors: duplicate DOM ids: ${anchorState.duplicates}`);
-for (const [anchor, state] of Object.entries(anchorState.results)) {
-  check(state.exists, `anchors: #${anchor} missing from DOM`);
-  check(!state.exists || state.isHeading, `anchors: #${anchor} is not on a heading`);
-  check(!state.exists || state.hasSelfLink, `anchors: #${anchor} has no self-link`);
-}
-await anchorContext.close();
-
-// Deep links must open collapsed targets: an accordion chapter and a card.
-const deepLinks = [
-  `opus-purum-${slugify(en.opusPurum.chapters[1].title)}`,
-  slugify(en.principles.modules.moduleBeing.list[0].title),
-  `${slugify(en.relationships.blocksTitle)}-${slugify(en.relationships.blocks[0].title)}`,
-  slugify(en.luxAperta.formats[0].title),
-];
-for (const anchor of deepLinks) {
-  const context = await browser.newContext({ locale: 'en-US' });
-  const page = await context.newPage();
-  await page.goto(`${url}#${anchor}`);
-  await page.waitForTimeout(1200);
-  const state = await page.evaluate((id) => {
-    const el = document.getElementById(id);
-    if (!el) return null;
-    const rect = el.getBoundingClientRect();
-    const link = el.querySelector('a[aria-expanded]');
-    return {
-      inViewport: rect.top >= -rect.height && rect.top < window.innerHeight,
-      expanded: link ? link.getAttribute('aria-expanded') : 'not-a-disclosure',
-    };
-  }, anchor);
-  check(state !== null, `deep link: #${anchor} target missing`);
-  check(state?.inViewport === true, `deep link: #${anchor} not scrolled into view`);
-  check(
-    state?.expanded === 'true' || state?.expanded === 'not-a-disclosure',
-    `deep link: #${anchor} did not open its disclosure (aria-expanded=${state?.expanded})`
-  );
-  await context.close();
-}
-
-// ---------------------------------------------------------------------------
-// 3. Anchor table in SYSTEM_PROMPT.md
-// ---------------------------------------------------------------------------
-
-// The chat prompt hands out deep links. Anchors derive from the English titles,
-// which that prompt does not carry, so it cannot compute them and lists them
-// instead. Renaming a title would leave the list pointing at anchors the page
-// no longer has, and nothing on the page would look wrong.
-
-const blocksPrefix = slugify(en.relationships.blocksTitle);
-
-const pairs = (deItems, enItems, prefix = '', label = (item) => item.title) =>
-  deItems.map((item, i) => ({
-    label: label(item),
-    anchor: `${prefix}${slugify(enItems[i].title)}`,
+  // A deep link opens its chapter and closes the first one.
+  await page.goto(`${url}#opus-purum-the-self`);
+  const opened = await page.evaluate(() => ({
+    target: document.getElementById('opus-purum-the-self').open,
+    first: document.getElementById('opus-purum-the-one').open,
   }));
-
-const expectedTable = [
-  {
-    group: 'Sektionen',
-    entries: [
-      { label: 'Intro', anchor: 'intro' },
-      { label: de.opusPurum.h2, anchor: 'opus-purum' },
-      { label: de.principles.h2, anchor: 'principles' },
-      { label: de.exocortex.h2, anchor: 'exocortex' },
-      { label: de.projects.h2, anchor: 'projects' },
-      { label: de.relationships.h2, anchor: 'relationships' },
-      { label: de.luxAperta.h2, anchor: 'lux-aperta' },
-    ],
-  },
-  {
-    group: 'Opus Purum, Kapitel',
-    entries: pairs(
-      de.opusPurum.chapters,
-      en.opusPurum.chapters,
-      'opus-purum-',
-      (chapter) => `${chapter.label} ${chapter.title}`
-    ),
-  },
-  {
-    group: 'Prinzipien, Module',
-    entries: Object.values(de.principles.modules).map((mod, i) => ({
-      label: mod.title,
-      anchor: slugify(Object.values(en.principles.modules)[i].title),
-    })),
-  },
-  {
-    group: `Prinzipien, ${de.principles.modules.moduleBeing.title}`,
-    entries: pairs(de.principles.modules.moduleBeing.list, en.principles.modules.moduleBeing.list),
-  },
-  {
-    group: `Prinzipien, ${de.principles.modules.moduleDoing.title}`,
-    entries: pairs(de.principles.modules.moduleDoing.list, en.principles.modules.moduleDoing.list),
-  },
-  {
-    group: 'Exocortex',
-    entries: Object.keys(en.exocortex.stack).map((key) => ({
-      label: de.exocortex.stack[key].title,
-      anchor: slugify(en.exocortex.stack[key].title),
-    })),
-  },
-  { group: 'Projekte', entries: pairs(de.projects.items, en.projects.items) },
-  {
-    group: 'Beziehungen, Prinzipien',
-    entries: pairs(de.relationships.principles, en.relationships.principles),
-  },
-  {
-    group: `Beziehungen, ${de.relationships.blocksTitle}`,
-    entries: [
-      { label: `${de.relationships.blocksTitle} (Überschrift)`, anchor: blocksPrefix },
-      ...pairs(de.relationships.blocks, en.relationships.blocks, `${blocksPrefix}-`),
-    ],
-  },
-  { group: 'Lux Aperta, Formate', entries: pairs(de.luxAperta.formats, en.luxAperta.formats) },
-];
-
-const renderRow = (entries) =>
-  entries.map((entry) => `${entry.label} → \`${entry.anchor}\``).join(', ');
-
-const prompt = readFileSync(resolve(root, 'SYSTEM_PROMPT.md'), 'utf8');
-const tableStart = prompt.indexOf('## Anker (Direktlinks)');
-const tableEnd = prompt.indexOf('\n## ', tableStart + 1);
-const tableText =
-  tableStart === -1 ? '' : prompt.slice(tableStart, tableEnd === -1 ? undefined : tableEnd);
-check(tableStart !== -1, 'prompt: SYSTEM_PROMPT.md has no "## Anker (Direktlinks)" section');
-
-const promptRows = new Map();
-for (const line of tableText.split('\n')) {
-  const row = line.match(/^\*\*(.+?)\*\*:\s*(.+)$/);
-  if (row) promptRows.set(row[1], row[2].trim());
+  check(opened.target && !opened.first, 'deep link #opus-purum-the-self does not open its chapter alone');
+  await page.context().close();
 }
 
-for (const { group, entries } of expectedTable) {
-  const expectedRow = renderRow(entries);
-  const actualRow = promptRows.get(group);
-  if (actualRow === undefined) {
-    check(false, `prompt: anchor table has no row "**${group}**:", expected\n      **${group}**: ${expectedRow}`);
-    continue;
-  }
-  check(
-    actualRow === expectedRow,
-    `prompt: anchor table row "${group}" is stale, expected\n      **${group}**: ${expectedRow}\n    got\n      **${group}**: ${actualRow}`
+// 4. Language -----------------------------------------------------------------
+for (const [locale, query, lang] of [['de-DE', '', 'de'], ['en-US', '', 'en'], ['en-US', '?lang=de', 'de'], ['de-DE', '?lang=en', 'en']]) {
+  const page = await (await browser.newContext({ locale })).newPage();
+  await page.goto(url + query);
+  const seen = await page.evaluate(() => ({
+    lang: document.documentElement.lang,
+    other: Array.from(document.querySelectorAll('[lang]:not(html)')).filter(
+      (el) => el.lang !== document.documentElement.lang && el.checkVisibility()
+    ).length,
+    h2: Array.from(document.querySelectorAll('h2')).map((h) => h.innerText.trim()),
+  }));
+  check(seen.lang === lang, `${locale}${query}: lang is ${seen.lang}, expected ${lang}`);
+  check(seen.other === 0, `${locale}${query}: ${seen.other} elements of the other language visible`);
+  check(seen.h2.every((t) => t && !t.includes('\n')), `${locale}${query}: a section heading shows both languages`);
+  await page.context().close();
+}
+
+// 5. Reader mode --------------------------------------------------------------
+{
+  const page = await (await browser.newContext({ locale: 'de-DE' })).newPage();
+  await page.goto(url);
+  const headings = await page.evaluate(() =>
+    Array.from(document.querySelectorAll('h2, h3, h4'), (h) => h.textContent.replace(/\s+/g, ' ').trim())
   );
-}
-const expectedGroups = new Set(expectedTable.map((row) => row.group));
-for (const group of promptRows.keys()) {
-  check(expectedGroups.has(group), `prompt: anchor table has an unknown row "**${group}**:"`);
-}
-
-// Every anchor the prompt promises has to exist on the page.
-const domIds = new Set(anchorState.ids);
-for (const { group, entries } of expectedTable) {
-  for (const { anchor } of entries) {
-    check(domIds.has(anchor), `prompt: anchor #${anchor} (${group}) is missing from the page`);
+  const doc = new JSDOM(await page.content(), { url }).window.document;
+  const article = new Readability(doc).parse();
+  const text = (article?.textContent ?? '').replace(/\s+/g, ' ');
+  for (const heading of headings) {
+    // A heading with both languages extracts as both spans run together.
+    check(text.includes(heading), `reader mode drops heading "${heading}"`);
   }
+  await page.context().close();
 }
 
-// ---------------------------------------------------------------------------
-// 4. Accessibility (axe-core), light and dark, mobile and desktop
-// ---------------------------------------------------------------------------
-
-const viewports = [
-  { name: 'mobile', width: 390, height: 844 },
-  { name: 'desktop', width: 1440, height: 900 },
-];
-for (const viewport of viewports) {
+// 6. Layout and accessibility ---------------------------------------------------
+for (const [width, height] of [[360, 780], [390, 844], [1440, 900]]) {
   for (const colorScheme of ['light', 'dark']) {
-    const context = await browser.newContext({
-      locale: 'en-US',
-      viewport: { width: viewport.width, height: viewport.height },
-      colorScheme,
-    });
-    const page = await context.newPage();
-    await page.goto(url);
-    await page.waitForTimeout(1200);
-    const results = await new AxeBuilder({ page }).analyze();
-    for (const violation of results.violations) {
-      check(
-        false,
-        `axe (${viewport.name}, ${colorScheme}): [${violation.impact}] ${violation.id}: ${violation.help} (${violation.nodes.length} node(s), e.g. ${violation.nodes[0]?.target})`
-      );
+    for (const locale of ['de-DE', 'en-US']) {
+      const context = await browser.newContext({ viewport: { width, height }, colorScheme, locale });
+      const page = await context.newPage();
+      const errors = [];
+      page.on('console', (m) => m.type() === 'error' && errors.push(m.text()));
+      page.on('pageerror', (e) => errors.push(e.message));
+      await page.goto(url);
+      await page.waitForTimeout(200);
+      const label = `${width}px ${colorScheme} ${locale}`;
+      const overflow = await page.evaluate(() => document.documentElement.scrollWidth - innerWidth);
+      check(overflow <= 0, `${label}: horizontal scroll of ${overflow}px`);
+      check(errors.length === 0, `${label}: console errors: ${errors.join(' | ')}`);
+      // The flower reveal is decoration; axe measures the settled page.
+      await page.addStyleTag({ content: '*{animation:none!important;transition:none!important}' });
+      const { violations } = await new AxeBuilder({ page }).analyze();
+      for (const v of violations) {
+        check(false, `${label}: axe ${v.id}: ${v.help} (${v.nodes.length})`);
+      }
+      await context.close();
     }
-    await context.close();
   }
 }
 
 await browser.close();
-await server.close();
+server.close();
 
 if (failures.length) {
-  console.error(`site-check: ${failures.length} failure(s)\n`);
-  for (const failure of failures) console.error(`  ✗ ${failure}`);
+  console.error(`site-check: ${failures.length} failure(s)`);
+  for (const f of failures) console.error(`  - ${f}`);
   process.exit(1);
 }
-console.log('site-check: reader extraction, anchors, prompt anchor table and accessibility checks passed');
+console.log('site-check: all checks passed');

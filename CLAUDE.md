@@ -1,176 +1,57 @@
 # CLAUDE.md – pajew.ski
 
-## Project Overview
+## Purpose
 
-Michael's personal web card (SPA): React 19, TypeScript (strict), Vite, Tailwind CSS.
-Monochromatic grayscale design with an animated Krystal Flower logo (SVG), Framer Motion, and embedded N8N chat.
+pajew.ski holds what anyone may take: Opus Purum, the open formats, and the open-source projects. The site shows the work and leaves out the person: no name, no self-description, no principles, no relationships, no meeting points, no chat. A section enters only if a reader can take it away and use it without the author.
 
-Purpose of the site: a fully transparent self-description for human visitors, mirrored one-to-one in `public/llms.txt` and `public/llms-full.txt` so AI systems can use the same knowledge for grounding.
+Since 23.11.2026 the site has no build. `site/` is the published form, written by hand: one `index.html` with inline CSS and two small inline scripts, the four llms files, `sitemap.xml`, `robots.txt`, `favicon.svg`, `og-image.png`, `CNAME`. `deploy.yml` uploads `site/` as it stands. npm carries only the check tools.
 
 ## Commands
 
-- `npm run build`: TypeScript check + Vite production build + prerender step (must pass before committing)
-- `npm run lint`: ESLint (flat config, strict TS rules)
-- `npm run dev`: Dev server
-- `npm run check:site`: Reader-mode extraction, anchor assertions (page anchors and the `SYSTEM_PROMPT.md` anchor table) + axe accessibility scans (light/dark, mobile/desktop); needs a fresh build
-- `npm run check:lighthouse`: Lighthouse with thresholds (performance >= 90, accessibility/best-practices/SEO = 100); set `CHROME_PATH` if no system Chrome
-- `npm run check`: build + both checks. CI runs all of this on every push (`.github/workflows/checks.yml`); run `check:site` locally before committing changes to markup or interactions
+- `npm run serve`: serves `site/` on 127.0.0.1:4173 as Pages does
+- `npm run check:site`: own origin, Albedo, anchors, language, reader mode, layout at 360/390/1440 px light and dark, axe (needs Chrome; `CHROME_PATH` overrides)
+- `npm run check:lighthouse`: performance >= 90, accessibility, best practices and SEO = 100
+- `node scripts/generate-og-image.mjs`: redraws `site/og-image.png` when the title or the card changes
 
-## Content Sync Rule (Critical)
+CI runs both checks on every push (`checks.yml`). A failing check never blocks a deploy.
 
-All visible text lives in the i18n translation files. When content changes, **all seven files must be updated together**:
+## Content sync
 
-| File | Purpose |
-|---|---|
-| `src/locales/de.json` | German translations (primary language) |
-| `src/locales/en.json` | English translations (must mirror de.json structure exactly) |
-| `public/llms.txt` | LLM-facing site summary (English, canonical) |
-| `public/llms-full.txt` | LLM-facing full site content (English) |
-| `public/llms.de.txt` | LLM-facing site summary (German) |
-| `public/llms-full.de.txt` | LLM-facing full site content (German) |
-| `SYSTEM_PROMPT.md` | System prompt for the embedded chat agent. Read live from main by the n8n workflow on every message (raw.githubusercontent.com, up to 5 min CDN delay); path and filename are an interface, do not move or rename the file |
+Visible text lives in `site/index.html`, once per language. When content changes, update in the same pass: `index.html` (both languages), `llms.txt`, `llms.de.txt`, `llms-full.txt`, `llms-full.de.txt`, and the JSON-LD and meta tags in the head when a project page is added or removed. `sitemap.xml` lists only fetchable URLs (`/`, the llms files, the project pages); `lastmod` is set by hand on a content change.
 
-Never add text directly in components; always use `t('key')` from `react-i18next`.
+## Language
 
-## Writing Style (Critical)
+Both languages ship in the same file, as in the open family. Prose exists as sibling elements with `lang="de"` and `lang="en"`; one CSS rule hides the language that does not match `<html lang>`. A classic script in the head sets `<html lang>` before first paint: German when the browser's first language starts with `de`, English otherwise; `?lang=de` or `?lang=en` overrides. Without script the page is German. There is no language switch and no theme switch.
 
-The copy must read as written by a person, not generated:
+## Writing style
 
-- No em-dashes in any visible text or LLM-facing file; use periods, commas, colons, or semicolons
-- No "not X, but Y" antithesis chains; use the contrast only where it is the actual point
-- No dramatic one-word fragment endings ("Not a metaphor.") outside deliberately kept manifesto lines
-- No grandiose self-description; plain, concrete claims
-- German copy avoids unnecessary anglicisms and consulting jargon
-- Two registers, applied without exception: first person ("ich") for everything self-describing (Opus Purum, Principles, Exocortex, Relationships); direct address ("du") only in the invitation context of Lux Aperta Bavaria (Iter/Convivium/Speculum Apertum). No section outside Lux Aperta addresses the reader directly. Chat-widget UI strings are conversational and exempt.
-- One vocabulary for one territory: the whole card speaks Opus Purum's process-philosophical/cybernetic language (attractor, Logos, order-direction, coherence, alignment, self-model). Do not reintroduce a parallel idiom (e.g. Ra/Q'uo terms like service-to-self/-others, negentropy, natural law) for the same ideas.
+- No em dashes in any visible text or llms file; use periods, commas, colons, semicolons.
+- No "not X, but Y" chains unless the contrast is the point; no dramatic fragment endings.
+- No self-description. The work speaks in its own register: Opus Purum impersonal, the formats in "wir" as a practice description, the projects in plain third person.
+- One vocabulary for one territory: Opus Purum's process-philosophical language (attractor, Logos, order-direction, coherence, alignment); no parallel idiom for the same ideas.
 
-## Links & Attribution (Critical)
+## Links and attribution
 
-This site is purely Michael's personal profile and web card, with its AI features. It links to Michael and nothing else.
+The site links to its own projects and to github.com/pajew-ski, nothing else. No external names, organizations, or sources in visible text or llms files.
 
-- Only Michael's own profiles and destinations may be linked (for example his GitHub profile, YouTube channel, other contact channels). No links to external websites.
-- No external names, organizations, or sources in any visible text or LLM-facing file. Concepts are described in Michael's own words, as they are generally understood today, without citing an outside source.
-- This applies to all seven content files and to the embedded chat's system prompt.
+## Design: Albedo
 
-## Design & Proportion (Critical)
+The inline stylesheet begins with the Albedo token block, `/* albedo: Anfang */` to `/* albedo: Ende */`, byte for byte as in the open family (temet-nosce, open-entrainer, open-desensitizer, open-helix). Rules outside the block use its tokens only:
 
-Guiding premise for all work on this site: natural beauty and semantic purity first. The first impression of every view must be pure beauty, on desktop and on mobile alike. This is a standing requirement, not a per-task instruction: every session that adds or changes anything visible applies and verifies the rules below proactively, without being asked.
+- Achromatic: five tones in oklch with chroma 0, light and dark from `prefers-color-scheme`. pajew.ski is outside the Exocortex and carries no brand color. `check:site` rejects chroma, hex, rgb and hsl outside the block.
+- Measure from 2: spacing `--step-2` to `--step-7` (4 to 128 px), type `--type-sm`, `--type-0` to `--type-4`, line height √2, shell 1024 px, text column 32 rem. Macro composition in powers of two in vmin.
+- Intro: the Krystal Flower is the centre (G1). Free space above : below = 1 : √2. The flower is drawn by the first script at the end of `index.html` (24 log spirals r = r0 · 2^(2θ/π)) and revealed by a growing `clip-path` circle; never animate stroke dashes, WebKit mis-renders them on these paths.
+- Sections alternate bg and surface. A card on bg is a surface band of `--step-3` around a bg interior (G2); inside a surface section the section is the band. Cards in a row are equally high.
+- Opus Purum is `<details name="opus-purum">`: one chapter open at a time, the first open by default. Opening glides via `::details-content`, closing is immediate. A summary may not contain a link, so chapters have ids but no self-link; the second script opens a chapter on a deep link and brings an opened heading back into view.
+- Every section `h2` and every card `h3` is a quiet self-link (`a.self`) to its id. Anchors: `#opus-purum`, `#opus-purum-<english-title-slug>`, `#open-formats`, `#iter-apertum`, `#convivium-apertum`, `#speculum-apertum`, `#projects`, `#<project-slug>`.
+- Reflow: at 360 px only vertical scrolling. Every visual change is checked with screenshots at 360 and 1440 px, light and dark, before committing.
 
-- Albedo, measure from 2 (pajew-ski/config#378): every length, size, and line height derives from 2, the same growth as the Krystal Flower. φ is gone. `tailwind.config.js` replaces the Tailwind defaults for spacing, type, line height, radii, and max widths instead of extending them, so a value outside the scale has no utility to arrive through.
-- Spacing uses the tokens `step-2` … `step-7` = 2ⁿ px (4, 8, 16, 32, 64, 128), plus `0` and `px` for hairlines. Macro composition uses powers of two in vmin (64, 32, 16, 8, 4). Pick values from these ladders instead of inventing new ones; an old or foreign value goes to the log-nearest step. The only arbitrary values are composites of the steps (`py-[max(16vmin,128px)]`, the principle card's `min-h-[256px]`, the facts grid's `minmax(min(256px,100%),1fr)`).
-- Type uses `text-type-sm`, `text-type-0` … `text-type-4`: 0.875, 1, 1.414, 2, 2.828, 4 rem, i.e. 2^(k/2) rem with 0.875rem (1 − 2⁻³) as the legibility floor. Line height is √2 (1.414) from `type-sm` to `type-2` and 1 for the display steps `type-3` and `type-4`; it comes with the size, so no `leading-*` utilities. The body carries `text-type-0`, so text without a size class inherits √2 too.
-- Radii are `rounded-sm/md/lg` = 4/8/16 px; `rounded-full` only for circles. Widths: `max-w-shell` (1024px) for every section, `max-w-text` (32em) for running text and leads; 32em is the Albedo text column of 32rem at body size and keeps the same measure in characters for a lead one step larger.
-- Viewport-relative units (vmin) keep proportions identical across devices; fixed values only as caps or floors (e.g. `max-w`, `min(...)`, `max(...)`).
-- Section shell, identical for every content section: `py-[max(16vmin,128px)] px-step-4 md:px-step-5 max-w-shell mx-auto`, header `mb-step-6 space-y-step-5`, h2 `text-type-2 md:text-type-3 font-bold tracking-tighter`, lead copy `text-type-1 max-w-text font-light`, card grids `gap-step-5`, uppercase micro-labels `text-type-sm tracking-[0.3em]`.
-- Vertical composition is optically centred: free space above : below = 1 : √2, which puts the group just above the middle, the classical optical centre; 1 : 2 would lift it into the upper third. Reference implementation: `Intro.tsx` (flower diameter 64vmin capped at 32rem, text gap 8vmin, spacers `grow` and `grow-[1.414]`).
-- Whitespace is a design element; prefer removing elements over adding. No helper graphics, no decoration without meaning. The Krystal Flower consists of its 24 curves and nothing else.
-- Semantic purity: semantic HTML, minimal DOM, no wrapper elements without purpose; ids, i18n keys, and component names stay aligned (see Component Conventions).
-- Every visual change is verified with headless-browser screenshots before committing: mobile (390×844) and desktop (1440×900), each in light and dark mode. Animations are checked mid-run too, not only in their final state; WebKit has mis-rendered animated `stroke-dasharray` (motion's `pathLength`) here before, so avoid dash-based drawing.
-- Dark mode must never flash: an inline script in `index.html` sets the `dark` class before first paint. Keep it intact.
+## Reader mode
 
-## Site Structure (Sections)
+All text stays in the DOM. No class name contains `hidden`. Decorative glyphs are pseudo-elements. Adjacent heading fragments carry an `sr-only` separator. The page is wrapped in `<main><article>`. `check:site` asserts that Readability keeps every heading.
 
-Ordered inside-out: worldview, principles, own infrastructure, published work, relationships, open spaces.
-Each section element carries an `id` matching the anchors used in `llms.txt`. Every named heading (section `h2`s, module/chapter/stack/format headings, principle cards, Building Blocks) is a self-link to its own `id`, so everything is directly shareable, e.g. `/#iter-apertum` or `/#opus-purum-axioms`. The affordance stays deliberately quiet: no glyph, only a pointer cursor and a faint underline that fades in on hover (shared class `anchorLinkClass` in `src/anchors.ts`); never add a visible anchor icon.
+## Git and deployment
 
-Anchor system (`src/anchors.ts`): slugs derive from the English titles via `slugify`, so ids are identical in both languages; renaming an English title changes its anchor. Chapter anchors carry the `opus-purum-` prefix and Building Block cards the `building-blocks-` prefix (their bare slugs would collide with the principles, e.g. Trust); everything else is the bare slug. Deep links to collapsed targets (accordion chapters, principle cards) open the target: the hash is read in the state initializer (layout-stable first paint) and on `hashchange`; on disclosure headings the anchor link itself carries `aria-expanded`/`aria-controls` (valid on links). Accordion chapters: Space toggles, Enter navigates and opens, clicking the row toggles. Principle and Building Block cards: every plain activation (click on title or card, Enter, Space) only toggles; a plain title click never navigates, because the fragment scroll would glide the page like the accordion does, and that behavior belongs to the accordion alone. Modified clicks (new tab) and incoming deep links still work through the href. `[id]` elements get `scroll-margin-top` (see `index.css`). The prerender snapshot mirrors the ids. `npm run check:site` asserts existence, uniqueness, self-links, and the open-on-deep-link behavior. `SYSTEM_PROMPT.md` carries the full German-title-to-anchor table so the chat hands out precise links instead of section names. It cannot derive those anchors (they come from the English titles the prompt does not carry), so a rename on either side would leave it handing out dead links: `npm run check:site` regenerates every row from the locale files, compares it against the table, asserts the anchors exist in the DOM, and prints the corrected row on a mismatch. Keep the row format `**Group**: Label → \`anchor\`, …`, one group per line; the parser expects it.
-
-1. **Intro** (`#intro`): Name, tagline, Krystal Flower animation
-2. **OpusPurum** (`#opus-purum`): Axiomatic framework, accordion with 8 chapters. Only one chapter is open at a time; opening one glides its heading to the top of the viewport with a per-frame rAF scroll pin (`glideHeadingToTop` in `OpusPurum.tsx`), so the simultaneous collapse of the previously open chapter cannot drag the page around. User scroll input cancels the glide. Chapter III (The Self) also carries the four formal axioms of cognitive systems (Interpretive Asymmetry, Syntactic Integration, Symbolic Organization, Semantic Communication), rendered as plain `heading`+`body` entries (no per-item anchor).
-3. **Principles** (`#principles`, heading "Prinzipien"): two modules
-   - Sein/Being: 12 principles (3-column grid)
-   - Tun/Doing: 12 principles (3-column grid). Written in Opus Purum's process-philosophical/cybernetic diction (attractor, Logos, order-direction, coherence, alignment), not the Ra/Q'uo vocabulary it once carried (service-to-self/-others, negentropy, natural law). Three Ra-coded titles were translated too (Hierarchical Control→Inner Governance, Law Compliance→Logos Compliance, Signal Congruence→Embodied Coherence), which changes those three anchors; the other nine titles are unchanged.
-4. **Exocortex** (`#exocortex`): Technical infrastructure (Orchestration, Memory & Inference, Operations)
-5. **Projects** (`#projects`, heading "Projekte"): five project cards, each with a micro-label (`kind`), a title, one description, an optional `note` (a smaller muted paragraph for the limits of the three browser tools: headphones, no medical device or therapy replacement, contraindications), and exactly one destination link. The llms-full files additionally carry each project's repository and license as structured lines; the system prompt carries those plus the section-to-project mapping, so the chat can answer license, source, and "why does this belong here" questions. Four projects have a page of their own under the same domain and link to it root-relative (`/temet-nosce/`, `/open-entrainer/`, `/open-desensitizer/`, `/open-helix/`); the Home Assistant extension has no page and links to its repository. That link is the only loud link on the card, so the site's hierarchy actually gets walked; the heading stays a quiet self-link like everywhere else. `href` and `linkLabel` live in the locale files (identical in both) because the prerender script reads only the locales.
-6. **Relationships** (`#relationships`, heading "Beziehungen"): relationship anarchy, 6 principle cards + 12 Building Block cards (both reuse `PrincipleCard`; `blocks` = `{title, desc}`, one-line definitions matching the card compression and the llms files)
-7. **LuxAperta** (`#lux-aperta`): Lux Aperta Bavaria community text + format cards (Iter Apertum, Convivium Apertum, Speculum Apertum)
-8. **Chat Widget**: N8N-powered assistant
-9. **Footer**: Legal modal, site footer text, links to `/llms.txt` and `/llms-full.txt`
-
-## Reader Mode & Content Extraction (Critical)
-
-The page must extract completely in browser reader modes. There is no standard: Safari, Firefox (Readability.js), and Chromium-family readers (including Vivaldi) each use their own heuristics, so the markup has to satisfy the common denominator. These rules exist because each one was violated and produced a real reader-mode bug:
-
-- All text stays in the DOM at all times. Never conditionally mount content (no `AnimatePresence` around body text) and never collapse it with inline styles (`height: 0`, `opacity: 0`, Framer Motion height animations); some extractors read inline styles as hidden. Collapse via CSS classes only, using the grid-rows pattern: outer `grid grid-rows-[0fr]/[1fr] opacity-0/100 transition-[grid-template-rows,opacity]`, inner `overflow-clip min-h-0`.
-- No class name may contain the substring `hidden` (Readability scores it as boilerplate and deletes the element). Use `overflow-clip`, never `overflow-hidden`.
-- Never put a heading inside a `<button>` (extractors strip buttons wholesale) and never put `aria-expanded` on non-widget elements. Disclosure pattern: the heading contains a `span role="button"` with `tabIndex`, `aria-expanded`, `aria-controls`, and Enter/Space handling; pointer clicks may additionally be handled on the surrounding row or card.
-- Decorative glyphs (the accordion `+`) are CSS pseudo-elements (`after:content-['+']`), never DOM text nodes; Safari extracts DOM text even under `aria-hidden`.
-- Adjacent heading fragments in separate spans need a real separator (`sr-only` span with a text separator); CSS gaps do not exist in extracted text.
-- The whole card is wrapped in `<main><article>` so extractors anchor on the h1 instead of electing an inner heading as the article title.
-- `npm run check:site` asserts all of this (every heading and every body string from the locale files must survive extraction) and must pass before committing.
-
-## Prerendering & AI Discovery
-
-The site is a CSR SPA; without countermeasures, non-JS fetchers (most AI agents, scrapers) would receive an empty `<div id="root">`. Therefore:
-
-- `scripts/prerender.mjs` runs as part of `npm run build`. It generates a static HTML snapshot of the full site content from `src/locales/de.json` (same source of truth as the app) and injects it into `dist/index.html` inside `#root`, wrapped in `[data-snapshot]`. React replaces the snapshot on mount; the interactive app is unaffected.
-- Browsers never flash the snapshot: the inline head script tags `<html>` with a `js` class before first paint and `index.css` hides `[data-snapshot]` under `.js`. Clients without JavaScript render the snapshot as before. Keep script, wrapper, and CSS rule in sync.
-- The script also stamps all four llms files in `dist/` (`llms.txt`, `llms-full.txt`, `llms.de.txt`, `llms-full.de.txt`) with an `Updated: YYYY-MM-DD` line (build date) so stale CDN caches are recognizable. The source files in `public/` carry no stamp.
-- The script also inlines the built entry stylesheet into `dist/index.html` and removes the `<link rel="stylesheet">`, so first paint needs no render-blocking CSS request. The hashed CSS file stays in `dist/` for browsers still holding previously cached HTML.
-- Because the snapshot is generated from `de.json`, it needs no manual syncing; new sections must be added to the script's section list, though.
-- Discovery: `public/robots.txt` points to `public/sitemap.xml`, which lists `/` and all four llms files; robots.txt also names them in a comment. `index.html` carries `<link rel="llms.txt">` and a meta description. The app footer links the llms files of the active language; the English and German llms files cross-reference each other.
-
-## Discoverability & Semantic Web (Critical)
-
-This site is Michael Pajewski's public identity for humans, search engines, and AI systems alike. Every session that touches content, links, or the head must keep the machine-readable layer truthful and in sync. This is a standing requirement, applied proactively, not per task.
-
-- The `<head>` in `index.html` is the semantic anchor. Keep in sync with the actual content and with each other: the `<title>`, `meta[name=description]`, the JSON-LD `@graph` (Person + WebSite + one WebPage per project page, tied together by `hasPart`/`isPartOf`), Open Graph tags, and Twitter Card tags. When a self-description, job, location, language, or profile link changes, update the JSON-LD (`jobTitle`, `knowsAbout`, `knowsLanguage`, `address`, `sameAs`) in the same pass. `sameAs` and OG/Twitter follow the same Links & Attribution rule: only Michael's own destinations, no external names or organizations.
-- `<link rel="canonical">` stays `https://pajew.ski/`. The site is one canonical URL; the language follows the browser on the client, so there are no per-language URLs and therefore no `hreflang` page alternates for HTML. The markdown alternate links carry `hreflang` for the llms files; their `href` values must stay absolute (Lighthouse rejects relative hreflang URLs).
-- The social preview image is `public/og-image.png` (1200x630 at 2x), referenced by `og:image` and `twitter:image` (`summary_large_image`). It is a committed static asset, not built by `npm run build`. Regenerate it with `node scripts/generate-og-image.mjs` when the name, tagline, or card design changes; that script reproduces the Krystal Flower with the exact math from `KrystalFlower.tsx`, so keep the two in sync (24 spirals, same opacities, monochrome, pure-black dark background). Update the `og:image:width`/`height` tags if the output dimensions change.
-- The llms files are the HTML-free Markdown mirror of the site and are declared via `<link rel="alternate" type="text/markdown">`. That is the supported clean-content mechanism. Do not attempt a dynamic `.md`-suffix feature: GitHub Pages is a static host with no content negotiation, and per-section `.md` files would only duplicate `llms-full.txt` while multiplying the content-sync surface.
-- `public/sitemap.xml` lists only real, fetchable URLs (`/`, the four llms files, and the four project pages under the same domain). Never add fragment URLs (`/#section`): search engines strip the fragment and treat them as duplicates of `/`. All `<lastmod>` values are stamped with the build date by `scripts/prerender.mjs`; leave the source dates as placeholders and let the build overwrite them. The project entries deliberately carry no `<lastmod>`: they deploy from their own repositories, so this site's build date would say nothing true about them.
-- New sections: add the `id`/`h2` self-link (see Site Structure), the anchor in `llms.txt`, and the section to the prerender script's section list. Sections are made shareable through anchors and the prerender snapshot, not through the sitemap.
-
-## Performance (Critical)
-
-The Lighthouse mobile score is kept at the top of the green range. Standing rules:
-
-- The chat bundle (`@n8n/chat` plus its Vue runtime, roughly two thirds of all JavaScript) must never be imported eagerly. Only `src/chat.ts` imports it; `ChatWidget` loads that chunk on the first user interaction, with a timer 6 s after `load` as fallback. This keeps the chat out of the critical path and out of the lab metrics window.
-- Framer Motion loads through `LazyMotion` with `domAnimation` in strict mode (see Component Conventions); importing `motion.*` anywhere throws at runtime and would pull the full bundle back in.
-- Scroll reveals use the shared presets in `src/motion.ts`. The viewport pre-trigger margin and the capped stagger delays are what keep cards from sitting blank inside the viewport; do not reintroduce long per-index delays or default viewport configs.
-- Elements animated by Framer Motion must not also have CSS transitions on `opacity` or `transform` (no `transition-all` on animated cards); the two systems fight and the animation stutters.
-- The n8n chat theme overrides in `src/index.css` use doubled `:root:root` selectors because the chat stylesheet loads after `index.css`; keep the doubling, load order no longer decides the cascade.
-- `index.html` preconnects to `https://n8n.pajewski.net` for the deferred webhook call.
-
-## i18n
-
-- Framework: `i18next` + `react-i18next` + browser language detector
-- Languages: `de` (German), `en` (English, fallback); the language follows the browser (`navigator` only, nothing cached), there is no switch, same as the color scheme
-- Files: `src/locales/{de,en}.json`
-- Usage: `const { t } = useTranslation()` in all components
-- Nested objects: `t('key', { returnObjects: true }) as Type`
-- Both JSON files must have identical key structure at all times
-- `document.documentElement.lang` is kept in sync in `src/i18n.ts`
-
-## Component Conventions
-
-- Functional components with TypeScript interfaces
-- Component file names, i18n keys, and section ids match the section they render (e.g. `Principles.tsx`, key `principles`, id `#principles`)
-- Framer Motion for scroll reveals and load animations, via `LazyMotion` (`domAnimation`, strict) in `App.tsx`: always `m.*` components, never `motion.*`. Scroll reveals combine `initial`, `whileInView`, `viewport={viewportOnce}` and `transition={reveal(delay)}` from `src/motion.ts`. Expand/collapse is the one exception: it uses the CSS grid-rows pattern (see Reader Mode section), never Framer height animations
-- Tailwind utilities only (no CSS modules, no inline styles)
-- `clsx` + `tailwind-merge` for conditional classnames
-- Accessibility: `aria-label`, `aria-labelledby`, `aria-expanded`, `tabIndex`, semantic HTML, keyboard handlers
-
-## Styling
-
-- Monochromatic grayscale, no color hues: the five Albedo tones in oklch with chroma 0, light bg 98 / surface 94 / border 85 / text-muted 40 / text 15 %, dark 15 / 23 / 32 / 70 / 95 %. Every color variable in `src/index.css` is one of them (`--background` = bg, `--secondary` = surface, `--border`, `--muted-foreground` = text-muted, `--foreground` and `--primary` = text); no opacity-blended text or border colors, no Tailwind palette grays. Sections alternate bg and surface; cards inside a surface section sit on bg (a surface band around a bg interior).
-- Dark mode via `class` strategy (`<html class="dark">`), automatic only: it follows `prefers-color-scheme`, there is no manual toggle. The class is set before first paint by an inline script in `index.html` and kept in sync by `ThemeProvider`.
-- Colors defined as CSS variables in `src/index.css`: the five tones in `:root` and `.dark`, the semantic names as aliases of them, used as `oklch(var(--x) / <alpha-value>)` in `tailwind.config.js`
-- System font stack, no web fonts
-- Responsive: mobile-first with `md:` and `lg:` breakpoints
-- Contrast is WCAG AA everywhere. For achromatic oklch the relative luminance is L³, so text-muted on surface is 7.7:1 light and 6.3:1 dark, on bg 8.7:1 and 7.4:1. Muted text never gets an additional opacity reduction
-
-## TypeScript
-
-- Strict mode enabled (`noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`)
-- Target: ES2022
-- No `any` types
-
-## Git & Deployment
-
-- Branch naming: `claude/<description>-<id>` for Claude-generated branches
-- CI/CD: GitHub Actions deploys `dist/` to GitHub Pages on push to main/master
-- Repo setting: Pages source must stay on "GitHub Actions". The legacy "Deploy from a branch" mode publishes the raw source tree (blank page) and races against the workflow deployment.
-- `deploy.yml` carries the previously live hashed assets into each new deployment so browsers holding the 10-minute-cached HTML never hit deleted assets.
-- Build must pass (`npm run build`) before pushing
-- Node version: 20
+- Branches `claude/<description>`; Michael merges.
+- Pages source stays on "GitHub Actions"; the branch mode would publish the repository root instead of `site/`.
+- The project pages under the same domain (`/temet-nosce/`, `/open-entrainer/`, `/open-desensitizer/`, `/open-helix/`) deploy from their own repositories and need this repository's custom domain; `site/CNAME` and the domain setting stay.

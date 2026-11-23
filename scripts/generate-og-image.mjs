@@ -1,11 +1,12 @@
-// One-off asset generator for the social preview image (public/og-image.png,
+// One-off asset generator for the social preview image (site/og-image.png,
 // 1200x630, rendered at 2x). NOT part of `npm run build`: the flower is
 // deterministic, so the PNG is generated once and committed as a static asset.
-// Re-run manually only when the card design, name, or tagline changes:
+// Re-run manually only when the card design or title changes:
 //   node scripts/generate-og-image.mjs
 //
-// The 24 logarithmic spirals are reproduced with the exact math from
-// src/components/KrystalFlower.tsx so the card stays 1:1 with the live logo.
+// The 24 logarithmic spirals are reproduced with the exact math of the
+// flower script at the end of site/index.html, so the card stays 1:1 with
+// the live logo. Set CHROME_PATH if Chrome is not at the default path.
 
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, writeFileSync, rmSync, existsSync } from 'node:fs';
@@ -15,7 +16,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 
-// --- Krystal Flower geometry (mirrors KrystalFlower.tsx exactly) ---
+// --- Krystal Flower geometry (mirrors site/index.html exactly) ---
 const CX = 250;
 const CY = 250;
 const R = 200;
@@ -47,39 +48,39 @@ const SPIRALS = Array.from({ length: 12 }, (_, k) => {
 
 const flowerPaths = SPIRALS.map(
   (s) =>
-    `<path d="${s.path}" fill="none" stroke="hsl(0 0% 98%)" stroke-width="2" opacity="${
+    `<path d="${s.path}" fill="none" stroke="oklch(95% 0 0)" stroke-width="2" opacity="${
       s.dir === 1 ? 0.52 : 0.34
     }"/>`
 ).join('');
 
-// --- Card layout (1200x630, dark theme of the site: bg 0 0% 0%) ---
-// Golden split: text column on the left, flower on the right.
+// --- Card layout (1200x630, Albedo dark: bg 15, text-muted 70, text 95) ---
+// Text column on the left, flower on the right.
 const html = `<!doctype html><html><head><meta charset="utf-8"><style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; }
   body {
-    background: hsl(0 0% 0%);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: hsl(0 0% 98%);
+    background: oklch(15% 0 0);
+    font-family: system-ui, sans-serif;
+    color: oklch(95% 0 0);
     display: flex; align-items: center; overflow: hidden;
   }
-  .text { padding-left: 96px; width: 742px; }
+  .text { padding-left: 128px; width: 742px; }
   .label {
     font-size: 20px; letter-spacing: 0.3em; text-transform: uppercase;
-    color: hsl(0 0% 63.9%); font-weight: 300; margin-bottom: 28px;
+    color: oklch(70% 0 0); font-weight: 300; margin-bottom: 32px;
   }
-  .name { font-size: 76px; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+  .name { font-size: 64px; font-weight: 700; letter-spacing: -0.05em; line-height: 1; }
   .tagline {
-    font-size: 30px; font-weight: 300; color: hsl(0 0% 63.9%);
-    margin-top: 28px; letter-spacing: -0.01em;
+    font-size: 32px; font-weight: 300; color: oklch(70% 0 0);
+    margin-top: 32px; letter-spacing: -0.01em; line-height: 1.414;
   }
   .flower { width: 458px; height: 630px; display: flex; align-items: center; justify-content: center; }
   .flower svg { width: 400px; height: 400px; }
 </style></head><body>
   <div class="text">
-    <div class="label">Regensburg</div>
-    <div class="name">Michael Pajewski</div>
-    <div class="tagline">Data Scientist, Tänzer, Kreativer</div>
+    <div class="label">pajew.ski</div>
+    <div class="name">Frei zum Mitnehmen</div>
+    <div class="tagline">Opus Purum, offene Formate und quelloffene Werkzeuge.</div>
   </div>
   <div class="flower">
     <svg viewBox="0 0 500 500"><g>${flowerPaths}</g></svg>
@@ -90,10 +91,9 @@ const work = mkdtempSync(join(tmpdir(), 'og-'));
 const htmlPath = join(work, 'card.html');
 writeFileSync(htmlPath, html);
 
-const outPath = resolve(root, 'public', 'og-image.png');
+const outPath = resolve(root, 'site', 'og-image.png');
 
-const chromium =
-  '/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell';
+const chromium = process.env.CHROME_PATH || '/usr/bin/google-chrome';
 if (!existsSync(chromium)) {
   throw new Error(`chromium not found at ${chromium}; adjust the path for this environment`);
 }

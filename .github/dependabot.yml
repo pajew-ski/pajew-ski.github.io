@@ -1,0 +1,18 @@
+# Monthly, grouped, merged by hand. npm carries only the check tools, and
+# checks.yml runs them on the bump.
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      check-tools:
+        patterns: ["*"]
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      actions:
+        patterns: ["*"]
